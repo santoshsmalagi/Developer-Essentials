@@ -171,7 +171,19 @@ You can align text in the columns to the left, right, or center by adding a colo
 | Paragraph   | Text        | And more      |
 
 
-## Links and Adding Titles to Links
+## Links
+To quickly turn a URL or email address into a link, enclose it in angle brackets.
+<www.picoslabs.com>
+
+To create a link, enclose the text in square brackets and then follow it immediately with the URL in parentheses.
+
+Follow us here - [PICOS Labs](www.picoslabs.com).
+
+You can optionally add a title for a link. This will appear as a tooltip when the user hovers over the link. To add a title, enclose it in parentheses after the URL.
+
+Follow us here - [PICOS Labs](www.picoslabs.com "PICOS Labs")
+
+
 ## Images and Linking Images
 
 
