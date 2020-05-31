@@ -17,8 +17,15 @@ Markdown is a lightweight markup language with plain-text-formatting syntax. It 
 * Tables
 
 ## Markdown Flavours
+The original Markdown syntax specification was outlined by John Gruber (creator of Markdown along with Aaron Swartz) in 2004. Several individuals and organizations added thier own extensions to these specifications and hence were born different flavors of Markdown. These Markdown flavors are also considered to be lightweight Markup languages in their own right. Some of the popular Markdown flavors include:
 
+* CommonMark
+* GitHub Flavored Markdown (GFM)
+* Markdown Extra
+* MultiMarkdown
+* R Markdown
 
+Basically these flavors are a superset of Gruber’s basic Markdown syntax and add aditional features such as tables, code blocks, syntax highlighting, URL auto-linking, footnotes etc.
 
 ## References
 https://www.markdownguide.org
