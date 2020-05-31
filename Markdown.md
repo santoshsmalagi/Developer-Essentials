@@ -27,5 +27,16 @@ The original Markdown syntax specification was outlined by John Gruber (creator 
 
 Basically these flavors are a superset of Gruber’s basic Markdown syntax and add aditional features such as tables, code blocks, syntax highlighting, URL auto-linking, footnotes etc.
 
+# Basic Syntax
+
+## Headings
+Levels of headings are created by using # sign.
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+
 ## References
 https://www.markdownguide.org
