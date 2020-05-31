@@ -123,6 +123,11 @@ Blockquotes can contain other Markdown formatted elements. Not all elements can 
 >  *Magna Servitus Est Magna Fortuna*
 
 
+## Code Blocks
+### Syntax Highlighting
+## Tables
+## Links and Adding Titles to Links
+## Images and Linking Images
 
 
 ## References
