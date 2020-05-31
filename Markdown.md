@@ -53,6 +53,12 @@ Use a blank line to separate one or more lines of text, for example:
 ### Line breaks
 Line breaks can be created by ending a line with two or more spaces, and then typing a return. Or by adding a \<br\> tag at end of line.
 
+### Seperators
+To create a horizontal seperator, use three or more asterisks (\*\*\*), dashes (---), or underscores (\_\_\_) on a line by themselves.
+
+***
+___
+
 ## Text Emphasis
 ### Bold text
 To bold text, add two asterisks or underscores before and after a word or phrase. To bold the middle of a word for emphasis, add two asterisks without spaces around the letters. <br>
@@ -182,7 +188,6 @@ Follow us here - [PICOS Labs](www.picoslabs.com).
 You can optionally add a title for a link. This will appear as a tooltip when the user hovers over the link. To add a title, enclose it in parentheses after the URL.
 
 Follow us here - [PICOS Labs](www.picoslabs.com "PICOS Labs")
-
 
 ## Images
 To add an image, add an exclamation mark (!), followed by text in brackets, and the path or URL to the image asset in parentheses. You can optionally add a title after the URL in the parentheses.  
