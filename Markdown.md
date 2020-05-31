@@ -134,7 +134,7 @@ Use three backticks (```) or three tildes (~~~) on the lines before and after th
 ```
 int main(int argc, char *argv[])
 {
-    printf("Hellow World!\n");
+    printf("Hello World!\n");
 }
 ```
 
