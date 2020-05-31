@@ -185,11 +185,12 @@ Follow us here - [PICOS Labs](www.picoslabs.com "PICOS Labs")
 
 
 ## Images
-To add an image, add an exclamation mark (!), followed by text in brackets, and the path or URL to the image asset in parentheses. You can optionally add a title after the URL in the parentheses.
+To add an image, add an exclamation mark (!), followed by text in brackets, and the path or URL to the image asset in parentheses. You can optionally add a title after the URL in the parentheses.  
 
 ![The Digital Earth](/assets/Earth.png)
 
-To add a link to an image, enclose the Markdown for the image in brackets, and then add the link in parentheses.
+To add a link to an image, enclose the Markdown for the image in brackets, and then add the link in parentheses.  
+
 [![The Real Earth](/assets/BluePlanet.png "The Blue Planet")](https://www.space.com/54-earth-history-composition-and-atmosphere.html)
 
 
