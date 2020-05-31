@@ -189,9 +189,8 @@ To add an image, add an exclamation mark (!), followed by text in brackets, and 
 
 ![The Digital Earth](/assets/Earth.png)
 
-
 To add a link to an image, enclose the Markdown for the image in brackets, and then add the link in parentheses.
-![The Real Earth](/assets/BluePlanet.png "The Blue Planet) (https://www.space.com/54-earth-history-composition-and-atmosphere.html)
+[![The Real Earth](/assets/BluePlanet.png "The Blue Planet")](https://www.space.com/54-earth-history-composition-and-atmosphere.html)
 
 
 ## References
