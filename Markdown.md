@@ -122,9 +122,27 @@ Blockquotes can contain other Markdown formatted elements. Not all elements can 
 >
 >  *Magna Servitus Est Magna Fortuna*
 
-
 ## Code Blocks
+Use three backticks (```) or three tildes (~~~) on the lines before and after the code block. No indentation is required.
+
+```
+int main(int argc, char *argv[])
+{
+    printf("Hellow World!\n");
+}
+```
+
 ### Syntax Highlighting
+Many flavors of Markdown e.g. GitHub Flavoured Markdown (GFM) support syntax highlighting. To add syntax highlighting, specify a language next to the backticks before the fenced code block.
+
+```C
+int main(int argc, char *argv[])
+{
+    printf("Hellow World!\n");
+}
+```
+
+
 ## Tables
 ## Links and Adding Titles to Links
 ## Images and Linking Images
