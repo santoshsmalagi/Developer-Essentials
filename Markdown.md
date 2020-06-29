@@ -148,6 +148,19 @@ int main(int argc, char *argv[])
 }
 ```
 
+To highlight a shell session command sequence as it looks to the user (with prompts, not just as contents of a hypothetical script file), then the right identifier to use is console:
+
+```console
+malagi@virtualVM:~$ whoami
+malagi
+```
+
+The highlighting includes the prompt, whereas bash, sh, zsh, and shell do not consider the start of the line to be the prompt and don't colour it properly.
+```Shell
+malagi@virtualVM:~$ whoami
+malagi
+```
+
 ## Tables
 Use three or more hyphens (---) to create each column’s header, and use pipes (|) to separate each column. You can optionally add pipes on either end of the table.
 
