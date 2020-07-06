@@ -9,7 +9,7 @@ For a new programmer to come to possess an existing theory of a program it is in
 * Knowledge that is of interest to a large number of people deserves to be documented.
 * Knowledge that is valuable or critical may also need to be documented.
 
-> ***What is documentation?***
+> ***What is documentation?***  
   The process of transferring valuable knowledge to other people now and also to people in the future.
 
 ### 1. Why knowledge is necessary?
