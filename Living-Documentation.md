@@ -6,7 +6,7 @@ Software development is all about knowledge and decision-making based on that kn
 
 Knowledge is necessary because:
 
-* **The mapping between code and the world it represents:**
+* **It represents the mapping between code and the real world:**
      * The programmer who has the theory of the program can explain how the solution relates to the affairs of the world that it helps to handle.
 * **The rationale of the program:**
      * The programmer who has the theory of the program can explain why each part of the program is what it is; in other words, the programmer is able to support the actual program
