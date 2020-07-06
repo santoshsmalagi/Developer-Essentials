@@ -7,7 +7,7 @@ The greater the ambition, the more documentation becomes necessary to enable a c
 ### Specific vs Generic Knowledge
 There is knowledge that is specific to your company, your particular system, or your business domain, and there is knowledge that is generic and shared with many other people in many other companies in the industry.
 
-* **Generic Knowledge*
+* **Generic Knowledge**
     * Knowledge about programming languages, developers’ tools, software patterns, and practices belongs to the generic knowledge category. Examples include DDD, patterns, continuous 
       integration using Puppet and Git tutorials. 
     * Knowledge about mature business industry sectors is also generic knowledge. Even in very competitive areas like pricing in finance or supply chain optimization in e-commerce, 
