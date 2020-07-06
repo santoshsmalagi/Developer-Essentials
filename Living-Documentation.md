@@ -1,6 +1,6 @@
 ### Documentation is All About Knowledge
 
-Software development is all about knowledge and decision-making based on that knowledge, which in turn creates additional knowledge. Software design can last a long time. It can last long enough to forget about previous decisions made, as well as their contexts. It can last long enough for people to leave, taking with them their knowledge, and for new people to join, lacking knowledge.  
+Software development is all about knowledge and decision-making based on that knowledge, which in turn creates additional knowledge. Software design can last a long time. It can last long enough to forget about previous decisions made, as well as their contexts. It can last long enough for people to leave, taking with them their knowledge, and for new people to join, lacking that knowledge.  
 
 The theory as a mental model in a programmer's head can never be fully shared with those who weren’t part of the thought process that led to building it. For a new programmer to come to possess an existing theory of a program it is insufficient that he or she has the opportunity to become familiar with the program text and other documentation. We’ll never completely solve that knowledge transfer problem, but we can accept it as a fact and learn to live with it. The conclusion seems inescapable: At least in certain kinds of large programs, the continued adaption, modification, and correction of errors is dependent on a certain kind of knowledge passed down generations of programmers. This can only happen with *Effective Documentation*.
 
