@@ -14,8 +14,14 @@ So effective documentation is about transferring knowledge in space between peop
 > ***What is documentation?***  
   The process of transferring valuable knowledge to other people now and also to people in the future.
 
-### 1. Why knowledge is necessary?
+#### 1. Why Knowledge is Necessary?
+#### 2. Specific vs Generic Knowledge
+#### 3. Most Knowledge Is Already There
+#### 4. Characteristics of Effective Documentation
+#### 5. Types of Documentation
+#### 6. Creating Documentation
 
+### 1. Why Knowledge is Necessary?
 Knowledge is necessary because:
 
 * **It represents the mapping between code and the real world:**
@@ -68,28 +74,7 @@ You learn generic knowledge by doing your job, as well as by reading books and a
 ### 2.2 Learning Specific Knowledge
 Knowledge specific to your software or business product, is gained by learning from tool documentation, interacting with experienced collegues, internal training material, and finally using or experimenting with the software product or tool.
 
-### 3. Characteristics of Effective Documentation
-
-* **Reliable:**
-  * Living documentation is accurate and in sync with the software being delivered, at any point in time.**
-  * To achieve reliable documentation, we rely on the following ideas:
-      * Exploiting available knowledge: Most of the knowledge is already present in the artifacts of the project, it just needs to be exploited, augmented, and curated for
-        documentation purposes.
-      * Accuracy mechanism: An accuracy mechanism is needed to ensure that the knowledge is always kept in sync.
-
-* **Low effort:**
-    * Living documentation minimizes the amount of work to be done on documentation
-    * Even in case of changes, deletions, or additions
-    * It requires only minimal additional effort—and only once
-
-* **Collaborative:**
-    * Living documentation promotes conversations and knowledge sharing between everyone involved
-
-* **Insightful:**
-    * By drawing attention to each aspect of the work, living documentation offers opportunities for feedback and encourages deeper thinking
-    * It helps reflect on the ongoing work and helps in making better decisions
-
-### 4. Most Knowledge Is Already There
+### 3. Most Knowledge Is Already There
 
 Acknowledge that most of the knowledge is already in the system itself. When needed, identify where it is located and exploit it from there. Even if the knowledge is there somewhere, this does not mean that there is nothing to do about it. There are a number of problems with the knowledge that’s already there:
 
@@ -110,6 +95,27 @@ Acknowledge that most of the knowledge is already in the system itself. When nee
 * **Unwritten:** 
      * In the worst case, the knowledge is only in people’s brains, and only its consequences are there in the system. 
      * For example, there may a general business rule, but it may have been programmed as a series of special cases, so the general rule is not expressed anywhere.
+
+### 4. Characteristics of Effective Documentation
+
+* **Reliable:**
+  * Living documentation is accurate and in sync with the software being delivered, at any point in time.**
+  * To achieve reliable documentation, we rely on the following ideas:
+      * Exploiting available knowledge: Most of the knowledge is already present in the artifacts of the project, it just needs to be exploited, augmented, and curated for
+        documentation purposes.
+      * Accuracy mechanism: An accuracy mechanism is needed to ensure that the knowledge is always kept in sync.
+
+* **Low effort:**
+    * Living documentation minimizes the amount of work to be done on documentation
+    * Even in case of changes, deletions, or additions
+    * It requires only minimal additional effort—and only once
+
+* **Collaborative:**
+    * Living documentation promotes conversations and knowledge sharing between everyone involved
+
+* **Insightful:**
+    * By drawing attention to each aspect of the work, living documentation offers opportunities for feedback and encourages deeper thinking
+    * It helps reflect on the ongoing work and helps in making better decisions
 
 ### 5. Types of Documentation 
 
