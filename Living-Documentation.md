@@ -4,7 +4,12 @@ Software development is all about knowledge and decision-making based on that kn
 
 For a new programmer to come to possess an existing theory of a program it is insufficient that he or she has the opportunity to become familiar with the program text and other documentation. We’ll never completely solve that knowledge transfer problem, but we can accept it as a fact and learn to live with it. The theory as a mental model in programmers’ heads can never be fully shared with those who weren’t part of the thought process that led to building it. The conclusion seems inescapable: At least in certain kinds of large programs, the continued adaption, modification, and correction of errors is dependent on a certain kind of knowledge possessed by a group of programmers who are closely and continuously connected to each other. So efefctie documentation is about transferring knowledge in space between people and also about transferring it over time.
 
-### Why knowledge is necessary?
+#### What Knowledge Must be Documented?
+* Knowledge that is of interest for a long period of time deserves to be documented.
+* Knowledge that is of interest to a large number of people deserves to be documented.
+* Knowledge that is valuable or critical may also need to be documented.
+
+### 1. Why knowledge is necessary?
 
 Knowledge is necessary because:
 
@@ -31,7 +36,7 @@ Knowledge is necessary because:
      * **Wasted time:** That time could have been better invested in improving something else.
      * **Suboptimal decisions:** Other decisions could have been more relevant, or cheaper in the long term.
 
-### Specific vs Generic Knowledge
+### 2. Specific vs Generic Knowledge
 
 There is knowledge that is specific to your company, your particular system, or your business domain, and there is knowledge that is generic and shared with many other people in many other companies in the industry.
 
@@ -50,18 +55,13 @@ There is knowledge that is specific to your company, your particular system, or 
      
 > ***As a professional, you should know enough of the generic, industry standard knowledge to be able to focus on growing the knowledge that’s specific to your particular ambitions.***
 
-### Learning Generic Knowledge
+### 2.1 Learning Generic Knowledge
 You learn generic knowledge by doing your job, as well as by reading books and attending trainings and conferences. This only takes a few hours, and you know beforehand what you’re going to learn, how long it will take, and how much it will cost. It’s as easy to learn generic knowledge as it is to go to the store to buy food. Generic knowledge is a solved problem. This knowledge is ready-made, ready to be reused by everyone. When you use it, you just have to link to an authoritative source.
 
-### Learning Specific Knowledge
+### 2.2 Learning Specific Knowledge
 Knowledge specific to your software or business product, is gained by learning from tool documentation, interacting with experienced collegues, internal training material, and finally using or experimenting with the software product or tool.
 
-#### What Knowledge Must be Documented?
-* Knowledge that is of interest for a long period of time deserves to be documented.
-* Knowledge that is of interest to a large number of people deserves to be documented.
-* Knowledge that is valuable or critical may also need to be documented.
-
-### Characteristics of Effective Documentation
+### 3. Characteristics of Effective Documentation
 
 * **Reliable: Living documentation is accurate and in sync with the software being delivered, at any point in time.**
      * To achieve reliable documentation, we rely on the following ideas:
@@ -81,7 +81,7 @@ Knowledge specific to your software or business product, is gained by learning f
     * By drawing attention to each aspect of the work, living documentation offers opportunities for feedback and encourages deeper thinking
     * It helps reflect on the ongoing work and helps in making better decisions
 
-### Most Knowledge Is Already There
+### 4. Most Knowledge Is Already There
 
 Acknowledge that most of the knowledge is already in the system itself. When needed, identify where it is located and exploit it from there. Even if the knowledge is there somewhere, this does not mean that there is nothing to do about it. There are a number of problems with the knowledge that’s already there:
 
@@ -103,7 +103,7 @@ Acknowledge that most of the knowledge is already in the system itself. When nee
      * In the worst case, the knowledge is only in people’s brains, and only its consequences are there in the system. 
      * For example, there may a general business rule, but it may have been programmed as a series of special cases, so the general rule is not expressed anywhere.
 
-### Types of Documentation 
+### 5. Types of Documentation 
 
 * **Internal Documentation**
      * *The best place to store documentation is on the documented thing itself.* 
@@ -118,7 +118,7 @@ Acknowledge that most of the knowledge is already in the system itself. When nee
 * **External Documentation**
      * An advantage of external documentation is that it can take whatever format and tool is most convenient for the audience and for the writers. 
    
- ### Creating Documentation
+ ### 6. Creating Documentation
 
 The best place to put documentation about a thing is on the thing itself. Choosing internal documentation by default, at least for all knowledge that’s at risk of changing regularly.
 Choose to do external documentation only when there is clear value add. The point of using external documentation would be to be able to add a human feel to the final document, so I’d use Apple Keynote or Microsoft PowerPoint, select or create beautiful quality pictures, and beta test the effectiveness of the documentation on a panel of colleagues to make sure it’s well received.
