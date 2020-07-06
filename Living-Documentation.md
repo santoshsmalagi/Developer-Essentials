@@ -118,7 +118,7 @@ Acknowledge that most of the knowledge is already in the system itself. When nee
 * **External Documentation**
      * An advantage of external documentation is that it can take whatever format and tool is most convenient for the audience and for the writers. 
    
- ### Rethinking Documentation
+ ### Creating Documentation
 
 The best place to put documentation about a thing is on the thing itself. Choosing internal documentation by default, at least for all knowledge that’s at risk of changing regularly.
 Choose to do external documentation only when there is clear value add. The point of using external documentation would be to be able to add a human feel to the final document, so I’d use Apple Keynote or Microsoft PowerPoint, select or create beautiful quality pictures, and beta test the effectiveness of the documentation on a panel of colleagues to make sure it’s well received.
