@@ -1,12 +1,20 @@
 ### Documentation is All About Knowledge
+
 Software development is all about knowledge and decision-making based on that knowledge, which in turn creates additional knowledge. The given problem, the decision that was made, the reason it was made that way, the facts that led to that decision, and the considered alternatives are all knowledge. Software design can last a long time. It can last long enough to forget about previous decisions made, as well as their contexts. It can last long enough for people to leave, taking with them their knowledge, and for new people to join, lacking knowledge.
 
 The greater the ambition, the more documentation becomes necessary to enable a cumulative process of knowledge management that scales beyond what fits in our heads. When our brains and memories are not enough, we need assistance from technologies such as writing, printing, and software to help remember and organize larger sets of knowledge.
 
 ### Specific vs Generic Knowledge
 There is knowledge that is specific to your company, your particular system, or your business domain, and there is knowledge that is generic and shared with many other people in many other companies in the industry.
-Knowledge about programming languages, developers’ tools, software patterns, and practices belongs to the generic knowledge category. Examples include DDD, patterns, continuous integration using Puppet and Git tutorials.
-Knowledge about mature business industry sectors is also generic knowledge. Even in very competitive areas like pricing in finance or supply chain optimization in e-commerce, most of the knowledge is public and available in industry-standard books, and only a small part of the business knowledge is specific and confidential— and only for a while at that. The good news is that generic knowledge is already documented in the industry literature. There are books, blog posts, and conference talks that describe it quite well. There are standard vocabularies to talk about it. There are trainings available to learn it faster from knowledgeable people.
+
+* **Generic Knowledge*
+    * Knowledge about programming languages, developers’ tools, software patterns, and practices belongs to the generic knowledge category. Examples include DDD, patterns, continuous 
+      integration using Puppet and Git tutorials. 
+    * Knowledge about mature business industry sectors is also generic knowledge. Even in very competitive areas like pricing in finance or supply chain optimization in e-commerce, 
+      most of the knowledge is public and available in industry-standard books, and only a small part of the business knowledge is specific and confidential — and only for a while at 
+      that. 
+    * The good news is that generic knowledge is already documented in the industry literature. There are books, blog posts, and conference talks that describe it quite well. There 
+      are standard vocabularies to talk about it. There are trainings available to learn it faster from knowledgeable people.
 
 ### Learning Generic Knowledge
 You also learn generic knowledge by doing your job, as well as by reading books and attending trainings and conferences. This only takes a few hours, and you know beforehand what you’re going to learn, how long it will take, and how much it will cost. It’s as easy to learn generic knowledge as it is to go to the store to buy food.
