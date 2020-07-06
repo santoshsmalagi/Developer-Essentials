@@ -42,9 +42,9 @@ There is knowledge that is specific to your company, your particular system, or 
       are standard vocabularies to talk about it. There are trainings available to learn it faster from knowledgeable people.
 
 * **Specific Knowledge**
-      * Specific knowledge is the knowledge your company or team has that is not (yet) shared with other peers in the same industry. This knowledge is more expensive to learn than 
+     * Specific knowledge is the knowledge your company or team has that is not (yet) shared with other peers in the same industry. This knowledge is more expensive to learn than 
         generic knowledge; it takes time practicing and learning from mistakes. This is the kind of knowledge that deserves most attention.
-      * Specific knowledge is valuable and cannot be found ready-made, so it’s the kind of knowledge you have to put maximal efforts to learn.
+     * Specific knowledge is valuable and cannot be found ready-made, so it’s the kind of knowledge you have to put maximal efforts to learn.
       
 > ***As a professional, you should know enough of the generic, industry standard knowledge to be able to focus on growing the knowledge that’s specific to your particular ambitions.***
 
