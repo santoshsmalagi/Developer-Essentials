@@ -67,14 +67,17 @@ Knowledge specific to your software or business product, is gained by learning f
               documentation purposes.
           * Accuracy mechanism: An accuracy mechanism is needed to ensure that the knowledge is always kept in sync.
 
-* **Low effort: Living documentation minimizes the amount of work to be done on documentation**
-     * Even in case of changes, deletions, or additions. 
-     * It requires only minimal additional effort—and only once.
+* **Low effort:**
+    * Living documentation minimizes the amount of work to be done on documentation**
+    * Even in case of changes, deletions, or additions
+    * It requires only minimal additional effort—and only once
 
-* **Collaborative: Living documentation promotes conversations and knowledge sharing between everyone involved.**
+* **Collaborative:**
+    * Living documentation promotes conversations and knowledge sharing between everyone involved
 
-* **Insightful: By drawing attention to each aspect of the work, living documentation offers opportunities for feedback and encourages deeper thinking.**
-     * It helps reflect on the ongoing work and helps in making better decisions
+* **Insightful:**
+    * By drawing attention to each aspect of the work, living documentation offers opportunities for feedback and encourages deeper thinking
+    * It helps reflect on the ongoing work and helps in making better decisions
 
 ### Most Knowledge Is Already There
 
