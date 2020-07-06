@@ -1,41 +1,6 @@
 ### Documentation is All About Knowledge
 
-Software development is all about knowledge and decision-making based on that knowledge, which in turn creates additional knowledge. 
-
-* The given problem
-* the decision that was made
-* the reason it was made that way
-* the facts that led to that decision
-* the considered alternatives 
-
-Software design can last a long time. It can last long enough to forget about previous decisions made, as well as their contexts. It can last long enough for people to leave, taking with them their knowledge, and for new people to join, lacking knowledge. Documentation is about kowledge transfer, the process of transferring valuable knowledge to other people now and also to people in the future. The greater the ambition, the more documentation becomes necessary to enable a cumulative process of knowledge management that scales beyond what fits in our heads. When our brains and memories are not enough, we need assistance from technologies such as writing, printing, and software to help remember and organize larger sets of knowledge.
-
-### Specific vs Generic Knowledge
-
-There is knowledge that is specific to your company, your particular system, or your business domain, and there is knowledge that is generic and shared with many other people in many other companies in the industry.
-
-* **Generic Knowledge**
-    * Knowledge about programming languages, developers’ tools, software patterns, and practices belongs to the generic knowledge category. Examples include DDD, patterns, continuous 
-      integration using Puppet and Git tutorials. 
-    * Knowledge about mature business industry sectors is also generic knowledge. Even in very competitive areas like pricing in finance or supply chain optimization in e-commerce, 
-      most of the knowledge is public and available in industry-standard books, and only a small part of the business knowledge is specific and confidential — and only for a while at 
-      that. 
-    * The good news is that generic knowledge is already documented in the industry literature. There are books, blog posts, and conference talks that describe it quite well. There 
-      are standard vocabularies to talk about it. There are trainings available to learn it faster from knowledgeable people.
-
-* **Specific Knowledge**
-      * Specific knowledge is the knowledge your company or team has that is not (yet) shared with other peers in the same industry. This knowledge is more expensive to learn than 
-        generic knowledge; it takes time practicing and making mistakes. This is the kind of knowledge that deserves most attention.
-      * Specific knowledge is valuable and cannot be found ready-made, so it’s the kind of knowledge you have to take care of. 
-      * Specific knowledge deserves the biggest efforts from you and your colleagues. 
-      
-***As a professional, you should know enough of the generic, industry standard knowledge to be able to focus on growing the knowledge that’s specific to your particular ambitions.***
-
-### Learning Generic Knowledge
-You also learn generic knowledge by doing your job, as well as by reading books and attending trainings and conferences. This only takes a few hours, and you know beforehand what you’re going to learn, how long it will take, and how much it will cost. It’s as easy to learn generic knowledge as it is to go to the store to buy food. Generic knowledge is a solved problem. This knowledge is ready-made, ready to be reused by everyone. When you use it, you just have to link to an authoritative source, this is as simple as noting an internet link or a bibliographic reference.
-
-### Learning Specific Knowledge
-Knowledge specific to your software or business product, is gained by learning from tool documentation, interacting with experienced collegues, internal training material, and finally using or experimenting with it.
+Software development is all about knowledge and decision-making based on that knowledge, which in turn creates additional knowledge. Software design can last a long time. It can last long enough to forget about previous decisions made, as well as their contexts. It can last long enough for people to leave, taking with them their knowledge, and for new people to join, lacking knowledge. Documentation is about kowledge transfer, the process of transferring valuable knowledge to other people now and also to people in the future. The greater the ambition, the more documentation becomes necessary to enable a cumulative process of knowledge management that scales beyond what fits in our heads. When our brains and memories are not enough, we need assistance from technologies such as writing, printing, and software to help remember and organize larger sets of knowledge.
 
 ### Why knowledge is necessary?
 
@@ -63,6 +28,31 @@ Knowledge is necessary because:
 * **Lack of knowledge manifests as two costs:**
       * **Wasted time:** That time could have been better invested in improving something else.
       * **Suboptimal decisions:** Other decisions could have been more relevant, or cheaper in the long term.
+
+### Specific vs Generic Knowledge
+
+There is knowledge that is specific to your company, your particular system, or your business domain, and there is knowledge that is generic and shared with many other people in many other companies in the industry.
+
+* **Generic Knowledge**
+    * Knowledge about programming languages, developer tools, software patterns, and practices belongs to the generic knowledge category. Examples include DDD, patterns, continuous 
+      integration and Git tutorials. 
+    * Knowledge about mature business industry sectors is also generic knowledge. Even in very competitive areas like EDA or VLSI design, most of the knowledge is public and 
+      available in industry-standard books, and only a small part of the business knowledge is specific and confidential.
+    * The good news is that generic knowledge is already documented in the industry literature. There are books, blog posts, and conference talks that describe it quite well. There 
+      are standard vocabularies to talk about it. There are trainings available to learn it faster from knowledgeable people.
+
+* **Specific Knowledge**
+      * Specific knowledge is the knowledge your company or team has that is not (yet) shared with other peers in the same industry. This knowledge is more expensive to learn than 
+        generic knowledge; it takes time practicing and learning from mistakes. This is the kind of knowledge that deserves most attention.
+      * Specific knowledge is valuable and cannot be found ready-made, so it’s the kind of knowledge you have to put maximal efforts to learn.
+      
+> ***As a professional, you should know enough of the generic, industry standard knowledge to be able to focus on growing the knowledge that’s specific to your particular ambitions.***
+
+### Learning Generic Knowledge
+You learn generic knowledge by doing your job, as well as by reading books and attending trainings and conferences. This only takes a few hours, and you know beforehand what you’re going to learn, how long it will take, and how much it will cost. It’s as easy to learn generic knowledge as it is to go to the store to buy food. Generic knowledge is a solved problem. This knowledge is ready-made, ready to be reused by everyone. When you use it, you just have to link to an authoritative source.
+
+### Learning Specific Knowledge
+Knowledge specific to your software or business product, is gained by learning from tool documentation, interacting with experienced collegues, internal training material, and finally using or experimenting with the software product or tool.
 
 #### What Knowledge Must be Documented?
 * Knowledge that is of interest for a long period of time deserves to be documented.
