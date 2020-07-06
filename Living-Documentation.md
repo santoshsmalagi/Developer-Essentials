@@ -36,6 +36,8 @@ Knowledge is necessary because:
      * **Wasted time:** That time could have been better invested in improving something else.
      * **Suboptimal decisions:** Other decisions could have been more relevant, or cheaper in the long term.
 
+With existing software, when we miss the knowledge developed before, we end up redoing what’s already done because we don’t know it’s there already. We also end up putting a feature in an unrelated component because we don’t know where it should be, and this makes the software bloated. Or the code about the feature becomes fragmented across various components.
+
 ### 2. Specific vs Generic Knowledge
 
 There is knowledge that is specific to your company, your particular system, or your business domain, and there is knowledge that is generic and shared with many other people in many other companies in the industry.
