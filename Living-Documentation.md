@@ -77,7 +77,7 @@ Knowledge specific to your software or business product, is gained by learning f
           * Accuracy mechanism: An accuracy mechanism is needed to ensure that the knowledge is always kept in sync.
 
 * **Low effort:**
-    * Living documentation minimizes the amount of work to be done on documentation**
+    * Living documentation minimizes the amount of work to be done on documentation
     * Even in case of changes, deletions, or additions
     * It requires only minimal additional effort—and only once
 
