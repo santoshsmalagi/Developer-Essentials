@@ -1,10 +1,17 @@
 ### Documentation is All About Knowledge
 
-Software development is all about knowledge and decision-making based on that knowledge, which in turn creates additional knowledge. The given problem, the decision that was made, the reason it was made that way, the facts that led to that decision, and the considered alternatives are all knowledge. Software design can last a long time. It can last long enough to forget about previous decisions made, as well as their contexts. It can last long enough for people to leave, taking with them their knowledge, and for new people to join, lacking knowledge. Documentation is about kowledge transfer, the process of transferring valuable knowledge to other people now and also to people in the future.
+Software development is all about knowledge and decision-making based on that knowledge, which in turn creates additional knowledge. 
 
-The greater the ambition, the more documentation becomes necessary to enable a cumulative process of knowledge management that scales beyond what fits in our heads. When our brains and memories are not enough, we need assistance from technologies such as writing, printing, and software to help remember and organize larger sets of knowledge.
+* The given problem
+* the decision that was made
+* the reason it was made that way
+* the facts that led to that decision
+* the considered alternatives 
+
+Software design can last a long time. It can last long enough to forget about previous decisions made, as well as their contexts. It can last long enough for people to leave, taking with them their knowledge, and for new people to join, lacking knowledge. Documentation is about kowledge transfer, the process of transferring valuable knowledge to other people now and also to people in the future. The greater the ambition, the more documentation becomes necessary to enable a cumulative process of knowledge management that scales beyond what fits in our heads. When our brains and memories are not enough, we need assistance from technologies such as writing, printing, and software to help remember and organize larger sets of knowledge.
 
 ### Specific vs Generic Knowledge
+
 There is knowledge that is specific to your company, your particular system, or your business domain, and there is knowledge that is generic and shared with many other people in many other companies in the industry.
 
 * **Generic Knowledge**
@@ -25,8 +32,7 @@ There is knowledge that is specific to your company, your particular system, or 
 ***As a professional, you should know enough of the generic, industry standard knowledge to be able to focus on growing the knowledge that’s specific to your particular ambitions.***
 
 ### Learning Generic Knowledge
-You also learn generic knowledge by doing your job, as well as by reading books and attending trainings and conferences. This only takes a few hours, and you know beforehand what you’re going to learn, how long it will take, and how much it will cost. It’s as easy to learn generic knowledge as it is to go to the store to buy food.
-Generic knowledge is a solved problem. This knowledge is ready-made, ready to be reused by everyone. When you use it, you just have to link to an authoritative source, and you’re done documenting. This is as simple as noting an Internet link or a bibliographic reference.
+You also learn generic knowledge by doing your job, as well as by reading books and attending trainings and conferences. This only takes a few hours, and you know beforehand what you’re going to learn, how long it will take, and how much it will cost. It’s as easy to learn generic knowledge as it is to go to the store to buy food. Generic knowledge is a solved problem. This knowledge is ready-made, ready to be reused by everyone. When you use it, you just have to link to an authoritative source, this is as simple as noting an internet link or a bibliographic reference.
 
 ### Learning Specific Knowledge
 Knowledge specific to your software or business product, is gained by learning from tool documentation, interacting with experienced collegues, internal training material, and finally using or experimenting with it.
@@ -102,31 +108,38 @@ Acknowledge that most of the knowledge is already in the system itself. When nee
       * In the worst case, the knowledge is only in people’s brains, and only its consequences are there in the system. 
       * For example, there may a general business rule, but it may have been programmed as a series of special cases, so the general rule is not expressed anywhere.
 
-# Internal Documentation
-The best place to store documentation is on the documented thing itself. The advantage of internal documentation is that it’s always up-to-date with any version of the product, as it’s part of its source code. Internal documentation cannot be lost because it’s embedded within the source code itself. It’s also readily available and comes to the attention of any developers working on the code just because it’s under their eyes. Internal documentation also enables you to benefit from all the tools and all the goodness of your fantastic IDE, such as autocomplete, instant search, and seamless navigation within and between elements. Because internal documentation is expressed using implementation technologies, it can usually be parsed by tools. This opens new opportunities for tools to assist developers in their daily tasks. In particular, it enables automated processing of knowledge for curation, consolidation, format conversion, automated publishing, or reconciliation
+### Types of Documentation 
 
-# External Documentation
-An advantage of external documentation is that it can take whatever format and tool is most convenient for the audience and for the writers
+* **Internal Documentation**
+      * *The best place to store documentation is on the documented thing itself.* 
+      * The advantage of internal documentation is that it’s always up-to-date with any version of the product, as it’s part of its source code. 
+      * Internal documentation cannot be lost because it’s embedded within the source code itself. 
+      * It’s also readily available and comes to the attention of any developers working on the code just because it’s under their eyes. 
+      * Internal documentation also enables you to benefit from all the tools and all the goodness of your fantastic IDE, such as autocomplete, instant search, and seamless navigation within and between elements. 
+      * Because internal documentation is expressed using implementation technologies, it can usually be parsed by tools. This opens new opportunities for tools to assist developers in their daily tasks. In particular, it enables automated processing of knowledge for curation, consolidation, format conversion, automated publishing, or reconciliation
 
-The best place to put documentation about a thing is on the thing itself. choosing internal documentation by default, at least for all knowledge that’s at risk of changing regularly
+* **External Documentation**
+   * An advantage of external documentation is that it can take whatever format and tool is most convenient for the audience and for the writers. 
+   
+ ### Rethinking Documentation
 
-Even for stable knowledge, I recommend internal documentation first, and I would choose to do external documentation only when there’s clearly value added, such as with a documentation that must be maximally attractive (perhaps for marketing reasons). In that case, I suggest hand-crafted slides, diagrams with careful manual layout, and appealing pictures. The point of using external documentation would be to be able to add a human feel to the final document, so I’d use Apple Keynote or Microsoft PowerPoint, select or create beautiful quality pictures, and beta test the effectiveness of the documentation on a panel of colleagues to make sure it’s well received.
+The best place to put documentation about a thing is on the thing itself. Choosing internal documentation by default, at least for all knowledge that’s at risk of changing regularly.
+Choose to do external documentation only when there is lear value add. The point of using external documentation would be to be able to add a human feel to the final document, so I’d use Apple Keynote or Microsoft PowerPoint, select or create beautiful quality pictures, and beta test the effectiveness of the documentation on a panel of colleagues to make sure it’s well received.
 
-## Rethinking Documentation
-Most knowledge is already there
-There is no need to record a piece of knowledge that is already recorded in the system itself.
+Examples of internal documentation:
+      * self-documenting code and use of clean code practices
+      * class and method naming
+      * using composed methods and types
+      * annotations that add knowledge to elements of the programming language
+      * comments on public interfaces, classes, and main methods
+      * folder organization and decomposition and naming of modules and submodules
 
-
-Prefer internal documentation
-The best place to store documentation is on the documented thing itself.
-
-
-Focus on specific knowledge
-Use documentation for the specific knowledge and learn the generic knowledge from trainings.
-
-
-Accuracy mechanism
-You can trust documentation only if there is a mechanism to guarantee its accuracy.
+Examples of effective external documentation
+* hand-crafted slides
+* diagrams with careful manual layout
+* appealing illustrations
+* tool user manuals, flow documentation
+* example scripts etc.
 
 ### Useful Links
 [Documenting C++ Code](https://developer.lsst.io/cpp/api-docs.html)  
