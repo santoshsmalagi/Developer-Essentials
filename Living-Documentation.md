@@ -70,11 +70,12 @@ Knowledge specific to your software or business product, is gained by learning f
 
 ### 3. Characteristics of Effective Documentation
 
-* **Reliable: Living documentation is accurate and in sync with the software being delivered, at any point in time.**
-     * To achieve reliable documentation, we rely on the following ideas:
-          * Exploiting available knowledge: Most of the knowledge is already present in the artifacts of the project, it just needs to be exploited, augmented, and curated for
-              documentation purposes.
-          * Accuracy mechanism: An accuracy mechanism is needed to ensure that the knowledge is always kept in sync.
+* **Reliable:**
+  * Living documentation is accurate and in sync with the software being delivered, at any point in time.**
+  * To achieve reliable documentation, we rely on the following ideas:
+      * Exploiting available knowledge: Most of the knowledge is already present in the artifacts of the project, it just needs to be exploited, augmented, and curated for
+        documentation purposes.
+      * Accuracy mechanism: An accuracy mechanism is needed to ensure that the knowledge is always kept in sync.
 
 * **Low effort:**
     * Living documentation minimizes the amount of work to be done on documentation
