@@ -1,7 +1,4 @@
-# What to document
-
-### Documenting C++ Code
-By writing documentation blocks for all public or protected C++ components (namespaces, types, methods, functions, and constants).
+# What to Comment?
 
 ### File Comments
 Start each file with license boilerplate.File comments describe the contents of a file. If a file declares, implements, or tests exactly one abstraction that is documented by a comment at the point of declaration, file comments are not required. All other files must have file comments.
@@ -74,6 +71,35 @@ If there is anything tricky about how a function does its job, the function defi
 
 Note you should not just repeat the comments given with the function declaration, in the .h file or wherever. It's okay to recapitulate briefly what the function does, but the focus of the comments should be on how it does it.  
 
+#### Function Argument Comments
+
+When the meaning of a function argument is nonobvious, consider one of the following remedies:
+
+If the argument is a literal constant, and the same constant is used in multiple function calls in a way that tacitly assumes they're the same, you should use a named constant to make that constraint explicit, and to guarantee that it holds.  
+
+Consider changing the function signature to replace a bool argument with an enum argument. This will make the argument values self-describing.  
+
+For functions that have several configuration options, consider defining a single class or struct to hold all the options , and pass an instance of that. This approach has several advantages. Options are referenced by name at the call site, which clarifies their meaning. It also reduces function argument count, which makes function calls easier to read and write. As an added benefit, you don't have to change call sites when you add another option.  
+
+Replace large or complex nested expressions with named variables. As a last resort, use comments to clarify argument meanings at the call site.  
+
+Consider the following example:
+
+```C++
+// What are these arguments?
+const DecimalNumber product = CalculateProduct(values, 7, false, nullptr);
+```
+
+versus:
+
+```C++
+ProductOptions options;
+options.set_precision_decimals(7);
+options.set_use_cache(ProductOptions::kDontUseCache);
+const DecimalNumber product =
+    CalculateProduct(values, options, /*completion_callback=*/nullptr);
+```
+
 ### Variable Comments
 In general the actual name of the variable should be descriptive enough to give a good idea of what the variable is used for. In certain cases, more comments are required.
 
@@ -82,7 +108,7 @@ The purpose of each class data member (also called an instance variable or membe
 
 In particular, add comments to describe the existence and meaning of sentinel values, such as nullptr or -1, when they are not obvious. For example:
 
-```C
+```C++
 private:
  // Used to bounds-check table accesses. -1 means
  // that we don't yet know how many entries the table has.
@@ -96,6 +122,78 @@ All global variables should have a comment describing what they are, what they a
 // The total number of tests cases that we run through in this regression test.
 const int kNumTestCases = 6;
 ```
+
+### Implementation Comments
+In your implementation you should have comments in tricky, non-obvious, interesting, or important parts of your code.
+
+#### Explanatory Comments
+Tricky or complicated code blocks should have comments before them. Example:
+```C++
+// Divide result by two, taking into account that x
+// contains the carry from the add.
+for (int i = 0; i < result->size(); ++i) {
+  x = (x << 8) + (*result)[i];
+  (*result)[i] = x >> 1;
+  x &= 1;
+}
+```
+
+#### Line-end Comments
+Also, lines that are non-obvious should get a comment at the end of the line. These end-of-line comments should be separated from the code by 2 spaces. Example:
+
+```C++
+// If we have enough memory, mmap the data portion too.
+mmap_budget = max<int64>(0, mmap_budget - index_->length());
+if (mmap_budget >= data_size_ && !MmapData(mmap_chunk_bytes, mlock))
+  return;  // Error already logged.
+```
+
+Note that there are both comments that describe what the code is doing, and comments that mention that an error has already been logged when the function returns.
+
+Don'ts
+
+Do not state the obvious. In particular, don't literally describe what code does, unless the behavior is nonobvious to a reader who understands C++ well. Instead, provide higher level comments that describe why the code does what it does, or make the code self describing.
+Compare this:
+
+// Find the element in the vector.  <-- Bad: obvious!
+auto iter = std::find(v.begin(), v.end(), element);
+if (iter != v.end()) {
+  Process(element);
+}
+
+To this:
+
+// Process "element" unless it was already processed.
+auto iter = std::find(v.begin(), v.end(), element);
+if (iter != v.end()) {
+  Process(element);
+}
+
+Self-describing code doesn't need a comment. The comment from the example above would be obvious:
+
+if (!IsAlreadyProcessed(element)) {
+  Process(element);
+}
+
+Punctuation, Spelling, and Grammar
+
+Pay attention to punctuation, spelling, and grammar; it is easier to read well-written comments than badly written ones.
+
+Comments should be as readable as narrative text, with proper capitalization and punctuation. In many cases, complete sentences are more readable than sentence fragments. Shorter comments, such as comments at the end of a line of code, can sometimes be less formal, but you should be consistent with your style.
+
+Although it can be frustrating to have a code reviewer point out that you are using a comma when you should be using a semicolon, it is very important that source code maintain a high level of clarity and readability. Proper punctuation, spelling, and grammar help with that goal.
+TODO Comments
+
+Use TODO comments for code that is temporary, a short-term solution, or good-enough but not perfect.
+
+TODOs should include the string TODO in all caps, followed by the name, e-mail address, bug ID, or other identifier of the person or issue with the best context about the problem referenced by the TODO. The main purpose is to have a consistent TODO that can be searched to find out how to get more details upon request. A TODO is not a commitment that the person referenced will fix the problem. Thus when you create a TODO with a name, it is almost always your name that is given.
+
+// TODO(kl@gmail.com): Use a "*" here for concatenation operator.
+// TODO(Zeke) change this to use relations.
+// TODO(bug 12345): remove the "Last visitors" feature.
+
+If your TODO is of the form "At a future date do something" make sure that you either include a very specific date ("Fix by November 2005") or a very specific event ("Remove this code when all clients can handle XML responses.").
+
 
 ### Useful Links
 [Documenting C++ Code](https://developer.lsst.io/cpp/api-docs.html)  
