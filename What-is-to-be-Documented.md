@@ -10,8 +10,6 @@ Start each file with license boilerplate.File comments describe the contents of 
 #### .h, .hpp file comments
 If a .h declares multiple abstractions, the file-level comment should broadly describe the contents of the file, and how the abstractions are related. A 1 or 2 sentence file-level comment may be sufficient. The detailed documentation about individual abstractions belongs with those abstractions, not at the file level. Do not duplicate comments in both the .h and the .cc. Duplicated comments diverge.
 
-
-
 ### Class Comments
 Every non-obvious class or struct declaration should have an accompanying comment that describes what it is for and how it should be used.
 
@@ -31,7 +29,6 @@ class GargantuanTableIterator {
 The class comment should provide the reader with enough information to know how and when to use the class, as well as any additional considerations necessary to correctly use the class. Document the synchronization assumptions the class makes, if any. If an instance of the class can be accessed by multiple threads, take extra care to document the rules and invariants surrounding multithreaded use.  
 
 The class comment is often a good place for a small example code snippet demonstrating a simple and focused usage of the class. When sufficiently separated (e.g., .h and .cc files), comments describing the use of the class should go together with its interface definition; comments about the class operation and implementation should accompany the implementation of the class's methods.
-
 
 ### Functions
 Declaration comments describe use of the function (when it is non-obvious); comments at the definition of a function describe operation.
@@ -76,6 +73,29 @@ Function Definitions
 If there is anything tricky about how a function does its job, the function definition should have an explanatory comment. For example, in the definition comment you might describe any coding tricks you use, give an overview of the steps you go through, or explain why you chose to implement the function in the way you did rather than using a viable alternative. For instance, you might mention why it must acquire a lock for the first half of the function but why it is not needed for the second half.  
 
 Note you should not just repeat the comments given with the function declaration, in the .h file or wherever. It's okay to recapitulate briefly what the function does, but the focus of the comments should be on how it does it.  
+
+### Variable Comments
+In general the actual name of the variable should be descriptive enough to give a good idea of what the variable is used for. In certain cases, more comments are required.
+
+#### Class Data Members
+The purpose of each class data member (also called an instance variable or member variable) must be clear. If there are any invariants (special values, relationships between members, lifetime requirements) not clearly expressed by the type and name, they must be commented. However, if the type and name suffice (int num_events_;), no comment is needed.  
+
+In particular, add comments to describe the existence and meaning of sentinel values, such as nullptr or -1, when they are not obvious. For example:
+
+```C
+private:
+ // Used to bounds-check table accesses. -1 means
+ // that we don't yet know how many entries the table has.
+ int num_total_entries_;
+```
+
+#### Global Variables
+All global variables should have a comment describing what they are, what they are used for, and (if unclear) why it needs to be global. For example:
+
+```C
+// The total number of tests cases that we run through in this regression test.
+const int kNumTestCases = 6;
+```
 
 ### Useful Links
 [Documenting C++ Code](https://developer.lsst.io/cpp/api-docs.html)  
