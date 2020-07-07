@@ -100,7 +100,7 @@ Acknowledge that most of the knowledge is already in the system itself. When nee
 ### 4. Characteristics of Effective Documentation
 
 * **Reliable:**
-  * Living documentation is accurate and in sync with the software being delivered, at any point in time.**
+  * Living documentation is accurate and in sync with the software being delivered, at any point in time.
   * To achieve reliable documentation, we rely on the following ideas:
       * Exploiting available knowledge: Most of the knowledge is already present in the artifacts of the project, it just needs to be exploited, augmented, and curated for
         documentation purposes.
