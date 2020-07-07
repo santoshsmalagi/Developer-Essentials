@@ -29,10 +29,10 @@ Knowledge is necessary because:
      * The programmer who has the theory of the program can explain how the solution relates to the affairs of the world that it helps to handle.
 * **The rationale of the program:**
      * The programmer who has the theory of the program can explain why each part of the program is what it is; in other words, the programmer is able to support the actual program
-       text with a justification of some sort.
+       text with a justification of some sort
 * **The potential of extension or evolution of the program:**
      * The programmer who has the theory of the program is able to respond constructively to any demand for modification of the program in order to support the affairs of the world
-       in a new manner.
+       in a new manner
 * **Without knowledge the following problems cannot be solved:**
      * Where can I fix that issue safely?
      * Where should I add this enhancement?
@@ -48,7 +48,7 @@ Knowledge is necessary because:
      * **Wasted time:** That time could have been better invested in improving something else.
      * **Suboptimal decisions:** Other decisions could have been more relevant, or cheaper in the long term.
 
-With existing software, when we miss the knowledge developed before, we end up redoing what’s already done because we don’t know it’s there already. We also end up putting a feature in an unrelated component because we don’t know where it should be, and this makes the software bloated. Or the code about the feature becomes fragmented across various components.
+With existing software, when we miss the knowledge developed before, we end up redoing what’s already done because we don’t know it’s there already. We also end up putting a feature in an unrelated component because we don’t know where it should be, and this makes the software bloated, or the code about the feature becomes fragmented across various components.
 
 ### 2. Specific vs Generic Knowledge
 
