@@ -146,7 +146,7 @@ Examples of internal documentation:
 * comments on public interfaces, classes, and main methods
 * folder organization and decomposition and naming of modules and submodules
 
-Examples of effective external documentation
+Examples of effective external documentation:
 * hand-crafted slides
 * diagrams with careful manual layout
 * appealing illustrations
