@@ -14,12 +14,13 @@ So effective documentation is about transferring knowledge in space between peop
 > ***What is documentation?***  
   The process of transferring valuable knowledge to other people now and also to people in the future.
 
-#### 1. Why Knowledge is Necessary?
-#### 2. Specific vs Generic Knowledge
-#### 3. Most Knowledge Is Already There
-#### 4. Characteristics of Effective Documentation
-#### 5. Types of Documentation
-#### 6. Creating Documentation
+#### Contents
+* 1. Why Knowledge is Necessary?
+* 2. Specific vs Generic Knowledge
+* 3. Most Knowledge Is Already There
+* 4. Characteristics of Effective Documentation
+* 5. Types of Documentation
+* 6. Creating Documentation
 
 ### 1. Why Knowledge is Necessary?
 Knowledge is necessary because:
