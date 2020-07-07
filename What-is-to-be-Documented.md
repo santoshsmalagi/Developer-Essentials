@@ -150,47 +150,57 @@ if (mmap_budget >= data_size_ && !MmapData(mmap_chunk_bytes, mlock))
 
 Note that there are both comments that describe what the code is doing, and comments that mention that an error has already been logged when the function returns.
 
-Don'ts
+### Don'ts
 
 Do not state the obvious. In particular, don't literally describe what code does, unless the behavior is nonobvious to a reader who understands C++ well. Instead, provide higher level comments that describe why the code does what it does, or make the code self describing.
+
 Compare this:
 
+```C++
 // Find the element in the vector.  <-- Bad: obvious!
 auto iter = std::find(v.begin(), v.end(), element);
 if (iter != v.end()) {
   Process(element);
 }
+```
 
 To this:
 
+```C++
 // Process "element" unless it was already processed.
 auto iter = std::find(v.begin(), v.end(), element);
 if (iter != v.end()) {
   Process(element);
 }
+```
 
 Self-describing code doesn't need a comment. The comment from the example above would be obvious:
 
+```C++
 if (!IsAlreadyProcessed(element)) {
   Process(element);
 }
+```
 
-Punctuation, Spelling, and Grammar
+### Punctuation, Spelling, and Grammar
 
-Pay attention to punctuation, spelling, and grammar; it is easier to read well-written comments than badly written ones.
+Pay attention to punctuation, spelling, and grammar; it is easier to read well-written comments than badly written ones.  
 
-Comments should be as readable as narrative text, with proper capitalization and punctuation. In many cases, complete sentences are more readable than sentence fragments. Shorter comments, such as comments at the end of a line of code, can sometimes be less formal, but you should be consistent with your style.
+Comments should be as readable as narrative text, with proper capitalization and punctuation. In many cases, complete sentences are more readable than sentence fragments. Shorter comments, such as comments at the end of a line of code, can sometimes be less formal, but you should be consistent with your style.  
 
-Although it can be frustrating to have a code reviewer point out that you are using a comma when you should be using a semicolon, it is very important that source code maintain a high level of clarity and readability. Proper punctuation, spelling, and grammar help with that goal.
-TODO Comments
+Although it can be frustrating to have a code reviewer point out that you are using a comma when you should be using a semicolon, it is very important that source code maintain a high level of clarity and readability. Proper punctuation, spelling, and grammar help with that goal.  
 
-Use TODO comments for code that is temporary, a short-term solution, or good-enough but not perfect.
+### TODO Comments
 
-TODOs should include the string TODO in all caps, followed by the name, e-mail address, bug ID, or other identifier of the person or issue with the best context about the problem referenced by the TODO. The main purpose is to have a consistent TODO that can be searched to find out how to get more details upon request. A TODO is not a commitment that the person referenced will fix the problem. Thus when you create a TODO with a name, it is almost always your name that is given.
+Use TODO comments for code that is temporary, a short-term solution, or good-enough but not perfect.  
 
+TODOs should include the string TODO in all caps, followed by the name, e-mail address, bug ID, or other identifier of the person or issue with the best context about the problem referenced by the TODO. The main purpose is to have a consistent TODO that can be searched to find out how to get more details upon request. A TODO is not a commitment that the person referenced will fix the problem. Thus when you create a TODO with a name, it is almost always your name that is given.  
+
+```C++
 // TODO(kl@gmail.com): Use a "*" here for concatenation operator.
 // TODO(Zeke) change this to use relations.
 // TODO(bug 12345): remove the "Last visitors" feature.
+```
 
 If your TODO is of the form "At a future date do something" make sure that you either include a very specific date ("Fix by November 2005") or a very specific event ("Remove this code when all clients can handle XML responses.").
 
