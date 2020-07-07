@@ -2,14 +2,14 @@
 
 Software development is all about knowledge and decision-making based on that knowledge, which in turn creates additional knowledge. Software design can last a long time. It can last long enough to forget about previous decisions made, as well as their contexts. It can last long enough for people to leave, taking with them their knowledge, and for new people to join, lacking that knowledge.  
 
-The theory as a mental model in a programmer's head can never be fully shared with those who weren’t part of the thought process that led to building it. For a new programmer to come to possess an existing theory of a program it is insufficient that he or she has the opportunity to become familiar with the program text and other documentation. We’ll never completely solve that knowledge transfer problem, but we can accept it as a fact and learn to live with it. The conclusion seems inescapable: At least in certain kinds of large programs, the continued adaption, modification, and correction of errors is dependent on a certain kind of knowledge passed down generations of programmers. This can only happen with *Effective Documentation*.
+The theory as a mental model in a programmer's head can never be fully shared with those who weren’t part of the thought process that led to building it. For a new programmer to come to possess an existing theory of a program, it is insufficient that he or she has the opportunity to become familiar with the program text and other documentation. We’ll never completely solve that knowledge transfer problem, but we can accept it as a fact and learn to live with it. The conclusion seems inescapable - at least in certain kinds of large programs, the continued adaption, modification, and correction of errors, is dependent on a certain kind of knowledge passed down generations of programmers. This can only happen with *Effective Documentation*.
 
-So effective documentation is about transferring knowledge in space between people and also about transferring it over time. The greater the ambition, the more documentation becomes necessary to enable a cumulative process of knowledge management that scales beyond what fits in our heads. When our brains and memories are not enough, we need assistance from technologies such as writing, printing, and software to help remember and organize larger sets of knowledge.  
+So effective documentation is about transferring knowledge in space between people and also about transferring it over time. The greater the ambition, the more documentation becomes necessary to enable a cumulative process of knowledge management that scales beyond what fits in our heads. When our brains and memories are not enough, we need assistance from technologies such as writing, printing, and software, to help remember and organize larger sets of knowledge.  
 
 #### What Knowledge Must be Documented?
-* Knowledge that is of interest for a long period of time deserves to be documented.
-* Knowledge that is of interest to a large number of people deserves to be documented.
-* Knowledge that is valuable or critical may also need to be documented.
+* Knowledge that is of interest for a long period of time deserves to be documented
+* Knowledge that is of interest to a large number of people deserves to be documented
+* Knowledge that is valuable or critical may also need to be documented
 
 > ***What is documentation?***  
   The process of transferring valuable knowledge to other people now and also to people in the future.
