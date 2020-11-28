@@ -16,6 +16,6 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-**What is the main()?***
+**What is the main()?***  
 Every C program begins at the ```main()``` (actually ```_start()```), and every C program MUST have only one ```main()``` function. The main() function has two arguments that traditionally are called ```argc``` and ```argv``` and returns a signed integer.  ```main()``` returns a 0 (zero) on success and -1 (negative one) on failure.
 
