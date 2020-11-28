@@ -31,7 +31,7 @@ Then ```argv = ["/home/malagi/a.out", "foo" "28"]``` and ```argc=3```.
 
 ### Structure of a good main.c
 
-A good outline for ```main.c``` looks like this:
+A good outline for ```main.c``` looks like something like this:
 
 ```C
 /* main.c */
@@ -96,6 +96,11 @@ The first things to add to a main.c file are includes to make a multitude of sta
 The OPTSTR define states what command line switches the program will recommend. The getopt(3) man page describes how OPTSTR will affect getopt()'s behavior. The USAGE_FMT define is a printf()-style format string that is referenced in the usage() function. Constants - int, char, float and string contants should be defined using #defines in this part of the file. Collecting them at a single location makes it easier to fix spelling, reuse messages, and internationalize messages, if required.  
 
 Use all capital letters when naming a #define to distinguish it from variable and function names. The define names can be a single continuous string or they can be separated with an underscore; just make sure they're all upper case.
+
+
+### 2. External Declarations
+
+
 
 
 The following example will be used to illustrate the ideas:
