@@ -2,7 +2,7 @@
 
 ## Writing a Good main() Function
 
-This is a modifed version of the original article - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function). It tries to address the following questions:
+This is a modifed version of the original article - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function). It tries to address the following:
 
 * How to structure a C file containing a ```main()``` function that will be easy to maintain
 * How to best process command line arguments
@@ -50,13 +50,13 @@ int main(int argc, char *argv[]) {
 /* 8 function declarations */
 ```
 
-Additionally it is always a good practice to add meaningful comments, do not write about what the code is doing - instead, write about why the code is doing what it's doing!
+Additionally it is always a good practice to add meaningful comments. Do not write about what the code is doing - instead, write about why the code is doing what it's doing!
 
 ### 0. Copyright and Licensing
 Usually this is some form of standard template text which describes information such as the autor, organization, version information, copyright notice etc. It may also be helpful to briefly describe the intended purpose of this C file, especially if the program binary is a part of collection of several binaries, or the file itself is not named as main.c but contains the main() function.
 
 ### 1.Includes
-At a minimum the following are recommended to be included in the main.c file:
+The first things to add to a main.c file are includes to make a multitude of standard C library functions and variables available to the program. The #include string is a C preprocessor (cpp) directive that causes the inclusion of the referenced file, in its entirety, in the current file. At a minimum the following are recommended to be included in the main.c file:
 
 ```C
 /* main.c */
@@ -80,6 +80,22 @@ At a minimum the following are recommended to be included in the main.c file:
 | string      | Supplies memcpy(), memset(), and the strlen() family of functions            |
 | getopt      | Supplies external optarg, opterr, optind, and getopt() function              |
 | sys/types   | Typedef shortcuts like uint32_t and uint64_t                                 |
+
+
+### 2. Defines
+
+```C
+#define OPTSTR "vi:o:f:h"
+#define USAGE_FMT  "%s [-v] [-f hexflag] [-i inputfile] [-o outputfile] [-h]"
+#define ERR_FOPEN_INPUT  "fopen(input, r)"
+#define ERR_FOPEN_OUTPUT "fopen(output, w)"
+#define ERR_DO_THE_NEEDFUL "do_the_needful blew up"
+#define DEFAULT_PROGNAME "george"
+```
+
+The OPTSTR define states what command line switches the program will recommend. The getopt(3) man page describes how OPTSTR will affect getopt()'s behavior. The USAGE_FMT define is a printf()-style format string that is referenced in the usage() function. Constants - int, char, float and string contants should be defined using #defines in this part of the file. Collecting them at a single location makes it easier to fix spelling, reuse messages, and internationalize messages, if required.  
+
+Use all capital letters when naming a #define to distinguish it from variable and function names. The define names can be a single continuous string or they can be separated with an underscore; just make sure they're all upper case.
 
 
 The following example will be used to illustrate the ideas:
