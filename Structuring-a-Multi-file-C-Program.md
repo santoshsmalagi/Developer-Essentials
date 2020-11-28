@@ -1,0 +1,1 @@
+Header files in C are usually named with a .h extension and should not contain any executable code; only macros, defines, typedefs, and external variable and function prototypes. The string <header.h> tells cpp to look for a file called header.h in the system-defined header path, usually /usr/include.
