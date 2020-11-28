@@ -2,12 +2,13 @@
 
 ## Writing a Good main() Function
 
-This is a short summary of the article ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function). It tries to address the following questions:
+This is a modifed version of the original article - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function). It tries to address the following questions:
 
-* How to structure a C file and write a ```main()``` function
+* How to structure a C file containing a ```main()``` function that will be easy to maintain
 * How to best process command line arguments
 
-Typical structure of a ```main()``` function in a C program:
+**What is the main()?**  
+Every C program MUST have only one ```main()``` function and program execution begins at the ```main()```. The ```main()``` function has two arguments that traditionally are called ```argc``` and ```argv``` and always returns a signed integer.  ```main()``` returns a 0 (zero) on success and -1 (negative one) on failure.
 
 ```C
 /* main.c */
@@ -15,9 +16,6 @@ int main(int argc, char *argv[]) {
 
 }
 ```
-
-**What is the main()?**  
-Every C program MUST have only one ```main()``` function and program execution begins at the ```main()```. The ```main()``` function has two arguments that traditionally are called ```argc``` and ```argv``` and always returns a signed integer.  ```main()``` returns a 0 (zero) on success and -1 (negative one) on failure.
 
 | Argument | Name            | Description                   |
 |----------|-----------------|-------------------------------|
@@ -33,7 +31,7 @@ Then ```argv = ["/home/malagi/a.out", "foo" "28"]``` and ```argc=3```.
 
 ### Structure of a good main.c
 
-A good outline for ```main.c``` looks somehting like this:
+A good outline for ```main.c``` looks like this:
 
 ```C
 /* main.c */
@@ -52,13 +50,13 @@ int main(int argc, char *argv[]) {
 /* 8 function declarations */
 ```
 
-It is always a good practice to add meaningful comments, do not write about what the code is doing - instead, write about why the code is doing what it's doing!
+Additionally it is always a good practice to add meaningful comments, do not write about what the code is doing - instead, write about why the code is doing what it's doing!
 
 ### 0. Copyright and Licensing
-Usually this is some form of standard template text which describes information such as the autor, organization, version information, copyright notice etc. It may also be helpful to briefly describe the intended purpose of this C file, especially if the program binary is a part of collection of several binaries, or the file itself is not named as main.c
+Usually this is some form of standard template text which describes information such as the autor, organization, version information, copyright notice etc. It may also be helpful to briefly describe the intended purpose of this C file, especially if the program binary is a part of collection of several binaries, or the file itself is not named as main.c but contains the main() function.
 
 ### 1.Includes
-The first things to add to a main.c file are includes to make a multitude of standard C library functions and variables available to the program. The #include string is a C preprocessor (cpp) directive that causes the inclusion of the referenced file, in its entirety, in the current file. Header files in C are usually named with a .h extension and should not contain any executable code; only macros, defines, typedefs, and external variable and function prototypes. The string <header.h> tells cpp to look for a file called header.h in the system-defined header path, usually /usr/include. At a minimum the following are recommended to be included in the main.c file:
+At a minimum the following are recommended to be included in the main.c file:
 
 ```C
 /* main.c */
@@ -82,3 +80,113 @@ The first things to add to a main.c file are includes to make a multitude of sta
 | string      | Supplies memcpy(), memset(), and the strlen() family of functions            |
 | getopt      | Supplies external optarg, opterr, optind, and getopt() function              |
 | sys/types   | Typedef shortcuts like uint32_t and uint64_t                                 |
+
+
+The following example will be used to illustrate the ideas:
+
+```C
+/* main.c - Command line processing example*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <libgen.h>
+#include <errno.h>
+#include <string.h>
+#include <getopt.h>
+
+#define OPTSTR "vi:o:f:h"
+#define USAGE_FMT  "%s [-v] [-f hexflag] [-i inputfile] [-o outputfile] [-h]"
+#define ERR_FOPEN_INPUT  "fopen(input, r)"
+#define ERR_FOPEN_OUTPUT "fopen(output, w)"
+#define ERR_DO_THE_NEEDFUL "do_the_needful blew up"
+#define DEFAULT_PROGNAME "george"
+
+extern int errno;
+extern char *optarg;
+extern int opterr, optind;
+
+typedef struct {
+  int           verbose;
+  uint32_t      flags;
+  FILE         *input;
+  FILE         *output;
+} options_t;
+
+int dumb_global_variable = -11;
+
+void usage(char *progname, int opt);
+int  do_the_needful(options_t *options);
+
+int main(int argc, char *argv[]) {
+    int opt;
+    options_t options = { 0, 0x0, stdin, stdout };
+
+    opterr = 0;
+
+    while ((opt = getopt(argc, argv, OPTSTR)) != EOF)
+       switch(opt) {
+           case 'i':
+              if (!(options.input = fopen(optarg, "r")) ){
+                 perror(ERR_FOPEN_INPUT);
+                 exit(EXIT_FAILURE);
+                 /* NOTREACHED */
+              }
+              break;
+
+           case 'o':
+              if (!(options.output = fopen(optarg, "w")) ){
+                 perror(ERR_FOPEN_OUTPUT);
+                 exit(EXIT_FAILURE);
+                 /* NOTREACHED */
+              }    
+              break;
+             
+           case 'f':
+              options.flags = (uint32_t )strtoul(optarg, NULL, 16);
+              break;
+
+           case 'v':
+              options.verbose += 1;
+              break;
+
+           case 'h':
+           default:
+              usage(basename(argv[0]), opt);
+              /* NOTREACHED */
+              break;
+       }
+
+    if (do_the_needful(&options) != EXIT_SUCCESS) {
+       perror(ERR_DO_THE_NEEDFUL);
+       exit(EXIT_FAILURE);
+       /* NOTREACHED */
+    }
+
+    return EXIT_SUCCESS;
+}
+
+void usage(char *progname, int opt) {
+   fprintf(stderr, USAGE_FMT, progname?progname:DEFAULT_PROGNAME);
+   exit(EXIT_FAILURE);
+   /* NOTREACHED */
+}
+
+int do_the_needful(options_t *options) {
+
+   if (!options) {
+     errno = EINVAL;
+     return EXIT_FAILURE;
+   }
+
+   if (!options->input || !options->output) {
+     errno = ENOENT;
+     return EXIT_FAILURE;
+   }
+
+   /* XXX do needful stuff */
+
+   return EXIT_SUCCESS;
+}
+```
+
