@@ -29,5 +29,5 @@ The argument vector - argv, is a tokenized representation of the command line th
 ```Console
 $:~ a.out foo 28 M
 ```
+Then ```argv = ["/home/malagi/a.out", "foo" "28"]``` and ```argc=3```.
 
-argv = ["/home/malagi/a.out", "foo" "28"]
