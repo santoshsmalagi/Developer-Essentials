@@ -31,3 +31,24 @@ $:~ a.out foo 28 M
 ```
 Then ```argv = ["/home/malagi/a.out", "foo" "28"]``` and ```argc=3```.
 
+### Structure of a good main.c
+
+A good outline for ```main.c``` looks somehting like this:
+
+```C
+/* main.c */
+/* 0 copyright/licensing */
+/* 1 includes */
+/* 2 defines */
+/* 3 external declarations */
+/* 4 typedefs */
+/* 5 global variable declarations */
+/* 6 function prototypes */
+
+int main(int argc, char *argv[]) {
+/* 7 command-line parsing */
+}
+
+/* 8 function declarations */
+```
+
