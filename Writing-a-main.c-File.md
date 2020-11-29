@@ -349,7 +349,7 @@ On a hypothetical implementation, calling main could result in fun things like r
 
 ## Why the main() function does not need a declaration in C/C++?
 * The compiler does not need a forward declaration for main().
-* In C++, since a user program never calls main, so technically it never needs a declaration before the definition. (Note that you could provide one if you wished. There is nothing special about a declaration of main in this regard.) 
+* In C++, since a user program never calls main, so technically it never needs a declaration before the definition. 
 * In C, a program can call main. In that case, it does require that a declaration be visible before the call. 
 * Note that main does need to be known to the code that calls it. This is special code in what is typically called the C++ runtime startup code. The linker includes that code for you automatically when you are linking a C++ program with the appropriate linker options. Whatever language that code is written in, it has whatever declaration of main it needs in order to call it properly.
-* Technically though, all definitions are also declarations, so your definition of main also declares main.
+* Technically though, all definitions are also declarations, so your definition of main also declares main. The compiler does not need a forward declaration for main(), the definiton is accepted by the compiler as the declaration of main().
