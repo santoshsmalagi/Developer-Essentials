@@ -193,7 +193,7 @@ int main(int argc, char *argv[]) {
 
 The guts of this main() function is a while loop that steps through argv looking for command line options and their arguments (if any). When a known command line option is detected, option-specific behavior happens. Some options have an argument, when an option has an argument, the next string in argv is available to the program. Files are opened for reading and writing or command line arguments are converted from a string to an integer value.
 
-# 8. Function Definitions
+### 8. Function Definitions
 
 ```C
 void usage(char *progname, int opt) {
