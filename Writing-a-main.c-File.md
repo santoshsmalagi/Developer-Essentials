@@ -1,11 +1,13 @@
-# Structuring a Multi-File C Program
+# Writing a Good main() Function
 
-## Writing a Good main() Function
-
-This is a modifed version of the original article - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function). It tries to address the following:
+The contents of this page are baased on the original article which appeared on Opensource.com - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function). It tries to address the following:
 
 * How to structure a C file containing a ```main()``` function that will be easy to maintain
 * How to best process command line arguments
+* The main() function should only act as a facilitator and perform these three tasks:
+  * parse the arguments 
+  * perform minimal input validation 
+  * pass the collected arguments to functions that will use them
 
 **What is the main()?**  
 Every C program MUST have only one ```main()``` function and program execution begins at the ```main()```. The ```main()``` function has two arguments that traditionally are called ```argc``` and ```argv``` and always returns a signed integer.  ```main()``` returns a 0 (zero) on success and -1 (negative one) on failure.
@@ -59,7 +61,6 @@ Usually this is some form of standard template text which describes information 
 The first things to add to a main.c file are includes to make a multitude of standard C library functions and variables available to the program. The #include string is a C preprocessor (cpp) directive that causes the inclusion of the referenced file, in its entirety, in the current file. At a minimum the following are recommended to be included in the main.c file:
 
 ```C
-/* main.c */
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -93,20 +94,19 @@ The first things to add to a main.c file are includes to make a multitude of sta
 #define DEFAULT_PROGNAME "george"
 ```
 
-The OPTSTR define states what command line switches the program will recommend. The getopt(3) man page describes how OPTSTR will affect getopt()'s behavior. The USAGE_FMT define is a printf()-style format string that is referenced in the usage() function. Constants - int, char, float and string contants should be defined using #defines in this part of the file. Collecting them at a single location makes it easier to fix spelling, reuse messages, and internationalize messages, if required.  
-
-Use all capital letters when naming a #define to distinguish it from variable and function names. The define names can be a single continuous string or they can be separated with an underscore; just make sure they're all upper case.
+Constants - int, char, float and string contants should be defined using #defines in this part of the file. Collecting them at a single location makes it easier to fix spelling, reuse messages, and internationalize messages, if required.  Use all capital letters when naming a #define to distinguish it from variable and function names. The define names can be a single continuous string or they can be separated with an underscore; just make sure they're all upper case.
 
 
 ### 3. External Declarations
 
-An extern declaration brings that name into the namespace of the current compilation unit (aka "file") and allows the program to access that variable. Here we've brought in the definitions for three integer variables and a character pointer. The opt prefaced variables are used by the getopt() function, and errno is used as an out-of-band communication channel by the standard C library to communicate why a function might have failed.
+An extern declaration brings that name into the namespace of the current compilation unit (aka "file") and allows the program to access that variable.
 
 ```C
 extern int errno;
 extern char *optarg;
 extern int opterr, optind;
 ```
+
 ### 4. typedef's
 
 ```C
@@ -191,28 +191,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-The guts of this main() function is a while loop that uses getopt() to step through argv looking for command line options and their arguments (if any). The OPTSTR #define earlier in the file is the template that drives getopt()'s behavior. The opt variable takes on the character value of any command line options found by getopt(), and the program's response to the detection of the command line option happens in the switch statement.
-
-Those of you paying attention will now be questioning why opt is declared as a 32-bit int but is expected to take on an 8-bit char? It turns out that getopt() returns an int that takes on a negative value when it gets to the end of argv, which I check against EOF (the End of File marker). A char is a signed quantity, but I like matching variables to their function return values.
-
-When a known command line option is detected, option-specific behavior happens. Some options have an argument, specified in OPTSTR with a trailing colon. When an option has an argument, the next string in argv is available to the program via the externally defined variable optarg. I use optarg to open files for reading and writing or converting a command line argument from a string to an integer value.
-
-There are a couple of points for style here:
-
-* Initialize opterr to 0, which disables getopt from emiting a ?.
-* Use exit(EXIT_FAILURE); or exit(EXIT_SUCCESS); in the middle of main().
-* /* NOTREACHED */ is a lint directive that I like.
-* Use return EXIT_SUCCESS; at the end of functions that return int.
-* Explicitly cast implicit type conversions.
-
-The command line signature for this program, if it were compiled, would look something like this:
-
-```Console
-$ ./a.out -h
-a.out [-v] [-f hexflag] [-i inputfile] [-o outputfile] [-h]
-```
-
-In fact, that's what usage() will emit to stderr once compiled.
+The guts of this main() function is a while loop that steps through argv looking for command line options and their arguments (if any). When a known command line option is detected, option-specific behavior happens. Some options have an argument, when an option has an argument, the next string in argv is available to the program. Files are opened for reading and writing or command line arguments are converted from a string to an integer value.
 
 # 8. Function Definitions
 
@@ -241,15 +220,11 @@ int do_the_needful(options_t *options) {
 }
 ```
 
-Finally, I write functions that aren't boilerplate. In this example, function do_the_needful() accepts a pointer to an options_t structure. I validate that the options pointer is not NULL and then go on to validate the input and output structure members. EXIT_FAILURE returns if either test fails and, by setting the external global variable errno to a conventional error code, I signal to the caller a general reason. The convenience function perror() can be used by the caller to emit human-readable-ish error messages based on the value of errno.
+Finally, write functions that aren't boilerplate. Functions should almost always validate their input in some way. If full validation is expensive, try to do it once and treat the validated data as immutable. 
 
-Functions should almost always validate their input in some way. If full validation is expensive, try to do it once and treat the validated data as immutable. The usage() function validates the progname argument using a conditional assignment in the fprintf() call. The usage() function is going to exit anyway, so I don't bother setting errno or making a big stink about using a correct program name.
+The big class of errors to avoid is de-referencing a NULL pointer. This will cause the operating system to send a special signal called SYSSEGV, which results in unavoidable death. The last thing users want to see is a crash due to SYSSEGV. It's much better to catch a NULL pointer in order to emit better error messages and shut down the program gracefully.
 
-The big class of errors I am trying to avoid here is de-referencing a NULL pointer. This will cause the operating system to send a special signal to my process called SYSSEGV, which results in unavoidable death. The last thing users want to see is a crash due to SYSSEGV. It's much better to catch a NULL pointer in order to emit better error messages and shut down the program gracefully.
-
-Some people complain about having multiple return statements in a function body. They make arguments about "continuity of control flow" and other stuff. Honestly, if something goes wrong in the middle of a function, it's a good time to return an error condition. Writing a ton of nested if statements to just have one return is never a "good idea."™
-
-Finally, if you write a function that takes four or more arguments, consider bundling them in a structure and passing a pointer to the structure. This makes the function signatures simpler, making them easier to remember and not screw up when they're called later. It also makes calling the function slightly faster, since fewer things need to be copied into the function's stack frame. In practice, this will only become a consideration if the function is called millions or billions of times. Don't worry about it if that doesn't make sense.
+A good practice is that - if something goes wrong in the middle of a function, it's a good time to return an error condition. Writing a ton of nested if statements to just have one return is never a "good idea. Finally, if you write a function that takes four or more arguments, consider bundling them in a structure and passing a pointer to the structure. This makes the function signatures simpler, making them easier to remember and not screw up when they're called later. It also makes calling the function slightly faster, since fewer things need to be copied into the function's stack frame. In practice, this will only become a consideration if the function is called millions or billions of times. Don't worry about it if that doesn't make sense.
 
 Putting it all together:
 
