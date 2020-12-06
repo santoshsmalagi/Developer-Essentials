@@ -32,7 +32,7 @@ The compiler does not need a forward declaration for ```main()```, the definiton
 | argv     | argument vector | Array of char pointers        |
 ```
 
-The argument vector - ```argv```, is a tokenized representation of the command line that invoked the program. The argument vector is guaranteed to always have at least one string in the first index, ```argv[0]```, which is the full path to the program executed. For example if ```a.out``` be the program being executed and it is passed the following command line arguments:
+The argument vector - ```argv```, is a tokenized representation of the command line that invoked the program, *it can be thought of as an array of strings*. The argument vector is guaranteed to always have at least one string in the first index, ```argv[0]```, which is the full path to the program executed. For example if ```a.out``` be the program being executed and it is passed the following command line arguments:
 
 ```Console
 $:~ a.out foo 28 M
