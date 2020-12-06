@@ -144,9 +144,16 @@ int  do_the_needful(options_t *options);
 ```
 A good practice (or choice of style) is to define the functions after the ```main()``` and not before. So the function prototypes need to be declared here. Early C compilers used a single-pass strategy, which meant that every symbol (variable or function name) you used in your program had to be declared before you used it. Modern compilers are nearly all multi-pass compilers that build a complete symbol table before generating code, so using function prototypes is not strictly required.
 
-### 7,8, & 9. The Actual main() - (1) parse the arguments (2) perform minimal input validation (3) pass the collected arguments to functions that will use them
+### 7,8, & 9. The actual main()
 
-The purpose of the main() function is to collect the arguments that the user provides, perform minimal input validation, and then pass the collected arguments to functions that will use them. This example declares an options variable initialized with default values and parse the command line, updating options as necessary.
+The statements within ```main()``` basically perform the following operations:
+
+1. parse command line arguments and validate them
+2. pass the collected arguments to functions
+3. monitor for return values, identify ERROR conditions to terminate program execution
+4. clean up tasks 
+
+This example declares an options variable initialized with default values and parse the command line, updating options as necessary.
 
 ```C
 
@@ -199,7 +206,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-The guts of this ```main()``` function is a while loop that steps through argv looking for command line options and their arguments (if any). When a known command line option is detected, option-specific behavior happens. Some options have an argument, when an option has an argument, the next string in argv is available to the program. Files are opened for reading and writing or command line arguments are converted from a string to an integer value.
+The guts of this ```main()``` function is a while loop that steps through argv looking for command line options and their arguments (if any). When a known command line option is detected, option-specific behavior happens. Some options have an argument, when an option has an argument, the next string in ```argv``` is available to the program. Files are opened for reading and writing or command line arguments are converted from a string to an integer value.
 
 ### 10. Function Definitions
 
