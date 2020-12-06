@@ -63,10 +63,10 @@ int main(int argc, char *argv[]) {
 Additionally it is always a good practice to add meaningful comments. Do not write about what the code is doing - instead, write about why the code is doing what it's doing!
 
 ### 0. Copyright and Licensing
-Usually this is some form of standard template text which describes information such as the autor, organization, version information, copyright notice etc. It may also be helpful to briefly describe the intended purpose of this C file, especially if the program binary is a part of collection of several binaries, or the file itself is not named as main.c but contains the main() function.
+Usually this is some form of standard template text which describes information such as the autor, organization, version information, copyright notice etc. It may also be helpful to briefly describe the intended purpose of this C file.
 
 ### 1.Includes
-The first things to add to a main.c file are includes to make a multitude of standard C library functions and variables available to the program. The #include string is a C preprocessor (cpp) directive that causes the inclusion of the referenced file, in its entirety, in the current file. At a minimum the following are recommended to be included in the main.c file:
+The first things to add to a ```main.c``` file are includes to make a multitude of standard C library functions and variables available to the program. The ```#include``` string is a C preprocessor (cpp) directive that causes the inclusion of the referenced file, in its entirety, in the current file. At a minimum the following are recommended to be included in the ```main.c``` file:
 
 ```C
 #include <stdio.h>
@@ -102,8 +102,7 @@ The first things to add to a main.c file are includes to make a multitude of sta
 #define DEFAULT_PROGNAME "george"
 ```
 
-Constants - int, char, float and string contants should be defined using #defines in this part of the file. Collecting them at a single location makes it easier to fix spelling, reuse messages, and internationalize messages, if required.  Use all capital letters when naming a #define to distinguish it from variable and function names. The define names can be a single continuous string or they can be separated with an underscore; just make sure they're all upper case.
-
+Constants should be defined using the ```#define``` directive in this part of the file. Collecting them at a single location makes it easier to update and modiy them as required. The constants can include mathematical constants; string constants for ERRORs, messages which get reused; #define macros etc.  Use all capital letters when naming a ```#define``` to distinguish them from variable and function names. The ```#define``` names can be a single continuous string or they can be separated with an underscore; just make sure they're all upper case.
 
 ### 3. External Declarations
 
