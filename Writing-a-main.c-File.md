@@ -7,7 +7,7 @@ The contents of this page are based on the original article which appeared on Op
 * The ```main()``` should basically act as a facilitator for the overall program execution and perform the following tasks:
   * parse command line arguments 
   * validate the command line arguments, and type cast them if necessary (e.g. string to int using atoi etc.)
-  * pass the collected arguments to respective functions, monitor return values from functions to terminate program execution on an ERROR
+  * pass the collected arguments to respective functions, monitor return values from functions which indicate an ERROR
   * clean up tasks - e.g. call functions to free up dynamically allocated memory
 
 **What is the main()?**  
