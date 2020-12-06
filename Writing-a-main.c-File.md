@@ -1,37 +1,38 @@
 # Writing a Good main() Function
 
-The contents of this page are based on the original article which appeared on Opensource.com - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function). It tries to address the following:
+The contents of this page are based on the original article which appeared on Opensource.com - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function). It tries to cover the following:
 
 * How to structure a C file containing a ```main()``` function that will be easy to maintain
 * How to best process command line arguments
-* The main() function should only act as a facilitator and perform these three tasks:
-  * parse the arguments 
-  * perform minimal input validation 
-  * pass the collected arguments to functions that will use them
+* The ```main()``` should basically act as a facilitator for the overall program execution and perform the following tasks:
+  * parse command line arguments 
+  * validate the command line arguments, and type cast them if necessary (e.g. string to int using atoi etc.)
+  * pass the collected arguments to respective functions, monitor return values from functions to terminate program execution on an ERROR
+  * clean up tasks - e.g. call functions to free up dynamically allocated memory
 
 **What is the main()?**  
-Every C program MUST have only one ```main()``` function and program execution begins at the ```main()```. The compiler expects a main() function in one of the following two forms:
+Program execution begins at the ```main()```. The compiler expects a main() function in one of the following two forms:
 
 ```C
 int main () { /* body */ } 
 int main (int argc, char *argv[]) { /* body */ } 
 ```
-
 An additional acceptable form is implementation specific and provides a list of the environment variables at the time the function is called:
 
 ```C
 int main (int argc, char* argv[], char *envp[]) { /* body */ }
 ```
 
-The compiler does not need a forward declaration for main(), the definiton is accepted by the compiler as the declaration of main(). The linker requires that one and only one main() function exist when creating an executable program. If no return statement is provided, the compiler will provide a return 0; as the last statement in the function body. The ```main()``` function has two arguments that traditionally are called ```argc``` and ```argv``` and always returns a signed integer.  ```main()``` returns a 0 (zero) on success and -1 (negative one) on failure.
+The compiler does not need a forward declaration for ```main()```, the definiton is accepted by the compiler as the declaration of ```main()```. The linker requires that one and only one ```main()``` function exist when creating an executable program. If no return statement is provided, the compiler will provide a ```return 0;``` as the last statement in the function body. The ```main()``` function has two arguments that traditionally are called ```argc``` and ```argv``` and always returns a signed integer.  ```main()``` returns a 0 (zero) on success and -1 (negative one) on failure.
 
-
+```
 | Argument | Name            | Description                   |
 |----------|-----------------|-------------------------------|
 | argc     | argument count  | Length of the argument vector |
 | argv     | argument vector | Array of char pointers        |
+```
 
-The argument vector - argv, is a tokenized representation of the command line that invoked the program. The argument vector is guaranteed to always have at least one string in the first index, argv[0], which is the full path to the program executed. For example if ```a.out``` be the program being executed and it is passed the following command line arguments:
+The argument vector - ```argv```, is a tokenized representation of the command line that invoked the program. The argument vector is guaranteed to always have at least one string in the first index, ```argv[0]```, which is the full path to the program executed. For example if ```a.out``` be the program being executed and it is passed the following command line arguments:
 
 ```Console
 $:~ a.out foo 28 M
@@ -42,19 +43,21 @@ A good outline for ```main.c``` looks like something like this:
 
 ```C
 /* main.c */
-/* 0 copyright/licensing */
-/* 1 includes */
-/* 2 defines */
-/* 3 external declarations */
-/* 4 typedefs */
-/* 5 global variable declarations */
-/* 6 function prototypes */
+/* 0. copyright/licensing */
+/* 1. includes */
+/* 2. defines */
+/* 3. external declarations */
+/* 4. typedefs */
+/* 5. global variable declarations */
+/* 6. function prototypes */
 
 int main(int argc, char *argv[]) {
-/* 7 command-line parsing */
+/* 7. command-line parsing */
+/* 8. function calls */
+/* 9. clean up tasks */
 }
 
-/* 8 function declarations */
+/* 10. function declarations */
 ```
 
 Additionally it is always a good practice to add meaningful comments. Do not write about what the code is doing - instead, write about why the code is doing what it's doing!
@@ -141,7 +144,7 @@ int  do_the_needful(options_t *options);
 ```
 A good practice (or choice of style) is to define the functions after the ```main()``` and not before. So the function prototypes need to be declared here. Early C compilers used a single-pass strategy, which meant that every symbol (variable or function name) you used in your program had to be declared before you used it. Modern compilers are nearly all multi-pass compilers that build a complete symbol table before generating code, so using function prototypes is not strictly required.
 
-### 7. The Actual main() - (1) parse the arguments (2) perform minimal input validation (3) pass the collected arguments to functions that will use them
+### 7,8, & 9. The Actual main() - (1) parse the arguments (2) perform minimal input validation (3) pass the collected arguments to functions that will use them
 
 The purpose of the main() function is to collect the arguments that the user provides, perform minimal input validation, and then pass the collected arguments to functions that will use them. This example declares an options variable initialized with default values and parse the command line, updating options as necessary.
 
@@ -196,9 +199,9 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-The guts of this main() function is a while loop that steps through argv looking for command line options and their arguments (if any). When a known command line option is detected, option-specific behavior happens. Some options have an argument, when an option has an argument, the next string in argv is available to the program. Files are opened for reading and writing or command line arguments are converted from a string to an integer value.
+The guts of this ```main()``` function is a while loop that steps through argv looking for command line options and their arguments (if any). When a known command line option is detected, option-specific behavior happens. Some options have an argument, when an option has an argument, the next string in argv is available to the program. Files are opened for reading and writing or command line arguments are converted from a string to an integer value.
 
-### 8. Function Definitions
+### 10. Function Definitions
 
 ```C
 void usage(char *progname, int opt) {
@@ -341,15 +344,15 @@ int do_the_needful(options_t *options) {
 
 ## What happens if any function in your program tries to call main()?
 
-The C++ standard says it's undefined behaviour to call main() from another function:
+The C++ standard says it's undefined behaviour to call ```main()``` from another function:
 
 *" An implementation shall not predefine the main function. This function shall not be overloaded. It shall have a return type of type int, but otherwise its type is implementation defined. All implementations shall allow both of the following definitions of main … The function main shall not be used within a program. The linkage (3.5) of main is implementation-defined.*
 
-On a hypothetical implementation, calling main could result in fun things like re-running constructors for all static variables, re-initializing the data structures used by new/delete to keep track of allocations, or other total breakage of your program. Or it might not cause any problem at all - i.e. undefined behaviour.
+On a hypothetical implementation, calling ```main``` could result in fun things like re-running constructors for all static variables, re-initializing the data structures used by new/delete to keep track of allocations, or other total breakage of your program. Or it might not cause any problem at all - i.e. undefined behaviour.
 
-## Why the main() function does not need a declaration in C/C++?
-* The compiler does not need a forward declaration for main().
-* In C++, since a user program never calls main, so technically it never needs a declaration before the definition. 
-* In C, a program can call main. In that case, it does require that a declaration be visible before the call. 
-* Note that main does need to be known to the code that calls it. This is special code in what is typically called the C++ runtime startup code. The linker includes that code for you automatically when you are linking a C++ program with the appropriate linker options. Whatever language that code is written in, it has whatever declaration of main it needs in order to call it properly.
-* Technically though, all definitions are also declarations, so your definition of main also declares main. The compiler does not need a forward declaration for main(), the definiton is accepted by the compiler as the declaration of main().
+## Why the ```main()``` function does not need a declaration in C/C++?
+* The compiler does not need a forward declaration for ```main()```.
+* In C++, since a user program never calls ```main```, so technically it never needs a declaration before the definition. 
+* In C, a program can call ```main```. In that case, it does require that a declaration be visible before the call. 
+* Note that ```main``` does need to be known to the code that calls it. This is special code in what is typically called the C++ runtime startup code. The linker includes that code for you automatically when you are linking a C++ program with the appropriate linker options. Whatever language that code is written in, it has whatever declaration of ```main``` it needs in order to call it properly.
+* Technically though, all definitions are also declarations, so your definition of main also declares main. The compiler does not need a forward declaration for ```main()```, the definiton is accepted by the compiler as the declaration of ```main()```.
