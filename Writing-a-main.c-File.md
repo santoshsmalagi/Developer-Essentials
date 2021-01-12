@@ -2,7 +2,7 @@
 
 The contents of this page are based on the original article which appeared on Opensource.com - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function). It tries to cover the following:
 
-* How to structure a C file containing a ```main()``` function that will be easy to maintain
+* How to structure a C file containing a ```main()``` function that is easy to maintain
 * How to best process command line arguments
 * The ```main()``` should basically act as a facilitator for the overall program execution and perform the following tasks:
   * parse command line arguments 
