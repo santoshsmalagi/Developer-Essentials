@@ -17,6 +17,13 @@ Program execution begins at the ```main()```. The compiler expects a main() func
 int main () { /* body */ } 
 int main (int argc, char *argv[]) { /* body */ } 
 ```
+
+Another usage is:
+
+```C
+int main () { /* body */ } 
+int main (int argc, char **argv) { /* body */ } 
+```
 An additional acceptable form is implementation specific and provides a list of the environment variables at the time the function is called:
 
 ```C
