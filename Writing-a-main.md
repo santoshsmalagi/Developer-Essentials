@@ -4,24 +4,18 @@ The contents of this page are based on the original article which appeared on Op
 
 * How to structure a C file containing a ```main()``` function that is easy to maintain
 * How to best process command line arguments
-* The ```main()``` should basically act as a facilitator for the overall program execution and perform the following tasks:
-  * parse command line arguments 
-  * validate the command line arguments, and type cast them if necessary (e.g. string to int using atoi etc.)
-  * pass the collected arguments to respective functions, monitor return values from functions which indicate an ERROR
-  * clean up tasks - e.g. call functions to free up dynamically allocated memory
+* The ```main()``` should primarily act as a facilitator for the overall program execution and perform the following tasks:
+  * parse and validate command line arguments, while type casting them if necessary (e.g. string to int using atoi etc.)
+  * instead the ```main()``` can also call another function which parses and validates the command line arguments
+  * pass the collected arguments to respective functions, monitor return values from functions and take appropriate actions e.g. terminate processing with a message when an ERROR state occurs
+  * clean up tasks - e.g. call destructor to free up memory etc.
 
 **What is the main()?**  
-Program execution begins at the ```main()```. The compiler expects a main() function in one of the following two forms:
+Program execution begins at the ```main()```. The compiler expects a ```main()``` function in one of the following forms:
 
 ```C
 int main () { /* body */ } 
 int main (int argc, char *argv[]) { /* body */ } 
-```
-
-Another usage is:
-
-```C
-int main () { /* body */ } 
 int main (int argc, char **argv) { /* body */ } 
 ```
 An additional acceptable form is implementation specific and provides a list of the environment variables at the time the function is called:
@@ -30,7 +24,9 @@ An additional acceptable form is implementation specific and provides a list of 
 int main (int argc, char* argv[], char *envp[]) { /* body */ }
 ```
 
-The compiler does not need a forward declaration for ```main()```, the definiton is accepted by the compiler as the declaration of ```main()```. The linker requires that one and only one ```main()``` function exist when creating an executable program. If no return statement is provided, the compiler will provide a ```return 0;``` as the last statement in the function body. The ```main()``` function has two arguments that traditionally are called ```argc``` and ```argv``` and always returns a signed integer.  ```main()``` returns a 0 (zero) on success and -1 (negative one) on failure.
+The compiler does not need a forward declaration for ```main()```, the definiton itself is accepted by the compiler as the declaration of ```main()```. The ```main()``` function has two arguments that traditionally are called ```argc``` and ```argv``` and always returns a signed integer.  ```main()``` returns a 0 (zero) on success and -1 (negative one) on failure. If no return statement is provided, the compiler will provide a ```return 0;``` as the last statement in the function body by default.  
+
+**The linker requires that one and only one ```main()``` function exist when creating an executable program***.   
 
 ```
 | Argument | Name            | Description                   |
@@ -50,27 +46,27 @@ A good outline for ```main.c``` looks like something like this:
 
 ```C
 /* main.c */
-/* 0. copyright/licensing */
-/* 1. includes */
-/* 2. defines */
-/* 3. external declarations */
-/* 4. typedefs */
-/* 5. global variable declarations */
-/* 6. function prototypes */
+/* 0. Copyright, Licensing or Author Information */
+/* 1. Includes */
+/* 2. Defines */
+/* 3. External declarations */
+/* 4. Typedefs and enums */
+/* 5. Global variable declarations */
+/* 6. Function prototypes */
 
 int main(int argc, char *argv[]) {
-/* 7. command-line parsing */
-/* 8. function calls */
-/* 9. clean up tasks */
+/* 7. Command-line parsing */
+/* 8. Function calls */
+/* 9. Clean up tasks */
 }
 
-/* 10. function declarations */
+/* 10. Function declarations */
 ```
 
 Additionally it is always a good practice to add meaningful comments. Do not write about what the code is doing - instead, write about why the code is doing what it's doing!
 
-### 0. Copyright and Licensing
-Usually this is some form of standard template text which describes information such as the autor, organization, version information, copyright notice etc. It may also be helpful to briefly describe the intended purpose of this C file.
+### 0. Copyright, Licensing and Author Information
+Usually this is some form of standard template text which describes copyright information, organization/author, version information, etc. It may also be helpful to briefly describe the intended purpose of this C file.
 
 ### 1.Includes
 The first things to add to a ```main.c``` file are includes to make a multitude of standard C library functions and variables available to the program. The ```#include``` string is a C preprocessor (cpp) directive that causes the inclusion of the referenced file, in its entirety, in the current file. At a minimum the following are recommended to be included in the ```main.c``` file:
@@ -97,6 +93,8 @@ The first things to add to a ```main.c``` file are includes to make a multitude 
 | getopt      | Supplies external optarg, opterr, optind, and getopt() function              |
 | sys/types   | Typedef shortcuts like uint32_t and uint64_t                                 |
 
+> **When a program is both C and C++!**
+Often times, we encounter code which is both C and C++ - i.e. C++ code, with C code declared using ```extern C``` to avoid name mangling. Such files tend to have a .C extension instead of the regular .c or .cpp extensions. For such programs, the suggested order of includes would be - (1) standard C++ headers e.g. <iostream>, <fstream>  (2) standard C headers (3) headers for C++ STL - <vector>, <list>, <string>, <algorithm> etc. (4) C++ headers for Boost if required (5) header includes for user defined libraries.
 
 ### 2. Defines
 
