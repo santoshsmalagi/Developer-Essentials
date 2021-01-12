@@ -361,7 +361,7 @@ The C++ standard says it's undefined behaviour to call ```main()``` from another
 
 On a hypothetical implementation, calling ```main``` could result in fun things like re-running constructors for all static variables, re-initializing the data structures used by new/delete to keep track of allocations, or other total breakage of your program. Or it might not cause any problem at all - i.e. undefined behaviour.
 
-## Why the ```main()``` function does not need a declaration in C/C++?
+## Why the ```main()``` function does not need a declaration?
 * The compiler does not need a forward declaration for ```main()```.
 * In C++, since a user program never calls ```main```, so technically it never needs a declaration before the definition. 
 * In C, a program can call ```main```. In that case, it does require that a declaration be visible before the call. 
