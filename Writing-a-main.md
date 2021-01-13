@@ -142,7 +142,7 @@ Global variables are a bad idea and you should never use them. But if you have t
 
 ### 6. Function Prototypes
 
-```
+```C
 void usage(char *progname, int opt);
 int  do_the_needful(options_t *options);
 ```
