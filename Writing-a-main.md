@@ -1,6 +1,8 @@
 # Writing a Good main() Function
 
-The contents of this page are based on the original article which appeared on Opensource.com - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function). It tries to cover the following:
+The contents of this page are based on the original article which appeared on Opensource.com - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function). At places it copies text as is from this site (I felt that I coudn't do a better job!).  
+
+It tries to cover the following:
 
 * How to structure a C file containing a ```main()``` function that is easy to maintain
 * How to best process command line arguments
