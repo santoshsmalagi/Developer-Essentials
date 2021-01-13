@@ -26,7 +26,7 @@ int main (int argc, char* argv[], char *envp[]) { /* body */ }
 
 The compiler does not need a forward declaration for ```main()```, the definiton itself is accepted by the compiler as the declaration of ```main()```. The ```main()``` function has two arguments that traditionally are called ```argc``` and ```argv``` and always returns a signed integer.  ```main()``` returns a 0 (zero) on success and -1 (negative one) on failure. If no return statement is provided, the compiler will provide a ```return 0;``` as the last statement in the function body by default.  
 
-**The linker requires that one and only one ```main()``` function exist when creating an executable program***.   
+**The linker requires that one and only one ```main()``` function exist when creating an executable program**.   
 
 ```
 | Argument | Name            | Description                   |
