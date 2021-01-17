@@ -1,4 +1,4 @@
-# Writing a Good main() Function
+# Writing a Good main.C File
 
 The contents of this page are based on the original article which appeared on Opensource.com - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function).
 
