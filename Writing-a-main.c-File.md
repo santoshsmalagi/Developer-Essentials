@@ -156,7 +156,7 @@ The statements within ```main()``` basically perform the following operations:
 
 1. parse command line arguments and validate them
 2. pass the collected arguments to functions
-3. monitor for return values, identify ERROR conditions to terminate program execution
+3. monitor return values from functions and take appropriate actions e.g. terminate processing with a message when an ERROR state occurs
 4. clean up tasks 
 
 This example declares an options variable initialized with default values and parse the command line, updating options as necessary.
