@@ -49,20 +49,22 @@ A good outline for ```main.c``` looks like something like this:
 ```C
 /* main.c */
 /* 0. Copyright, Licensing or Author Information */
-/* 1. Includes */
-/* 2. Defines */
-/* 3. External declarations */
-/* 4. Typedefs and enums */
-/* 5. Global variable declarations */
-/* 6. Function prototypes */
+/* 1. Standard header includes */
+/* 2. Project specific header includes */
+/* 3. Defines */
+/* 4. External declarations */
+/* 5. Typedefs and enums */
+/* 6. Global variable declarations */
+/* 7. Function prototypes */
 
 int main(int argc, char *argv[]) {
-/* 7. Command-line parsing */
-/* 8. Function calls */
-/* 9. Clean up tasks */
+/* 8. Variable declarations /*
+/* 9. Command-line parsing */
+/* 10. Function calls */
+/* 11. Clean up tasks */
 }
 
-/* 10. Function declarations */
+/* 12. Function declarations */
 ```
 
 Additionally it is always a good practice to add meaningful comments. Do not write about what the code is doing - instead, write about why the code is doing what it's doing!
@@ -70,7 +72,7 @@ Additionally it is always a good practice to add meaningful comments. Do not wri
 ### 0. Copyright, Licensing and Author Information
 Usually this is some form of standard template text which describes copyright information, organization/author, version information, etc. It may also be helpful to briefly describe the intended purpose of this C file.
 
-### 1.Includes
+### 1.Standard Header Includes
 The first things to add to a ```main.c``` file are includes to make a multitude of standard C library functions and variables available to the program. The ```#include``` string is a C preprocessor (cpp) directive that causes the inclusion of the referenced file, in its entirety, in the current file. At a minimum the following are recommended to be included in the ```main.c``` file:
 
 ```C
@@ -95,10 +97,13 @@ The first things to add to a ```main.c``` file are includes to make a multitude 
 | getopt      | Supplies external optarg, opterr, optind, and getopt() function              |
 | sys/types   | Typedef shortcuts like uint32_t and uint64_t                                 |
 
+### 2.Project Header Includes
+Include project specific headers i.e. framework utilities, GUI enablers, or headers to provide access to API useful for the current program/project.
+
 > **When a program is both C and C++!**  
 Often times, we encounter code which is both C and C++ - i.e. C++ code, with C code declared using ```extern C``` to avoid name mangling. Such files tend to have a .C extension instead of the regular .c or .cpp extensions. For such programs, the suggested order of includes would be - (1) standard C++ headers e.g. <iostream>, <fstream>  (2) standard C headers (3) headers for C++ STL - \<vector\>, \<list\>, \<string\>, \<algorithm\> etc. (4) C++ headers for Boost if required (5) header includes for user defined libraries. An interesting article on this topic - [How to mix C and C++](https://isocpp.org/wiki/faq/mixing-c-and-cpp).
 
-### 2. Defines
+### 3. Defines
 
 ```C
 #define OPTSTR "vi:o:f:h"
@@ -111,7 +116,7 @@ Often times, we encounter code which is both C and C++ - i.e. C++ code, with C c
 
 Constants should be defined using the ```#define``` directive in this part of the file. Collecting them at a single location makes it easier to update and modiy them as required. The constants can include mathematical constants; string constants for ERRORs, messages which get reused; #define macros etc.  Use all capital letters when naming a ```#define``` to distinguish them from variable and function names. The ```#define``` names can be a single continuous string or they can be separated with an underscore; just make sure they're all upper case.
 
-### 3. External Declarations
+### 4. External Declarations
 
 An extern declaration brings that name into the namespace of the current compilation unit (aka "file") and allows the program to access that variable.
 
@@ -121,7 +126,7 @@ extern char *optarg;
 extern int opterr, optind;
 ```
 
-### 4. typedef's
+### 5. typedef's
 
 ```C
 typedef struct {
@@ -134,7 +139,7 @@ typedef struct {
 
 After external declarations, declare typedef's for structures, unions, and enumerations. For naming a typedef prefer a \_t suffix to indicate that the name is a type. Since C is a whitespace-neutral programming language, whitespaces can be used to line up field names in the same column. For pointer declarations, prepend the asterisk to the name to make it clear that it's a pointer.
 
-### 5. Global Variable Declarations
+### 6. Global Variable Declarations
 
 ```C
 int dumb_global_variable = -11;
@@ -142,7 +147,7 @@ int dumb_global_variable = -11;
 
 Global variables are a bad idea and you should never use them. But if you have to use a global variable, declare them here and be sure to give them a default value. Seriously, don't use global variables.
 
-### 6. Function Prototypes
+### 7. Function Prototypes
 
 ```C
 void usage(char *progname, int opt);
@@ -150,14 +155,15 @@ int  do_the_needful(options_t *options);
 ```
 A good practice (or choice of style) is to define the functions after the ```main()``` and not before. So the function prototypes need to be declared here. Early C compilers used a single-pass strategy, which meant that every symbol (variable or function name) you used in your program had to be declared before you used it. Modern compilers are nearly all multi-pass compilers that build a complete symbol table before generating code, so using function prototypes is not strictly required.
 
-### 7,8, & 9. The actual main()
+### 8, 9, 10, & 11. The actual main()
 
 The statements within ```main()``` basically perform the following operations:
 
-1. parse command line arguments and validate them
-2. pass the collected arguments to functions
-3. monitor return values from functions and take appropriate actions e.g. terminate processing with a message when an ERROR state occurs
-4. clean up tasks 
+1. declare any variables local to main, or initialze global variables and data structures required by the program
+2. parse command line arguments and validate them
+3. pass the collected arguments to functions
+4. monitor return values from functions and take appropriate actions e.g. terminate processing with a message when an ERROR state occurs
+5. clean up tasks 
 
 This example declares an options variable initialized with default values and parse the command line, updating options as necessary.
 
@@ -214,7 +220,7 @@ int main(int argc, char *argv[]) {
 
 The guts of this ```main()``` function is a while loop that steps through argv looking for command line options and their arguments (if any). When a known command line option is detected, option-specific behavior happens. Some options have an argument, when an option has an argument, the next string in ```argv``` is available to the program. Files are opened for reading and writing or command line arguments are converted from a string to an integer value.
 
-### 10. Function Definitions
+### 12. Function Definitions
 
 ```C
 void usage(char *progname, int opt) {
