@@ -6,6 +6,8 @@ The following example illustrates the concept of multi-file C programming by cal
  * ```standard.c```      # function definitions for add(), sub(), mul(), divide()
  * ```advanced.c```      # function definitions for mod(), power()
 
+As you can see, the challenge with this approach is - you need to always declare the external functions in your current file scope using the extern keyword. Though this seems insignificant when the number of files and functions involved are less, this is a major concern for real world programs involving hundreds of functions. 
+
 To compile:
 
 ```bash
