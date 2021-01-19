@@ -1,6 +1,6 @@
  # Structuring a Multi-File C Program - PART I
  
- The following example illustrates the concept of multi-file C programming by calling functions defined in external files.
+The following example illustrates the concept of multi-file C programming by calling functions defined in external files. Basically, functions are defined in their respective files and bought into the scope of ```main.c``` using ```extern``` keyword. 
  
  * ```main.c```          # processes command line arguments, references functions declared externally in other files
  * ```standard.c```      # function definitions for add(), sub(), mul(), divide()
