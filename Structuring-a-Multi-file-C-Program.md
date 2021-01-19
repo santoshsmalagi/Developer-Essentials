@@ -2,9 +2,9 @@
  
  The following example illustrates the concept of multi-file C programming by calling functions defined in external files.
  
- * ```main.c```      # processes command line arguments, references functions declared externally in other files
- * ```standard.c```  # function definitions for add(), sub(), mul(), divide()
- * ```advanced.c```  # function definitions for mod(), power()
+ * ```main.c```          # processes command line arguments, references functions declared externally in other files
+ * ```standard.c```      # function definitions for add(), sub(), mul(), divide()
+ * ```advanced.c```      # function definitions for mod(), power()
 
 To compile:
 
