@@ -22,7 +22,8 @@ Note the use of `-lm` flag during compilation required to successfully link to t
 
 ```bash
 $ ./calc 2 + 1
-$ ./calc 1 '*' 2      # note the use of '*', not using single quotes results in wild card expansion casuing the argc != 4 condition check to fail  
+$ ./calc 1 '*' 2      # note the use of '*', not using single quotes results in wild card expansion 
+                      casuing the argc != 4 condition check to fail  
 ```
 
 Another way to get avoid wildcard expansion during command execution is to:
