@@ -13,7 +13,7 @@ A good outline for a ```main.c``` which is easy to maintain looks something like
 /* 4. External declarations */
 /* 5. Typedefs and enums */
 /* 6. Global variable declarations */
-/* 7. Function prototypes */
+/* 7. Function prototype declarations */
 
 int main(int argc, char *argv[]) {
 /* 8. Variable declarations /*
@@ -22,19 +22,11 @@ int main(int argc, char *argv[]) {
 /* 11. Clean up tasks */
 }
 
-/* 12. Function declarations */
+/* 12. Function definitions */
 ```
 
-
-
-A good outline for ```main.c``` looks like something like this:
-
-
-
-Additionally it is always a good practice to add meaningful comments. Do not write about what the code is doing - instead, write about why the code is doing what it's doing!
-
 ### 0. Copyright, Licensing and Author Information
-Usually this is some form of standard template text which describes copyright information, organization/author, version information, etc. It may also be helpful to briefly describe the intended purpose of this C file.
+Usually this is some form of standard template text which describes copyright information, organization/author, version information, etc. It may also be helpful to briefly describe the intended purpose of this C file. Additionally it is always a good practice to add meaningful comments. Do not write about what the code is doing - instead, write about why the code is doing what it's doing
 
 ### 1.Standard Header Includes
 The first things to add to a ```main.c``` file are includes to make a multitude of standard C library functions and variables available to the program. The ```#include``` string is a C preprocessor (cpp) directive that causes the inclusion of the referenced file, in its entirety, in the current file. At a minimum the following are recommended to be included in the ```main.c``` file:
