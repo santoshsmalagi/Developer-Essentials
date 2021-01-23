@@ -4,7 +4,7 @@ Large C programs can be constructed and laid out efficiently as a collection of 
 
 * Readability and ease of maintainence
 	* makes the program convenient enough to edit and modify
-	* common utilities such as frameowrk services, reporting functions etc. can be shared  - therby avoiding code duplicacy
+	* common utilities such as frameowrk services, reporting functions etc. can be shared  - there by avoiding code duplicacy
 * Each of the modules can be developed and tested seperately
 	* files can be compiled separately into \*.o files, later all the \*.o files can be linked together to create a binary executable
 * Promotes the concept of abstraction
