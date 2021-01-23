@@ -1,4 +1,9 @@
-# Multi file C program consisting of header files
+## Philosophy behind design of multi-file C Programs
+## Layout of a multi-file C project
+## A note on header Files
+## Extern and static variables
+## Compiling a multi-file C project
+## Simple illustrative example of a multi-file C project
 
 ```Makefile
 all: main.o standard.o advanced.o
