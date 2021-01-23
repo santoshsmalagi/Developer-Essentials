@@ -31,7 +31,7 @@ Though there is no "one right way" to divide a large program (or a project), in 
 	* if a data structure/variable or function is supposed to be local to a file, then it must not be included in the header file 
 	* every source file which uses definitions from *foo.h* must contain an "include" statement for *foo.h*, this directs the compiler to read the code in foo.h (i.e. function definitions from *foo.c*) when it compiles the source file
 
-* **Always include 'Header Gaurds' in header files.
+* **Always include 'Header Gaurds' in header files.**
 
 ## A note on header Files
 
