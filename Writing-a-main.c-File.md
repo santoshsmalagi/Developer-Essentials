@@ -7,7 +7,7 @@ It tries to cover the following:
 * How to structure a C file containing a ```main()``` function that is easy to maintain
 * How to best process command line arguments
 * The ```main()``` should primarily act as a facilitator for the overall program execution and perform the following tasks:
-  * parse and validate command line arguments, while type casting them if necessary (e.g. string to int using atoi etc.)
+  * parse and validate command line arguments, while type casting them if necessary (e.g. ```string``` to ```int``` using ```atoi``` etc.)
   * instead the ```main()``` can also call another function which parses and validates the command line arguments
   * pass the collected arguments to respective functions, monitor return values from functions and take appropriate actions e.g. terminate processing with a message when an ERROR state occurs
   * clean up tasks - e.g. call destructor to free up memory etc.
