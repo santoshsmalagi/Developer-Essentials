@@ -2,7 +2,14 @@
 
 ## Layout of a multi-file C project
 
-Let us try to illustrate the layout of a multi-file C program by building a simple calculator application which:
+Though there is no hard and fast rule to organize a multi-file C program (or a project) the following are some of the suggested best practices:
+
+* **Organize your program as a collection of multiple files, each file containing similar functions grouped together:**
+	* start by laying out a directory structure consisting of multiple empty files - at a bare minimum the files as shown above
+	* every source file (.c, .cpp or .C) should ideally be accompanied by a header file (.h)
+	* minimize the number of functions in a file, this makes it easy to maintain and read
+
+Let us try to illustrate the above ideas by building a simple calculator application which:
 * accepts two real numbers and an operator (+, -, \*, %, p) as command line arguments
 * validates command line arguments and calls appropriate functions
 * if an invalid input is entered, exits gracefully with an appropriate ERROR message
@@ -17,12 +24,6 @@ Let us try to illustrate the layout of a multi-file C program by building a simp
 | advanced.h 	| declarations for mod() and power()               	|
 | Makefile   	| recipes for building and compiling our program   	|
 
-Though there is no hard and fast rule to organize a multi-file C program (or a project) the following are some of the suggested best practices:
-
-* **Organize your program as a collection of multiple files, each file containing similar functions grouped together:**
-	* start by laying out a directory structure consisting of multiple empty files - at a bare minimum the files as shown above
-	* every source file (.c, .cpp or .C) should ideally be accompanied by a header file (.h)
-	* minimize the number of functions in a file, this makes it easy to maintain and read
 
 ## A note on header Files
 
