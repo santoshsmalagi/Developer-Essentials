@@ -31,6 +31,8 @@ Though there is no "one right way" to divide a large program (or a project), in 
 	* if a data structure/variable or function is supposed to be local to a file, then it must not be included in the header file 
 	* every source file which uses definitions from *foo.h* must contain an "include" statement for *foo.h*, this directs the compiler to read the code in foo.h (i.e. function definitions from *foo.c*) when it compiles the source file
 
+* **Always include 'Header Gaurds' in header files.
+
 ## A note on header Files
 
 If a piece of source file is named *sourceFile.c*, the corresponding header file is traditionally named *sourceFile.h*. The main purpose of header files is to make definitions and declarations accessible to functions in more than one files. A header file typically contains:
@@ -44,12 +46,81 @@ If a piece of source file is named *sourceFile.c*, the corresponding header file
 
 **In general, header files should not contain function definitions, only function decrlarations. Exceptions involve very short functions, so short that they can be included in a class definition or declared as inline functions. These functions do trivial things such as increment a counter, return the larger of two numbers, or return the value of a private data member for a class.  If the function does something non-trivial, it belongs in a source file.**  
 
-> #include<filename.h> - includes standard library header files, normally in search directories pre-designated by the compiler  
-  #include "filename" - to include programmer-defined header files, files are searched first in the current directory, then in a preconfigured list of standard system directories
+> #include<filename.h> - includes standard library header files, searched for in a set of pre-determined system directories 
+  #include "filename" - to include programmer-defined header files, files are searched first in the current directory, then in the system directories
 
 ### Header Gaurds
 
-header gaurds are an ABSOLUTE NECESSITY to avoid multiple inclusions of a single header file in a multi-file C project
+The ```#ifdef```, ```#define```, ```#endif``` construction is collectively known as a "header guard." 
+
+```C
+
+// -----------------------------------------------
+// header.h
+// -----------------------------------------------
+
+#ifndef _HEADER_H
+#define _HEADER_H
+
+// header file contents 
+
+#endif
+```
+
+This keeps the C compiler from including a header file more than once per file. In case of a multi file C project it is common for header files to include other header files.  If this is done extensively, it could lead to a situation in which the same header declarations are included multiple times.  This is probably OK for function prototypes, and for variable declarations, but it produces illegal C programs if enums, structs, or unions are repeated, since the member names and enum constants defined by these declarations become multiply defined.  A header gaurd is therefore an **ABSOLUTE MUST** when creating header files.
+
+Consider the following example:
+
+```C
+
+// --------------------------------------------------
+// grandparent.h
+// --------------------------------------------------
+
+struct foo {
+    int member;
+};
+
+// --------------------------------------------------
+// parent.h
+// --------------------------------------------------
+
+#include "grandparent.h"
+
+// --------------------------------------------------
+// child.h
+// --------------------------------------------------
+
+#include "grandparent.h"
+#include "parent.h"
+
+// --------------------------------------------------
+// child.c
+// --------------------------------------------------
+
+#include "child.h"
+
+```
+
+The net result is that the file "child.c" has indirectly included two copies of ```struct foo``` resulting in a compilation error, since the structure type ```foo``` will thus be defined twice. This problem can be fixed by including a header gaurd for ```grandparent.h```.
+
+```C
+
+// --------------------------------------------------
+// grandparent.h
+// --------------------------------------------------
+
+#ifndef _GRANDPARENT_H
+#define _GRANDPARENT_H
+
+struct foo {
+    int member;
+};
+
+#endif
+```
+
+*A project using header guards must work out a coherent naming scheme for its include guards, and make sure its scheme doesn't conflict with that of any third-party headers it uses, or with the names of any globally visible macros. For this reason, most C and C++ implementations provide a non-standard* ```#pragma once``` *directive. This directive, inserted at the top of a header file, will ensure that the file is included only once.*
 
 ## Extern and static variables
 ## Compiling a multi-file C project
