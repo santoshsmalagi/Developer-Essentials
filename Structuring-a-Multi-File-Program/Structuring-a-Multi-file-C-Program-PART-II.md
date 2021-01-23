@@ -2,12 +2,12 @@
 
 Large C programs can be constructed and laid out efficiently as a collection of multiple source files (.c, .cpp or .C) and corresponding header files (.h). This provides several advantages:
 
-* Readability and ease of maintainence
+* **Readability and ease of maintainence**
 	* makes the program convenient enough to edit and modify
 	* common utilities such as frameowrk services, reporting functions etc. can be shared  - there by avoiding code duplicacy
-* Each of the modules can be developed and tested seperately
+* **Each of the modules can be developed and tested seperately**
 	* files can be compiled separately into \*.o files, later all the \*.o files can be linked together to create a binary executable
-* Promotes the concept of abstraction
+* **Promotes the concept of abstraction**
 	* exposes the Application Programming Interface (API) for use by functions external to a file 
 	* each file can have access to a set of names that are private to that file, and to other names that are shared across all the files of the complete program
 
@@ -29,11 +29,27 @@ Though there is no "one right way" to divide a large program (or a project), in 
 * **Declare once and re-use multiple times**
 	* main purpose of header files is to make definitions and declarations accessible to functions in more than one file
 	* if a data structure/variable or function is supposed to be local to a file, then it must not be included in the header file 
+	* every source file which uses definitions from *foo.h* must contain an "include" statement for *foo.h*, this directs the compiler to read the code in foo.h (i.e. function definitions from *foo.c*) when it compiles the source file
 
 ## A note on header Files
 
-* Header guards
-	* header gaurds are an ABSOLUTE NECESSITY to avoid multiple inclusions of a single header file in a multi-file C project
+If a piece of source file is named *sourceFile.c*, the corresponding header file is traditionally named *sourceFile.h*. The main purpose of header files is to make definitions and declarations accessible to functions in more than one files. A header file typically contains:
+
+* definitions of global variables and global constants
+* definitions of classes, structs, unions, enumerated types 
+* typedef statements used to create type names
+* declarations of functions, called "prototypes"
+* include statements for other files, including C/C++ library files (e.g. iostream.h, math.h)
+* comments associated with all of the above 
+
+**n general, header files should not contain function definitions, only function decrlarations. Exceptions involve very short functions, so short that they can be included in a class definition or declared as inline functions. These functions do trivial things such as increment a counter, return the larger of two numbers, or return the value of a private data member for a class.  If the function does something non-trivial, it belongs in a source file.**  
+
+> #include<filename.h> - includes standard library header files, normally in search directories pre-designated by the compiler  
+  #include "filename" - to include programmer-defined header files, files are searched first in the current directory, then in a preconfigured list of standard system directories
+
+### Header Gaurds
+
+header gaurds are an ABSOLUTE NECESSITY to avoid multiple inclusions of a single header file in a multi-file C project
 
 ## Extern and static variables
 ## Compiling a multi-file C project
