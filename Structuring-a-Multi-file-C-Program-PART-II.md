@@ -6,6 +6,11 @@
 ## Simple illustrative example of a multi-file C project
 
 ```Makefile
+
+//###############################################################
+// Makefile
+//###############################################################
+
 all: main.o standard.o advanced.o
 		cc -Wall -o calc main.o standard.o advanced.o -lm
 
