@@ -32,6 +32,11 @@ Though there is no "one right way" to divide a large program (or a project), in 
 	* every source file which uses definitions from *foo.h* must contain an "include" statement for *foo.h*, this directs the compiler to read the code in foo.h (i.e. function definitions from *foo.c*) when it compiles the source file
 
 * **Always include 'Header Gaurds' in header files.**
+* **Header files must never include 'function definitions', only 'function declarataions'; and are not fed to the compiler unless there is a need to use pre-compiled headers
+	* Header files are intended to be included into implementation files, not fed to the compiler as independent translation units
+	* Often large projects have many header files that are included in every source file. 
+	* The time the compiler takes to process these header files over and over again can account for nearly all of the time required to build the project. 
+	* To make builds faster, GCC allows you to precompile a header file - [Pre-Compiled Headers](https://gcc.gnu.org/onlinedocs/gcc/Precompiled-Headers.html)
 
 ## 3. A note on header Files
 
@@ -135,6 +140,8 @@ Sometimes a decision has to be made regarding which header file to inlcude depen
 #elif SYSTEM_3
 ```
 ## 5. Compiling a multi-file C project
+
+In general, to compile a program consisting of multiple files, start by compiling each of the 'non-main' source files wiht a *-c* flag to generate an object file for each of them.
 
 ## 6. Simple illustrative example of a multi-file C project
 
