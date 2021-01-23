@@ -1,4 +1,4 @@
-## Philosophy behind design of multi-file C Programs
+## 1. Philosophy behind design of multi-file C Programs
 
 Large C programs can be constructed and laid out efficiently as a collection of multiple source files (.c, .cpp or .C) and corresponding header files (.h). This provides several advantages:
 
@@ -11,7 +11,7 @@ Large C programs can be constructed and laid out efficiently as a collection of 
 	* exposes the Application Programming Interface (API) for use by functions external to a file 
 	* each file can have access to a set of names that are private to that file, and to other names that are shared across all the files of the complete program
 
-## Layout of a multi-file C project
+## 2. Layout of a multi-file C project
 
 Though there is no "one right way" to divide a large program (or a project), in general one source file defines the ```main()``` while others contain function definitions. Corresponding header files declare these functions and any associated data structures, variables or constants. Global data structures and constants may be defined in a ```main.h```. In order for functions in a file *sourceFile1.c* to call a function defined in another file *sourceFile2.c*, the corresponding header file *sourceFile2.h* must be included in *sourceFile1.c*. 
 
@@ -33,7 +33,7 @@ Though there is no "one right way" to divide a large program (or a project), in 
 
 * **Always include 'Header Gaurds' in header files.**
 
-## A note on header Files
+## 3. A note on header Files
 
 If a piece of source file is named *sourceFile.c*, the corresponding header file is traditionally named *sourceFile.h*. The main purpose of header files is to make definitions and declarations accessible to functions in more than one files. A header file typically contains:
 
@@ -50,7 +50,7 @@ If a piece of source file is named *sourceFile.c*, the corresponding header file
   #include "filename"  - to include programmer-defined header files, files are searched first in the current directory <br>
                          then in the system directories
 
-### Header Gaurds
+### 4. Header Gaurds
 
 The ```#ifdef```, ```#define```, ```#endif``` construction is collectively known as a "header guard." 
 
@@ -134,13 +134,9 @@ Sometimes a decision has to be made regarding which header file to inlcude depen
    # include "system_2.h"
 #elif SYSTEM_3
 ```
-## Compiling a multi-file C project
-## Summary
-Writing a multi-file program in C requires a little more planning on behalf of the programmer than just a single main.c. But just a little effort up front can save a lot of time and headache when you refactor as you add functionality.
+## 5. Compiling a multi-file C project
 
-To recap, I like to have a lot of files with a few short functions in them. I like to expose a small subset of the functions in those files via header files. I like to keep my constants in header files, both numeric and string constants. I love Makefiles and use them instead of Bash scripts to automate all sorts of things. I like my main() function to handle command-line argument parsing and act as a scaffold for the primary functionality of the program.
-
-## Simple illustrative example of a multi-file C project
+## 6. Simple illustrative example of a multi-file C project
 
 Let us try to illustrate the above ideas by building a simple calculator application which:
 * accepts two real numbers and an operator (+, -, \*, %, p) as command line arguments
@@ -364,3 +360,7 @@ double power(double num1, double num2);
 #endif
 
 ```
+## 7. Summary
+Writing a multi-file program in C requires a little more planning on behalf of the programmer than just a single main.c. But just a little effort up front can save a lot of time and headache when you refactor as you add functionality.
+
+To recap, I like to have a lot of files with a few short functions in them. I like to expose a small subset of the functions in those files via header files. I like to keep my constants in header files, both numeric and string constants. I love Makefiles and use them instead of Bash scripts to automate all sorts of things. I like my main() function to handle command-line argument parsing and act as a scaffold for the primary functionality of the program.
