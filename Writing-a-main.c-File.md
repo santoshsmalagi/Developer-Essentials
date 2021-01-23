@@ -2,7 +2,7 @@
 
 The contents of this page are based on the original article which appeared on Opensource.com - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function).  
 
-A C program basically:
+A program basically:
 * declares and initialzes variables and data structures, sets up the program environment
 * processes and validates command line arguments or user inputs
 * call a sequence of functions to operate on data
