@@ -3,15 +3,17 @@
 Large C programs can be constructed and laid out efficiently as a collection of multiple source file (.c, .cpp or .C) and corresponding header files (.h). This provides several advantages:
 
 * Readability and ease of maintainence
+	* makes the program convenient enough to edit and modify
+	* common utilities such as frameowrk services, reporting functions etc. can be shared  - therby avoiding code duplicacy
 * Each of the modules can be developed and tested seperately
-	* files can be compiled separately, into a \*.o file, later, all the \*.o files can be linked together to create a binary executable
+	* files can be compiled separately into \*.o files, later all the \*.o files can be linked together to create a binary executable
 * Promotes the concept of abstraction
-	* only exposes the Application Programming Interface (API) for use by functions external to a file 
+	* exposes the Application Programming Interface (API) for use by functions external to a file 
 	* each file can have access to a set of names that are private to that file, and to other names that are shared across all the files of the complete program
 
 ## Layout of a multi-file C project
 
-Though there is no hard and fast rule to organize a multi-file C program (or a project) the following are some of the suggested best practices:
+Though there is no "one right way" to divide a large program (or a project) into  the following are some of the suggested best practices:
 
 * **Organize your program as a collection of multiple files, each file containing similar functions grouped together:**
 	* start by laying out a directory structure consisting of multiple empty files
