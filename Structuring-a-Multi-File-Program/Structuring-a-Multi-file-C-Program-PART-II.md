@@ -5,8 +5,9 @@
 Though there is no hard and fast rule to organize a multi-file C program (or a project) the following are some of the suggested best practices:
 
 * **Organize your program as a collection of multiple files, each file containing similar functions grouped together:**
-	* start by laying out a directory structure consisting of multiple empty files - at a bare minimum the files as shown above
-	* every source file (.c, .cpp or .C) should ideally be accompanied by a header file (.h)
+	* start by laying out a directory structure consisting of multiple empty files
+		* every source file (.c, .cpp or .C) should ideally be accompanied by a header file (.h)
+		* include a Makefile with recipes to build and compile the program
 	* minimize the number of functions in a file, this makes it easy to maintain and read
 
 Let us try to illustrate the above ideas by building a simple calculator application which:
