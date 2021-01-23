@@ -133,8 +133,6 @@ Sometimes a decision has to be made regarding which header file to inlcude depen
    # include "system_2.h"
 #elif SYSTEM_3
 ```
-
-## Extern and static variables
 ## Compiling a multi-file C project
 ## Summary
 Writing a multi-file program in C requires a little more planning on behalf of the programmer than just a single main.c. But just a little effort up front can save a lot of time and headache when you refactor as you add functionality.
