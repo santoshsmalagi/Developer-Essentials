@@ -2,53 +2,11 @@
 
 The contents of this page are based on the original article which appeared on Opensource.com - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function).
 
-It tries to cover the following:
-
-* How to structure a C file containing a ```main()``` function that is easy to maintain
-* How to best process command line arguments
-* The ```main()``` should primarily act as a facilitator for the overall program execution and perform the following tasks:
-  * parse and validate command line arguments, while type casting them if necessary (e.g. ```string``` to ```int``` using ```atoi```)
-  * instead the ```main()``` can also call another function which parses and validates the command line arguments
-  * pass the collected arguments to respective functions, monitor return values from functions and take appropriate actions e.g. terminate processing with a message when an ERROR state occurs
-  * clean up tasks - e.g. call destructor to free up memory etc.
-
-**What is the main()?**  
-Program execution begins at the ```main()```. The compiler expects a ```main()``` function in one of the following forms:
-
-```C
-int main () { /* body */ } 
-int main (int argc, char *argv[]) { /* body */ } 
-int main (int argc, char **argv) { /* body */ } 
-```
-An additional acceptable form is implementation specific and provides a list of the environment variables at the time the function is called:
-
-```C
-int main (int argc, char* argv[], char *envp[]) { /* body */ }
-```
-
-The compiler does not need a forward declaration for ```main()```, the definiton itself is accepted by the compiler as the declaration of ```main()```. The ```main()``` function has two arguments that traditionally are called ```argc``` and ```argv``` and always returns a signed integer.  ```main()``` returns a 0 (zero) on success and -1 (negative one) on failure. If no return statement is provided, the compiler will provide a ```return 0;``` as the last statement in the function body by default.  
-
-**The linker requires that one and only one ```main()``` function exist when creating an executable program**.   
-
-```
-| Argument | Name            | Description                   |
-|----------|-----------------|-------------------------------|
-| argc     | argument count  | Length of the argument vector |
-| argv     | argument vector | Array of char pointers        |
-```
-
-The argument vector - ```argv```, is a tokenized representation of the command line that invoked the program, *it can be thought of as an array of strings*. The argument vector is guaranteed to always have at least one string in the first index, ```argv[0]```, which is the full path to the program executed. For example if ```a.out``` be the program being executed and it is passed the following command line arguments:
-
-```Console
-$:~ a.out foo 28 M
-```
-Then ```argv = ["/home/malagi/a.out", "foo" "28"]``` and ```argc=3```.
-
-A good outline for ```main.c``` looks like something like this:
+A good outline for a ```main.c``` which is easy to maintain looks something like this:
 
 ```C
 /* main.c */
-/* 0. Copyright, Licensing or Author Information */
+/* 0. Copyright, licensing or author information */
 /* 1. Standard header includes */
 /* 2. Project specific header includes */
 /* 3. Defines */
@@ -66,6 +24,12 @@ int main(int argc, char *argv[]) {
 
 /* 12. Function declarations */
 ```
+
+
+
+A good outline for ```main.c``` looks like something like this:
+
+
 
 Additionally it is always a good practice to add meaningful comments. Do not write about what the code is doing - instead, write about why the code is doing what it's doing!
 
@@ -375,3 +339,46 @@ The C++ standard says it's undefined behaviour to call ```main()``` from another
 *" An implementation shall not predefine the main function. This function shall not be overloaded. It shall have a return type of type int, but otherwise its type is implementation defined. All implementations shall allow both of the following definitions of main … The function main shall not be used within a program. The linkage (3.5) of main is implementation-defined.*
 
 On a hypothetical implementation, calling ```main``` could result in fun things like re-running constructors for all static variables, re-initializing the data structures used by new/delete to keep track of allocations, or other total breakage of your program. Or it might not cause any problem at all - i.e. undefined behaviour.
+
+* Sructure a C file containing a ```main()``` function that is easy to maintain
+* How to best process command line arguments, and handle erroneous user inputs
+* Monitor return values from functions, and take appropriate actions e.g. fail gracefully when a ERROR occurs
+* Post program wrap up tasks e.g. free memory
+
+The ```main()``` should primarily act as a facilitator for the overall program execution and perform the following tasks:
+  * parse and validate command line arguments, while type casting them if necessary (e.g. ```string``` to ```int``` using ```atoi```)
+  * instead the ```main()``` can also call another function which parses and validates the command line arguments
+  * pass the collected arguments to respective functions, monitor return values from functions and take appropriate actions e.g. terminate processing with a message when an ERROR state occurs
+  * clean up tasks - e.g. call destructor to free up memory etc.
+
+**What is the main()?**  
+Program execution begins at the ```main()```. The compiler expects a ```main()``` function in one of the following forms:
+
+```C
+int main () { /* body */ } 
+int main (int argc, char *argv[]) { /* body */ } 
+int main (int argc, char **argv) { /* body */ } 
+```
+An additional acceptable form is implementation specific and provides a list of the environment variables at the time the function is called:
+
+```C
+int main (int argc, char* argv[], char *envp[]) { /* body */ }
+```
+
+The compiler does not need a forward declaration for ```main()```, the definiton itself is accepted by the compiler as the declaration of ```main()```. The ```main()``` function has two arguments that traditionally are called ```argc``` and ```argv``` and always returns a signed integer.  ```main()``` returns a 0 (zero) on success and -1 (negative one) on failure. If no return statement is provided, the compiler will provide a ```return 0;``` as the last statement in the function body by default.  
+
+**The linker requires that one and only one ```main()``` function exist when creating an executable program**.   
+
+```
+| Argument | Name            | Description                   |
+|----------|-----------------|-------------------------------|
+| argc     | argument count  | Length of the argument vector |
+| argv     | argument vector | Array of char pointers        |
+```
+
+The argument vector - ```argv```, is a tokenized representation of the command line that invoked the program, *it can be thought of as an array of strings*. The argument vector is guaranteed to always have at least one string in the first index, ```argv[0]```, which is the full path to the program executed. For example if ```a.out``` be the program being executed and it is passed the following command line arguments:
+
+```Console
+$:~ a.out foo 28 M
+```
+Then ```argv = ["/home/malagi/a.out", "foo" "28"]``` and ```argc=3```.
