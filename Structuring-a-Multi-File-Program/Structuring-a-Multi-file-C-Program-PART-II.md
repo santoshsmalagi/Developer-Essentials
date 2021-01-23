@@ -1,5 +1,17 @@
 ## Philosophy behind design of multi-file C Programs
+
 ## Layout of a multi-file C project
+
+Though there is no hard and fast rule to organize a multi-file C program (or a project) the following are some of the suggested best practices. Let us try to illustrate these ideas by building a simple calculator application which:
+
+1. accepts two real numbers and an operator (+, -, \*, %, p) as command line arguments
+2. 
+
+* Organize your program in terms of multiple files, each file containing similar functions grouped together
+* Minimize the number of functions in a file, this makes it easy to maintain and read
+* Start by laying out a directory structure consisting of multiple empty files - every source file (.c, .cpp or .C) should ideally be accompanied by a header file (.h), at a bare minimum 
+
+
 ## A note on header Files
 ## Extern and static variables
 ## Compiling a multi-file C project
