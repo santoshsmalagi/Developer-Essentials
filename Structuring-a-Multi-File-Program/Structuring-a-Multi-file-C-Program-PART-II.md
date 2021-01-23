@@ -3,30 +3,26 @@
 ## Layout of a multi-file C project
 
 Let us try to illustrate the layout of a multi-file C program by building a simple calculator application which:
-
-1. accepts two real numbers and an operator (+, -, \*, %, p) as command line arguments
-2. validates the command line arguments and calls corresponding functions
-3. if an invalid input is entered, exits gracefully with an appropriate ERROR message
-4. let us say the functions to carry out the basic operations - ```add(), sub(), mul()``` and ```divide()``` are declared in standard.h and defined in standard.c
-5. similarly, functions to carry out the advanced operations - ```mod()``` and ```power()``` are declared in advanced.h and defined in advanced.c
-6. finally the overall command line argument processing and function calls happen in main.c, with the global symbolic constants defined in main.h
-
-Though there is no hard and fast rule to organize a multi-file C program (or a project) the following are some of the suggested best practices.
-
-* Organize your program in terms of multiple files, each file containing similar functions grouped together
-* Every source file (.c, .cpp or .C) should ideally be accompanied by a header file (.h)
-* Minimize the number of functions in a file, this makes it easy to maintain and read
-* Start by laying out a directory structure consisting of multiple empty files - at a bare minimum our application needs:
-
+* accepts two real numbers and an operator (+, -, \*, %, p) as command line arguments
+* validates the command line arguments and calls corresponding functions if an invalid input is entered
+* exits gracefully with an appropriate ERROR message
+  
 | File       	| Remarks                                          	|
 |------------	|--------------------------------------------------	|
-| main.c     	| overall command line argument processing         	|
+| main.c     	| overall command line argument processing and function calls      	|
 | main.h     	| global defines and macros                        	|
 | standard.c 	| definitions for add(), sub(), mul() and divide() 	|
 | standard.h 	| declarations for the above functions             	|
 | advanced.c 	| definitions for mod() and power()                	|
 | advanced.h 	| declarations for mod() and power()               	|
 | Makefile   	| recipes for building and compiling our program   	|
+
+Though there is no hard and fast rule to organize a multi-file C program (or a project) the following are some of the suggested best practices.
+
+* Organize your program in terms of multiple files, each file containing similar functions grouped together
+* Every source file (.c, .cpp or .C) should ideally be accompanied by a header file (.h)
+* Minimize the number of functions in a file, this makes it easy to maintain and read
+* Start by laying out a directory structure consisting of multiple empty files - at a bare minimum our application needs the files as shown in the above table
 
 ## A note on header Files
 ## Extern and static variables
