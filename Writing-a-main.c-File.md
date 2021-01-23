@@ -119,7 +119,7 @@ int  do_the_needful(options_t *options);
 ```
 A good practice (or choice of style) is to define the functions after the ```main()``` and not before. So the function prototypes need to be declared here. Early C compilers used a single-pass strategy, which meant that every symbol (variable or function name) you used in your program had to be declared before you used it. Modern compilers are nearly all multi-pass compilers that build a complete symbol table before generating code, so using function prototypes is not strictly required.
 
-### 8, 9, 10, & 11. The actual main()
+### 8, 9, 10, & 11 - the actual main()
 
 **What is the main()?**  
 
