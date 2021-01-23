@@ -13,7 +13,7 @@ Large C programs can be constructed and laid out efficiently as a collection of 
 
 ## Layout of a multi-file C project
 
-Though there is no "one right way" to divide a large program (or a project), in general one source file defines the ```main()``` while others contain function definitions. Corresponding header files declare these functions and any associated data structures, variables or constants. Global data structures and constants may be defined in a ```main.h```. In order for functions in a file *sourceFile1.c* to call a function defined in another file *sourceFile2.c*, the corresponding header file *sourceFile2.h* must be included in *sourceFile1.c*.   
+Though there is no "one right way" to divide a large program (or a project), in general one source file defines the ```main()``` while others contain function definitions. Corresponding header files declare these functions and any associated data structures, variables or constants. Global data structures and constants may be defined in a ```main.h```. In order for functions in a file *sourceFile1.c* to call a function defined in another file *sourceFile2.c*, the corresponding header file *sourceFile2.h* must be included in *sourceFile1.c*. 
 
 * **Organize your program as a collection of multiple files, each file containing similar functions grouped together:**
 	* start by laying out a directory structure consisting of multiple empty files
@@ -21,11 +21,14 @@ Though there is no "one right way" to divide a large program (or a project), in 
 		* include a Makefile with recipes to build and compile the program
 	* minimize the number of functions in a file, making it easy to maintain and read
 
-* **All functions operating on similar objects or data structures must be kept in a single source file, this promotes**
+* **All functions operating on similar objects or data structures must be kept in a single source file**
 	* re-usability of the data structure and objects of this type
 	* all related functions are stored together
 	* modifications or changes to the object require only one file to be modified
-	
+
+* **Declare once and re-use multiple times**
+	* by informing the compiler about the existence of such functions,
+
 Let us try to illustrate the above ideas by building a simple calculator application which:
 * accepts two real numbers and an operator (+, -, \*, %, p) as command line arguments
 * validates command line arguments and calls appropriate functions
