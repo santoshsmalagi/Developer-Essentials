@@ -1,12 +1,15 @@
  # Structuring a Multi-File C Program - PART I
  
-The following example illustrates the concept of multi-file C programming by calling functions defined in external files. Basically, functions are defined in their respective files and bought into the scope of ```main.c``` using ```extern``` keyword. 
+The following example illustrates the concept of multi-file C programming by referencing functions defined in external files using the ```extern``` keyword. 
  
  * ```main.c```          # processes command line arguments, references functions declared externally in other files
  * ```standard.c```      # function definitions for add(), sub(), mul(), divide()
  * ```advanced.c```      # function definitions for mod(), power()
 
-As you can see, the challenge with this approach is - you need to always declare the external functions in your current file scope using the ```extern``` keyword. This is not a suggested approach for real world programs involving hundreds of functions, where maintainability is a primary concern.
+A prototype for a function can be put in the file of code which calls the function, typically at/near the top of the file. Alternatively, the prototype can be put in a header file and an include statement for this header file inserted into the code file.  The challenge with using ```extern``` declarations is that:
+
+* the order of prototype declarations matter - i.e. a function needs to be present in the current file scope before it can be called by any other function
+* if the external function operates on data structures, variables or constants which are restricted to the file in which it is defined (i.e. static) then calling the external function would throw an error when it tries to access these data items
 
 To compile:
 
