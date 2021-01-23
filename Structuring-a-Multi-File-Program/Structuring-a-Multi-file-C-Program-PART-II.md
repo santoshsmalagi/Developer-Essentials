@@ -19,7 +19,6 @@ Though there is no hard and fast rule to organize a multi-file C program (or a p
 * Start by laying out a directory structure consisting of multiple empty files - at a bare minimum our application needs:
 
 | main.c     | overall command line argument processing         |
-|------------|--------------------------------------------------|
 | main.h     | global defines and macros                        |
 | standard.c | definitions for add(), sub(), mul() and divide() |
 | standard.h | declarations for the above functions             |
