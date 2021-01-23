@@ -19,14 +19,23 @@ Let us try to illustrate the layout of a multi-file C program by building a simp
 
 Though there is no hard and fast rule to organize a multi-file C program (or a project) the following are some of the suggested best practices:
 
-* Organize your program as a collection of multiple files, each file containing similar functions grouped together:
+* **Organize your program as a collection of multiple files, each file containing similar functions grouped together:**
 	* start by laying out a directory structure consisting of multiple empty files - at a bare minimum the files as shown above
 	* every source file (.c, .cpp or .C) should ideally be accompanied by a header file (.h)
 	* minimize the number of functions in a file, this makes it easy to maintain and read
 
 ## A note on header Files
+
+* Header guards
+	* header gaurds are an ABSOLUTE NECESSITY to avoid multiple inclusions of a single header file in a multi-file C project
+
 ## Extern and static variables
 ## Compiling a multi-file C project
+## Summary
+Writing a multi-file program in C requires a little more planning on behalf of the programmer than just a single main.c. But just a little effort up front can save a lot of time and headache when you refactor as you add functionality.
+
+To recap, I like to have a lot of files with a few short functions in them. I like to expose a small subset of the functions in those files via header files. I like to keep my constants in header files, both numeric and string constants. I love Makefiles and use them instead of Bash scripts to automate all sorts of things. I like my main() function to handle command-line argument parsing and act as a scaffold for the primary functionality of the program.
+
 ## Simple illustrative example of a multi-file C project
 
 ```Makefile
