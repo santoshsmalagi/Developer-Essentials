@@ -8,7 +8,7 @@ Though there is no hard and fast rule to organize a multi-file C program (or a p
 	* start by laying out a directory structure consisting of multiple empty files
 		* every source file (.c, .cpp or .C) should ideally be accompanied by a header file (.h)
 		* include a Makefile with recipes to build and compile the program
-	* minimize the number of functions in a file, this makes it easy to maintain and read
+	* minimize the number of functions in a file, making it easy to maintain and read
 
 Let us try to illustrate the above ideas by building a simple calculator application which:
 * accepts two real numbers and an operator (+, -, \*, %, p) as command line arguments
