@@ -2,6 +2,7 @@
 
 Large C programs can be constructed and laid out efficiently as a collection of multiple source file (.c, .cpp or .C) and corresponding header files (.h). This provides several advantages:
 
+* Readability and ease of maintainence
 * Each of the modules can be developed and tested seperately
 	* files can be compiled separately, into a \*.o file, later, all the \*.o files can be linked together to create a binary executable
 * Promotes the concept of abstraction
