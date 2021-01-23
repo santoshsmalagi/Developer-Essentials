@@ -27,7 +27,22 @@ Though there is no "one right way" to divide a large program (or a project), in 
 	* modifications or changes to the object require only one file to be modified
 
 * **Declare once and re-use multiple times**
-	* by informing the compiler about the existence of such functions,
+	* main purpose of header files is to make definitions and declarations accessible to functions in more than one file
+	* if a data structure/variable or function is supposed to be local to a file, then it must not be included in the header file 
+
+## A note on header Files
+
+* Header guards
+	* header gaurds are an ABSOLUTE NECESSITY to avoid multiple inclusions of a single header file in a multi-file C project
+
+## Extern and static variables
+## Compiling a multi-file C project
+## Summary
+Writing a multi-file program in C requires a little more planning on behalf of the programmer than just a single main.c. But just a little effort up front can save a lot of time and headache when you refactor as you add functionality.
+
+To recap, I like to have a lot of files with a few short functions in them. I like to expose a small subset of the functions in those files via header files. I like to keep my constants in header files, both numeric and string constants. I love Makefiles and use them instead of Bash scripts to automate all sorts of things. I like my main() function to handle command-line argument parsing and act as a scaffold for the primary functionality of the program.
+
+## Simple illustrative example of a multi-file C project
 
 Let us try to illustrate the above ideas by building a simple calculator application which:
 * accepts two real numbers and an operator (+, -, \*, %, p) as command line arguments
@@ -44,20 +59,6 @@ Let us try to illustrate the above ideas by building a simple calculator applica
 | advanced.h 	| declarations for mod() and power()               	|
 | Makefile   	| recipes for building and compiling our program   	|
 
-
-## A note on header Files
-
-* Header guards
-	* header gaurds are an ABSOLUTE NECESSITY to avoid multiple inclusions of a single header file in a multi-file C project
-
-## Extern and static variables
-## Compiling a multi-file C project
-## Summary
-Writing a multi-file program in C requires a little more planning on behalf of the programmer than just a single main.c. But just a little effort up front can save a lot of time and headache when you refactor as you add functionality.
-
-To recap, I like to have a lot of files with a few short functions in them. I like to expose a small subset of the functions in those files via header files. I like to keep my constants in header files, both numeric and string constants. I love Makefiles and use them instead of Bash scripts to automate all sorts of things. I like my main() function to handle command-line argument parsing and act as a scaffold for the primary functionality of the program.
-
-## Simple illustrative example of a multi-file C project
 
 ```Makefile
 
