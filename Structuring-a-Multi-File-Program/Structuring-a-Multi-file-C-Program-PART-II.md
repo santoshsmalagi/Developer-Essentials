@@ -4,8 +4,8 @@
 
 Let us try to illustrate the layout of a multi-file C program by building a simple calculator application which:
 * accepts two real numbers and an operator (+, -, \*, %, p) as command line arguments
-* validates the command line arguments and calls corresponding functions if an invalid input is entered
-* exits gracefully with an appropriate ERROR message
+* validates the command line arguments and calls appropriate functions
+* if an invalid input is entered, exits gracefully with an appropriate ERROR message
   
 | File       	| Remarks                                          	|
 |------------	|--------------------------------------------------	|
