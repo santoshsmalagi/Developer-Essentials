@@ -1,4 +1,8 @@
-Let us try to illustrate a multi-file C program by building a simple calculator application which:
+## Philosophy behind design of multi-file C Programs
+
+## Layout of a multi-file C project
+
+Let us try to illustrate the layout of a multi-file C program by building a simple calculator application which:
 
 1. accepts two real numbers and an operator (+, -, \*, %, p) as command line arguments
 2. validates the command line arguments and calls corresponding functions
@@ -6,10 +10,6 @@ Let us try to illustrate a multi-file C program by building a simple calculator 
 4. let us say the functions to carry out the basic operations - ```add(), sub(), mul()``` and ```divide()``` are declared in standard.h and defined in standard.c
 5. similarly, functions to carry out the advanced operations - ```mod()``` and ```power()``` are declared in advanced.h and defined in advanced.c
 6. finally the overall command line argument processing and function calls happen in main.c, with the global symbolic constants defined in main.h
-
-## Philosophy behind design of multi-file C Programs
-
-## Layout of a multi-file C project
 
 Though there is no hard and fast rule to organize a multi-file C program (or a project) the following are some of the suggested best practices.
 
