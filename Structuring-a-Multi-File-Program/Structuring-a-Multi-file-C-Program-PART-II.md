@@ -1,6 +1,6 @@
 ## Philosophy behind design of multi-file C Programs
 
-Large C programs can be constructed and laid out efficiently as a collection of multiple source file (.c, .cpp or .C) and corresponding header files (.h). This provides several advantages:
+Large C programs can be constructed and laid out efficiently as a collection of multiple source files (.c, .cpp or .C) and corresponding header files (.h). This provides several advantages:
 
 * Readability and ease of maintainence
 	* makes the program convenient enough to edit and modify
