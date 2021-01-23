@@ -5,7 +5,7 @@ The contents of this page are based on the original article which appeared on Op
 A program basically:
 * declares and initialzes variables and data structures, sets up the program environment
 * processes and validates command line arguments or user inputs
-* call a sequence of functions to operate on data
+* calls a sequence of functions to operate on the data
 * monitor return values from functions and take further actions based on outcome of a function call
 * output/store the results
 * post program clean up tasks - e.g. free memory, and exit gracefully
