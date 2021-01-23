@@ -122,6 +122,18 @@ struct foo {
 
 *A project using header guards must work out a coherent naming scheme for its include guards, and make sure its scheme doesn't conflict with that of any third-party headers it uses, or with the names of any globally visible macros. For this reason, most C and C++ implementations provide a non-standard* ```#pragma once``` *directive. This directive, inserted at the top of a header file, will ensure that the file is included only once.*
 
+### Computed Includes
+
+Sometimes a decision has to be made regarding which header file to inlcude depending on - the compiler flags or conditional parameters, architecture of the target machine etc. In such a situation the ```#if``` pre-processor construct can be used as follows:
+
+```C
+#if SYSTEM_1
+   # include "system_1.h"
+#elif SYSTEM_2
+   # include "system_2.h"
+#elif SYSTEM_3
+```
+
 ## Extern and static variables
 ## Compiling a multi-file C project
 ## Summary
