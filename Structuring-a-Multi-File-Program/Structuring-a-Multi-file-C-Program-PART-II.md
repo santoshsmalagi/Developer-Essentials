@@ -1,6 +1,12 @@
 ## Philosophy behind design of multi-file C Programs
 
-Large C programs can be constructed and laid out efficiently as a collection of multiple source file (.c, .cpp or .C) and corresponding header files (.h).  This allows any file that includes the header to access the global variables declared in the header, and to call functions defined in the source file. Each of the files can be compiled separately, into a \*.o file.  Later, all the \*.o files can be linked together to create a binary executable.  Each file can have access to a set of names that are private to that file, and to other names that are shared across all the files of the complete program.  This allows the program to be built and modified in pieces, often called “modules”, which can be tested separately, and later combined into the final product.
+Large C programs can be constructed and laid out efficiently as a collection of multiple source file (.c, .cpp or .C) and corresponding header files (.h). This provides several advantages:
+
+* Each of the modules can be developed and tested seperately
+	* files can be compiled separately, into a \*.o file, later, all the \*.o files can be linked together to create a binary executable
+* Promotes the concept of abstraction
+	* only exposes the Application Programming Interface (API) for use by functions external to a file 
+	* each file can have access to a set of names that are private to that file, and to other names that are shared across all the files of the complete program
 
 ## Layout of a multi-file C project
 
