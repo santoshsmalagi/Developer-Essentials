@@ -22,7 +22,7 @@ Though there is no hard and fast rule to organize a multi-file C program (or a p
 * Organize your program in terms of multiple files, each file containing similar functions grouped together
 * Every source file (.c, .cpp or .C) should ideally be accompanied by a header file (.h)
 * Minimize the number of functions in a file, this makes it easy to maintain and read
-* Start by laying out a directory structure consisting of multiple empty files - at a bare minimum our application needs the files as shown in the above table
+* Start by laying out a directory structure consisting of multiple empty files - at a bare minimum our application needs the files as shown above
 
 ## A note on header Files
 ## Extern and static variables
