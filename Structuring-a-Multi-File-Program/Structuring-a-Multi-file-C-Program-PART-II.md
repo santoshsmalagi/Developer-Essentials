@@ -18,13 +18,15 @@ Though there is no hard and fast rule to organize a multi-file C program (or a p
 * Minimize the number of functions in a file, this makes it easy to maintain and read
 * Start by laying out a directory structure consisting of multiple empty files - at a bare minimum our application needs:
 
-| main.c     | overall command line argument processing         |
-| main.h     | global defines and macros                        |
-| standard.c | definitions for add(), sub(), mul() and divide() |
-| standard.h | declarations for the above functions             |
-| advanced.c | definitions for mod() and power()                |
-| advanced.h | declarations for mod() and power()               |
-| Makefile   | recipes for building and compiling our program   |
+| File       	| Remarks                                          	|
+|------------	|--------------------------------------------------	|
+| main.c     	| overall command line argument processing         	|
+| main.h     	| global defines and macros                        	|
+| standard.c 	| definitions for add(), sub(), mul() and divide() 	|
+| standard.h 	| declarations for the above functions             	|
+| advanced.c 	| definitions for mod() and power()                	|
+| advanced.h 	| declarations for mod() and power()               	|
+| Makefile   	| recipes for building and compiling our program   	|
 
 ## A note on header Files
 ## Extern and static variables
