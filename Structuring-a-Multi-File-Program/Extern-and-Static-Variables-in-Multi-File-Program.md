@@ -1,4 +1,4 @@
- # Structuring a Multi-File C Program - PART I
+ # Extern and Static Variables in a Multi-File Program
  
 The following example illustrates the concept of multi-file C programming by referencing functions defined in external files using the ```extern``` keyword. 
  
