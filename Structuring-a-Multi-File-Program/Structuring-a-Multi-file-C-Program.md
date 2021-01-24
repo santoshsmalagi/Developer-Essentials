@@ -31,7 +31,7 @@ Though there is no "one right way" to divide a large program (or a project), in 
 	* if a data structure/variable or function is supposed to be local to a file, then it must not be included in the header file 
 	* every source file which uses definitions from *foo.h* must contain an "include" statement for *foo.h*, this directs the compiler to read the code in foo.h (i.e. function definitions from *foo.c*) when it compiles the source file
 
-* **Always include 'Header Gaurds' in header files.**
+* **Always include 'Header Guard' in header files.**
 * **Header files must never include 'function definitions', only 'function declarations'**
 * **Header files are not fed to the compiler unless there is a need to use Pre-Compiled headers**
 	* Header files are intended to be included into implementation files, not fed to the compiler as independent translation units
@@ -55,7 +55,7 @@ If a piece of source file is named *sourceFile.c*, the corresponding header file
   #include "filename"  - to include programmer-defined header files, files are searched first in the current directory <br>
                          then in the system directories
 
-### 3.1. Header Gaurds
+### 3.1. Header Guard
 
 The ```#ifdef```, ```#define```, ```#endif``` construction is collectively known as a "header guard." 
 
@@ -73,7 +73,7 @@ The ```#ifdef```, ```#define```, ```#endif``` construction is collectively known
 #endif
 ```
 
-This keeps the C compiler from including a header file more than once per file. In case of a multi file C project it is common for header files to include other header files.  If this is done extensively, it could lead to a situation in which the same header declarations are included multiple times.  This is probably OK for function prototypes, and for variable declarations, but it produces illegal C programs if enums, structs, or unions are repeated, since the member names and enum constants defined by these declarations become multiply defined.  A header gaurd is therefore an **ABSOLUTE MUST** when creating header files.
+This keeps the C compiler from including a header file more than once per file. In case of a multi file C project it is common for header files to include other header files.  If this is done extensively, it could lead to a situation in which the same header declarations are included multiple times.  This is probably OK for function prototypes, and for variable declarations, but it produces illegal C programs if enums, structs, or unions are repeated, since the member names and enum constants defined by these declarations become multiply defined.  A header guard is therefore an **ABSOLUTE MUST** when creating header files.
 
 Consider the following example:
 
@@ -108,7 +108,7 @@ struct foo {
 
 ```
 
-The net result is that the file "child.c" has indirectly included two copies of ```struct foo``` resulting in a compilation error, since the structure type ```foo``` will thus be defined twice. This problem can be fixed by including a header gaurd for ```grandparent.h```.
+The net result is that the file "child.c" has indirectly included two copies of ```struct foo``` resulting in a compilation error, since the structure type ```foo``` will thus be defined twice. This problem can be fixed by including a header guard for ```grandparent.h```.
 
 ```C
 
