@@ -49,7 +49,7 @@ If a piece of source file is named *sourceFile.c*, the corresponding header file
 * include statements for other files, including C/C++ library files (e.g. iostream.h, math.h)
 * comments associated with all of the above 
 
-**In general, header files should not contain function definitions, only function decrlarations. Exceptions involve very short functions, so short that they can be included in a class definition or declared as inline functions. These functions do trivial things such as increment a counter, return the larger of two numbers, or return the value of a private data member for a class.  If the function does something non-trivial, it belongs in a source file.**  
+**In general, header files should not contain function definitions, only function declarations. Exceptions involve very short functions, so short that they can be included in a class definition or declared as inline functions. These functions do trivial things such as increment a counter, return the larger of two numbers, or return the value of a private data member for a class.  If the function does something non-trivial, it belongs in a source file.**  
 
 > #include<filename.h> - includes standard library header files, searched for in a set of pre-determined system directories <br>
   #include "filename"  - to include programmer-defined header files, files are searched first in the current directory <br>
