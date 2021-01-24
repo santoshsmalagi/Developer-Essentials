@@ -32,7 +32,7 @@ Though there is no "one right way" to divide a large program (or a project), in 
 	* every source file which uses definitions from *foo.h* must contain an "include" statement for *foo.h*, this directs the compiler to read the code in foo.h (i.e. function definitions from *foo.c*) when it compiles the source file
 
 * **Always include 'Header Gaurds' in header files.**
-* **Header files must never include 'function definitions', only 'function declarataions'**
+* **Header files must never include 'function definitions', only 'function declarations'**
 * **Header files are not fed to the compiler unless there is a need to use Pre-Compiled headers**
 	* Header files are intended to be included into implementation files, not fed to the compiler as independent translation units
 	* To make builds faster, GCC allows you to precompile a header file - [Pre-Compiled Headers](https://gcc.gnu.org/onlinedocs/gcc/Precompiled-Headers.html)
