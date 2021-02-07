@@ -1,4 +1,4 @@
-## 1. Philosophy behind design of multi-file C Programs
+# Philosophy behind design of multi-file C Programs
 
 Large C programs can be constructed and laid out efficiently as a collection of multiple source files (.c, .cpp or .C) and corresponding header files (.h). This provides several advantages:
 
@@ -11,7 +11,7 @@ Large C programs can be constructed and laid out efficiently as a collection of 
 	* exposes the Application Programming Interface (API) for use by functions external to a file 
 	* each file can have access to a set of names that are private to that file, and to other names that are shared across all the files of the complete program
 
-## 2. Layout of a multi-file C program
+## 1. Layout of a multi-file C program
 
 Though there is no "one right way" to divide a large program (or a project), in general one source file defines the ```main()``` while others contain function definitions. Corresponding header files declare these functions and any associated data structures, variables or constants. Global data structures and constants may be defined in a ```main.h```. In order for functions in a file *sourceFile1.c* to call a function defined in another file *sourceFile2.c*, the corresponding header file *sourceFile2.h* must be included in *sourceFile1.c*. 
 
@@ -38,7 +38,7 @@ Though there is no "one right way" to divide a large program (or a project), in 
 	* To make builds faster, GCC allows you to precompile a header file - [Pre-Compiled Headers](https://gcc.gnu.org/onlinedocs/gcc/Precompiled-Headers.html)
 	* These can include system headers which are not going to change, or header files in very large C++ projects
 
-## 3. A note on header Files
+## 2. A note on header Files
 
 If a piece of source file is named *sourceFile.c*, the corresponding header file is traditionally named *sourceFile.h*. The main purpose of header files is to make definitions and declarations accessible to functions in more than one files. A header file typically contains:
 
@@ -55,7 +55,7 @@ If a piece of source file is named *sourceFile.c*, the corresponding header file
   #include "filename"  - to include programmer-defined header files, files are searched first in the current directory <br>
                          then in the system directories
 
-### 3.1. Header Guard
+### 2.1. Header Guard
 
 The ```#ifdef```, ```#define```, ```#endif``` construction is collectively known as a "header guard." 
 
@@ -128,7 +128,7 @@ struct foo {
 
 *A project using header guards must work out a coherent naming scheme for its include guards, and make sure its scheme doesn't conflict with that of any third-party headers it uses, or with the names of any globally visible macros. For this reason, most C and C++ implementations provide a non-standard* ```#pragma once``` *directive. This directive, inserted at the top of a header file, will ensure that the file is included only once.*
 
-### 3.2 Computed Includes
+### 2.2 Computed Includes
 
 Sometimes a decision has to be made regarding which header file to inlcude depending on - the compiler flags or conditional parameters, architecture of the target machine etc. In such a situation the ```#if``` pre-processor construct can be used as follows:
 
@@ -139,7 +139,7 @@ Sometimes a decision has to be made regarding which header file to inlcude depen
    # include "system_2.h"
 #elif SYSTEM_3
 ```
-## 4. Compiling a multi-file C project
+## 3. Compiling a multi-file C project
 
 In general, to compile a program consisting of multiple files, start by compiling each of the 'non-main' source files with a *-c* flag to generate an object file for each of them. The *-c* flag tells the compiler to produce an object file ```(\*.o)``` that can be linked together with other compiled object files.  It also prevents the compiler from complaining about the lack of a ```main()``` function and about use of functions that are not defined (i.e. because they are defined in other code files). The next step is to compile the ```main.c``` file linking all the object files produced to create the binary executable.
 
@@ -157,7 +157,7 @@ $ cc -Wall -o calc main.c standard.c advanced.c -lm
 
 Note the use of `-lm` flag during compilation required to successfully link to the math library.
 
-## 5. Simple illustrative example of a multi-file C project
+## 4. Simple illustrative example of a multi-file C project
 
 Let us try to illustrate the above ideas by building a simple calculator application which:
 * accepts two real numbers and an operator (+, -, \*, %, p) as command line arguments
@@ -381,6 +381,6 @@ double power(double num1, double num2);
 #endif
 
 ```
-## 6. Summary
+## 5. Summary
 
 A multi-file C program improves the readabililty and makes it easy to modify a large program. Start by creating a directory structure of empty source files (.c) and header files (.h) and a Makefile. Group related functions together, and declare them in .h files and define them in a .c file. This exposes the functions in a file to other functions declared else where in other files. Also ensure that functions operating on data structures local to a file stay together. Also define numeric and string constants, and macros in header files. Finally, the ```main.c``` basically defines the ```main()``` which processes the command line arguments and handles function calls as discussed here - [Writing-a-good-main.c-File](/Structuring-a-Multi-File-Program/Writing-a-good-main.c-File.md).
