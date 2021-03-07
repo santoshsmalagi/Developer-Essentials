@@ -49,6 +49,10 @@ This directive is equivalent to:
 
 https://www.keil.com/support/man/docs/c51/c51_pp_conditionals.htm  
 https://gcc.gnu.org/onlinedocs/gcc/Preprocessor-Options.html
+https://stackoverflow.com/questions/26396915/gcc-debug-flags-scons
+https://stackoverflow.com/questions/2754966/cflags-vs-cppflags
+https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html
+https://en.wikipedia.org/wiki/CFLAGS
 https://www.eskimo.com/~scs/cclass/notes/sx9c.html  
 https://www.learncpp.com/cpp-tutorial/more-debugging-tactics/  
 https://cboard.cprogramming.com/c-programming/153836-what-exactly-does-sharpifdef-debug-do.html  
