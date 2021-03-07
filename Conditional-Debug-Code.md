@@ -1,6 +1,6 @@
 # Conditional Debugging
 
-## Enabling simple conditional debugging with #ifdef
+## 1. Enabling simple conditional debugging with #ifdef
 
 ```C
 
@@ -55,4 +55,68 @@ main()...
 Hello Debug!
 main() returning...
 ```
+
+If you comment out the ```#define``` for ```DEBUG``` and then compile, you will not see the debug code being printed:
+
+```Bash
+Hello Debug!
+```
+
+## 1. Enabling debug by passing debug variables to gcc during compilation:
+If you just pass the debug variable as ```D<DEBUGVAR>``` which in this case is ```DDEBUG``` to gcc during compilation, then debug code is compiled, otherwise it gets ommitted during the pre-processing step. For example:
+
+
+```C
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/***************************************************************** 
+* gccDebug.c                                                     *
+* enable or disable conditional debug based on flags passed      *
+* to the compiler.                                               *
+******************************************************************/ 
+
+#define DEBUG 
+
+int main(int argc, char *argv[])
+{
+  
+  #ifdef DEBUG
+  printf("main()...\n");
+  #endif
+
+  printf("Hello Debug!\n");
+  
+  #ifdef DEBUG
+  printf("main() returning...\n");
+  #endif
+
+  return 0;
+}
+
+```
+
+to enable debug statements compile your source as follows:
+
+```Bash
+gcc -DDEBUG -o simpleDebug simpleDebug.c
+```
+
+to disable debug statements do not pass the debug flag DDEBUG to gcc:
+
+```Bash
+gcc o simpleDebug simpleDebug.c
+```
+
+
+
+
+
+
+
+
+
+
+
 
