@@ -1,5 +1,50 @@
 # Conditional Debugging
 
+This article discusses the use of conditional compilation for enabling or disabling debug code in your program. Conditional compilation directives allow you to designate parts of the program for the compiler to ignore. These parts are not compiled and no object code is generated for them.The test performed by a conditional directive is done at compile-time by the compiler. Depending on the result of the test, source code is either included or excluded from the compilation. There are several reasons to use conditional compilation in your program.
+
+* program may require different code depending on which device or architecture you use. In some cases, library routines may exist in one configuration that do not exist in another. Conditional compilation allows you to handle such a situation by substituting alternate functions with the unavailable library routines.
+* Many complex functions require comprehensive test code to verify or validate I/O and proper operation. Intermediate values may be tested and output as well. After verification, you may wish to retain the test cases for future reference. You can include them in conditional blocks you control with a macro:
+
+```C
+#define DEBUG 0
+```
+
+The following test case compiles only when DEBUG is defined to a value other than 0.
+
+```C
+#if DEBUG   /*** Test Case ***/
+.
+.
+.
+#endif
+```
+
+Often, it is necessary to replace or rewrite certain sections of a working program. Conditionals allow you to retain old code in the source file by placing it in a conditional block. For example:
+
+```C
+#if 0   /*** Old code from 1999 ***/
+.
+.
+.
+#endif
+```
+
+The ```#ifdef``` directive is a special case of the ```#if``` directive that tests a name to determine if it is defined.
+
+```#ifdef name```
+
+This directive is equivalent to:
+
+```#if defined(name)```
+
+```#ifndef``` - same as ```#ifdef``` but the evaluation succeeds if the definition is not defined.
+
+#ifndef name
+
+This directive is equivalent to:
+
+```#if !defined(name)```
+
 ## 1. Enabling simple conditional debugging with #ifdef
 
 ```C
