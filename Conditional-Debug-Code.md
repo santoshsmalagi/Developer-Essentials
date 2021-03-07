@@ -45,8 +45,23 @@ This directive is equivalent to:
 
 ```#if !defined(name)```
 
+## Reorganize these links in prority order
+
 https://www.keil.com/support/man/docs/c51/c51_pp_conditionals.htm  
-https://www.eskimo.com/~scs/cclass/notes/sx9c.html
+https://gcc.gnu.org/onlinedocs/gcc/Preprocessor-Options.html
+https://www.eskimo.com/~scs/cclass/notes/sx9c.html  
+https://www.learncpp.com/cpp-tutorial/more-debugging-tactics/  
+https://cboard.cprogramming.com/c-programming/153836-what-exactly-does-sharpifdef-debug-do.html  
+http://boost-log.sourceforge.net/libs/log/doc/html/index.html
+https://stackoverflow.com/questions/24195123/using-define-in-c-with-no-value  
+https://stackoverflow.com/questions/1079832/how-can-i-configure-my-makefile-for-debug-and-release-builds  
+https://stackoverflow.com/questions/25797287/how-do-i-add-a-debug-option-to-makefile/25801355  
+http://web.mit.edu/rhel-doc/3/rhel-gcc-en-3/debugging-options.html  
+https://stackoverflow.com/questions/6465557/where-is-debug-defined-in-the-code 
+https://stackoverflow.com/questions/2290509/debug-vs-ndebug  
+https://bytes.com/topic/c/answers/130027-difference-between-debug-ndebug
+https://stackoverflow.com/questions/28737776/standard-way-for-writing-a-debug-mode-in-c  
+https://stackoverflow.com/questions/41320050/ddebug-0-doesnt-work
 
 ## 1. Enabling simple conditional debugging
 
