@@ -45,7 +45,10 @@ This directive is equivalent to:
 
 ```#if !defined(name)```
 
-## 1. Enabling simple conditional debugging with #ifdef
+https://www.keil.com/support/man/docs/c51/c51_pp_conditionals.htm
+https://www.eskimo.com/~scs/cclass/notes/sx9c.html
+
+## 1. Enabling simple conditional debugging
 
 ```C
 
@@ -107,9 +110,8 @@ If you comment out the ```#define``` for ```DEBUG``` and then compile, you will 
 Hello Debug!
 ```
 
-## 1. Enabling debug by passing debug variables to gcc during compilation:
+## 2. Enabling debug by passing debug variables to gcc during compilation:
 If you just pass the debug variable as ```D<DEBUGVAR>``` which in this case is ```DDEBUG``` to gcc during compilation, then debug code is compiled, otherwise it gets ommitted during the pre-processing step. For example:
-
 
 ```C
 
@@ -121,8 +123,6 @@ If you just pass the debug variable as ```D<DEBUGVAR>``` which in this case is `
 * enable or disable conditional debug based on flags passed      *
 * to the compiler.                                               *
 ******************************************************************/ 
-
-#define DEBUG 
 
 int main(int argc, char *argv[])
 {
@@ -141,7 +141,6 @@ int main(int argc, char *argv[])
 }
 
 ```
-
 to enable debug statements compile your source as follows:
 
 ```Bash
@@ -154,10 +153,39 @@ to disable debug statements do not pass the debug flag DDEBUG to gcc:
 gcc o simpleDebug simpleDebug.c
 ```
 
+## 3. Conditional debug by using debug print macros
 
+```C
 
+#include <stdio.h>
+#include <stdlib.h>
 
+#ifdef DEBUG
+  #define DEBUG_PRINT(X) printf(X)
+#else
+  #define DEBUG_PRINT(X)
+#endif
 
+int main(int argc, char *argv[])
+{
+  
+  DEBUG_PRINT("main()...\n");
+
+  printf("Hello Debug!\n");
+  
+  DEBUG_PRINT("main() returning...\n");
+
+  return 0;
+
+}
+
+```
+
+To enable debugging compile your code as:
+
+```Bash
+gcc -DDEBUG -o simpleDebug simpleDebug.c
+```
 
 
 
