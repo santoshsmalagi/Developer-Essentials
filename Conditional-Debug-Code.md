@@ -45,22 +45,22 @@ This directive is equivalent to:
 
 ```#if !defined(name)```
 
-https://www.keil.com/support/man/docs/c51/c51_pp_conditionals.htm
+https://www.keil.com/support/man/docs/c51/c51_pp_conditionals.htm  
 https://www.eskimo.com/~scs/cclass/notes/sx9c.html
 
 ## 1. Enabling simple conditional debugging
 
 ```C
 
-#include <stdio.h>
-#include <stdlib.h>
-
 /***************************************************************** 
 * simpleDebug.c                                                  *
 * Either of these three 'defines will have the same effect,      * 
-* the pre-processor only looks whether DEBUG is defined,         *
+* the #ifdef pre-processor only looks whether DEBUG is defined,  *
 * and does not really care about its value.                      *
 ******************************************************************/ 
+
+#include <stdio.h>
+#include <stdlib.h>
 
 #define DEBUG 
 // #define DEBUG 1
@@ -115,14 +115,14 @@ If you just pass the debug variable as ```D<DEBUGVAR>``` which in this case is `
 
 ```C
 
-#include <stdio.h>
-#include <stdlib.h>
-
 /***************************************************************** 
 * gccDebug.c                                                     *
 * enable or disable conditional debug based on flags passed      *
 * to the compiler.                                               *
 ******************************************************************/ 
+
+#include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char *argv[])
 {
@@ -157,6 +157,12 @@ gcc o simpleDebug simpleDebug.c
 
 ```C
 
+/***************************************************************** 
+* gccMacroDebug.c                                                *
+* enable or disable conditional debug based on flags passed      *
+* to the compiler, and debug statements defined as macros.       *
+******************************************************************/ 
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -186,10 +192,3 @@ To enable debugging compile your code as:
 ```Bash
 gcc -DDEBUG -o simpleDebug simpleDebug.c
 ```
-
-
-
-
-
-
-
