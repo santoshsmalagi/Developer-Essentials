@@ -264,7 +264,7 @@ int main(int argc, char *argv[])
   DEBUG_PRINT("main() returning...\n");
 
   #ifdef DEBUG_ENABLE
-  DEBUG_PRINT("DE was defined during compilation...\n");
+  printf("DE was defined during compilation...\n");
   #endif
 
   return 0;
