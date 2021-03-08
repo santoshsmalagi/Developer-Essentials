@@ -238,3 +238,35 @@ In order to enable debug features associated with both these definitions use:
 ```gcc -DDEBUG -DDE -o gccMacroDebug gccMacroDebug.c``` or
 ```gcc -D DEBUG -D DE -o gccMacroDebug gccMacroDebug.c```
 
+The following program illustrates this:
+
+```C
+#include <stdio.h>
+#include <stdlib.h>
+
+#ifdef DEBUG
+#define DEBUG_PRINT(X) printf(X)
+#else
+#define DEBUG_PRINT(X)
+#endif
+
+#ifdef DE
+#define DEBUG_ENABLE
+#endif
+
+int main(int argc, char *argv[])
+{
+  
+  DEBUG_PRINT("main()...\n");
+
+  printf("Hello Debug!\n");
+  
+  DEBUG_PRINT("main() returning...\n");
+
+  #ifdef DEBUG_ENABLE
+  DEBUG_PRINT("DE was defined during compilation...\n");
+
+  return 0;
+
+}
+```
