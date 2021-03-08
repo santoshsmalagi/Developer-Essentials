@@ -211,3 +211,30 @@ To enable debugging compile your code as:
 ```Bash
 gcc -DDEBUG -o simpleDebug simpleDebug.c
 ```
+
+The `-D` option in gcc controls the C pre-processor which runs prior to actual C compilation. 
+
+```
+-D name - Predefine name as a macro, with definition 1.
+-D name=definition - The contents of definition are tokenized and processed as if they appeared a ‘#define’ directive, suggested to include definition in single quotes.
+```
+
+Now suppose that you had the following definition instead of the above in your source file:
+
+```C
+#ifdef DEBUG
+#define DEBUG_PRINT(X) printf(X)
+#else
+#define DEBUG_PRINT(X)
+#endif
+
+#ifdef DE
+#define DEBUG_ENABLE
+#endif
+```
+
+In order to enable debug features associated with both these definitions use:
+
+```gcc -DDEBUG -DDE -o gccMacroDebug gccMacroDebug.c``` or
+```gcc -D DEBUG -D DE -o gccMacroDebug gccMacroDebug.c```
+
