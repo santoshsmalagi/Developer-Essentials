@@ -235,7 +235,7 @@ Now suppose that you had the following definition instead of the above in your s
 
 In order to enable debug features associated with both these definitions use:
 
-```gcc -DDEBUG -DDE -o gccMacroDebug gccMacroDebug.c``` or
+```gcc -DDEBUG -DDE -o gccMacroDebug gccMacroDebug.c``` or  
 ```gcc -D DEBUG -D DE -o gccMacroDebug gccMacroDebug.c```
 
 The following program illustrates this:
