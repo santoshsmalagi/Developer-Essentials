@@ -4,7 +4,14 @@ After you edit your source code with a text-editor, the next step is to to compi
 
 ```Shell
 g++ -std=<std> -o <executable> <src1.cpp> [src2.cpp ...]              # to compile witha specific version of C++
-g++ -Wall -g -o <executable> <src1.cpp> [src2.cpp ...]                # compile with warnings and -g flags to enable debug build (i.e. include debugging symbols)
+```
+
+In order to debug an executable, it must be compiled with –g flag to save the symbol table. The symbol table contains the list of memory addresses corresponding to the variables and various machine instructions.
+
+```Shell
+gcc -Wall –g -o <executable_name>  <source files>
+gcc –Wall –g –Og –o <executable_name> <source files>
+gcc –Wall –std=C++17 –g –Og –o <executable_name> <source files>
 ```
 
 Run the program as follows:
