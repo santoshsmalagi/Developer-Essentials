@@ -10,8 +10,8 @@ In order to debug an executable, it must be compiled with –g flag to save the 
 
 ```Shell
 gcc -Wall –g -o <executable_name>  <source files>
-gcc –Wall –g –Og –o <executable_name> <source files>
-gcc –Wall –std=C++17 –g –Og –o <executable_name> <source files>
+gcc –Wall –Og –o <executable_name> <source files>
+gcc –Wall –std=C++17 –Og –o <executable_name> <source files>
 ```
 
 Run the program as follows:
