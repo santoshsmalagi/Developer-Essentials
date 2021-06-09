@@ -65,6 +65,28 @@ Run the program as follows:
 ./<executable>
 ```
 
+## A Summary of GCC Command Options
+
+* Overall Options
+* C language Options
+* C++ Language Options
+* Diagnostic Message Formating Options
+* Warning Options
+* Static Analyzer Options
+* Debugging Options
+* Optimization Options
+* Program Instrumentation Options
+* Pre-processor Options
+* Assembler Options
+* Linker Options
+* Directory Options
+* Code Generation Options
+* Others
+ * Developer Options
+ * Machine Dependent Options
+## Common File Formats
+## Difference in behaviour - cc vs g++
+
 https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html  
 https://www3.ntu.edu.sg/home/ehchua/programming/index.html  
 http://web.cs.ucla.edu/classes/fall14/cs143/project/cpp/gcc-intro.html  
