@@ -1,6 +1,6 @@
 # GCC - the Essentials
 
-# What is the gcc?
+## What is the GCC?
 
 GCC stands for “GNU Compiler Collection”. GCC is an integrated distribution of compilers for several major programming languages. These languages currently include C, C++,
 Objective-C, Objective-C++, Fortran, Ada, D, Go, and BRIG (HSAIL).  
@@ -12,8 +12,17 @@ The language-independent component of GCC includes the majority of the optimizer
 Historically, compilers for many languages, including C++ and Fortran, have been implemented as “preprocessors” which emit another high level language such as C. None of
 the compilers included in GCC are implemented this way; they all generate machine code directly.
 
+#### C and C++ Standards supported by GCC
+
+|  C Standard |  Language option  |
+|:-----------:|:-----------------:|
+| ANSI or C90 | -ansi or -std=c90 |
+|     C99     |      -std=c99     |
+|     C11     |      -std=c11     |
+|     C17     |      -std=c17     |
 
 
+## Compiling with GCC
 
 After you edit your source code with a text-editor, the next step is to to compile your program using gcc.  
 
