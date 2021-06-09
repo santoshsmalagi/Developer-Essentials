@@ -14,7 +14,7 @@ the compilers included in GCC are implemented this way; they all generate machin
 
 #### C Standards supported by GCC
 
-GCC supports all C standards staring ANSI C Standard in 1990 upto more recent C2X standard, which has mostly experimental support. GCC also provides some extensions to the C language - GNU Extensions that, on rare occasions conflict with the C standard.
+GCC supports all C standards starting ANSI C Standard in 1990 upto more recent C2X standard, which has mostly experimental support. GCC also provides some extensions to the C language - GNU Extensions that, on rare occasions conflict with the C standard. Use of the ‘-std’ options listed below disables these extensions where they conflict with the C standard version selected.
 
 |  C Standard |  Language option  | GNU Extension |
 |:-----------:|:-----------------:|:-------------:|
@@ -28,7 +28,7 @@ GCC supports all C standards staring ANSI C Standard in 1990 upto more recent C2
 
 #### C++ Standards supported by GCC
 
-GCC supports the original ISO C++ standard published in 1998, and the 2011, 2014, 2017 and mostly 2020 revisions.
+GCC supports the original ISO C++ standard published in 1998, and the 2011, 2014, 2017 and mostly 2020 revisions. By default, GCC also provides some additional extensions to the C++ language that on rare occasions conflict with the C++ standard. Use of the ‘-std’ options listed below disables these extensions where they they conflict with the C++ standard version selected.
 
 |        C++ Standard       |   Language option   | GNU Extension |
 |:-------------------------:|:-------------------:|---------------|
@@ -40,6 +40,7 @@ GCC supports the original ISO C++ standard published in 1998, and the 2011, 2014
 |           C++20           |      -std=c++20     | -std=gnu++20  |
 
 > *The default, if no C language dialect options are given, is ‘-std=gnu++17’.*
+
 
  ## Compiling with GCC
 
