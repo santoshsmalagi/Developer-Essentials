@@ -12,7 +12,7 @@ The language-independent component of GCC includes the majority of the optimizer
 Historically, compilers for many languages, including C++ and Fortran, have been implemented as “preprocessors” which emit another high level language such as C. None of
 the compilers included in GCC are implemented this way; they all generate machine code directly.
 
-#### C and C++ Standards supported by GCC
+#### C Standards supported by GCC
 
 |  C Standard |  Language option  |
 |:-----------:|:-----------------:|
@@ -20,7 +20,19 @@ the compilers included in GCC are implemented this way; they all generate machin
 |     C99     |      -std=c99     |
 |     C11     |      -std=c11     |
 |     C17     |      -std=c17     |
+|     C2X     |      -std=c2x     |
 
+#### C++ Standards supported by GCC
+
+GCC supports the original ISO C++ standard published in 1998, and the 2011, 2014, 2017 and mostly 2020 revisions.
+
+|  C++ Standard |  Language option  |
+|:-----------:|:-----------------:|
+| ANSI or C90 | -ansi or -std=c90 |
+|     C99     |      -std=c99     |
+|     C11     |      -std=c11     |
+|     C17     |      -std=c17     |
+|     C2X     |      -std=c2x     |
 
 ## Compiling with GCC
 
