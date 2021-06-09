@@ -44,7 +44,7 @@ GCC supports the original ISO C++ standard published in 1998, and the 2011, 2014
 
  ## Compiling with GCC
 
-After you edit your source code with a text-editor, the next step is to to compile your program using gcc.  
+After you edit your source code with a text-editor, the next step is to to compile your program using GCC.  When you invoke GCC, it normally does preprocessing, compilation, assembly and linking.
 
 
 ```Shell
