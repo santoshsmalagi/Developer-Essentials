@@ -7,7 +7,7 @@ Objective-C, Objective-C++, Fortran, Ada, D, Go, and BRIG (HSAIL).
 
 > *When we talk about compiling one of those languages, we might refer to that compiler by its own name, or as GCC. Either is correct.*
 
-The language-independent component of GCC includes the majority of the optimizers, as well as the *“back ends”* that generate machine code for various processors.  The part of a compiler that is specific to a particular language is called the *“front end”*. For example the C front-end is called CC (or simply GCC), the C++ compiler is G++, the Ada compiler is GNAT, and so on.  
+The language-independent component of GCC includes the majority of the optimizers, as well as the *“back ends”* that generate machine code for various processors.  The part of a compiler that is specific to a particular language is called the *“front end”*. For example the C front-end is called CC, the C++ compiler is G++, the Ada compiler is GNAT, and so on.  
 
 Historically, compilers for many languages, including C++ and Fortran, have been implemented as “preprocessors” which emit another high level language such as C. None of
 the compilers included in GCC are implemented this way; they all generate machine code directly.
