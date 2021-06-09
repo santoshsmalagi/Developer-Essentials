@@ -14,13 +14,17 @@ the compilers included in GCC are implemented this way; they all generate machin
 
 #### C Standards supported by GCC
 
-|  C Standard |  Language option  |
-|:-----------:|:-----------------:|
-| ANSI or C90 | -ansi or -std=c90 |
-|     C99     |      -std=c99     |
-|     C11     |      -std=c11     |
-|     C17     |      -std=c17     |
-|     C2X     |      -std=c2x     |
+GCC supports all C standards staring ANSI C Standard in 1990 upto more recent C2X standard, which has mostly experimental support. GCC also provides some extensions to the C language - GNU Extensions that, on rare occasions conflict with the C standard.
+
+|  C Standard |  Language option  | GNU Extension |
+|:-----------:|:-----------------:|:-------------:|
+| ANSI or C90 | -ansi or -std=c90 |  -std=gnu90   |
+|     C99     |      -std=c99     |  -std=gnu99   |
+|     C11     |      -std=c11     |  -std=gnu03   |
+|     C17     |      -std=c17     |  -std=gnu17   |
+|     C2X     |      -std=c2x     |  -std=gnu2x   |
+
+> *The default, if no C language dialect options are given, is ‘-std=gnu17’.*
 
 #### C++ Standards supported by GCC
 
@@ -35,11 +39,9 @@ GCC supports the original ISO C++ standard published in 1998, and the 2011, 2014
 |           C++17           |      -std=c++17     | -std=gnu++17  |
 |           C++20           |      -std=c++20     | -std=gnu++20  |
 
-#### What is the default if no standard is specified?
+> *The default, if no C language dialect options are given, is ‘-std=gnu++17’.*
 
-By default, GCC provides some extensions to the C/C++ language that, on rare occasions conflict with the corresponding C/C++ standard. For 
-
-## Compiling with GCC
+ ## Compiling with GCC
 
 After you edit your source code with a text-editor, the next step is to to compile your program using gcc.  
 
