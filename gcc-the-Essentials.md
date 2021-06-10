@@ -65,6 +65,21 @@ Run the program as follows:
 ./<executable>
 ```
 
+## Difference in behaviour - cc vs g++
+When you compile C++ programs, you should invoke GCC as g++ instead.
+
+C++ source files conventionally use one of the suffixes ‘.C’, ‘.cc’, ‘.cpp’, ‘.CPP’, ‘.c++’,
+‘.cp’, or ‘.cxx’; C++ header files often use ‘.hh’, ‘.hpp’, ‘.H’, or (for shared template code)
+‘.tcc’; and preprocessed C++ files use the suffix ‘.ii’. GCC recognizes files with these
+names and compiles them as C++ programs even if you call the compiler the same way as
+for compiling C programs (usually with the name gcc).
+
+However, the use of gcc does not add the C++ library. g++ is a program that calls GCC
+and automatically specifies linking against the C++ library. It treats ‘.c’, ‘.h’ and ‘.i’ files
+as C++ source files instead of C source files unless ‘-x’ is used. This program is also useful
+when precompiling a C header file with a ‘.h’ extension for use in C++ compilations. On
+many systems, g++ is also installed with the name c++.
+
 ## A Summary of GCC Command Options
 
 Most of the command-line options that you can use with GCC are useful for C programs; when an option is only useful with another language (usually C++), the explanation says
@@ -217,10 +232,40 @@ while maintaining fast compilation and a good debugging experience
 > For a complete list of optimization flags turned on by gcc refer the gcc manual
 
 * Program Instrumentation Options
+
+purpose of instrumentation is collect profiling statistics for use in finding program hot spots, code coverage analysis, or profile-guided optimizations.
+
+-p
+-pg Generate extra code to write profile information suitable for the analysis program
+prof (for ‘-p’) or gprof (for ‘-pg’). You must use this option when
+compiling the source files you want data about, and you must also use it when
+linking
+
+
 * Pre-processor Options
-* Assembler Options
-* Linker Options
+
+These options control the C preprocessor, which is run on each C source file before actual
+compilation. If you use the ‘-E’ option, nothing is done except preprocessing. Some of these options
+make sense only together with ‘-E’ because they cause the preprocessor output to be unsuitable
+for actual compilation.
+
+-D name Predefine name as a macro, with definition 1.
+-D name=definition
+The contents of definition are tokenized and processed as if they appeared during
+translation phase three in a ‘#define’ directive.
+
 * Directory Options
+These options specify directories to search for header files, for libraries and for parts of the
+compiler:
+
+-I dir
+-iquote dir
+-isystem dir
+-idirafter dir
+Add the directory dir to the list of directories to be searched for header files during
+preprocessing. If dir begins with ‘=’ or $SYSROOT, then the ‘=’ or $SYSROOT
+is replaced by the sysroot prefix; see ‘--sysroot’ and ‘-isysroot
+
 * Code Generation Options
 * Others
  * Developer Options
@@ -228,20 +273,65 @@ while maintaining fast compilation and a good debugging experience
 
 ## Common File Formats
 
-## Difference in behaviour - cc vs g++
-When you compile C++ programs, you should invoke GCC as g++ instead.
+file.c C source code that must be preprocessed.
+file.i C source code that should not be preprocessed.
+file.ii C++ source code that should not be preprocessed
 
-C++ source files conventionally use one of the suffixes ‘.C’, ‘.cc’, ‘.cpp’, ‘.CPP’, ‘.c++’,
-‘.cp’, or ‘.cxx’; C++ header files often use ‘.hh’, ‘.hpp’, ‘.H’, or (for shared template code)
-‘.tcc’; and preprocessed C++ files use the suffix ‘.ii’. GCC recognizes files with these
-names and compiles them as C++ programs even if you call the compiler the same way as
-for compiling C programs (usually with the name gcc).
+file.h C, C++, Objective-C or Objective-C++ header file to be turned into a precompiled
+header (default), or C, C++ header file to be turned into an Ada spec (via
+the ‘-fdump-ada-spec’ switch).
+file.cc
+file.cp
+file.cxx
+file.cpp
+file.CPP
+file.c++
+file.C C++ source code that must be preprocessed. Note that in ‘.cxx’, the last two
+letters must both be literally ‘x’. Likewise, ‘.C’ refers to a literal capital C.
+file.hh
+file.H
+file.hp
+file.hxx
+file.hpp
+file.HPP
+file.h++
+file.tcc C++ header file to be turned into a precompiled header
 
-However, the use of gcc does not add the C++ library. g++ is a program that calls GCC
-and automatically specifies linking against the C++ library. It treats ‘.c’, ‘.h’ and ‘.i’ files
-as C++ source files instead of C source files unless ‘-x’ is used. This program is also useful
-when precompiling a C header file with a ‘.h’ extension for use in C++ compilations. On
-many systems, g++ is also installed with the name c++.
+file.s Assembler code.
+file.S
+file.sx Assembler code that must be preprocessed.
+
+## Common compiler flags via make
+C
+
+    Program for compiling C programs; default ‘cc’.
+CXX
+
+    Program for compiling C++ programs; default ‘g++’.
+CPP
+
+    Program for running the C preprocessor, with results to standard output; default ‘$(CC) -E’
+    CFLAGS
+
+    Extra flags to give to the C compiler.
+CXXFLAGS
+
+    Extra flags to give to the C++ compiler.
+CPPFLAGS
+
+    Extra flags to give to the C preprocessor and programs that use it (the C and Fortran compilers).
+LDFLAGS
+
+    Extra flags to give to compilers when they are supposed to invoke the linker, ‘ld’, such as -L. Libraries (-lfoo) should be added to the LDLIBS variable instead.
+LDLIBS
+
+    Library flags or names given to compilers when they are supposed to invoke the linker, ‘ld’. LOADLIBES is a deprecated (but still supported) alternative to LDLIBS. Non-library linker flags, such as -L, should go in the LDFLAGS variable.
+LFLAGS
+
+    Extra flags to give to Lex.
+
+The CFLAGS variable sets compile flags for gcc:
+The LDFLAGS variable sets flags for linker
 
 https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html  
 https://www3.ntu.edu.sg/home/ehchua/programming/index.html  
