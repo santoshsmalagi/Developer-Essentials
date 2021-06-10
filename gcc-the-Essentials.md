@@ -67,14 +67,155 @@ Run the program as follows:
 
 ## A Summary of GCC Command Options
 
-* Overall Options
-* C language Options
-* C++ Language Options
-* Diagnostic Message Formating Options
+Most of the command-line options that you can use with GCC are useful for C programs; when an option is only useful with another language (usually C++), the explanation says
+so explicitly.
+
+The gcc program accepts options and file names as operands.
+
+You can mix options and other arguments. For the most part, the order you use doesn’t matter.
+
+Order does matter when you use several options of the same kind.
+
+Some options take one or more arguments typically separated either by a space or by the equals sign (‘=’) from the option name.
+
+#### Overall Options
+Compilation can involve up to four stages: preprocessing, compilation proper, assembly and linking, always in that order. The “overall options” allow you to stop this process at an intermediate stage. GCC is capable of preprocessing and compiling several files either into several assembler input files, or into one assembler input file; then each assembler input file produces an object file, and linking combines all the object files (those newly compiled, and those specified as input) into an executable file. 
+
+-c Compile or assemble the source files, but do not link. The ultimate output is in the form of an object file for each source
+file. By default, the object file name for a source file is made by replacing the suffix
+‘.c’, ‘.i’, ‘.s’, etc., with ‘.o’. Unrecognized input files, not requiring compilation or assembly, are ignored.
+
+-S Stop after the stage of compilation proper; do not assemble. The output is in
+the form of an assembler code file for each non-assembler input file specified.
+By default, the assembler file name for a source file is made by replacing the
+suffix ‘.c’, ‘.i’, etc., with ‘.s’.
+Input files that don’t require compilation are ignored.
+
+-E Stop after the preprocessing stage; do not run the compiler proper. The output
+is in the form of preprocessed source code, which is sent to the standard output.
+Input files that don’t require preprocessing are ignored.
+-o file Place the primary output in file file. This applies to whatever sort of output is
+being produced, whether it be an executable file, an object file, an assembler
+file or preprocessed C code.
+
+If ‘-o’ is not specified, the default is to put an executable file in ‘a.out’, the
+object file for ‘source.suffix’ in ‘source.o’, its assembler file in ‘source.s’, a
+precompiled header file in ‘source.suffix.gch’, and all preprocessed C source
+on standard output.
+
+* C/C++ language Options
+
+-std= Determine the language standard
+
+
 * Warning Options
-* Static Analyzer Options
+
+Warnings are diagnostic messages that report constructions that are not inherently erroneous
+but that are risky or suggest there may have been an error.
+
+-w Inhibit all warning messages.
+-Werror Make all warnings into errors.
+-Werror= Make the specified warning into an error. The specifier for a warning is
+appended; for example ‘-Werror=switch’ turns the warnings controlled by
+‘-Wswitch’ into errors.
+
+-Wall This enables all the warnings about constructions that some users consider
+questionable, and that are easy to avoid (or modify to prevent the warning),
+even in conjunction with macros. This also enables some language-specific
+warnings
+
+-Wextra This enables some extra warning flags that are not enabled by ‘-Wall’.
+The option ‘-Wextra’ also prints warning messages for the following cases:
+ A pointer is compared against integer zero with <, <=, >, or >=.
+ (C++ only) An enumerator and a non-enumerator both appear in a conditional
+expression.
+ (C++ only) Ambiguous virtual bases.
+ (C++ only) Subscripting an array that has been declared register.
+ (C++ only) Taking the address of a variable that has been declared
+register.
+ (C++ only) A base class is not initialized in the copy constructor of a derived
+class.
+
 * Debugging Options
+
+To tell GCC to emit extra information for use by a debugger, in almost all cases you need
+only to add ‘-g’ to your other options.
+GCC allows you to use ‘-g’ with ‘-O’. The shortcuts taken by optimized code may
+occasionally be surprising: some variables you declared may not exist at all; flow of control
+may briefly move where you did not expect it; some statements may not be executed because
+they compute constant results or their values are already at hand; some statements may
+execute in different places because they have been moved out of loops. Nevertheless it
+is possible to debug optimized output. This makes it reasonable to use the optimizer for
+programs that might have bugs.
+If you are not using some other optimization option, consider using ‘-Og’
+
+
+With no ‘-O’ option at all, some compiler passes
+that collect information useful for debugging do not run at all, so that ‘-Og’ may result in
+a better debugging experience.
+-g Produce debugging information in the operating system’s native format (stabs,
+COFF, XCOFF, or DWARF). GDB can work with this debugging information.
+On most systems that use stabs format, ‘-g’ enables use of extra debugging
+information that only GDB can use; this extra information makes debugging
+work better in GDB but probably makes other debuggers crash or refuse to read
+the program.
+
+-ggdb Produce debugging information for use by GDB. This means to use the most
+expressive format available (DWARF, stabs, or the native format if neither of
+those are supported), including GDB extensions if at all possible.
+gdwarf
+-gdwarf-version
+Produce debugging information in DWARF format (
+
+-glevel
+-ggdblevel
+
+Request debugging information and also use level to specify how much information.
+The default level is 2.
+Level 0 produces no debug information at all. Thus, ‘-g0’ negates ‘-g’.
+Level 1 produces minimal information, enough for making backtraces in parts
+of the program that you don’t plan to debug. This includes descriptions of
+functions and external variables, and line number tables, but no information
+about local variables.
+Level 3 includes extra information, such as all the macro definitions present in
+the program. Some debuggers support macro expansion when you use ‘-g3’.
+If you use multiple ‘-g’ options, with or without level numbers, the last such
+option is the one that is effective.
+
 * Optimization Options
+
+These options control various sorts of optimizations.
+Without any optimization option, the compiler’s goal is to reduce the cost of compilation
+and to make debugging produce the expected results
+
+Turning on optimization flags makes the compiler attempt to improve the performance
+and/or code size at the expense of compilation time and possibly the ability to debug the
+program.
+
+Most optimizations are completely disabled at ‘-O0’ or if an ‘-O’ level is not set on the
+command line, even if individual optimization flags are specified. Similarly, ‘-Og’ suppresses
+many optimization passes.
+
+-O
+-O1 Optimize. Optimizing compilation takes somewhat more time, and a lot more
+memory for a large function.
+
+-O2 Optimize even more. GCC performs nearly all supported optimizations that do
+not involve a space-speed tradeoff. As compared to ‘-O’, this option increases
+both compilation time and the performance of the generated code
+
+-O3 Optimize yet more. ‘-O3’ turns on all optimizations specified by ‘-O2’ and also
+turns on the following optimization flags:
+
+-O0 Reduce compilation time and make debugging produce the expected results.
+This is the default.
+
+-Og Optimize debugging experience. ‘-Og’ should be the optimization level of choice
+for the standard edit-compile-debug cycle, offering a reasonable level of optimization
+while maintaining fast compilation and a good debugging experience
+
+> For a complete list of optimization flags turned on by gcc refer the gcc manual
+
 * Program Instrumentation Options
 * Pre-processor Options
 * Assembler Options
@@ -84,8 +225,23 @@ Run the program as follows:
 * Others
  * Developer Options
  * Machine Dependent Options
+
 ## Common File Formats
+
 ## Difference in behaviour - cc vs g++
+When you compile C++ programs, you should invoke GCC as g++ instead.
+
+C++ source files conventionally use one of the suffixes ‘.C’, ‘.cc’, ‘.cpp’, ‘.CPP’, ‘.c++’,
+‘.cp’, or ‘.cxx’; C++ header files often use ‘.hh’, ‘.hpp’, ‘.H’, or (for shared template code)
+‘.tcc’; and preprocessed C++ files use the suffix ‘.ii’. GCC recognizes files with these
+names and compiles them as C++ programs even if you call the compiler the same way as
+for compiling C programs (usually with the name gcc).
+
+However, the use of gcc does not add the C++ library. g++ is a program that calls GCC
+and automatically specifies linking against the C++ library. It treats ‘.c’, ‘.h’ and ‘.i’ files
+as C++ source files instead of C source files unless ‘-x’ is used. This program is also useful
+when precompiling a C header file with a ‘.h’ extension for use in C++ compilations. On
+many systems, g++ is also installed with the name c++.
 
 https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html  
 https://www3.ntu.edu.sg/home/ehchua/programming/index.html  
