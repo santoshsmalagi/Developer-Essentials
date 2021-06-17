@@ -5,7 +5,7 @@
 GCC stands for “GNU Compiler Collection”. GCC is an integrated distribution of compilers for several major programming languages. These languages currently include C, C++,
 Objective-C, Objective-C++, Fortran, Ada, D, Go, and BRIG (HSAIL).  
 
-> *When we talk about compiling one of those languages, we might refer to that compiler by its own name, or as GCC. Either is correct.*
+> *When we talk about compiling one of those languages, we might refer to that compiler by its own name, or as GCC. Either is correct. In C/C++ context, gcc more or less refers to the GNU C Compiler and g++ refers to the GNU C++ Compiler!*
 
 The language-independent component of GCC includes the majority of the optimizers, as well as the *“back ends”* that generate machine code for various processors.  The part of a compiler that is specific to a particular language is called the *“front end”*. For example the C front-end is called CC, the C++ compiler is G++, the Ada compiler is GNAT, and so on.  
 
