@@ -2,7 +2,7 @@
 
 This tutorial focusses on the following topics:
 * The GNU Compiler Collection (GCC)
-* gcc and g++ - GNU C and C++ compilers
+* GNU C and C++ compilers - gcc and g++
 * Compiling C programs using gcc
 * Compiling C++ programs using g++
 * Options controlling output generation
