@@ -1,5 +1,19 @@
 # GCC - the Essentials
 
+This tutorial focusses on the following topics:
+* The GNU Compiler Collection (GCC)
+* gcc and g++ - GNU C and C++ compilers
+* Compiling C programs using gcc
+* Compiling C++ programs using g++
+* Options controlling output generation
+* Options for diagnostics and warning messages
+* Static analyzer options
+* Debugging options
+* Optimization options
+* Program instrumentation
+* Preprocessor options
+* Platform specific options 
+
 ## What is the GCC?
 
 GCC stands for “GNU Compiler Collection”. GCC is an integrated distribution of compilers for several major programming languages. These languages currently include C, C++,
