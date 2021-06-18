@@ -10,9 +10,10 @@ This tutorial focusses on the following topics:
 * Static analyzer options
 * Debugging options
 * Optimization options
-* Program instrumentation
+* Code coverage and profiling options
 * Preprocessor options
-* Platform specific options 
+* Platform specific options
+* Object files and libraries
 
 ## What is the GCC?
 
