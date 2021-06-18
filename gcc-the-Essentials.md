@@ -1,31 +1,50 @@
 # GCC - the Essentials
 
 This tutorial focusses on the following topics:
-* The GNU Compiler Collection (GCC)
-* GNU C and C++ compilers - gcc and g++
-* Compiling C programs using gcc
-* Compiling C++ programs using g++
-* Options controlling output generation
-* Options for diagnostics and warning messages
-* Static analyzer options
-* Debugging options
-* Optimization options
-* Code coverage and profiling options
-* Preprocessor options
-* Platform specific options
-* Static and Dynamic libraries
+1. The GNU Compiler Collection (GCC)
+2. GNU C and C++ compilers - gcc and g++
+3. Compiling C programs using gcc
+4. Compiling C++ programs using g++
+5. Options controlling output generation
+6. Options for diagnostics and warning messages
+7. Static analyzer options
+8. Debugging options
+9. Optimization options
+10. Code coverage and profiling options
+11. Preprocessor options
+12. Platform specific options
+13. Static and Dynamic libraries
+14. Summary
+15. Common File Formats
+16. Common compiler flags
 
-## What is the GCC?
+> *Note: In all subsequent discussions, GCC - refers to the GNU Compiler Collection; gcc - refers to the GNU C Compiler and g++ is the GNU C++ Compiler. When we talk about compiling one of those languages, we might refer to that compiler by its own name, or as GCC. Either is correct!
+
+## 1. The GNU Compiler Collection (GCC)
 
 GCC stands for “GNU Compiler Collection”. GCC is an integrated distribution of compilers for several major programming languages. These languages currently include C, C++,
 Objective-C, Objective-C++, Fortran, Ada, D, Go, and BRIG (HSAIL).  
-
-> *When we talk about compiling one of those languages, we might refer to that compiler by its own name, or as GCC. Either is correct. In C/C++ context, gcc more or less refers to the GNU C Compiler and g++ refers to the GNU C++ Compiler!*
 
 The language-independent component of GCC includes the majority of the optimizers, as well as the *“back ends”* that generate machine code for various processors.  The part of a compiler that is specific to a particular language is called the *“front end”*. For example the C front-end is called CC, the C++ compiler is G++, the Ada compiler is GNAT, and so on.  
 
 Historically, compilers for many languages, including C++ and Fortran, have been implemented as “preprocessors” which emit another high level language such as C. None of
 the compilers included in GCC are implemented this way; they all generate machine code directly.
+
+## 2. GNU C and C++ compilers - gcc and g++
+
+When you compile C++ programs, you should invoke GCC as g++ instead.
+
+C++ source files conventionally use one of the suffixes ‘.C’, ‘.cc’, ‘.cpp’, ‘.CPP’, ‘.c++’,
+‘.cp’, or ‘.cxx’; C++ header files often use ‘.hh’, ‘.hpp’, ‘.H’, or (for shared template code)
+‘.tcc’; and preprocessed C++ files use the suffix ‘.ii’. GCC recognizes files with these
+names and compiles them as C++ programs even if you call the compiler the same way as
+for compiling C programs (usually with the name gcc).
+
+However, the use of gcc does not add the C++ library. g++ is a program that calls GCC
+and automatically specifies linking against the C++ library. It treats ‘.c’, ‘.h’ and ‘.i’ files
+as C++ source files instead of C source files unless ‘-x’ is used. This program is also useful
+when precompiling a C header file with a ‘.h’ extension for use in C++ compilations. On
+many systems, g++ is also installed with the name c++.
 
 #### C Standards supported by GCC
 
@@ -56,9 +75,8 @@ GCC supports the original ISO C++ standard published in 1998, and the 2011, 2014
 
 > *The default, if no C language dialect options are given, is ‘-std=gnu++17’.*
 
-
- ## Compiling with GCC
-
+ ## 3. Compiling C Programs with gcc
+ 
 After you edit your source code with a text-editor, the next step is to to compile your program using GCC.  When you invoke GCC, it normally does preprocessing, compilation, assembly and linking.
 
 
@@ -80,23 +98,9 @@ Run the program as follows:
 ./<executable>
 ```
 
-## Difference in behaviour - cc vs g++
-When you compile C++ programs, you should invoke GCC as g++ instead.
+## 4. Compiling C++ Programs with g++
 
-C++ source files conventionally use one of the suffixes ‘.C’, ‘.cc’, ‘.cpp’, ‘.CPP’, ‘.c++’,
-‘.cp’, or ‘.cxx’; C++ header files often use ‘.hh’, ‘.hpp’, ‘.H’, or (for shared template code)
-‘.tcc’; and preprocessed C++ files use the suffix ‘.ii’. GCC recognizes files with these
-names and compiles them as C++ programs even if you call the compiler the same way as
-for compiling C programs (usually with the name gcc).
-
-However, the use of gcc does not add the C++ library. g++ is a program that calls GCC
-and automatically specifies linking against the C++ library. It treats ‘.c’, ‘.h’ and ‘.i’ files
-as C++ source files instead of C source files unless ‘-x’ is used. This program is also useful
-when precompiling a C header file with a ‘.h’ extension for use in C++ compilations. On
-many systems, g++ is also installed with the name c++.
-
-## A Summary of GCC Command Options
-
+## 5. Options controlling output generation
 Most of the command-line options that you can use with GCC are useful for C programs; when an option is only useful with another language (usually C++), the explanation says
 so explicitly.
 
@@ -108,7 +112,6 @@ Order does matter when you use several options of the same kind.
 
 Some options take one or more arguments typically separated either by a space or by the equals sign (‘=’) from the option name.
 
-#### Overall Options
 Compilation can involve up to four stages: preprocessing, compilation proper, assembly and linking, always in that order. The “overall options” allow you to stop this process at an intermediate stage. GCC is capable of preprocessing and compiling several files either into several assembler input files, or into one assembler input file; then each assembler input file produces an object file, and linking combines all the object files (those newly compiled, and those specified as input) into an executable file. 
 
 -c Compile or assemble the source files, but do not link. The ultimate output is in the form of an object file for each source
@@ -133,12 +136,24 @@ object file for ‘source.suffix’ in ‘source.o’, its assembler file in ‘
 precompiled header file in ‘source.suffix.gch’, and all preprocessed C source
 on standard output.
 
-* C/C++ language Options
+C/C++ language Options
 
 -std= Determine the language standard
 
+Directory options
 
-* Warning Options
+These options specify directories to search for header files, for libraries and for parts of the
+compiler:
+
+-I dir
+-iquote dir
+-isystem dir
+-idirafter dir
+Add the directory dir to the list of directories to be searched for header files during
+preprocessing. If dir begins with ‘=’ or $SYSROOT, then the ‘=’ or $SYSROOT
+is replaced by the sysroot prefix; see ‘--sysroot’ and ‘-isysroot
+
+## 6. Options for diagnostics and warning messages
 
 Warnings are diagnostic messages that report constructions that are not inherently erroneous
 but that are risky or suggest there may have been an error.
@@ -166,7 +181,9 @@ register.
  (C++ only) A base class is not initialized in the copy constructor of a derived
 class.
 
-* Debugging Options
+## 7. Static analyzer options
+
+## 8. Debugging options
 
 To tell GCC to emit extra information for use by a debugger, in almost all cases you need
 only to add ‘-g’ to your other options.
@@ -178,7 +195,6 @@ execute in different places because they have been moved out of loops. Neverthel
 is possible to debug optimized output. This makes it reasonable to use the optimizer for
 programs that might have bugs.
 If you are not using some other optimization option, consider using ‘-Og’
-
 
 With no ‘-O’ option at all, some compiler passes
 that collect information useful for debugging do not run at all, so that ‘-Og’ may result in
@@ -212,7 +228,7 @@ the program. Some debuggers support macro expansion when you use ‘-g3’.
 If you use multiple ‘-g’ options, with or without level numbers, the last such
 option is the one that is effective.
 
-* Optimization Options
+## 9. Optimization options
 
 These options control various sorts of optimizations.
 Without any optimization option, the compiler’s goal is to reduce the cost of compilation
@@ -246,7 +262,7 @@ while maintaining fast compilation and a good debugging experience
 
 > For a complete list of optimization flags turned on by gcc refer the gcc manual
 
-* Program Instrumentation Options
+## 10. Code coverage and profiling options
 
 purpose of instrumentation is collect profiling statistics for use in finding program hot spots, code coverage analysis, or profile-guided optimizations.
 
@@ -256,8 +272,7 @@ prof (for ‘-p’) or gprof (for ‘-pg’). You must use this option when
 compiling the source files you want data about, and you must also use it when
 linking
 
-
-* Pre-processor Options
+## 11. Preprocessor options
 
 These options control the C preprocessor, which is run on each C source file before actual
 compilation. If you use the ‘-E’ option, nothing is done except preprocessing. Some of these options
@@ -269,24 +284,10 @@ for actual compilation.
 The contents of definition are tokenized and processed as if they appeared during
 translation phase three in a ‘#define’ directive.
 
-* Directory Options
-These options specify directories to search for header files, for libraries and for parts of the
-compiler:
-
--I dir
--iquote dir
--isystem dir
--idirafter dir
-Add the directory dir to the list of directories to be searched for header files during
-preprocessing. If dir begins with ‘=’ or $SYSROOT, then the ‘=’ or $SYSROOT
-is replaced by the sysroot prefix; see ‘--sysroot’ and ‘-isysroot
-
-* Code Generation Options
-* Others
- * Developer Options
- * Machine Dependent Options
-
-## Common File Formats
+## 12. Platform specific options
+## 13. Static and Dynamic libraries
+## 14. Summary
+## 15. Common File Formats
 
 file.c C source code that must be preprocessed.
 file.i C source code that should not be preprocessed.
@@ -316,7 +317,7 @@ file.s Assembler code.
 file.S
 file.sx Assembler code that must be preprocessed.
 
-## Common compiler flags via make
+## 16. Common compiler flags
 C
 
     Program for compiling C programs; default ‘cc’.
