@@ -20,4 +20,4 @@ This tutorial focusses on the following topics:
 [16. Common compiler flags](/GCC/16.Common-compiler-flags.md)  
 
 
-> *Note: In all subsequent discussions, GCC - refers to the GNU Compiler Collection; gcc - refers to the GNU C Compiler and g++ is the GNU C++ Compiler. When we talk about compiling one of those languages, we might refer to that compiler by its own name, or as GCC. Either is correct!
+> *Note: In all subsequent discussions, GCC - refers to the GNU Compiler Collection; gcc - refers to the GNU C Compiler and g++ is the GNU C++ Compiler. When we talk about compiling one of those languages, we might refer to that compiler by its own name, or as GCC. Either is correct!*
