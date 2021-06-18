@@ -13,7 +13,7 @@ This tutorial focusses on the following topics:
 * Code coverage and profiling options
 * Preprocessor options
 * Platform specific options
-* Object files and libraries
+* Static and Dynamic libraries
 
 ## What is the GCC?
 
