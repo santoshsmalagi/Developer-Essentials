@@ -2,7 +2,7 @@
 
 This tutorial focusses on the following topics:
 
-[1. The GNU Compiler Collection](/GCC/1.The GNU Compiler Collection.md)  
+[1. The GNU Compiler Collection](/GCC/1.The-GNU-Compiler-Collection.md)  
 [2. GNU C and C++ compilers - gcc and g++](/GCC/2.GNU C and C++ compilers - gcc and g++.md)  
 [3. Compiling C programs using gcc](/GCC/3.Compiling C programs using gcc.md)  
 [4. Compiling C++ programs using g++](/GCC/4.Compiling C++ programs using g++.md)  
