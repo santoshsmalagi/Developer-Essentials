@@ -1,5 +1,7 @@
 # GCC - the Essentials
 
+> *GCC - refers to the GNU Compiler Collection; gcc - refers to the GNU C Compiler and g++ is the GNU C++ Compiler. *cc* and *c++* are synonyms for gcc and g++ respectively. When we talk about compiling one of those languages, we might refer to that compiler by its own name, or simply as GCC. Either is correct!*
+
 This tutorial focusses on the following topics:
 
 [1. The GNU Compiler Collection](/GCC/01.The-GNU-Compiler-Collection.md)  
@@ -19,8 +21,6 @@ This tutorial focusses on the following topics:
 [15. Common File Formats](/GCC/15.Common-File-Formats.md)  
 [16. Common compiler flags](/GCC/16.Common-compiler-flags.md)  
 
-
-> *Note: GCC - refers to the GNU Compiler Collection; gcc - refers to the GNU C Compiler and g++ is the GNU C++ Compiler. When we talk about compiling one of those languages, we might refer to that compiler by its own name, or as GCC. Either is correct!*
 
 https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html  
 https://www3.ntu.edu.sg/home/ehchua/programming/index.html  
