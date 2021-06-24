@@ -22,8 +22,6 @@ This tutorial focusses on the following topics:
 
 
 https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html  
-https://www3.ntu.edu.sg/home/ehchua/programming/index.html  
-https://courses.cs.washington.edu/courses/cse451/99wi/Section/gccintro.html   
 https://www.geeksforgeeks.org/compiling-with-g-plus-plus/  
 https://riptutorial.com/cplusplus/example/1334/compiling-with-gcc  
 https://riptutorial.com/gcc  
