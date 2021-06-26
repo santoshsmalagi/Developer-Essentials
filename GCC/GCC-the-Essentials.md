@@ -8,7 +8,7 @@ This tutorial focusses on the following topics:
 [2. Compiling C Programs](/GCC/02.Compiling-C-Programs.md)  
 [3. Compiling C++ Programs](/GCC/03.Compiling-C++Programs.md)  
 [4. Options controlling output generation](/GCC/04.Options-controlling-output-generation.md)  
-[5. Options for diagnostics and warning messages](/GCC/05.Options-for-diagnostics-and-warning-messages.md)  
+[5. Options for warning messages](/GCC/05.Options-for-warning-messages.md)  
 [6. Static analyzer options](/GCC/06.Static-analyzer-options.md)  
 [7. Debugging options](/GCC/07.Debugging-options.md)  
 [8. Code coverage and profiling options](08.Code-coverage-and-profiling-options.md)
