@@ -218,7 +218,8 @@ The `-D` option in gcc controls the C pre-processor which runs prior to actual C
 
 ```
 -D name - Predefine name as a macro, with definition 1.
--D name=definition - The contents of definition are tokenized and processed as if they appeared a ‘#define’ directive, suggested to include definition in single quotes.
+-D name=definition - The contents of definition are tokenized and processed as if they appeared a ‘#define’ directive
+                     suggested to include definition in single quotes if required.
 ```
 
 Now suppose that you had the following definition instead of the above in your source file:
