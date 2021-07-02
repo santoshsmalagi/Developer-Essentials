@@ -76,6 +76,8 @@ https://stackoverflow.com/questions/41320050/ddebug-0-doesnt-work
 * Either of these three 'defines will have the same effect,      * 
 * the #ifdef pre-processor only looks whether DEBUG is defined,  *
 * and does not really care about its value.                      *
+* However note that #if evaluates for true or false values!      *
+* so if DEBUG is defined as 0, then #if DEBUG returns false.     *
 ******************************************************************/ 
 
 #include <stdio.h>
