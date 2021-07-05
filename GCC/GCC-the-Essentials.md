@@ -15,7 +15,7 @@ This tutorial focusses on the following topics:
 [9. Optimization options](/GCC/09.Optimization-options.md)    
 [10. Preprocessor options](/GCC/10.Preprocessor-options.md)  
 [11. Platform specific options](/GCC/11.Platform-specific-options.md)  
-[12. Static and Dynamic libraries](/GCC/12.Static-and-Dynamic-libraries.md)  
+[12. Examining files and binaries ](/GCC/12.Examining-object-files-and-binaries.md)  
 [13. Summary](/GCC/13.Summary.md)  
 [14. Common File Formats](/GCC/14.Common-File-Formats.md)  
 [15. Common compiler flags](/GCC/15.Common-compiler-flags.md)  
