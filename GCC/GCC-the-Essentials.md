@@ -17,8 +17,8 @@ This tutorial focusses on the following topics:
 [11. Platform specific options](/GCC/11.Platform-specific-options.md)  
 [12. Examining object files and binaries ](/GCC/12.Examining-object-files-and-binaries.md)  
 [13. Summary](/GCC/13.Summary.md)  
-[14. Common File Formats](/GCC/14.Common-File-Formats.md)  
-[15. Common compiler flags](/GCC/15.Common-compiler-flags.md)  
+[13. Common File Formats](/GCC/13.Common-File-Formats.md)  
+[14. Common compiler flags](/GCC/14.Common-compiler-flags.md)  
 
 
 https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html  
