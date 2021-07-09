@@ -56,7 +56,3 @@ This tutorial focusses on the following topics:
     * ``readelf`` 
 * [13. Common File Formats](/GCC/13.Common-File-Formats.md)  
 * [14. Common compiler flags](/GCC/14.Common-compiler-flags.md)  
-
-
-https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html  
-https://riptutorial.com/cplusplus/example/1334/compiling-with-gcc  
