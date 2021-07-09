@@ -53,8 +53,8 @@ This tutorial focusses on the following topics:
     * ``ldd``
     * ``objdump``
     * ``readelf`` 
-[13. Common File Formats](/GCC/13.Common-File-Formats.md)  
-[14. Common compiler flags](/GCC/14.Common-compiler-flags.md)  
+* [13. Common File Formats](/GCC/13.Common-File-Formats.md)  
+* [14. Common compiler flags](/GCC/14.Common-compiler-flags.md)  
 
 
 https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html  
