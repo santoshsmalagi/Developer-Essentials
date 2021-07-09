@@ -5,13 +5,26 @@
 This tutorial focusses on the following topics:
 
 * [1. The GNU Compiler Collection](/GCC/01.The-GNU-Compiler-Collection.md)
-     * History of GCC  
-
-
-
-
-[2. Compiling C Programs](/GCC/02.Compiling-C-Programs.md)  
-[3. Compiling C++ Programs](/GCC/03.Compiling-C++Programs.md)  
+     * History of GCC 
+     * Major features of GCC
+     * GCC Command Line Options
+     * Specifying Command Line Options
+     * GCC Platform Support
+* [2. Compiling C Programs](/GCC/02.Compiling-C-Programs.md)
+    * Compiling a simple C Program
+    * Compiling multiple source files
+    * Creating object files from source files
+    * Creating executables by linking object files
+    * Link order of object files
+    * Specifying a C standard using ``-std`` command option
+* [3. Compiling C++ Programs](/GCC/03.Compiling-C++Programs.md)
+    * Compiling a simple C++ Program
+    * Compiling multiple source files
+    * Creating object files from source files
+    * Creating executables by linking object files
+    * Link order of object files
+    * gcc vs g++
+    * Specifying a C++ standard using ``-std`` command option
 [4. Options controlling output generation](/GCC/04.Options-controlling-output-generation.md)  
 [5. Options for warning messages](/GCC/05.Options-for-warning-messages.md)  
 [6. Static analyzer options](/GCC/06.Static-analyzer-options.md)  
