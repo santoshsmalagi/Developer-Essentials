@@ -25,16 +25,34 @@ This tutorial focusses on the following topics:
     * Link order of object files
     * gcc vs g++
     * Specifying a C++ standard using ``-std`` command option
-[4. Options controlling output generation](/GCC/04.Options-controlling-output-generation.md)  
-[5. Options for warning messages](/GCC/05.Options-for-warning-messages.md)  
-[6. Static analyzer options](/GCC/06.Static-analyzer-options.md)  
-[7. Debugging options](/GCC/07.Debugging-options.md)  
-[8. Code coverage and profiling options](08.Code-coverage-and-profiling-options.md)
-[9. Optimization options](/GCC/09.Optimization-options.md)    
-[10. Preprocessor options](/GCC/10.Preprocessor-options.md)  
-[11. Platform specific options](/GCC/11.Platform-specific-options.md)  
-[12. Examining object files and binaries ](/GCC/12.Examining-object-files-and-binaries.md)  
-[13. Summary](/GCC/13.Summary.md)  
+* [4. Options controlling output generation](/GCC/04.Options-controlling-output-generation.md)
+    * Compile or assemble the source files, but do not link (-c)
+    * Stop after the stage of compilation proper, do not assemble (-S)
+    * Stop after the preprocessing stage, do not run the compiler proper ``(-E)`` 
+    * Place the primary output in the specified output file ``(-o)``
+    * Directory search path ``(-I)``
+* [5. Options for warning messages](/GCC/05.Options-for-warning-messages.md)
+* [6. Static analyzer options](/GCC/06.Static-analyzer-options.md)
+* [7. Debugging options](/GCC/07.Debugging-options.md)
+    * Why debugging optimized code is not always efficient?
+    * Commonly used debug options
+* [8. Code coverage and profiling options](08.Code-coverage-and-profiling-options.md)
+* [9. Optimization options](/GCC/09.Optimization-options.md)
+    * GCC Optimization levels
+    * Optimization techniques
+* [10. Preprocessor options](/GCC/10.Preprocessor-options.md)
+    * Defining macros during compilation
+* [11. Platform specific options](/GCC/11.Platform-specific-options.md)
+* [12. Examining object files and binaries ](/GCC/12.Examining-object-files-and-binaries.md)
+    * ``file``
+    * ``size``
+    * ``nm``
+    * ``strip``
+    * ``strace``
+    * ``ltrace``
+    * ``ldd``
+    * ``objdump``
+    * ``readelf`` 
 [13. Common File Formats](/GCC/13.Common-File-Formats.md)  
 [14. Common compiler flags](/GCC/14.Common-compiler-flags.md)  
 
