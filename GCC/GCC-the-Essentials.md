@@ -5,6 +5,7 @@
 This tutorial focusses on the following topics:
 
 [1. The GNU Compiler Collection](/GCC/01.The-GNU-Compiler-Collection.md)  
+\t\t\t History of GCC
 [2. Compiling C Programs](/GCC/02.Compiling-C-Programs.md)  
 [3. Compiling C++ Programs](/GCC/03.Compiling-C++Programs.md)  
 [4. Options controlling output generation](/GCC/04.Options-controlling-output-generation.md)  
