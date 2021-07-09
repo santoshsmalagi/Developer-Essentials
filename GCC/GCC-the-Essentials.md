@@ -33,7 +33,7 @@ This tutorial focusses on the following topics:
     * Place the primary output in the specified output file ``(-o)``
     * Searching for header files and libraries (``-I``, ``-L`` and ``-l``)
 * [5. Options for warning messages](/GCC/05.Options-for-warning-messages.md)
-* [6. Static analyzer options](/GCC/06.Static-analyzer-options.md)
+* [6. Static and dynamic analysis options](/GCC/06.Static-and-dynamic-analysis-options.md)
 * [7. Debugging options](/GCC/07.Debugging-options.md)
     * Why debugging optimized code is not always efficient?
     * Commonly used debug options
