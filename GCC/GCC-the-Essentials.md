@@ -60,4 +60,3 @@ This tutorial focusses on the following topics:
 
 https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html  
 https://riptutorial.com/cplusplus/example/1334/compiling-with-gcc  
-https://web.stanford.edu/class/cs107/resources/gcc  
