@@ -31,7 +31,7 @@ This tutorial focusses on the following topics:
     * Stop after the stage of compilation proper, do not assemble (-S)
     * Stop after the preprocessing stage, do not run the compiler proper ``(-E)`` 
     * Place the primary output in the specified output file ``(-o)``
-    * Directory search path ``(-I)``
+    * Searching for header files and libraries (``-I``, ``-L`` and ``-l``)
 * [5. Options for warning messages](/GCC/05.Options-for-warning-messages.md)
 * [6. Static analyzer options](/GCC/06.Static-analyzer-options.md)
 * [7. Debugging options](/GCC/07.Debugging-options.md)
