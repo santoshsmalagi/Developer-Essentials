@@ -56,8 +56,8 @@ This tutorial focusses on the following topics:
     * ``readelf`` 
 * [13. Common File Formats](/GCC/13.Common-File-Formats.md)  
 * [14. Common compiler flags](/GCC/14.Common-compiler-flags.md)  
-* [15. Common compiler flags](/GCC/15.Static-Dynamic-Libraries.md)  
-* [16. Common compiler flags](/GCC/16.Compilation-Process.md)  
+* [15. Static and Dynamic Libraries](/GCC/15.Static-Dynamic-Libraries.md)  
+* [16. Compilation Process](/GCC/16.Compilation-Process.md)  
     * Code development
     * Pre-processing
     * Compilation proper
