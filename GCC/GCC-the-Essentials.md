@@ -47,6 +47,7 @@ This tutorial focusses on the following topics:
 * [12. Examining object files and binaries ](/GCC/12.Examining-object-files-and-binaries.md)
     * ``file``
     * ``size``
+    * ``strings``
     * ``nm``
     * ``strip``
     * ``strace``
