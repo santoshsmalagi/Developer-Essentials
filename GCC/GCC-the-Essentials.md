@@ -37,7 +37,7 @@ This tutorial focusses on the following topics:
 * [7. Debugging options](/GCC/07.Debugging-options.md)
     * Why debugging optimized code is not always efficient?
     * Commonly used debug options
-* [8. Code coverage and profiling options](08.Code-coverage-and-profiling-options.md)
+* [8. Code coverage and profiling options](/GCC/08.Code-coverage-and-profiling-options.md)
 * [9. Optimization options](/GCC/09.Optimization-options.md)
     * GCC Optimization levels
     * Optimization techniques
