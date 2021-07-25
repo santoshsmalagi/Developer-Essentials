@@ -22,22 +22,6 @@ Various entities in source code (e.g. classes and their member variables and met
 * Place a special documentation block in front of the declaration or definition of the member, class or namespace. For file, class and namespace members it is also allowed to place the documentation directly after the member. See - [Special comment blocks](https://www.doxygen.nl/manual/docblocks.html#specialblock).
 * Place a special documentation block somewhere else (another file or another location) and put a structural command in the documentation block. A structural command links a documentation block to a certain entity that can be documented (e.g. a member, class, namespace or file). See - [Documentation at other places](https://www.doxygen.nl/manual/docblocks.html#structuralcommands) and [Special Commands](https://www.doxygen.nl/manual/commands.html).
 
-If the EXTRACT_ALL option is set to NO in the configuration file (the default), then doxygen will only generate documentation for documented entities. So how do you document these? For members, classes and namespaces there are basically two options:
-
-    Place a special documentation block in front of the declaration or definition of the member, class or namespace. For file, class and namespace members it is also allowed to place the documentation directly after the member.
-
-    See section Special comment blocks to learn more about special documentation blocks.
-
-    Place a special documentation block somewhere else (another file or another location) and put a structural command in the documentation block. A structural command links a documentation block to a certain entity that can be documented (e.g. a member, class, namespace or file).
-
-    See section Documentation at other places to learn more about structural commands.
-
-The advantage of the first option is that you do not have to repeat the name of the entity.
-
-Files can only be documented using the second option, since there is no way to put a documentation block before a file. Of course, file members (functions, variables, typedefs, defines) do not need an explicit structural command; just putting a special documentation block in front or behind them will work fine.
-
-https://www.doxygen.nl/manual/docblocks.html#specialblock  
-https://www.doxygen.nl/manual/docblocks.html  
 
 ## Configuration File
 
@@ -54,8 +38,7 @@ The configuration file has a format that is similar to that of a (simple) Makefi
 TAGNAME = VALUE or
 TAGNAME = VALUE1 VALUE2 ...
 
-You can probably leave the values of most tags in a generated template configuration file to their default value.  
-  https://www.doxygen.nl/manual/config.html
+You can probably leave the values of most tags in a generated template configuration file to their default value. https://www.doxygen.nl/manual/config.html
   
 If you do not wish to edit the configuration file with a text editor, you should have a look at doxywizard, which is a GUI front-end that can create, read and write doxygen configuration files, and allows setting configuration options by entering them via dialogs.
   
