@@ -1,1 +1,16 @@
+# Doxygen
 
+Doxygen is the de facto standard tool for generating documentation from annotated C/C++ sources. Since the documentation is extracted directly from the source, it is much easier to keep the documentation in sync with the source code. Doxygen offers the following capabilities:
+
+* generate an on-line documentation browser (in HTML) and/or an off-line reference manual (e.g. LaTeX, man pages) from a set of documented source files
+* quickly extract code structure from undocumented source files, which is useful for navigating large code bases
+* visualize relationships between between various elements by means of include dependency graphs, inheritance diagrams, collaboration diagrams etc. 
+
+``doxygen`` - the executable ``doxygen`` is the main program that parses the sources and generates documentation  
+``doxywizard`` - is a graphical front-end for editing the configuration file which is used by ``doxygen`` and for running ``doxygen`` in a graphical environment
+
+Working with Doxygen basically involves three steps:
+
+* Step I - annotate source code with *special comments* or *special comment blocks*
+* Step II - create a configuration file
+* Step III - run ``doxygen`` to parse the source code and generate documentation
