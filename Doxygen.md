@@ -11,7 +11,7 @@ Doxygen is the de facto standard tool for generating documentation from annotate
 
 Working with Doxygen basically involves three steps:
 
-* Step I - annotate source code with special comments or comment blocks understandable by Doxygen
+* Step I - annotate source code with *special comments* or *special comment blocks*
 * Step II - create a configuration file
 * Step III - run ``doxygen`` to parse the source code and generate documentation
 
@@ -19,9 +19,14 @@ Working with Doxygen basically involves three steps:
 
 Various entities in source code (e.g. classes and their member variables and methods, global functions, structs, variables, namespaces, macros and typedefs) need to be annotated with comments (or comment blocks). This can be done in two ways:
 
-* Place a special documentation block in front of the declaration or definition of the member, class or namespace. For file, class and namespace members it is also allowed to place the documentation directly after the member. See - [Special comment blocks](https://www.doxygen.nl/manual/docblocks.html#specialblock).
-* Place a special documentation block somewhere else (another file or another location) and put a structural command in the documentation block. A structural command links a documentation block to a certain entity that can be documented (e.g. a member, class, namespace or file). See - [Documentation at other places](https://www.doxygen.nl/manual/docblocks.html#structuralcommands) and [Special Commands](https://www.doxygen.nl/manual/commands.html).
+* Place a special comment block in front of the declaration or definition of the member, class or namespace. For file, class and namespace members it is also allowed to place the documentation directly after the member. See - [Special comment blocks](https://www.doxygen.nl/manual/docblocks.html#specialblock).
+* Place a special comment block somewhere else (another file or another location) and put a structural command in the documentation block. A structural command links a documentation block to a certain entity that can be documented (e.g. a member, class, namespace or file). See - [Documentation at other places](https://www.doxygen.nl/manual/docblocks.html#structuralcommands) and [Special Commands](https://www.doxygen.nl/manual/commands.html).
 
+A special comment block is a C or C++ style comment block with some additional markings, so doxygen knows it is a piece of structured text that needs to end up in the generated documentation. 
+
+For each entity in the code there are two (or in some cases three) types of descriptions, which together form the documentation for that entity; a brief description and detailed description, both are optional. For methods and functions there is also a third type of description, the so called in body description, which consists of the concatenation of all comment blocks found within the body of the method or function.  
+
+Having more than one brief or detailed description is allowed but not recommended.
 
 ## Configuration File
 
