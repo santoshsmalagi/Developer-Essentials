@@ -11,13 +11,14 @@ Doxygen is the de facto standard tool for generating documentation from annotate
 
 Working with Doxygen basically involves three steps:
 
-* Step I - annotate source code with special comments or comment blocks which Doxygen can understand
+* Step I - annotate source code with special comments or comment blocks understandable by Doxygen
 * Step II - create a configuration file
 * Step III - run ``doxygen`` to parse the source code and generate documentation
- 
-#### Step 1: Creating a configuration file
 
-https://www.doxygen.nl/manual/starting.html
+## Annotating Source Code with Comment Blocks
+
+## Configuration File
+
 Doxygen uses a configuration file to determine all of its settings. Each project should get its own configuration file. A project can consist of a single source file, but can also be an entire source tree that is recursively scanned.
 
 To simplify the creation of a configuration file, doxygen can create a template configuration file for you. To do this call doxygen from the command line with the -g option:
@@ -43,19 +44,24 @@ If you have a larger project consisting of a source directory or tree you should
 EXCLUDE_PATTERNS = */test/*
 
 
-#### Step II
+## Running Doxygen and Viewing Generated Output
 
-  Step 2: Running doxygen
-
-To generate the documentation you can now enter:
-
+```Shell
 doxygen <config-file>
+```
 
 Depending on your settings doxygen will create html, rtf, latex, xml, man, and/or docbook directories inside the output directory.he default output directory is the directory in which doxygen is started. The root directory to which the output is written can be changed using the OUTPUT_DIRECTORY. The format specific directory within the output directory can be selected using the HTML_OUTPUT, RTF_OUTPUT, LATEX_OUTPUT, XML_OUTPUT, MAN_OUTPUT, and DOCBOOK_OUTPUT. tags of the configuration file.
-  
-  HTML output
-
+ 
+#### HTML output
 The generated HTML documentation can be viewed by pointing a HTML browser to the index.html file in the html directory.
+
+
+https://www.doxygen.nl/manual/starting.html
+
+
+## Step II
+
+
 
 #### Step 3
   
