@@ -26,7 +26,40 @@ A special comment block is a C or C++ style comment block with some additional m
 
 For each entity in the code there are two (or in some cases three) types of descriptions, which together form the documentation for that entity; a brief description and detailed description, both are optional. For methods and functions there is also a third type of description, the so called in body description, which consists of the concatenation of all comment blocks found within the body of the method or function.  
 
-Having more than one brief or detailed description is allowed but not recommended.
+A brief description is a short one-liner, whereas the detailed description provides longer, more detailed documentation. An "in body" description can also act as a detailed description or can describe a collection of implementation details. Having more than one brief or detailed description is allowed but not recommended.
+
+Doxygen supports both C and C++ style comment blocks:
+
+#### C-style comments
+
+JavaDoc C style comment blocks
+
+```C
+/**
+ * ... text ...
+ */
+```
+
+Qt style
+
+```C
+/*!
+ * ... text ...
+ */
+```
+
+the intermediate \*'s are optional, so
+
+```C
+/*!
+ ... text ...
+*/
+```
+
+is also valid.
+
+
+#### C++ style
 
 ## Configuration File
 
@@ -75,4 +108,13 @@ The generated HTML documentation can be viewed by pointing a HTML browser to the
 
       
 ## Installing and Building
+
+#### CentOS 7
+
+Update to the latest version of gcc
+build and install cmake
+build and install graphviz
+build and install doxygen
+  
+  
 ## Advanced Topics
