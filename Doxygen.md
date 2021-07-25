@@ -6,10 +6,15 @@ Doxygen is the de facto standard tool for generating documentation from annotate
 * quickly extract code structure from undocumented source files which is often useful in navigating large code bases
 * visualize relationships between between various elements by means of include dependency graphs, inheritance diagrams, collaboration diagrams etc. 
 
-## Doxygen - Overview
 ``doxygen`` - the executable ``doxygen`` is the main program that parses the sources and generates documentation  
 ``doxywizard`` - is a graphical front-end for editing the configuration file that is used by ``doxygen`` and for running ``doxygen`` in a graphical environment
 
+Working with Doxygen in a new project basically involves three steps:
+
+* Step I - annotate source code with special comments or comment blocks which Doxygen can understand
+* Step II - create a configuration file
+* Step III - run ``doxygen`` to parse the source code and generate documentation
+ 
 #### Step 1: Creating a configuration file
 
 https://www.doxygen.nl/manual/starting.html
