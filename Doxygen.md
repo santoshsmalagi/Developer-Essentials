@@ -17,6 +17,23 @@ Working with Doxygen basically involves three steps:
 
 ## Annotating Source Code with Comment Blocks
 
+If the EXTRACT_ALL option is set to NO in the configuration file (the default), then doxygen will only generate documentation for documented entities. So how do you document these? For members, classes and namespaces there are basically two options:
+
+    Place a special documentation block in front of the declaration or definition of the member, class or namespace. For file, class and namespace members it is also allowed to place the documentation directly after the member.
+
+    See section Special comment blocks to learn more about special documentation blocks.
+
+    Place a special documentation block somewhere else (another file or another location) and put a structural command in the documentation block. A structural command links a documentation block to a certain entity that can be documented (e.g. a member, class, namespace or file).
+
+    See section Documentation at other places to learn more about structural commands.
+
+The advantage of the first option is that you do not have to repeat the name of the entity.
+
+Files can only be documented using the second option, since there is no way to put a documentation block before a file. Of course, file members (functions, variables, typedefs, defines) do not need an explicit structural command; just putting a special documentation block in front or behind them will work fine.
+
+https://www.doxygen.nl/manual/docblocks.html#specialblock  
+https://www.doxygen.nl/manual/docblocks.html  
+
 ## Configuration File
 
 Doxygen uses a configuration file to determine all of its settings. Each project should get its own configuration file. A project can consist of a single source file, but can also be an entire source tree that is recursively scanned.
@@ -43,7 +60,6 @@ If you have a larger project consisting of a source directory or tree you should
 
 EXCLUDE_PATTERNS = */test/*
 
-
 ## Running Doxygen and Viewing Generated Output
 
 ```Shell
@@ -55,44 +71,10 @@ Depending on your settings doxygen will create html, rtf, latex, xml, man, and/o
 #### HTML output
 The generated HTML documentation can be viewed by pointing a HTML browser to the index.html file in the html directory.
 
-
-https://www.doxygen.nl/manual/starting.html
-
-
-## Step II
-
-
-
-#### Step 3
   
-Step 3: Documenting the sources
-
-Although documenting the sources is presented as step 3, in a new project this should of course be step 1. Here I assume you already have some code and you want doxygen to generate a nice document describing the API and maybe the internals and some related design documentation as well.
-
-If the EXTRACT_ALL option is set to NO in the configuration file (the default), then doxygen will only generate documentation for documented entities. So how do you document these? For members, classes and namespaces there are basically two options:
-
-    Place a special documentation block in front of the declaration or definition of the member, class or namespace. For file, class and namespace members it is also allowed to place the documentation directly after the member.
-
-    See section Special comment blocks to learn more about special documentation blocks.
-
-    Place a special documentation block somewhere else (another file or another location) and put a structural command in the documentation block. A structural command links a documentation block to a certain entity that can be documented (e.g. a member, class, namespace or file).
-
-    See section Documentation at other places to learn more about structural commands.
-
-The advantage of the first option is that you do not have to repeat the name of the entity.
-
-Files can only be documented using the second option, since there is no way to put a documentation block before a file. Of course, file members (functions, variables, typedefs, defines) do not need an explicit structural command; just putting a special documentation block in front or behind them will work fine.
-  
-  https://www.doxygen.nl/manual/docblocks.html#structuralcommands
-  
-## Special Comment Blocks
-https://www.doxygen.nl/manual/docblocks.html#specialblock  
-https://www.doxygen.nl/manual/docblocks.html  
-  
-  
-## Call graphs
+## Generating with Call Graphs
   https://www.doxygen.nl/manual/diagrams.html
-https://stackoverflow.com/questions/8887810/how-to-get-doxygen-to-produce-call-caller-graphs-for-c-functions  
+  https://stackoverflow.com/questions/8887810/how-to-get-doxygen-to-produce-call-caller-graphs-for-c-functions  
   https://stackoverflow.com/questions/63484344/create-a-call-graph-for-a-specific-function-using-doxygen  
   https://dzone.com/articles/understanding-code-call-graphs
   https://www.programmersought.com/article/56204839816/  
