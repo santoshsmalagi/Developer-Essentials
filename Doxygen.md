@@ -9,7 +9,7 @@ Doxygen is the de facto standard tool for generating documentation from annotate
 ``doxygen`` - the executable ``doxygen`` is the main program that parses the sources and generates documentation  
 ``doxywizard`` - is a graphical front-end for editing the configuration file that is used by ``doxygen`` and for running ``doxygen`` in a graphical environment
 
-Working with Doxygen in a new project basically involves three steps:
+Working with Doxygen basically involves three steps:
 
 * Step I - annotate source code with special comments or comment blocks which Doxygen can understand
 * Step II - create a configuration file
