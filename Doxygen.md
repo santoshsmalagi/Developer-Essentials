@@ -72,7 +72,7 @@ Depending on your settings doxygen will create html, rtf, latex, xml, man, and/o
 The generated HTML documentation can be viewed by pointing a HTML browser to the index.html file in the html directory.
 
   
-## Generating with Call Graphs
+## Generating Call Graphs
   https://www.doxygen.nl/manual/diagrams.html
   https://stackoverflow.com/questions/8887810/how-to-get-doxygen-to-produce-call-caller-graphs-for-c-functions  
   https://stackoverflow.com/questions/63484344/create-a-call-graph-for-a-specific-function-using-doxygen  
