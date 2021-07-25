@@ -19,8 +19,8 @@ Working with Doxygen basically involves three steps:
 
 Various entities in source code (e.g. classes and their member variables and methods, global functions, structs, variables, namespaces, macros and typedefs) need to be annotated with comments (or comment blocks). This can be done in two ways:
 
-* Place a special documentation block in front of the declaration or definition of the member, class or namespace. For file, class and namespace members it is also allowed to place the documentation directly after the member. ([Manual](https://www.doxygen.nl/manual/docblocks.html#specialblock))
-* Place a special documentation block somewhere else (another file or another location) and put a structural command in the documentation block. A structural command links a documentation block to a certain entity that can be documented (e.g. a member, class, namespace or file). ([Manual](https://www.doxygen.nl/manual/docblocks.html#structuralcommands))
+* Place a special documentation block in front of the declaration or definition of the member, class or namespace. For file, class and namespace members it is also allowed to place the documentation directly after the member. (See - [Special comment blocks](https://www.doxygen.nl/manual/docblocks.html#specialblock))
+* Place a special documentation block somewhere else (another file or another location) and put a structural command in the documentation block. A structural command links a documentation block to a certain entity that can be documented (e.g. a member, class, namespace or file). (See - [Documentation at other places](https://www.doxygen.nl/manual/docblocks.html#structuralcommands) and [Special Commands](https://www.doxygen.nl/manual/commands.html)).
 
 If the EXTRACT_ALL option is set to NO in the configuration file (the default), then doxygen will only generate documentation for documented entities. So how do you document these? For members, classes and namespaces there are basically two options:
 
