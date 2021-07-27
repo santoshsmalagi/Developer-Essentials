@@ -7,7 +7,7 @@ The following templates are mostly inspired from Steve Oualine's classic - *C El
 
 > *The templates use the Qt syle - /\*! as the preffered style for generating documentation using Doxygen. The \* always ends on the 80th column and \/ on the 81st!*
 
-## 1. Comments which should not be processed by Doxygen
+## 1. Ignoring comments
 
 For comments which need not be processed by Doxygen e.g. copyright notice use the boxed comment style:
 
@@ -24,8 +24,8 @@ For comments which need not be processed by Doxygen e.g. copyright notice use th
 
 **IMPORTANT** - in your Doxyfile configuration ALWAYS set ``JAVADOC_BANNER = NO``, such that Doxygen will always interpret these boxed comments as *comments* and ignore them.
 
-## 2. File comments
-After the licence and copyright stuff, author information etc. include a heading comment at the beginning of each file, that explains the purpose of the file.  
+## 2. Documenting files using file comments
+All files must have file comments. File comments must necessarily include license and copyright stuff, author information etc. If you do not wish to process liecensing and copyright information through Doxygen, it can be ignored as mentioned above. Always include a heading comment at the beginning of each file, that explains the purpose of the file.  
 
 If the file defines the ``main()``, then the top of the file must also briefly describe the program, its usage, any warnings/special instructions for someone building the program, describe in short the most important data structures or algorithms, references if any, and finally add any other miscelleanous remarks.  
 
@@ -72,7 +72,7 @@ EXTRACT_STATIC = YES
 EXTRACT_LOCAL_CLASSES  = YES     
 ```
 
-## 3. Function comments
+## 3. Documenting functions (global/static) using function comments
 Declaration comments describe use of the function (when it is non-obvious); comments at the definition of a function describe operation. Do not repeat the same information in multiple locations. Function comments may be ommitted if the function is simple and obvious.
 
 > *For functions which have been declared and defined (e.g. ``static`` functions) in the same file it may be much cleaner to document them at the definition.*
@@ -94,3 +94,8 @@ A function's documentation must include the following fields:
     * use ``@see`` to refer to related functions
     * use ``@note`` to add additional information, remarks, notes etc.
     * use ``@warning`` to warn the user about any special restrictions regarding the function usage etc. 
+
+## 4. Documenting typedefs
+## 5. Documenting enumerated constants
+## 6. Documenting structure types
+## 7. Documenting macro definitions
