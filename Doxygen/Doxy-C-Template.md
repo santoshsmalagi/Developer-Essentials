@@ -78,13 +78,17 @@ Declaration comments describe use of the function (when it is non-obvious); comm
 A function's documentation must include the following fields:
 * A brief one line description about the function and its purpose
 * Detailed description about the function which describe what the function does and how to use it
+    * If there is anything tricky about how a function does its job, the function definition MUST have an explanatory comment regaridng this 
     * For class member functions whether the object remembers reference arguments beyond the duration of the method call, and whether it will free them or not.
-    * If the function allocates memory that the caller must free.
-    * Whether any of the arguments can be a null pointer.
-    * If there are any performance implications of how a function is used.
-    * If the function is re-entrant. What are its synchronization assumptions
-    * If there is anything tricky about how a function does its job, the function definition MUST have an explanatory comment regaridng this
+    * If the function allocates memory that the caller must free
+    * Whether any of the arguments can be a null pointer
+    * If there are any performance implications of how a function is used
+    * If the function is re-entrant, What are its synchronization assumptions
 * Parameters (specified using ``@parms``)
     * a list of parameters (one per line) and a brief description of each of them
 * Return value (specified using ``@return``)
     * describes what value the function returns
+* in addition to these, any other useful information can always be added
+    * use ``@see`` to refer to related functions
+    * use ``@note`` to add additional information, remarks, notes etc.
+    * use ``@warning`` to warn the user about any special restrictions regarding the function usage etc. 
