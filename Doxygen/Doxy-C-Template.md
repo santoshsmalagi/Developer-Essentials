@@ -73,7 +73,9 @@ EXTRACT_LOCAL_CLASSES  = YES
 ```
 
 ## 3. Function comments
-Declaration comments describe use of the function (when it is non-obvious); comments at the definition of a function describe operation. Do not repeat the information from the ``.h`` file or wherever. Function comments may be ommitted if the function is simple and obvious.  For functions which have been declared and defined (e.g. ``static`` functions) in the same file it may be much cleaner to document it at the definition.  
+Declaration comments describe use of the function (when it is non-obvious); comments at the definition of a function describe operation. Do not repeat the same information in multiple locations. Function comments may be ommitted if the function is simple and obvious.
+
+> *For functions which have been declared and defined (e.g. ``static`` functions) in the same file it may be much cleaner to document them at the definition.*
 
 A function's documentation must include the following fields:
 * A brief one line description about the function and its purpose
