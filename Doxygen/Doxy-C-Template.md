@@ -78,7 +78,7 @@ Declaration comments describe use of the function (when it is non-obvious); comm
 > *For functions which have been declared and defined (e.g. ``static`` functions) in the same file it may be much cleaner to document them at the definition.*
 
 A function's documentation must include the following fields:
-* A brief one line description about the function and its purpose
+* A brief one line description about the function and its purpose specified using ``@brief``
 * Detailed description about the function which describe what the function does and how to use it
     * If there is anything tricky about how a function does its job, the function definition MUST have an explanatory comment regarding this 
     * For class member functions whether the object remembers reference arguments beyond the duration of the method call, and whether it will free them or not.
