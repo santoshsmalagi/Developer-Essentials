@@ -22,8 +22,7 @@ For comments which need not be processed by Doxygen e.g. copyright notice use th
 *******************************************************************************/
 ```
 
-**IMPORTANT** - in your Doxyfile configurations ALWAYS set ``JAVADOC_BANNER = NO``, such that Doxygen will always interpret such boxed comments as *comments* and ignore them.
-
+**IMPORTANT** - in your Doxyfile configuration ALWAYS set ``JAVADOC_BANNER = NO``, such that Doxygen will always interpret these boxed comments as *comments* and ignore them.
 
 ## 2. File comments
 After the licence and copyright stuff, author information etc. include a heading comment at the beginning of each file, that explains the purpose of the file.  
