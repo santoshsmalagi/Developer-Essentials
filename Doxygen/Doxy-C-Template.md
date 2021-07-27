@@ -3,7 +3,7 @@ This is a collection of readily usable templates to generate documentation for C
 
 Code documentation is absolutely vital to keep the codebase readable and to preserve valuable knowledge. While comments and code documentation are very important, the best code is self-documenting. When documenting code do it with the audience in mind - the next developer who will need to understand the code to fix bugs and ship enhancements. *Be generous — the next one may be you!*  
 
-The following templates are mostly inspired from Steve Oualine's classic - *C Elements of Style* and *The Elements of C Programming Style* by Jay Ranade and Alan Nash.
+The following templates are somewhat inspired from Steve Oualine's classic - *C Elements of Style* and exampls provided in Doxygen manual.
 
 > *The templates use the Qt syle - /\*! as the preffered style for generating documentation using Doxygen. The \* always ends on the 80th column and \/ on the 81st!*
 
