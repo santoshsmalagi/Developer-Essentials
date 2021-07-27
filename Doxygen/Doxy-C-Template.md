@@ -83,7 +83,7 @@ A function's documentation must include the following fields:
     * If the function allocates memory that the caller must free
     * Whether any of the arguments can be a null pointer
     * If there are any performance implications of how a function is used
-    * If the function is re-entrant, What are its synchronization assumptions
+    * If the function is re-entrant, what are its synchronization assumptions?
 * Parameters (specified using ``@parms``)
     * a list of parameters (one per line) and a brief description of each of them
 * Return value (specified using ``@return``)
