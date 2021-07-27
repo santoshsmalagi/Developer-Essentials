@@ -5,7 +5,7 @@ Code documentation is absolutely vital to keep the codebase readable and to pres
 
 The following templates are mostly inspired from Steve Oualine's classic - *C Elements of Style* and *The Elements of C Programming Style* by Jay Ranade and Alan Nash.
 
-> *This template uses the Qt syle - /\*! as the preffered style for generating documentation using Doxygen. The \* always ends on the 80th column and \/ on the 81st!*
+> *The templates use the Qt syle - /\*! as the preffered style for generating documentation using Doxygen. The \* always ends on the 80th column and \/ on the 81st!*
 
 ## 1. Comments which should not be processed by Doxygen
 
