@@ -73,4 +73,18 @@ EXTRACT_LOCAL_CLASSES  = YES
 ```
 
 ## 3. Function comments
-Declaration comments describe use of the function (when it is non-obvious); comments at the definition of a function describe operation.
+Declaration comments describe use of the function (when it is non-obvious); comments at the definition of a function describe operation. Do not repeat the information from the ``.h`` file or wherever. Function comments may be ommitted if the function is simple and obvious.  For functions which have been declared and defined (e.g. ``static`` functions) in the same file it may be much cleaner to document it at the definition.  
+
+A function's documentation must include the following fields:
+* A brief one line description about the function and its purpose
+* Detailed description about the function which describe what the function does and how to use it
+    * For class member functions whether the object remembers reference arguments beyond the duration of the method call, and whether it will free them or not.
+    * If the function allocates memory that the caller must free.
+    * Whether any of the arguments can be a null pointer.
+    * If there are any performance implications of how a function is used.
+    * If the function is re-entrant. What are its synchronization assumptions
+    * If there is anything tricky about how a function does its job, the function definition MUST have an explanatory comment regaridng this
+* Parameters (specified using ``@parms``)
+    * a list of parameters (one per line) and a brief description of each of them
+* Return value (specified using ``@return``)
+    * describes what value the function returns
