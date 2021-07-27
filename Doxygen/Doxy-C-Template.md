@@ -99,6 +99,6 @@ A function's documentation must include the following fields:
 ## 5. Documenting typedefs
 ## 6. Documenting enumerated constants
 ## 7. Documenting structure types
-## 8. Documenting macro definitions
+## 8. Documenting macros
 
 > *OK, enough writing about writing code; the code itself is much more interesting. Have fun!*
