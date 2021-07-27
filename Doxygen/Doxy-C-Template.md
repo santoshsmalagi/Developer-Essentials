@@ -26,6 +26,7 @@ For comments which need not be processed by Doxygen e.g. copyright notice use th
 
 
 ## 2. File comments
+After the licence and copyright stuff, author information, legal notices
 Include a heading comment at the beginning of each file that explains the purpose of the file.  
 
 If the file defines the ``main()``, then the top of the file must also briefly describe the program, its usage, any warnings/special instructions for someone building the program, special data structures or algorithms, any references if any, and finally add any other notes.  
@@ -39,3 +40,27 @@ If the file defines the ``main()``, then the top of the file must also briefly d
  * it displays a suitable error message and terminates the program.
  *******************************************************************************/
  ```
+ To document a global C function, typedef, enum or preprocessor definition you must first document the file that contains it (usually this will be a header file, because that file contains the information that is exported to other source files).
+ 
+ > *All files must have file comments, and must include @file command, otherwise global entities - functions, typedefs, enums, macros and variables will not be documented, even though Doxygen compatible comments are used*
+
+The following settings in the Doxyfile determine which entities from the file are documented:
+
+```Shell
+# all entities except ``static`` functions/variables and ``private`` class members are documented, default = NO
+EXTRACT_ALL = YES      
+
+# if EXTRACT_PRIVATE tag is set to YES, all private members of a class will be documented; default = NO
+EXTRACT_PRIVATE = YES   
+
+# if EXTRACT_PRIV_VIRTUAL tag is set to YES, private virtual methods of a class are included in the documentation
+EXTRACT_PRIV_VIRTUAL = YES 
+
+# if EXTRACT_STATIC tag is set to YES, all static members of a file will be documented
+EXTRACT_STATIC = YES   
+
+# is set to YES, classes (and structs) defined locally in source files will be included, if set to NO only classes defined in header files are included.
+EXTRACT_LOCAL_CLASSES = YES       
+```
+
+
