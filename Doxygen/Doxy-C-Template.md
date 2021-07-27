@@ -95,9 +95,9 @@ A function's documentation must include the following fields:
     * use ``@note`` to add additional information, remarks, notes etc.
     * use ``@warning`` to warn the user about any special restrictions regarding the function usage etc. 
 
-## 4. Documenting typedefs
-## 5. Documenting enumerated constants
-## 6. Documenting global variables
+## 4. Documenting global, static variables
+## 5. Documenting typedefs
+## 6. Documenting enumerated constants
 ## 7. Documenting structure types
 ## 8. Documenting macro definitions
 
