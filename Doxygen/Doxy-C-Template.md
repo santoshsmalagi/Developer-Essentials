@@ -71,3 +71,6 @@ EXTRACT_STATIC = YES
 # default = YES.
 EXTRACT_LOCAL_CLASSES  = YES     
 ```
+
+## 3. Function comments
+Declaration comments describe use of the function (when it is non-obvious); comments at the definition of a function describe operation.
