@@ -100,3 +100,5 @@ A function's documentation must include the following fields:
 ## 6. Documenting global variables
 ## 7. Documenting structure types
 ## 8. Documenting macro definitions
+
+> *OK, enough writing about writing code; the code itself is much more interesting. Have fun!*
