@@ -26,10 +26,9 @@ For comments which need not be processed by Doxygen e.g. copyright notice use th
 
 
 ## 2. File comments
-After the licence and copyright stuff, author information, legal notices
-Include a heading comment at the beginning of each file that explains the purpose of the file.  
+After the licence and copyright stuff, author information etc. include a heading comment at the beginning of each file, that explains the purpose of the file.  
 
-If the file defines the ``main()``, then the top of the file must also briefly describe the program, its usage, any warnings/special instructions for someone building the program, special data structures or algorithms, any references if any, and finally add any other notes.  
+If the file defines the ``main()``, then the top of the file must also briefly describe the program, its usage, any warnings/special instructions for someone building the program, describe in short the most important data structures or algorithms, references if any, and finally add any other miscelleanous remarks.  
 
 ```C
 /*!****************************************************************************
@@ -40,7 +39,7 @@ If the file defines the ``main()``, then the top of the file must also briefly d
  * it displays a suitable error message and terminates the program.
  *******************************************************************************/
  ```
- To document a global C function, typedef, enum or preprocessor definition you must first document the file that contains it (usually this will be a header file, because that file contains the information that is exported to other source files).
+To document a global C function, typedef, enum, or pre-processor definition you must first document the file that contains it (usually this will be a header file, because that file contains the information that is exported to other source files).
  
  > *All files must have file comments, and must include @file command, otherwise global entities - functions, typedefs, enums, macros and variables will not be documented, even though Doxygen compatible comments are used.*
 
@@ -73,5 +72,3 @@ EXTRACT_STATIC = YES
 # default = YES.
 EXTRACT_LOCAL_CLASSES  = YES     
 ```
-
-
