@@ -5,6 +5,8 @@ Code documentation is absolutely vital to keep the codebase readable and to pres
 
 The following templates are mostly inspired from Steve Oualine's classic - *C Elements of Style* and *The Elements of C Programming Style* by Jay Ranade and Alan Nash.
 
+> *This template uses the Qt syle - /\*! as the preffered style.*
+
 ## 1. Comments which should not be processed by Doxygen
 
 For comments which need not be processed by Doxygen e.g. copyright notice use the boxed comment style:
@@ -22,7 +24,6 @@ For comments which need not be processed by Doxygen e.g. copyright notice use th
 
 **IMPORTANT** - in your Doxyfile configurations ALWAYS set ``JAVADOC_BANNER = NO``, such that Doxygen will always interpret such boxed comments as *comments* and ignore them.
 
-> *Henceforth, the Qt syle - /\*! will be the preffered style.*
 
 ## 2. File comments
 Include a heading comment at the beginning of each file that explains the purpose of the file.  
