@@ -22,3 +22,9 @@ For comments which need not be processed by Doxygen e.g. copyright notice use th
 
 **IMPORTANT** - in your Doxyfile configurations ALWAYS set ``JAVADOC_BANNER = NO``, such that Doxygen will always interpret such boxed comments as *comments* and ignore them.
 
+> *Henceforth, the Qt syle - /\*! will be the preffered style.*
+
+## 2. File comments
+Include a heading comment at the beginning of each file that explains the purpose of the file.  
+
+If the file defines the ``main()``, then the top of the file must also briefly describe the program, its usage, any warnings/special instructions for someone building the program, special data structures or algorithms, any references if any, and finally any other notes.  
