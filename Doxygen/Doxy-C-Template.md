@@ -5,7 +5,7 @@ Code documentation is absolutely vital to keep the codebase readable and to pres
 
 The following templates are mostly inspired from Steve Oualine's classic - *C Elements of Style* and *The Elements of C Programming Style* by Jay Ranade and Alan Nash.
 
-## Comments which should not be processed by Doxygen
+## 1. Comments which should not be processed by Doxygen
 
 For comments which need not be processed by Doxygen e.g. copyright notice use the boxed comment style:
 
