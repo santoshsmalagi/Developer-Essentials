@@ -42,7 +42,7 @@ If the file defines the ``main()``, then the top of the file must also briefly d
  ```
  To document a global C function, typedef, enum or preprocessor definition you must first document the file that contains it (usually this will be a header file, because that file contains the information that is exported to other source files).
  
- > *All files must have file comments, and must include @file command, otherwise global entities - functions, typedefs, enums, macros and variables will not be documented, even though Doxygen compatible comments are used*
+ > *All files must have file comments, and must include @file command, otherwise global entities - functions, typedefs, enums, macros and variables will not be documented, even though Doxygen compatible comments are used.*
 
 The following settings in the Doxyfile determine which entities from the file are documented:
 
