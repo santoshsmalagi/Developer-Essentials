@@ -5,4 +5,20 @@ Code documentation is absolutely vital to keep the codebase readable and to pres
 
 The following templates are mostly inspired from Steve Oualine's classic - *C Elements of Style* and *The Elements of C Programming Style* by Jay Ranade and Alan Nash.
 
+## Comments which should not be processed by Doxygen
+
+For comments which need not be processed by Doxygen e.g. copyright notice use the boxed comment style:
+
+```C
+/***********************************************************************
+* Copyright (C) 1988-2021 Free Software Foundation, Inc.               *
+* This file is part of GCC.                                            *
+* GCC is free software; you can redistribute it and/or modify it under *
+* the terms of the GNU General Public License as published by the Free *
+* Software Foundation; either version 3, or (at your option) any later *
+* version.                                                             *
+************************************************************************/
+```
+
+**IMPORTANT** - in your Doxyfile configurations ALWAYS set ``JAVADOC_BANNER = NO``, such that Doxygen will always interpret such boxed comments as *comments* and ignore them.
 
