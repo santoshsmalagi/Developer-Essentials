@@ -48,11 +48,11 @@ The following settings in the Doxyfile determine which entities from the file ar
 
 ```Shell
 # all entities except ``static`` functions/variables and ``private`` class members are documented
-default = NO
+# default = NO
 EXTRACT_ALL = YES      
 
 # if EXTRACT_PRIVATE tag is set to YES, all private members of a class will be documented
-default = NO
+# default = NO
 EXTRACT_PRIVATE = YES   
 
 # if EXTRACT_PRIV_VIRTUAL tag is set to YES, private virtual methods of a class are included
@@ -60,7 +60,7 @@ EXTRACT_PRIVATE = YES
 EXTRACT_PRIV_VIRTUAL = YES 
 
 # If the EXTRACT_PACKAGE tag is set to YES, all members with package or internal included
-# The default value is: NO.
+# default = NO.
 EXTRACT_PACKAGE = YES
 
 # if EXTRACT_STATIC tag is set to YES, all static members of a file will be documented
@@ -70,7 +70,7 @@ EXTRACT_STATIC = YES
 # If the EXTRACT_LOCAL_CLASSES tag is set to YES, classes (and structs) defined
 # locally in source files will be included in the documentation. If set to NO,
 # only classes defined in header files are included.
-# The default value is: YES.
+# default = YES.
 EXTRACT_LOCAL_CLASSES  = YES     
 ```
 
