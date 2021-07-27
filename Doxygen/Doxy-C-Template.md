@@ -98,7 +98,7 @@ A function's documentation must include the following fields:
 ## 4. Documenting global, static variables
 ## 5. Documenting typedefs
 ## 6. Documenting enumerated constants
-## 7. Documenting structure types
+## 7. Documenting structures, unions and bit fields
 ## 8. Documenting macros
 
 > *OK, enough writing about writing code; the code itself is much more interesting. Have fun!*
