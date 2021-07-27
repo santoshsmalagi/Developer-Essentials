@@ -47,20 +47,31 @@ If the file defines the ``main()``, then the top of the file must also briefly d
 The following settings in the Doxyfile determine which entities from the file are documented:
 
 ```Shell
-# all entities except ``static`` functions/variables and ``private`` class members are documented, default = NO
+# all entities except ``static`` functions/variables and ``private`` class members are documented
+default = NO
 EXTRACT_ALL = YES      
 
-# if EXTRACT_PRIVATE tag is set to YES, all private members of a class will be documented; default = NO
+# if EXTRACT_PRIVATE tag is set to YES, all private members of a class will be documented
+default = NO
 EXTRACT_PRIVATE = YES   
 
-# if EXTRACT_PRIV_VIRTUAL tag is set to YES, private virtual methods of a class are included in the documentation
+# if EXTRACT_PRIV_VIRTUAL tag is set to YES, private virtual methods of a class are included
+# default = NO
 EXTRACT_PRIV_VIRTUAL = YES 
 
+# If the EXTRACT_PACKAGE tag is set to YES, all members with package or internal included
+# The default value is: NO.
+EXTRACT_PACKAGE = YES
+
 # if EXTRACT_STATIC tag is set to YES, all static members of a file will be documented
+# default = NO
 EXTRACT_STATIC = YES   
 
-# is set to YES, classes (and structs) defined locally in source files will be included, if set to NO only classes defined in header files are included.
-EXTRACT_LOCAL_CLASSES = YES       
+# If the EXTRACT_LOCAL_CLASSES tag is set to YES, classes (and structs) defined
+# locally in source files will be included in the documentation. If set to NO,
+# only classes defined in header files are included.
+# The default value is: YES.
+EXTRACT_LOCAL_CLASSES  = YES     
 ```
 
 
