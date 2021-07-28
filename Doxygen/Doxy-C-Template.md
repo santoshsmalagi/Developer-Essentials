@@ -114,26 +114,33 @@ A function's documentation must include the following fields:
 
 ## 4. Documenting global, static variables
 
-To document global or static variables, put an additional ```<``` marker in the comment block:
+To document global or static variables, put an additional ```<``` marker in the comment block. This is more of an inline comment.
 
 ```C
-int var;                   /*!< stores the number of variables */
+int var;                   /*!< stores the number of variables */ or
+int var;                   //!< stores the number of variables
 ```
 
 ## 5. Documenting typedefs
 ## 6. Documenting enumerated constants
-    /** 
-     * An enum.
-     * More detailed enum description.
-     */
- 
-    enum TEnum { 
-          TVal1, /**< enum value TVal1. */  
-          TVal2, /**< enum value TVal2. */  
-          TVal3  /**< enum value TVal3. */  
-         } 
-       *enumPtr, /**< enum pointer. Details. */
-       enumVar;  /**< enum variable. Details. */
+
+Describe the ``enum`` type in detail, why are you defining an enumerated type in the first place and what are the legal and illegal values, and how will they be used. Documenting enumerated types involves a combination of block comments to descibe the structure overall, but using inline comments to describe the constants themselves in greater detail.
+
+```C
+/*!****************************************************************************
+ * @brief an enumerated type
+ * more detailed enum description.
+ *******************************************************************************/
+ enum TEnum 
+ {
+     TVal1,               /*!< enum value TVal1. */
+     TVal2,               /*!< enum value TVal2. */
+     TVal3                /*!< enum value TVal3. */  
+  }
+  *enumPtr,               /*!< enum pointer.     */
+   enumVar;               /*!< enum variable     */
+```
+
 ## 7. Documenting structures, unions and bit fields
 ## 8. Documenting macros
 
