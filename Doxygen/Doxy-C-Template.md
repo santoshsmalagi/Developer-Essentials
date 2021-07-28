@@ -124,10 +124,10 @@ int var;                   //!< stores the number of variables
 ## 5. Documenting typedefs
 ## 6. Documenting enumerated constants
 
-Describe the ``enum`` type in detail, why are you defining an enumerated type in the first place and what are the legal and illegal values, and how will they be used. Documenting enumerated types involves a combination of block comments to descibe the structure overall, but using inline comments to describe the constants themselves in greater detail.
+Describe the ``enum`` type in detail, why are you defining an enumerated type in the first place, what are the legal and illegal values, and how will they be used. Documenting enumerated types involves a combination of block comments to descibe the structure overall, but using inline comments to describe the constants themselves in greater detail.
 
 ```C
-/*!****************************************************************************
+/*!*****************************************************************************
  * @brief an enumerated type
  * more detailed enum description.
  *******************************************************************************/
@@ -142,6 +142,15 @@ Describe the ``enum`` type in detail, why are you defining an enumerated type in
 ```
 
 ## 7. Documenting structures, unions and bit fields
+
 ## 8. Documenting macros
+A macro is documented using block comments.
+
+```C
+/*!*****************************************************************************
+ * @brief A macro that returns the maximum of a and b.
+ *******************************************************************************/
+#define MAX(a,b) (((a)>(b))?(a):(b))
+```
 
 > *OK, enough writing about writing code; the code itself is much more interesting. Have fun!*
