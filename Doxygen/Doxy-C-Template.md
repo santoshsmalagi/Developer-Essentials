@@ -122,6 +122,7 @@ int var;                   //!< stores the number of variables
 ```
 
 ## 5. Documenting typedefs
+A ``typedef`` can be documented 
 ## 6. Documenting enumerated constants
 
 Describe the ``enum`` type in detail, why are you defining an enumerated type in the first place, what are the legal and illegal values, and how will they be used. Documenting enumerated types involves a combination of block comments to descibe the structure overall, but using inline comments to describe the constants themselves in greater detail.
