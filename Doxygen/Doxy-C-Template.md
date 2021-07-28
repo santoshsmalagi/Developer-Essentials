@@ -94,10 +94,45 @@ A function's documentation must include the following fields:
     * use ``@see`` to refer to related functions
     * use ``@note`` to add additional information, remarks, notes etc.
     * use ``@warning`` to warn the user about any special restrictions regarding the function usage etc. 
+ 
+```C
+/*!****************************************************************************
+ * @brief accepts three unsigned numbers and returns true if they form\
+          a pythagorean triplet
+ * This function accepts three unsigned numbers, calculates the
+ * square of each, and checks to see if sum of squares of the the two 
+ * smaller numbers equals the square of the third. 
+ * @param num1 the first number
+ * @param num2 the second number
+ * @param num3 the third number
+ * @return returns true if the numbers form a pythagorean triplet, otherwise returns false
+ * @see square
+ * @note a^2 = b^2 + c^2
+ *******************************************************************************/
+ int isPythagoreanTriplet(unsigned a, unsigned b, unsigned c);
+```
 
 ## 4. Documenting global, static variables
+
+To document global or static variables, put an additional ```<``` marker in the comment block:
+
+```C
+```
+
 ## 5. Documenting typedefs
 ## 6. Documenting enumerated constants
+    /** 
+     * An enum.
+     * More detailed enum description.
+     */
+ 
+    enum TEnum { 
+          TVal1, /**< enum value TVal1. */  
+          TVal2, /**< enum value TVal2. */  
+          TVal3  /**< enum value TVal3. */  
+         } 
+       *enumPtr, /**< enum pointer. Details. */
+       enumVar;  /**< enum variable. Details. */
 ## 7. Documenting structures, unions and bit fields
 ## 8. Documenting macros
 
