@@ -160,4 +160,4 @@ A macro is documented using block comments.
 #define MAX(a,b) (((a)>(b))?(a):(b))
 ```
 
-> *OK, enough writing about writing code; the code itself is much more interesting. Have fun -:)
+> *OK, enough writing about writing code; the code itself is much more interesting. Have fun -:)*
