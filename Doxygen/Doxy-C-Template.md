@@ -117,6 +117,7 @@ A function's documentation must include the following fields:
 To document global or static variables, put an additional ```<``` marker in the comment block:
 
 ```C
+int var;                   /*!< stores the number of variables */
 ```
 
 ## 5. Documenting typedefs
