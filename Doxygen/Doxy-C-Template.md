@@ -148,6 +148,7 @@ Describe the ``enum`` type in detail, why are you defining an enumerated type in
 ```
 
 ## 7. Documenting structures, unions and bit fields
+Structs, unions and bit fields are documented just like enumerated types - a combination of descriptive block comment describing the structure/union or bit field, and inline comments for the members.
 
 ## 8. Documenting macros
 A macro is documented using block comments.
