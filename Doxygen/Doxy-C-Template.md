@@ -122,7 +122,12 @@ int var;                   //!< stores the number of variables
 ```
 
 ## 5. Documenting typedefs
-A ``typedef`` can be documented 
+A ``typedef`` can be documented with an inline comment or block comment, though inline comments ae more preferable.
+
+```C
+typedef unsigned int u_int32;               /*!< a type definition for unsigned 32 bit integer */
+```
+
 ## 6. Documenting enumerated constants
 
 Describe the ``enum`` type in detail, why are you defining an enumerated type in the first place, what are the legal and illegal values, and how will they be used. Documenting enumerated types involves a combination of block comments to descibe the structure overall, but using inline comments to describe the constants themselves in greater detail.
