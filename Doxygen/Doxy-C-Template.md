@@ -3,7 +3,7 @@ This is a collection of templates to generate documentation for C source code us
 * Steve Oualline's classic book - *C Elements of Style*
 * Examples provided in Doxygen Manual
 
-> *The templates use the Qt syle - /\*! as the preffered style for generating documentation using Doxygen. The \* always ends on the 80th column and \/ on the 81st!*
+> *The templates use the Qt syle - /\*! as the preffered style for generating documentation using Doxygen. The \* always ends on the 80th column and \/ on the 81st! For more styles see (Comment Blocks)[Doxygen/02.Comment-Blocks.md]*
 
 ## 1. Ignoring comments
 
