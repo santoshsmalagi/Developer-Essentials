@@ -23,9 +23,7 @@ For comments which need not be processed by Doxygen use the boxed comment style:
 > **IMPORTANT** - *in your Doxyfile configuration ALWAYS set ``JAVADOC_BANNER = NO``, such that Doxygen will interpret these boxed comments as comments and ignore them.*
 
 ## 2. Documenting files
-All files must have file comments. File comments must necessarily include license and copyright stuff, author information etc. If you do not wish to process liecensing and copyright information through Doxygen, it can be ignored as mentioned above. Always include a heading comment at the beginning of each file, that explains the purpose of the file.  
-
-If the file defines the ``main()``, then the top of the file must also briefly describe the program, its usage, any warnings/special instructions for someone building the program, describe in short the most important data structures or algorithms, references if any, and finally add any other miscelleanous remarks.  
+All files must have file comments. File comments include details like licensing and copyright if any, author information, the purpose of the file, known bugs, change log etc. If the file defines the ``main()``, then it is also helpful to include details like - program usage, warnings/special instructions for someone building the program, a summary of the most important data structures or algorithms, references if any, and finally any other miscelleanous notes.  
 
 ```C
 /*!****************************************************************************
@@ -40,13 +38,11 @@ If the file defines the ``main()``, then the top of the file must also briefly d
  > *All files must have file comments, and must include @file command, otherwise global entities - functions, typedefs, enums, macros and variables will not be documented, even though Doxygen compatible comments are used.*
 
 ## 3. Documenting global/static functions
-Declaration comments describe use of the function (when it is non-obvious); comments at the definition of a function describe operation. Do not repeat the same information in multiple locations. Function comments may be ommitted if the function is simple and obvious.
-
-> *For functions which have been declared and defined (e.g. ``static`` functions) in the same file it may be much cleaner to document them at the definition.*
+Functions can be documentated at thier declaration (i.e. in header files) or at their definition (in the source file). For functions which have been declared and defined (e.g. ``static`` functions) in the same file it may be much cleaner to document them at thier definition. See - [Elements of C++ Style](https://github.com/santoshsmalagi/CPP/blob/master/Part%20I%20-%20The%20Basics/The-Elements-of-C++-Stlye.md for how to document functions.
 
 A function's documentation must include the following fields:
 * A brief one line description about the function and its purpose specified using ``@brief``
-* Detailed description about the function (as explained in [Elements of C++ Style](https://github.com/santoshsmalagi/CPP/blob/master/Part%20I%20-%20The%20Basics/The-Elements-of-C++-Stlye.md)
+* Detailed description about the function (as explained in 
 * Parameters (specified using ``@param``)
     * a list of parameters (one per line) and a brief description of each of them
 * Return value (specified using ``@return``)
