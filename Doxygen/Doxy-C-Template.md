@@ -39,7 +39,7 @@ All files must have file comments. File comments include details like licensing 
  > *All files must have file comments, and must include @file command, otherwise global entities - functions, typedefs, enums, macros and variables will not be documented, even though Doxygen compatible comments are used.*
 
 ## 3. Documenting global/static functions
-Functions can be documentated at thier declaration (i.e. in header files) or at their definition (in the source file). For functions which have been declared and defined (e.g. ``static`` functions) in the same file it may be much cleaner to document them at thier definition. See - [Elements of C++ Style](https://github.com/santoshsmalagi/CPP/blob/master/Part%20I%20-%20The%20Basics/The-Elements-of-C++-Stlye.md for how to document functions.
+Functions can be documentated at thier declaration (i.e. in header files) or at their definition (in the source file). For functions which have been declared and defined (e.g. ``static`` functions) in the same file it may be much cleaner to document them at thier definition. See - [Elements of C++ Style](https://github.com/santoshsmalagi/CPP/blob/master/Part%20I%20-%20The%20Basics/The-Elements-of-C++-Stlye.md) for how to document functions.
 
 A function's documentation must include the following fields:
 * A brief one line description about the function and its purpose specified using ``@brief``
