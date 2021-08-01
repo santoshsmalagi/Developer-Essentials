@@ -35,26 +35,127 @@ All files must have file comments. File comments include details like licensing 
 //! it displays a suitable error message and terminates the program.
 //!///////////////////////////////////////////////////////////////////////////////
  ```
- 
+  
  > *All files must have file comments, and must include @file command, otherwise global entities - functions, typedefs, enums, macros and variables will not be documented, even though Doxygen compatible comments are used.*
 
 ## 3. Documenting classes
 
-Documenting structured types involves a combination of block comments to describe the overall purpose of the data structure, and using inline comments to describe the structure members in greater detail.
+Class documentation involves use of block comments to describe the overall purpose of the class, and using inline comments to describe the class members variables and methods. Though it may not always be necessary to document the obivious - e.g. the purpose of a ctor or a dtor.
 
-```C
-//!//////////////////////////////////////////////////////////////////////////////
-//! @brief this structure holds variables together
-//! more detailed struct description.
-//!//////////////////////////////////////////////////////////////////////////////
- struct TEnum 
- {
-     TVal1,               /*!< value TVal1. */
-     TVal2,               /*!< value TVal2. */
-     TVal3                /*!< value TVal3. */  
-  }
-  *enumPtr,               /*!< a struct pointer.     */
-   enumVar;               /*!< struct type           */
+```C++
+//!  @brief A test class. 
+//!  A more elaborate class description.
+ 
+class QTstyle_Test
+{
+  public:
+ 
+    //! An enum.
+    //! More detailed enum description.
+    enum TEnum { 
+                 TVal1, //!< Enum value TVal1.  
+                 TVal2, //!< Enum value TVal2.  
+                 TVal3  //!< Enum value TVal3.  
+               }
+               //! and enum variable
+               *enumPtr,
+               //! an enum pointer
+               enumVar;  
+    
+    //! A constructor.
+    //! A more elaborate description of the constructor.
+    QTstyle_Test();
+ 
+    //! A destructor.
+    //! A more elaborate description of the destructor.
+   ~QTstyle_Test();
+    
+    //! @brief A normal member taking two arguments and returning an integer value.
+    //! @param a an integer argument.
+    //! @param s a constant character pointer.
+    //! @return The test results
+    //! @see QTstyle_Test(), ~QTstyle_Test(), testMeToo() and publicVar()
+    int testMe(int a,const char *s);
+       
+    //! A pure virtual member.
+    //! @see testMe()
+    //! @param c1 the first argument
+    //! @param param c2 the second argument
+    virtual void testMeToo(char c1,char c2) = 0;
+   
+    int publicVar;  //!< A public variable.
+       
+    //! @brief A function variable.
+    int (*handler)(int a,int b);
+};
+```
+It may also be possible to be creative and re-write the above example using multiple commenting styles, as shown in the [Doxygen Reference](https://www.doxygen.nl/manual/docblocks.html):
+
+```C++
+//!  A test class. 
+/*!
+  A more elaborate class description.
+*/
+ 
+class QTstyle_Test
+{
+  public:
+ 
+    //! An enum.
+    /*! More detailed enum description. */
+    enum TEnum { 
+                 TVal1, /*!< Enum value TVal1. */  
+                 TVal2, /*!< Enum value TVal2. */  
+                 TVal3  /*!< Enum value TVal3. */  
+               } 
+         //! Enum pointer.
+         /*! Details. */
+         *enumPtr, 
+         //! Enum variable.
+         /*! Details. */
+         enumVar;  
+    
+    //! A constructor.
+    /*!
+      A more elaborate description of the constructor.
+    */
+    QTstyle_Test();
+ 
+    //! A destructor.
+    /*!
+      A more elaborate description of the destructor.
+    */
+   ~QTstyle_Test();
+    
+    //! A normal member taking two arguments and returning an integer value.
+    /*!
+      \param a an integer argument.
+      \param s a constant character pointer.
+      \return The test results
+      \sa QTstyle_Test(), ~QTstyle_Test(), testMeToo() and publicVar()
+    */
+    int testMe(int a,const char *s);
+       
+    //! A pure virtual member.
+    /*!
+      \sa testMe()
+      \param c1 the first argument.
+      \param c2 the second argument.
+    */
+    virtual void testMeToo(char c1,char c2) = 0;
+   
+    //! A public variable.
+    /*!
+      Details.
+    */
+    int publicVar;
+       
+    //! A function variable.
+    /*!
+      Details.
+    */
+    int (*handler)(int a,int b);
+};
 ```
 
 ## 4. Documenting global/static functions
