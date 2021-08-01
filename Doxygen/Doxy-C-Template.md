@@ -65,7 +65,7 @@ A function's documentation must include the following fields:
  * @param num1 the first number
  * @param num2 the second number
  * @param num3 the third number
- * @return returns true if the numbers form a pythagorean triplet, otherwise returns false
+ * @return returns true if the numbers form a pythagorean triplet
  * @see square
  * @note a^2 = b^2 + c^2
  *******************************************************************************/
