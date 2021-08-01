@@ -82,33 +82,33 @@ int var;                   //!< stores the number of variables
 ```
 
 ## 5. Documenting typedefs
-A ``typedef`` can be documented with an inline comment or block comment, though inline comments ae more preferable.
+A ``typedef`` can be documented with an inline comment or block comment, though inline comments are more preferable.
 
 ```C
 typedef unsigned int u_int32;               /*!< a type definition for unsigned 32 bit integer */
 ```
 
-## 6. Documenting enumerated constants
+## 6. Documenting structs
 
-Describe the ``enum`` type in detail, why are you defining an enumerated type in the first place, what are the legal and illegal values, and how will they be used. Documenting enumerated types involves a combination of block comments to descibe the structure overall, but using inline comments to describe the constants themselves in greater detail.
+Documenting structured types involves a combination of block comments to describe the overall purpose of the data structure, and using inline comments to describe the structure members in greater detail.
 
 ```C
 /*!*****************************************************************************
- * @brief an enumerated type
- * more detailed enum description.
+ * @brief this structure holds variables together
+ * more detailed struct description.
  *******************************************************************************/
- enum TEnum 
+ struct TEnum 
  {
-     TVal1,               /*!< enum value TVal1. */
-     TVal2,               /*!< enum value TVal2. */
-     TVal3                /*!< enum value TVal3. */  
+     TVal1,               /*!< value TVal1. */
+     TVal2,               /*!< value TVal2. */
+     TVal3                /*!< value TVal3. */  
   }
-  *enumPtr,               /*!< enum pointer.     */
-   enumVar;               /*!< enum variable     */
+  *enumPtr,               /*!< a struct pointer.     */
+   enumVar;               /*!< struct type           */
 ```
 
-## 7. Documenting structures, unions and bit fields
-Structs, unions and bit fields are documented just like enumerated types - a combination of descriptive block comment describing the structure/union or bit field, and inline comments for the members.
+## 7. Documenting unions, bit fields and enumerated constants
+Unions, bit fields, and enumerated types, are documented just like structs - a combination of descriptive block comments describing the structure/union or bit field, and inline comments for the members.
 
 ## 8. Documenting macros
 A macro is documented using block comments.
