@@ -46,22 +46,18 @@ Declaration comments describe use of the function (when it is non-obvious); comm
 
 A function's documentation must include the following fields:
 * A brief one line description about the function and its purpose specified using ``@brief``
-* Detailed description about the function which describe what the function does and how to use it
-    * If there is anything tricky about how a function does its job, the function definition MUST have an explanatory comment regarding this 
-    * For class member functions whether the object remembers reference arguments beyond the duration of the method call, and whether it will free them or not.
-    * If the function allocates memory that the caller must free
-    * Whether any of the arguments can be a null pointer
-    * If there are any performance implications of how a function is used
-    * If the function is re-entrant, what are its synchronization assumptions?
+* Detailed description about the function (as explained in [Elements of C++ Style](https://github.com/santoshsmalagi/CPP/blob/master/Part%20I%20-%20The%20Basics/The-Elements-of-C++-Stlye.md)
 * Parameters (specified using ``@param``)
     * a list of parameters (one per line) and a brief description of each of them
 * Return value (specified using ``@return``)
     * describes what value the function returns
-* in addition to these, any other useful information can always be added
-    * use ``@see`` to refer to related functions
-    * use ``@note`` to add additional information, remarks, notes etc.
-    * use ``@warning`` to warn the user about any special restrictions regarding the function usage etc. 
- 
+* any other useful information such as:
+    * ``@see`` to refer to related functions
+    * ``@note`` to add additional information, remarks, notes etc.
+    * ``@date`` to describe when the source file was created
+    * ``@author`` to describe who the author is 
+    * ``@warning`` to warn the user about any special restrictions regarding function usage 
+
 ```C
 /*!****************************************************************************
  * @brief accepts three unsigned numbers and returns true if they form\
