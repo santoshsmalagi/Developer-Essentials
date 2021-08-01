@@ -213,10 +213,12 @@ Unions, bit fields, and enumerated types, are documented just like structs - a c
 ## 8. Documenting macros
 A macro is documented using block comments.
 
+> *Use of macros is discouraged in modern C++, consider using ``constexpr`` instead*
+
 ```C
-/*!*****************************************************************************
- * @brief A macro that returns the maximum of a and b.
- *******************************************************************************/
+//!//////////////////////////////////////////////////////////////////////////
+//! @brief A macro that returns the maximum of a and b.
+//!//////////////////////////////////////////////////////////////////////////
 #define MAX(a,b) (((a)>(b))?(a):(b))
 ```
 
