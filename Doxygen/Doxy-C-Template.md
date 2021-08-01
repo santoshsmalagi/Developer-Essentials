@@ -1,6 +1,7 @@
 # Doxygen Template for C Programs
 This is a collection of templates to generate documentation for C source code using Doxygen. The content of the templates has been inspired from multiple sources:
 * Steve Oualline's classic book - *C Elements of Style*
+* *The Elements of C++ Style* by Trevor Misffeldt, Gregory Bumgardner, and Andrew Gray
 * Examples provided in Doxygen Manual
 
 *The templates use the Qt syle - /\*! as the preffered style for generating documentation using Doxygen. The \* always ends on the 80th column and \/ on the 81st! For more styles see - [Comment Blocks](/Doxygen/02.Comment-Blocks.md)*.
