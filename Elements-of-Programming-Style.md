@@ -1,4 +1,16 @@
-# What to Comment?
+# The Elements of Programming Style
+
+Code documentation is absolutely vital to keep the codebase readable and to preserve valuable knowledge. While comments and code documentation are very important, the best code is self-documenting. When documenting code do it with the audience in mind - the next developer who will need to understand the code to fix bugs and ship enhancements. *Be generous — the next one may be you!*  
+
+## Documenting functions
+
+* Detailed description about the function which describe what the function does and how to use it
+    * If there is anything tricky about how a function does its job, the function definition MUST have an explanatory comment regarding this 
+    * For class member functions whether the object remembers reference arguments beyond the duration of the method call, and whether it will free them or not.
+    * If the function allocates memory that the caller must free
+    * Whether any of the arguments can be a null pointer
+    * If there are any performance implications of how a function is used
+    * If the function is re-entrant, what are its synchronization assumptions?
 
 ### File Comments
 Start each file with license boilerplate.File comments describe the contents of a file. If a file declares, implements, or tests exactly one abstraction that is documented by a comment at the point of declaration, file comments are not required. All other files must have file comments.
