@@ -2,6 +2,12 @@
 #   Last modified 21st Aug 2021
 #   Contains support for both 'python Pretty Printers' and 'gdb-stl-views'
 
+
+#--------------------------------------------------------------------------
+#   Enable loading of a local .gdbinit file
+#--------------------------------------------------------------------------
+set auto-load safe-path /
+
 #--------------------------------------------------------------------------
 #   Python Pretty Printer Support - libstdc++-v3
 #--------------------------------------------------------------------------
@@ -707,5 +713,3 @@ set print vtbl on
 set print demangle on
 set demangle-style gnu-v3
 set print sevenbit-strings off
-
-set auto-load safe-path /
