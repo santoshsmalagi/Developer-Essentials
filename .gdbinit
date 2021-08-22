@@ -708,4 +708,4 @@ set print demangle on
 set demangle-style gnu-v3
 set print sevenbit-strings off
 
-add-auto-load-safe-path /
+set auto-load safe-path /
