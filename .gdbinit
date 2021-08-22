@@ -11,12 +11,13 @@ set auto-load safe-path /
 #--------------------------------------------------------------------------
 #   Python Pretty Printer Support - libstdc++-v3
 #--------------------------------------------------------------------------
-    python
-    import sys
-    sys.path.insert(0, ‘<absolute path to python dir checked-out above>')
-    from libstdcxx.v6.printers import register_libstdcxx_printers
-    register_libstdcxx_printers (None)
-    end
+
+python
+import sys
+sys.path.insert(0, '<absolute path to python dir checked-out above>')
+from libstdcxx.v6.printers import register_libstdcxx_printers
+register_libstdcxx_printers (None)
+end
 
 #--------------------------------------------------------------------------
 #   STL GDB evaluators/views/utilities - 1.03
