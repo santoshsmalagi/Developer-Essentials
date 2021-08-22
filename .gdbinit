@@ -12,6 +12,7 @@ set auto-load safe-path /
 #   Python Pretty Printer Support - libstdc++-v3
 #   checkout the latest Python libstdc++ printers:
 #   svn co svn://gcc.gnu.org/svn/gcc/trunk/libstdc++-v3/python
+#   requires python2 or python3 to be installed on the system
 #--------------------------------------------------------------------------
 
 python
