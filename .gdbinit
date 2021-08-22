@@ -1,5 +1,5 @@
 #   .gdbinit File - Santosh S Malagi
-#   Last modified 
+#   Last modified 21st Aug 2021
 #   Contains support for both 'python Pretty Printers' and 'gdb-stl-views'
 
 #--------------------------------------------------------------------------
