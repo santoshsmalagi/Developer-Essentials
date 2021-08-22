@@ -211,6 +211,8 @@ To add a link to an image, enclose the Markdown for the image in brackets, and t
 
 [![The Real Earth](/assets/BluePlanet.png "The Blue Planet")](https://www.space.com/54-earth-history-composition-and-atmosphere.html)
 
+## Emojis and Icons
+https://github.com/ikatyang/emoji-cheat-sheet
 
 ## References
 https://www.markdownguide.org
