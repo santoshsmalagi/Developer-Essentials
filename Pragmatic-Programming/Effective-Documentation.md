@@ -80,7 +80,7 @@ Knowledge specific to your software or business product, is gained by learning f
 Acknowledge that most of the knowledge is already in the system itself. When needed, identify where it is located and exploit it from there. Even if the knowledge is there somewhere, this does not mean that there is nothing to do about it. There are a number of problems with the knowledge that’s already there:
 
 * **Inaccessible:** 
-     * The knowledge stored in the source code and other artifacts is not accessible to nontechnical people. For example, source code is not readable by nondevelopers.
+     * The knowledge stored in the source code and other artifacts is not accessible to nontechnical people. For example, source code is not readable by nondevelopers. Or the original developers and software architects - the master minds behind the product have moved on to other companies or roles and are no longer available to address your questions.
 * **Too abundant:** 
      * Huge amounts of knowledge are stored in the project artifacts, which makes it impossible to use the knowledge efficiently. 
      * For example, each logical line of code encodes knowledge, but for a given question, only one or two lines may be relevant to the answer.
@@ -102,8 +102,7 @@ Acknowledge that most of the knowledge is already in the system itself. When nee
 * **Reliable:**
   * Living documentation is accurate and in sync with the software being delivered, at any point in time.
   * To achieve reliable documentation, we rely on the following ideas:
-      * Exploiting available knowledge: Most of the knowledge is already present in the artifacts of the project, it just needs to be exploited, augmented, and curated for
-        documentation purposes.
+      * Exploiting available knowledge: Most of the knowledge is already present in the artifacts of the project, it just needs to be exploited, augmented, and curated for documentation purposes.
       * Accuracy mechanism: An accuracy mechanism is needed to ensure that the knowledge is always kept in sync.
 
 * **Low effort:**
@@ -135,14 +134,14 @@ Acknowledge that most of the knowledge is already in the system itself. When nee
    
  ### 6. Creating Documentation
 
-The best place to put documentation about a thing is on the thing itself. Choosing internal documentation by default, at least for all knowledge that’s at risk of changing regularly.
-Choose to do external documentation only when there is clear value add. The point of using external documentation would be to be able to add a human feel to the final document, so I’d use Apple Keynote or Microsoft PowerPoint, select or create beautiful quality pictures, and beta test the effectiveness of the documentation on a panel of colleagues to make sure it’s well received.
+The best place to put documentation about a thing is on the thing itself. Choosing internal documentation by default, at least for all knowledge that’s at risk of changing regularly. Choose to do external documentation only when there is clear value add. The point of using external documentation would be to be able to add a human feel to the final document, so I’d use Apple Keynote or Microsoft PowerPoint, select or create beautiful quality pictures, and beta test the effectiveness of the documentation on a panel of colleagues to make sure it’s well received.
 
 Examples of internal documentation:
 * self-documenting code and use of clean code practices
 * class and method naming
 * using composed methods and types
 * annotations that add knowledge to elements of the programming language
+* use of automatic documentation generators e.g. Doxygen for documenting C/C++ source code
 * comments on public interfaces, classes, and main methods
 * folder organization and decomposition and naming of modules and submodules
 
