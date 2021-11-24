@@ -132,7 +132,7 @@ The compiler does not need a forward declaration for ```main()```, the definiton
 
 **The linker requires that one and only one ```main()``` function exist when creating an executable program**.  
 
-The ```main()``` function has two arguments that are traditionally called ```argc``` (argument count) and ```argv``` (argument vector), although the C compiler does not require these names. The types for ``argc`` and ``argv`` are defined by the C language.  
+The ```main()``` function has two arguments that are traditionally called ```argc``` (argument count) and ```argv``` (argument vector), although the compiler does not require these names. The types for ``argc`` and ``argv`` are defined by the language.  
  
  ``argc``, is a non-negative number corresponding to the number of elements in ``argv``.  
  
