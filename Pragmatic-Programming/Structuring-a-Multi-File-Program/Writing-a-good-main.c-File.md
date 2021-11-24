@@ -184,7 +184,7 @@ For example, the following provides a list of the environment variables at the t
 int main (int argc, char *argv[], char *envp[])           
 ```
 
-In the Unicode programming model, you can define a wide-character version of the main function. Use ``wmain`` instead of ``main`` if you want to write portable code that adheres to the Unicode programming model.
+Windows Visual C++ programming environment also supports a wide-character version of the main function.
  
 ```C
 int wmain(int argc, wchar_t *argv[], wchar_t *envp[])
