@@ -2,8 +2,8 @@
 
 The contents of this page are based on the original article which appeared on Opensource.com - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function).  
 
-A program basically:
-* declares and initialzes variables and data structures, sets up the program environment
+A command line program or a console application:
+* declares and initializes variables and data structures, sets up the program environment
 * processes and validates command line arguments or user inputs
 * calls a sequence of functions to operate on the data
 * monitor return values from functions and take further actions based on outcome of a function call
