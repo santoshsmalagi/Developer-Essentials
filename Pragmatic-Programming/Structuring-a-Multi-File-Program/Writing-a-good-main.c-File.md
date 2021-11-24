@@ -120,9 +120,7 @@ int  do_the_needful(options_t *options);
 ```
 A good practice (or choice of style) is to define the functions after the ```main()``` and not before. So the function prototypes need to be declared here. Early C compilers used a single-pass strategy, which meant that every symbol (variable or function name) you used in your program had to be declared before you used it. Modern compilers are nearly all multi-pass compilers that build a complete symbol table before generating code, so using function prototypes is not strictly required.
 
-### 9 - 13 - main()
-
-**What is the main()?**  
+### 9-13. main()
 
 Program execution begins at the ```main()```. The compiler does not need a forward declaration for ```main()```, the definiton itself is accepted by the compiler as the declaration of ```main()```. The ``main`` function doesn't have a declaration, because it's built into the language. It cannot be declared as ``inline`` or ``static``. 
 
