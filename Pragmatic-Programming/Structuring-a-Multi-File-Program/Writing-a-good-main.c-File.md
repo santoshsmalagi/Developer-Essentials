@@ -128,13 +128,21 @@ Program execution begins at the ```main()```. The compiler expects a ```main()``
 
 ```C
 int main () { /* body */ } 
-int main (int argc, char *argv[]) { /* body */ } 
-int main (int argc, char **argv) { /* body */ } 
+int main (int argc, char *argv[]) { /* body */ }
+int main (int argc, char *argv[], implementation parameters) { /* body */ }
 ```
-An additional acceptable form is implementation specific and provides a list of the environment variables at the time the function is called:
+
+It is also possible to use the following alternative forms:
+ 
+```C
+int main (int argc, char **argv) { /* body */ }
+int main (int argc, const char **argv) { /* body */ }
+```
+ 
+For example, the following provides a list of the environment variables at the time the function is called:
 
 ```C
-int main (int argc, char* argv[], char *envp[]) { /* body */ }
+int main (int argc, char *argv[], char *envp[]) { /* body */ }
 ```
 
 The compiler does not need a forward declaration for ```main()```, the definiton itself is accepted by the compiler as the declaration of ```main()```. The ```main()``` function has two arguments that traditionally are called ```argc``` and ```argv``` and always returns a signed integer.  ```main()``` returns a 0 (zero) on success and -1 (negative one) on failure. If no return statement is provided, the compiler will provide a ```return 0;``` as the last statement in the function body by default.  
