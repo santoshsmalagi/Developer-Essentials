@@ -26,7 +26,7 @@ The compiler expects a ```main()``` function in one of the following forms to be
 
 ```C
 // no arguments, ignore any command line arguments or environmental variables
-void main(); { /* body */ } 
+void main() { /* body */ } 
 int main () { /* body */ }
 
 // process command line arguments
