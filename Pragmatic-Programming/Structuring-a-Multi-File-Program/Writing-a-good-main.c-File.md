@@ -233,7 +233,7 @@ The C++ standard says it's undefined behaviour to call ```main()``` from another
 
 On a hypothetical implementation, calling ```main``` could result in fun things like re-running constructors for all static variables, re-initializing the data structures used by new/delete to keep track of allocations, or other total breakage of your program. Or it might not cause any problem at all - i.e. undefined behaviour.
 
-* Sructure a C file containing a ```main()``` function that is easy to maintain
+* Structure a C file containing a ```main()``` function that is easy to maintain
 * How to best process command line arguments, and handle erroneous user inputs
 * Monitor return values from functions, and take appropriate actions e.g. fail gracefully when a ERROR occurs
 * Post program wrap up tasks e.g. free memory
