@@ -66,7 +66,7 @@ The first things to add to a ```main.c``` file are includes to make a multitude 
 Include project specific headers i.e. framework utilities, GUI enablers, or headers to provide access to API useful for the current program/project.
 
 > **When a program is both C and C++!**  
-Often times, we encounter code which is both C and C++ - i.e. C++ code, with C code declared using ```extern C``` to avoid name mangling. Such files tend to have a .C extension instead of the regular .c or .cpp extensions. For such programs, the suggested order of includes would be - (1) standard C++ headers e.g. <iostream>, <fstream>  (2) standard C headers (3) headers for C++ STL - \<vector\>, \<list\>, \<string\>, \<algorithm\> etc. (4) C++ headers for Boost if required (5) header includes for user defined libraries. An interesting article on this topic - [How to mix C and C++](https://isocpp.org/wiki/faq/mixing-c-and-cpp).
+Often times, we encounter code which is both C and C++ - i.e. C++ code, with C code declared using ```extern C``` to avoid name mangling. Such files tend to have a .C extension instead of the regular .c or .cpp extensions. For such programs, the suggested order of includes would be - (1) standard C++ headers e.g. \<iostream\>, \<fstream\>  (2) standard C headers (3) headers for C++ STL - \<vector\>, \<list\>, \<string\>, \<algorithm\> etc. (4) C++ headers for Boost if required (5) header includes for user defined libraries. An interesting article on this topic - [How to mix C and C++](https://isocpp.org/wiki/faq/mixing-c-and-cpp).
 
 ### 4. Define macros and symbolic constants
 
@@ -120,17 +120,17 @@ int  do_the_needful(options_t *options);
 ```
 A good practice (or choice of style) is to define the functions after the ```main()``` and not before. So the function prototypes need to be declared here. Early C compilers used a single-pass strategy, which meant that every symbol (variable or function name) you used in your program had to be declared before you used it. Modern compilers are nearly all multi-pass compilers that build a complete symbol table before generating code, so using function prototypes is not strictly required.
 
-### 9 - 13 - the actual main()
+### 9 - 13 - main()
 
 **What is the main()?**  
 
-Program execution begins at the ```main()```. 
+Program execution begins at the ```main()```. The compiler does not need a forward declaration for ```main()```, the definiton itself is accepted by the compiler as the declaration of ```main()```. The ``main`` function doesn't have a declaration, because it's built into the language. It cannot be declared as ``inline`` or ``static``. 
 
-The compiler does not need a forward declaration for ```main()```, the definiton itself is accepted by the compiler as the declaration of ```main()```. The ``main`` function doesn't have a declaration, because it's built into the language. It cannot be declared as ``inline`` or ``static``. 
+> *For most C/C++ programs the true entry point to a program is not ``main``, it is a function called ``_start`` which initializes the program runtime and invokes the ``main`` function. The implementation of ``_start()`` is provided by ``libc`` and it is written in assembly. Many implementations store the ``_start`` function in a file called ``crt0.s``. Compilers typically ship with pre-compiled ``crt0.o`` object files for each supported architecture. Because ``_start`` invokes main, it also handles its return. When control returns from ``main`` to ``_start``, the next function to run is exit. The exit function calls all functions registered with ``atexitand \__cxa_atexit`` during the startup process. Then ``exit`` calls the global destructors (those placed in the ``.fini``, ``.fini_array``, or ``.dtors`` sections). Finally, ``exit`` terminates the program with the return value provided by ``main``.
 
-```main()```  always returns a signed integer, for example it returns a 0 (zero) on success and -1 (negative one) on failure. If no return statement is provided, the compiler will provide an implicit  ```return 0;``` as the last statement. The ``main`` can also be defined as returning ``void`` (no return value). This extension is available in some other compilers, but its use isn't recommended.  If ``main`` returns a void, you can't return an exit code to the parent process or the operating system by using a ``return`` statement. To return an exit code when ``main`` defined as void type, you must use the ``exit()`` function.
+``main()``  always returns a signed integer, for example it returns a 0 (zero) on success and -1 (negative one) on failure. If no return statement is provided, the compiler will provide an implicit  ```return 0;``` as the last statement. The ``main`` can also be defined as returning ``void`` (no return value). This extension is available in some other compilers, but its use isn't recommended.  If ``main`` returns a void, you can't return an exit code to the parent process or the operating system by using a ``return`` statement. To return an exit code when ``main`` defined as void type, you must use the ``exit()`` function.
 
-**The linker requires that one and only one ```main()``` function exist when creating an executable program**. Dynamic-link libraries and static libraries don't have a main function. The ``main`` function is where source code begins execution, but before a program enters the ``main`` function, all static class members without explicit initializers are set to zero. Global static objects are also initialized before entry to ``main``.
+**The linker requires that one and only one ```main()``` function exist when creating an executable program**. Dynamic-link libraries and static libraries don't have a main function. Before a program enters the ``main`` function, all static class members without explicit initializers are set to zero. Global static objects are also initialized before entry to ``main``.
 
 The ```main()``` function has two arguments that are traditionally called ```argc``` (argument count) and ```argv``` (argument vector), although the compiler does not require these names. The types for ``argc`` and ``argv`` are defined by the language.  
  
