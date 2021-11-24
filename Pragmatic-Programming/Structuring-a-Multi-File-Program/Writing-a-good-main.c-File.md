@@ -178,7 +178,7 @@ int main (int argc, char *argv[], char *envp[])           // envp provides a lis
 In the Unicode programming model, you can define a wide-character version of the main function. Use ``wmain`` instead of ``main`` if you want to write portable code that adheres to the Unicode programming model.
  
 ```C
- wmain( int argc, wchar_t *argv[ ], wchar_t *envp[ ] )
+ wmain(int argc, wchar_t *argv[ ], wchar_t *envp[ ])
  ```
 
 The statements within ```main()``` basically perform the following operations:
