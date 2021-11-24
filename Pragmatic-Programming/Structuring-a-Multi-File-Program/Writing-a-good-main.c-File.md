@@ -157,9 +157,14 @@ Additional arguments known as implementation parammeters can be passed to ``main
 The compiler expects a ```main()``` function in one of the following forms:
 
 ```C
-int main ()                                                  // no arguments, ignore any command line arguments or environmental variables
-int main (int argc, char *argv[])                            // process command line arguments
-int main (int argc, char *argv[], implementation parameters) // additional arguments are implementation defined e.g. array of env variables
+// no arguments, ignore any command line arguments or environmental variables
+int main ()
+
+// process command line arguments
+int main (int argc, char *argv[])
+ 
+// additional arguments are implementation defined e.g. array of env variables
+int main (int argc, char *argv[], implementation parameters) 
 ```
 
 It is also possible to use the following alternative forms:
