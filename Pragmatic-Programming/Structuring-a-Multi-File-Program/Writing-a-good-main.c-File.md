@@ -93,7 +93,7 @@ extern int opterr, optind;
 
 ### 6. typedef's
 
-```C
+```C++
 typedef struct {
   int           verbose;
   uint32_t      flags;
@@ -157,23 +157,29 @@ Additional arguments known as implementation parammeters can be passed to ``main
 The compiler expects a ```main()``` function in one of the following forms:
 
 ```C
-int main ()    // no arguments, ignore any command line arguments or environmental variables
-int main (int argc, char *argv[]) // 
-int main (int argc, char *argv[], implementation parameters) { /* body */ }
+int main ()                                                  // no arguments, ignore any command line arguments or environmental variables
+int main (int argc, char *argv[])                            // process command line arguments
+int main (int argc, char *argv[], implementation parameters) // additional arguments are implementation defined e.g. array of env variables
 ```
 
 It is also possible to use the following alternative forms:
  
 ```C
-int main (int argc, char **argv) { /* body */ }
-int main (int argc, const char **argv) { /* body */ }
+int main (int argc, char **argv)                           // alternative to char *argv[], pointer form
+int main (int argc, const char **argv)                     // some implementations may require argv to be of const type
 ```
  
 For example, the following provides a list of the environment variables at the time the function is called:
 
 ```C
-int main (int argc, char *argv[], char *envp[]) { /* body */ }
+int main (int argc, char *argv[], char *envp[])           // envp provides a list of environment variables and their values
 ```
+
+In the Unicode programming model, you can define a wide-character version of the main function. Use ``wmain`` instead of ``main`` if you want to write portable code that adheres to the Unicode programming model.
+ 
+``C
+ wmain( int argc, wchar_t *argv[ ], wchar_t *envp[ ] )
+ ```
 
 The statements within ```main()``` basically perform the following operations:
 
