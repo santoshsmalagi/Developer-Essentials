@@ -132,7 +132,20 @@ The compiler does not need a forward declaration for ```main()```, the definiton
 
 **The linker requires that one and only one ```main()``` function exist when creating an executable program**.  
 
-The ```main()``` function has two arguments that are traditionally called ```argc``` and ```argv```, although the C compiler does not require these names. The types for ``argc`` and ``argv`` are defined by the C language. ``argc``, is a non-negative number corresponding to the number of elements in ``argv``, and ``argv`` is an array of pointers to null-terminated strings that correspond to the program arguments. Traditionally, if a third parameter is passed to ``main``, that parameter is named ``envp``.
+The ```main()``` function has two arguments that are traditionally called ```argc``` (argument count) and ```argv``` (argument vector), although the C compiler does not require these names. The types for ``argc`` and ``argv`` are defined by the C language.  
+ 
+ ``argc``, is a non-negative number corresponding to the number of elements in ``argv``.  
+ 
+ ``argv`` is an array of pointers to null-terminated strings that correspond to the program arguments. Usually, an operating system passes the full path to the program’s
+executable as the first argument i.e. ```argv[0]``. Although the behavior depends on the execution environment. For example if ```a.out``` be the program being executed and it is passed the following command line arguments:
+
+```Console
+$:~ a.out foo 28 M
+```
+
+Then ```argv = ["/home/malagi/a.out", "foo" "28"]``` and ```argc=3```. 
+ 
+Additional arguments known as implementation parammeters can be passed to ``main``. Implementation parameters aren’t common in modern desktop environments. Traditionally, if a third parameter is passed to ``main``, that parameter is named ``envp`` and contains an array of null terminated strings corresponding to environment variables and their values.
  
 ```
 | Argument | Description                                                                             |
@@ -141,14 +154,6 @@ The ```main()``` function has two arguments that are traditionally called ```arg
 | argv     | Array of character pointers corresponding to the program arguments                      |
 | envp     | Array of character pointers corresponding to the environment variables and their values |
 ```
-
-The argument vector - ```argv```, is a tokenized representation of the command line that invoked the program, *it can be thought of as an array of strings*. The argument vector is guaranteed to always have at least one string in the first index, ```argv[0]```, which is the full path to the program executed. For example if ```a.out``` be the program being executed and it is passed the following command line arguments:
-
-```Console
-$:~ a.out foo 28 M
-```
-
-Then ```argv = ["/home/malagi/a.out", "foo" "28"]``` and ```argc=3```.
 
 The compiler expects a ```main()``` function in one of the following forms:
 
