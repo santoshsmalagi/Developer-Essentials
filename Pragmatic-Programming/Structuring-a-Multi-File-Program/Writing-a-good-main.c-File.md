@@ -3,12 +3,13 @@
 The contents of this page are based on the original article which appeared on Opensource.com - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function).  
 
 A command line program or a console application:
-* declares and initializes objects, sets up the program environment
-* processes and validates command line arguments or user inputs
-* calls a sequence of functions to operate on the data
-* monitor return values from functions and take further actions based on outcome of a function call
+* sets up the program environment
+* parses and validates command line arguments, exiting gracefully in case of incorrect usage
+* initializes objects and sets up program controls based on specified arguments (or keyword-options)
+* calls a sequence of functions to operate on data
+* monitor return values from functions, and take further actions
 * output/store the results
-* post program clean up tasks - e.g. free memory, and exit gracefully
+* post program clean up tasks - free memory, report summary, and exit gracefully
 
 A good outline for a ```main.c``` to achieve the above mentioned objectives is as follows:
 
