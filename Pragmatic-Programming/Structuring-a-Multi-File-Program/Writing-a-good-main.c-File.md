@@ -170,14 +170,18 @@ int main (int argc, char *argv[], implementation parameters)
 It is also possible to use the following alternative forms:
  
 ```C
-int main (int argc, char **argv)                           // alternative to char *argv[], pointer form
-int main (int argc, const char **argv)                     // some implementations may require argv to be of const type
+// alternative to char *argv[], pointer form
+int main (int argc, char **argv) 
+ 
+// some implementations may require argv to be of const type
+int main (int argc, const char **argv)                     
 ```
  
 For example, the following provides a list of the environment variables at the time the function is called:
 
 ```C
-int main (int argc, char *argv[], char *envp[])           // envp provides a list of environment variables and their values
+// envp provides a list of environment variables and their values
+int main (int argc, char *argv[], char *envp[])           
 ```
 
 In the Unicode programming model, you can define a wide-character version of the main function. Use ``wmain`` instead of ``main`` if you want to write portable code that adheres to the Unicode programming model.
