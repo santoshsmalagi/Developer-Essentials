@@ -124,11 +124,37 @@ A good practice (or choice of style) is to define the functions after the ```mai
 
 **What is the main()?**  
 
-Program execution begins at the ```main()```. The compiler expects a ```main()``` function in one of the following forms:
+Program execution begins at the ```main()```. 
+
+The compiler does not need a forward declaration for ```main()```, the definiton itself is accepted by the compiler as the declaration of ```main()```.
+
+```main()```  always returns a signed integer, for example it returns a 0 (zero) on success and -1 (negative one) on failure. If no return statement is provided, the compiler will provide an implicit  ```return 0;``` as the last statement. 
+
+**The linker requires that one and only one ```main()``` function exist when creating an executable program**.  
+
+The ```main()``` function has two arguments that are traditionally called ```argc``` and ```argv```, although the C compiler does not require these names. The types for ``argc`` and ``argv`` are defined by the C language. ``argc``, is a non-negative number corresponding to the number of elements in ``argv``, and ``argv`` is an array of pointers to null-terminated strings that correspond to the program arguments. Traditionally, if a third parameter is passed to ``main``, that parameter is named ``envp``.
+ 
+```
+| Argument | Name            | Description                   |
+|----------|-----------------|-------------------------------|
+| argc     | argument count  | Length of the argument vector |
+| argv     | argument vector | Array of char pointers        |
+| envp     | environment variables | Array of char pointers  |
+```
+
+The argument vector - ```argv```, is a tokenized representation of the command line that invoked the program, *it can be thought of as an array of strings*. The argument vector is guaranteed to always have at least one string in the first index, ```argv[0]```, which is the full path to the program executed. For example if ```a.out``` be the program being executed and it is passed the following command line arguments:
+
+```Console
+$:~ a.out foo 28 M
+```
+
+Then ```argv = ["/home/malagi/a.out", "foo" "28"]``` and ```argc=3```.
+
+The compiler expects a ```main()``` function in one of the following forms:
 
 ```C
-int main () { /* body */ } 
-int main (int argc, char *argv[]) { /* body */ }
+int main ()    // no arguments, ignore any command line arguments or environmental variables
+int main (int argc, char *argv[]) // 
 int main (int argc, char *argv[], implementation parameters) { /* body */ }
 ```
 
@@ -144,25 +170,6 @@ For example, the following provides a list of the environment variables at the t
 ```C
 int main (int argc, char *argv[], char *envp[]) { /* body */ }
 ```
-
-The compiler does not need a forward declaration for ```main()```, the definiton itself is accepted by the compiler as the declaration of ```main()```. The ```main()``` function has two arguments that traditionally are called ```argc``` and ```argv``` and always returns a signed integer.  ```main()``` returns a 0 (zero) on success and -1 (negative one) on failure. If no return statement is provided, the compiler will provide a ```return 0;``` as the last statement in the function body by default.  
-
-**The linker requires that one and only one ```main()``` function exist when creating an executable program**.   
-
-```
-| Argument | Name            | Description                   |
-|----------|-----------------|-------------------------------|
-| argc     | argument count  | Length of the argument vector |
-| argv     | argument vector | Array of char pointers        |
-```
-
-The argument vector - ```argv```, is a tokenized representation of the command line that invoked the program, *it can be thought of as an array of strings*. The argument vector is guaranteed to always have at least one string in the first index, ```argv[0]```, which is the full path to the program executed. For example if ```a.out``` be the program being executed and it is passed the following command line arguments:
-
-```Console
-$:~ a.out foo 28 M
-```
-Then ```argv = ["/home/malagi/a.out", "foo" "28"]``` and ```argc=3```.
-
 
 The statements within ```main()``` basically perform the following operations:
 
