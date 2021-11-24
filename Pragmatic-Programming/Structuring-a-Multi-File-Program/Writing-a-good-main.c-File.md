@@ -137,7 +137,7 @@ The ```main()``` function has two arguments that are traditionally called ```arg
  ``argc``, is a non-negative number corresponding to the number of elements in ``argv``.  
  
 ``argv`` is an array of pointers to null-terminated strings that correspond to the program arguments. Usually, an operating system passes the full path to the program’s
-executable as the first argument i.e. ``argv[0]``. Although the behavior depends on the execution environment. For example if ``a.out`` be the program being executed and it is passed the following command line arguments:
+executable as the first argument i.e. ``argv[0]``. The last argument from the command line is ```argv[argc - 1]```, and ```argv[argc]`` is always NULL. For example if ``a.out`` be the program being executed and it is passed the following command line arguments:
 
 ```Console
 $:~ a.out foo 28 M
