@@ -158,37 +158,37 @@ The compiler expects a ```main()``` function in one of the following forms:
 
 ```C
 // no arguments, ignore any command line arguments or environmental variables
-int main ()
+int main () { /* body */ }
 
 // process command line arguments
-int main (int argc, char *argv[])
+int main (int argc, char *argv[]) { /* body */ }
  
 // additional arguments are implementation defined e.g. array of env variables
-int main (int argc, char *argv[], implementation parameters) 
+int main (int argc, char *argv[], implementation parameters)  { /* body */ }
 ```
 
 It is also possible to use the following alternative forms:
  
 ```C
 // alternative to char *argv[], pointer form
-int main (int argc, char **argv) 
+int main (int argc, char **argv) { /* body */ }
  
 // some implementations may require argv to be of const type
-int main (int argc, const char **argv)                     
+int main (int argc, const char **argv) { /* body */ }                   
 ```
  
 For example, the following provides a list of the environment variables at the time the function is called:
 
 ```C
 // envp provides a list of environment variables and their values
-int main (int argc, char *argv[], char *envp[])           
+int main (int argc, char *argv[], char *envp[]) { /* body */ }         
 ```
 
 Windows Visual C++ programming environment also supports a wide-character version of the main function.
  
 ```C
 // Visual studio also supports a wchar version of parameters
-int wmain(int argc, wchar_t *argv[], wchar_t *envp[])
+int wmain(int argc, wchar_t *argv[], wchar_t *envp[]) { /* body */ }
  ```
 
 The statements within ```main()``` basically perform the following operations:
