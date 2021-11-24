@@ -187,6 +187,7 @@ int main (int argc, char *argv[], char *envp[])
 Windows Visual C++ programming environment also supports a wide-character version of the main function.
  
 ```C
+// Visual studio also supports a wchar version of parameters
 int wmain(int argc, wchar_t *argv[], wchar_t *envp[])
  ```
 
