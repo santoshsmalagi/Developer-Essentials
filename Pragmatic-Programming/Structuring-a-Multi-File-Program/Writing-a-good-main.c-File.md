@@ -147,13 +147,12 @@ Then ```argv = ["/home/malagi/a.out", "foo" "28"]``` and ```argc=3```.
  
 Additional arguments known as implementation parammeters can be passed to ``main``. Implementation parameters aren’t common in modern desktop environments. Traditionally, if a third parameter is passed to ``main``, that parameter is named ``envp`` and contains an array of null terminated strings corresponding to environment variables and their values.
  
-```
 | Argument | Description                                                                             |
 |----------|-----------------------------------------------------------------------------------------|
 | argc     | Number of elements in the argument vector                                               |
 | argv     | Array of character pointers corresponding to the program arguments                      |
 | envp     | Array of character pointers corresponding to the environment variables and their values |
-```
+
 
 The compiler expects a ```main()``` function in one of the following forms:
 
