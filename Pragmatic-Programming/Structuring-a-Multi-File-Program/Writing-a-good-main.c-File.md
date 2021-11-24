@@ -3,7 +3,7 @@
 The contents of this page are based on the original article which appeared on Opensource.com - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function).  
 
 * sets up the program environment
-* parses and validates command line arguments, exiting gracefully in case of incorrect usage
+* parses and validates command line arguments (or calls a function to do so), exiting gracefully in case of incorrect usage
 * initializes objects and sets up program controls based on specified arguments (or keyword-options)
 * calls a sequence of functions to operate on data
 * monitors return values from functions, and take further actions
@@ -34,10 +34,10 @@ int main(int argc, char *argv[]) {
 /* 14. Function definitions */
 ```
 
-### 1. Copyright, licensing and author information
+## 1. Copyright, licensing and author information
 Usually this is some form of standard template text which describes copyright information, organization/author, version information, etc. It may also be helpful to briefly describe the intended purpose of this C file. Additionally it is always a good practice to add meaningful comments. Do not write about what the code is doing - instead, write about why the code is doing what it's doing
 
-### 2.Standard header includes
+## 2.Standard header includes
 The first things to add to a ```main.c``` file are includes to make a multitude of standard C library functions and variables available to the program. The ```#include``` string is a C preprocessor (cpp) directive that causes the inclusion of the referenced file, in its entirety, in the current file. At a minimum the following are recommended to be included in the ```main.c``` file:
 
 ```C
@@ -62,13 +62,13 @@ The first things to add to a ```main.c``` file are includes to make a multitude 
 | getopt      | Supplies external optarg, opterr, optind, and getopt() function              |
 | sys/types   | Typedef shortcuts like uint32_t and uint64_t                                 |
 
-### 3.Project specific header includes
+## 3.Project specific header includes
 Include project specific headers i.e. framework utilities, GUI enablers, or headers to provide access to API useful for the current program/project.
 
 > **When a program is both C and C++!**  
 Often times, we encounter code which is both C and C++ - i.e. C++ code, with C code declared using ```extern C``` to avoid name mangling. Such files tend to have a .C extension instead of the regular .c or .cpp extensions. For such programs, the suggested order of includes would be - (1) standard C++ headers e.g. \<iostream\>, \<fstream\>  (2) standard C headers (3) headers for C++ STL - \<vector\>, \<list\>, \<string\>, \<algorithm\> etc. (4) C++ headers for Boost if required (5) header includes for user defined libraries. An interesting article on this topic - [How to mix C and C++](https://isocpp.org/wiki/faq/mixing-c-and-cpp).
 
-### 4. Define macros and symbolic constants
+## 4. Define macros and symbolic constants
 
 ```C
 #define OPTSTR "vi:o:f:h"
@@ -81,7 +81,7 @@ Often times, we encounter code which is both C and C++ - i.e. C++ code, with C c
 
 Constants should be defined using the ```#define``` directive in this part of the file. Collecting them at a single location makes it easier to update and modiy them as required. The constants can include mathematical constants; string constants for ERRORs, messages which get reused; #define macros etc.  Use all capital letters when naming a ```#define``` to distinguish them from variable and function names. The ```#define``` names can be a single continuous string or they can be separated with an underscore; just make sure they're all upper case.
 
-### 5. External declarations
+## 5. External declarations
 
 An extern declaration brings that name into the namespace of the current compilation unit (aka "file") and allows the program to access that variable.
 
@@ -91,7 +91,7 @@ extern char *optarg;
 extern int opterr, optind;
 ```
 
-### 6. typedef's
+## 6. typedef's
 
 ```C++
 typedef struct {
@@ -104,7 +104,7 @@ typedef struct {
 
 After external declarations, declare typedef's for structures, unions, and enumerations. For naming a typedef prefer a \_t suffix to indicate that the name is a type. Since C is a whitespace-neutral programming language, whitespaces can be used to line up field names in the same column. For pointer declarations, prepend the asterisk to the name to make it clear that it's a pointer.
 
-### 7. Global variable declarations
+## 7. Global variable declarations
 
 ```C
 int dumb_global_variable = -11;
@@ -112,7 +112,7 @@ int dumb_global_variable = -11;
 
 Global variables are a bad idea and you should never use them. But if you have to use a global variable, declare them here and be sure to give them a default value. Seriously, don't use global variables.
 
-### 8. Function prototypes
+## 8. Function prototypes
 
 ```C
 void usage(char *progname, int opt);
@@ -120,7 +120,7 @@ int  do_the_needful(options_t *options);
 ```
 A good practice (or choice of style) is to define the functions after the ```main()``` and not before. So the function prototypes need to be declared here. Early C compilers used a single-pass strategy, which meant that every symbol (variable or function name) you used in your program had to be declared before you used it. Modern compilers are nearly all multi-pass compilers that build a complete symbol table before generating code, so using function prototypes is not strictly required.
 
-### 9-13. main()
+## 9-13. main()
 
 Program execution begins at the ```main()```. The compiler does not need a forward declaration for ```main()```, because it's built into the language. The definiton itself is accepted by the compiler as the declaration of ```main()```. Also program functions usually dont call the ``main`` so there is no need for a forward declaration. It cannot be overloaded or declared as ``inline`` or ``static``. 
 
@@ -130,6 +130,7 @@ Program execution begins at the ```main()```. The compiler does not need a forwa
 
 **The linker requires that one and only one ```main()``` function exist when creating an executable program**. Dynamic-link libraries and static libraries don't have a main function. Before a program enters the ``main`` function, all static class members without explicit initializers are set to zero. Global static objects are also initialized before entry to ``main``.
 
+#### Command line arguments
 The ```main()``` function has two arguments that are traditionally called ```argc``` (argument count) and ```argv``` (argument vector), although the compiler does not require these names. For e.g. you can have ``int argi`` and ``char *args[]`` inplace of ``int argc`` and ``char *argv[]`` respectively. The types for command line arguments are defined by the language.  
  
  ``argc``, is a non-negative number corresponding to the number of elements in ``argv``.  
@@ -192,13 +193,20 @@ Windows Visual C++ programming environment also supports a wide-character versio
 int wmain(int argc, wchar_t *argv[], wchar_t *envp[]) { /* body */ }
  ```
 
-The statements within ```main()``` basically perform the following operations:
+#### Why the ```main()``` function does not need a declaration?
+* The compiler does not need a forward declaration for ```main()```
+* In C++, since a user program never calls ```main```, so technically it never needs a declaration before the definition
+* In C, a program can call ```main```, in that case it does require that a declaration be visible before the call
+* Note that ```main``` does need to be known to the code that calls it. This is special code in what is typically called the C++ runtime startup code. The linker includes that code for you automatically when you are linking a C++ program with the appropriate linker options. Whatever language that code is written in, it has whatever declaration of ```main``` it needs in order to call it properly.
+* Technically though, all definitions are also declarations, so your definition of main also declares main. The compiler does not need a forward declaration for ```main()```, the definiton is accepted by the compiler as the declaration of ```main()```.
 
-1. declare any variables local to main, or initialze global variables and data structures required by the program
-2. parse command line arguments and validate them
-3. pass the collected arguments to functions
-4. monitor return values from functions and take appropriate actions e.g. terminate processing with a message when an ERROR state occurs
-5. clean up tasks 
+#### What happens if any function in your program tries to call main()?
+
+The C++ standard says it's undefined behaviour to call ```main()``` from another function:
+
+*" An implementation shall not predefine the main function. This function shall not be overloaded. It shall have a return type of type int, but otherwise its type is implementation defined. All implementations shall allow both of the following definitions of main … The function main shall not be used within a program. The linkage (3.5) of main is implementation-defined.*
+
+On a hypothetical implementation, calling ```main``` could result in fun things like re-running constructors for all static variables, re-initializing the data structures used by new/delete to keep track of allocations, or other total breakage of your program. Or it might not cause any problem at all - i.e. undefined behaviour.
 
 This example declares an ```options``` variable initialized with default values and parse the command line, updating options as necessary.
 
@@ -254,32 +262,6 @@ int main(int argc, char *argv[]) {
 ```
 
 The guts of this ```main()``` function is a while loop that steps through argv looking for command line options and their arguments (if any). When a known command line option is detected, option-specific behavior happens. Some options have an argument, when an option has an argument, the next string in ```argv``` is available to the program. Files are opened for reading and writing or command line arguments are converted from a string to an integer value.
-
-## Why the ```main()``` function does not need a declaration?
-* The compiler does not need a forward declaration for ```main()```
-* In C++, since a user program never calls ```main```, so technically it never needs a declaration before the definition
-* In C, a program can call ```main```, in that case it does require that a declaration be visible before the call
-* Note that ```main``` does need to be known to the code that calls it. This is special code in what is typically called the C++ runtime startup code. The linker includes that code for you automatically when you are linking a C++ program with the appropriate linker options. Whatever language that code is written in, it has whatever declaration of ```main``` it needs in order to call it properly.
-* Technically though, all definitions are also declarations, so your definition of main also declares main. The compiler does not need a forward declaration for ```main()```, the definiton is accepted by the compiler as the declaration of ```main()```.
-
-## What happens if any function in your program tries to call main()?
-
-The C++ standard says it's undefined behaviour to call ```main()``` from another function:
-
-*" An implementation shall not predefine the main function. This function shall not be overloaded. It shall have a return type of type int, but otherwise its type is implementation defined. All implementations shall allow both of the following definitions of main … The function main shall not be used within a program. The linkage (3.5) of main is implementation-defined.*
-
-On a hypothetical implementation, calling ```main``` could result in fun things like re-running constructors for all static variables, re-initializing the data structures used by new/delete to keep track of allocations, or other total breakage of your program. Or it might not cause any problem at all - i.e. undefined behaviour.
-
-* Structure a C file containing a ```main()``` function that is easy to maintain
-* How to best process command line arguments, and handle erroneous user inputs
-* Monitor return values from functions, and take appropriate actions e.g. fail gracefully when a ERROR occurs
-* Post program wrap up tasks e.g. free memory
-
-The ```main()``` should primarily act as a facilitator for the overall program execution and perform the following tasks:
-  * parse and validate command line arguments, while type casting them if necessary (e.g. ```string``` to ```int``` using ```atoi```)
-  * instead the ```main()``` can also call another function which parses and validates the command line arguments
-  * pass the collected arguments to respective functions, monitor return values from functions and take appropriate actions e.g. terminate processing with a message when an ERROR state occurs
-  * clean up tasks - e.g. call destructor to free up memory etc.
 
 ### 14. Function definitions
 
