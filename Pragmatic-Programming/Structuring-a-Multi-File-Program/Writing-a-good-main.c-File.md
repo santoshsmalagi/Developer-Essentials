@@ -135,11 +135,11 @@ The compiler does not need a forward declaration for ```main()```, the definiton
 The ```main()``` function has two arguments that are traditionally called ```argc``` and ```argv```, although the C compiler does not require these names. The types for ``argc`` and ``argv`` are defined by the C language. ``argc``, is a non-negative number corresponding to the number of elements in ``argv``, and ``argv`` is an array of pointers to null-terminated strings that correspond to the program arguments. Traditionally, if a third parameter is passed to ``main``, that parameter is named ``envp``.
  
 ```
-| Argument | Name            | Description                   |
-|----------|-----------------|-------------------------------|
-| argc     | argument count  | Length of the argument vector |
-| argv     | argument vector | Array of char pointers        |
-| envp     | environment variables | Array of char pointers  |
+| Argument | Description                                                                             |
+|----------|-----------------------------------------------------------------------------------------|
+| argc     | Number of elements in the argument vector                                               |
+| argv     | Array of character pointers corresponding to the program arguments                      |
+| envp     | Array of character pointers corresponding to the environment variables and their values |
 ```
 
 The argument vector - ```argv```, is a tokenized representation of the command line that invoked the program, *it can be thought of as an array of strings*. The argument vector is guaranteed to always have at least one string in the first index, ```argv[0]```, which is the full path to the program executed. For example if ```a.out``` be the program being executed and it is passed the following command line arguments:
