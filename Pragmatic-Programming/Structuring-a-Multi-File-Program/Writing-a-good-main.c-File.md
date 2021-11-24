@@ -156,7 +156,7 @@ The compiler expects a ```main()``` function in one of the following forms:
 
 ```C
 // no return value 
-void main(); { /* body */ } 
+void main() { /* body */ } 
  
 // no arguments, ignore any command line arguments or environmental variables
 int main () { /* body */ }
