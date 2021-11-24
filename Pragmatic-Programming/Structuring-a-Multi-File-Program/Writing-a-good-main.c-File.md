@@ -2,42 +2,42 @@
 
 The contents of this page are based on the original article which appeared on Opensource.com - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function).  
 
-A command line program or a console application:
 * sets up the program environment
 * parses and validates command line arguments, exiting gracefully in case of incorrect usage
 * initializes objects and sets up program controls based on specified arguments (or keyword-options)
 * calls a sequence of functions to operate on data
-* monitor return values from functions, and take further actions
-* output/store the results
+* monitors return values from functions, and take further actions
+* outputs the results to stdout or writes it to a database/file
 * post program clean up tasks - free memory, report summary, and exit gracefully
-
+ 
 A good outline for a ```main.c``` to achieve the above mentioned objectives is as follows:
 
 ```C
 /* main.c */
-/* 0. Copyright, licensing or author information */
-/* 1. Standard header includes */
-/* 2. Project specific header includes */
-/* 3. Defines macros and symbolic constants */
-/* 4. External declarations */
-/* 5. Typedefs and enums */
-/* 6. Global variable declarations */
-/* 7. Function prototype declarations */
+/* 1. Copyright, licensing or author information */
+/* 2. Standard header includes */
+/* 3. Project specific header includes */
+/* 4. Defines macros and symbolic constants */
+/* 5. External declarations */
+/* 6. Typedefs and enums */
+/* 7. Global variable declarations */
+/* 8. Function prototype declarations */
 
 int main(int argc, char *argv[]) {
-/* 8. Declare variables and initialze data structures /*
-/* 9. Command-line argument processing */
-/* 10. Function calls */
-/* 11. Clean up tasks */
+/* 9. Declare variables and initialze objects required for program startup /*
+/* 10. Command-line argument processing, and setup program controls */
+/* 11. Function calls, error handling*/
+/* 12. Output to stdout or write to file/database */
+/* 13. Clean up tasks */
 }
 
-/* 12. Function definitions */
+/* 14. Function definitions */
 ```
 
-### 0. Copyright, licensing and author information
+### 1. Copyright, licensing and author information
 Usually this is some form of standard template text which describes copyright information, organization/author, version information, etc. It may also be helpful to briefly describe the intended purpose of this C file. Additionally it is always a good practice to add meaningful comments. Do not write about what the code is doing - instead, write about why the code is doing what it's doing
 
-### 1.Standard header includes
+### 2.Standard header includes
 The first things to add to a ```main.c``` file are includes to make a multitude of standard C library functions and variables available to the program. The ```#include``` string is a C preprocessor (cpp) directive that causes the inclusion of the referenced file, in its entirety, in the current file. At a minimum the following are recommended to be included in the ```main.c``` file:
 
 ```C
@@ -62,13 +62,13 @@ The first things to add to a ```main.c``` file are includes to make a multitude 
 | getopt      | Supplies external optarg, opterr, optind, and getopt() function              |
 | sys/types   | Typedef shortcuts like uint32_t and uint64_t                                 |
 
-### 2.Project specific header includes
+### 3.Project specific header includes
 Include project specific headers i.e. framework utilities, GUI enablers, or headers to provide access to API useful for the current program/project.
 
 > **When a program is both C and C++!**  
 Often times, we encounter code which is both C and C++ - i.e. C++ code, with C code declared using ```extern C``` to avoid name mangling. Such files tend to have a .C extension instead of the regular .c or .cpp extensions. For such programs, the suggested order of includes would be - (1) standard C++ headers e.g. <iostream>, <fstream>  (2) standard C headers (3) headers for C++ STL - \<vector\>, \<list\>, \<string\>, \<algorithm\> etc. (4) C++ headers for Boost if required (5) header includes for user defined libraries. An interesting article on this topic - [How to mix C and C++](https://isocpp.org/wiki/faq/mixing-c-and-cpp).
 
-### 3. Define macros and symbolic constants
+### 4. Define macros and symbolic constants
 
 ```C
 #define OPTSTR "vi:o:f:h"
@@ -81,7 +81,7 @@ Often times, we encounter code which is both C and C++ - i.e. C++ code, with C c
 
 Constants should be defined using the ```#define``` directive in this part of the file. Collecting them at a single location makes it easier to update and modiy them as required. The constants can include mathematical constants; string constants for ERRORs, messages which get reused; #define macros etc.  Use all capital letters when naming a ```#define``` to distinguish them from variable and function names. The ```#define``` names can be a single continuous string or they can be separated with an underscore; just make sure they're all upper case.
 
-### 4. External declarations
+### 5. External declarations
 
 An extern declaration brings that name into the namespace of the current compilation unit (aka "file") and allows the program to access that variable.
 
@@ -91,7 +91,7 @@ extern char *optarg;
 extern int opterr, optind;
 ```
 
-### 5. typedef's
+### 6. typedef's
 
 ```C
 typedef struct {
@@ -104,7 +104,7 @@ typedef struct {
 
 After external declarations, declare typedef's for structures, unions, and enumerations. For naming a typedef prefer a \_t suffix to indicate that the name is a type. Since C is a whitespace-neutral programming language, whitespaces can be used to line up field names in the same column. For pointer declarations, prepend the asterisk to the name to make it clear that it's a pointer.
 
-### 6. Global variable declarations
+### 7. Global variable declarations
 
 ```C
 int dumb_global_variable = -11;
@@ -112,7 +112,7 @@ int dumb_global_variable = -11;
 
 Global variables are a bad idea and you should never use them. But if you have to use a global variable, declare them here and be sure to give them a default value. Seriously, don't use global variables.
 
-### 7. Function prototypes
+### 8. Function prototypes
 
 ```C
 void usage(char *progname, int opt);
@@ -120,7 +120,7 @@ int  do_the_needful(options_t *options);
 ```
 A good practice (or choice of style) is to define the functions after the ```main()``` and not before. So the function prototypes need to be declared here. Early C compilers used a single-pass strategy, which meant that every symbol (variable or function name) you used in your program had to be declared before you used it. Modern compilers are nearly all multi-pass compilers that build a complete symbol table before generating code, so using function prototypes is not strictly required.
 
-### 8, 9, 10, & 11 - the actual main()
+### 9, 10, 11, & 12 - the actual main()
 
 **What is the main()?**  
 
