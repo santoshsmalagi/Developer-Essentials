@@ -126,11 +126,11 @@ A good practice (or choice of style) is to define the functions after the ```mai
 
 Program execution begins at the ```main()```. 
 
-The compiler does not need a forward declaration for ```main()```, the definiton itself is accepted by the compiler as the declaration of ```main()```.
+The compiler does not need a forward declaration for ```main()```, the definiton itself is accepted by the compiler as the declaration of ```main()```. The ``main`` function doesn't have a declaration, because it's built into the language. It cannot be declared as ``inline`` or ``static``. 
 
-```main()```  always returns a signed integer, for example it returns a 0 (zero) on success and -1 (negative one) on failure. If no return statement is provided, the compiler will provide an implicit  ```return 0;``` as the last statement. 
+```main()```  always returns a signed integer, for example it returns a 0 (zero) on success and -1 (negative one) on failure. If no return statement is provided, the compiler will provide an implicit  ```return 0;``` as the last statement. The ``main`` can also be defined as returning ``void`` (no return value). This extension is available in some other compilers, but its use isn't recommended.  If ``main`` returns a void, you can't return an exit code to the parent process or the operating system by using a ``return`` statement. To return an exit code when ``main`` defined as void type, you must use the ``exit()`` function.
 
-**The linker requires that one and only one ```main()``` function exist when creating an executable program**.  
+**The linker requires that one and only one ```main()``` function exist when creating an executable program**. Dynamic-link libraries and static libraries don't have a main function. The ``main`` function is where source code begins execution, but before a program enters the ``main`` function, all static class members without explicit initializers are set to zero. Global static objects are also initialized before entry to ``main``.
 
 The ```main()``` function has two arguments that are traditionally called ```argc``` (argument count) and ```argv``` (argument vector), although the compiler does not require these names. The types for ``argc`` and ``argv`` are defined by the language.  
  
@@ -145,7 +145,7 @@ $:~ a.out foo 28 M
 
 Then ```argv = ["/home/malagi/a.out", "foo" "28"]``` and ```argc=3```. 
  
-Additional arguments known as implementation parammeters can be passed to ``main``. Implementation parameters aren’t common in modern desktop environments. Traditionally, if a third parameter is passed to ``main``, that parameter is named ``envp`` and contains an array of null terminated strings corresponding to environment variables and their values.
+Additional arguments known as implementation parammeters can be passed to ``main``. Implementation parameters aren’t common in modern desktop environments. Traditionally, if a third parameter is passed to ``main``, that parameter is named ``envp`` and contains an array of null terminated strings representing the variables set in the user's environment. The environment block passed to ``main`` is a "frozen" copy of the current environment. Later changes to the environment won't change the values in ``envp``.
  
 | Argument | Description                                                                             |
 |----------|-----------------------------------------------------------------------------------------|
@@ -157,6 +157,9 @@ Additional arguments known as implementation parammeters can be passed to ``main
 The compiler expects a ```main()``` function in one of the following forms:
 
 ```C
+// no return value 
+void main(); { /* body */ } 
+ 
 // no arguments, ignore any command line arguments or environmental variables
 int main () { /* body */ }
 
