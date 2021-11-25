@@ -5,15 +5,20 @@ The ```main()``` function has two arguments that are traditionally called ```arg
  
  ``argc``, is a non-negative number corresponding to the number of elements in ``argv``.  
  
-``argv`` is an array of pointers to null-terminated strings that correspond to the program arguments. Usually, an operating system passes the full path to the program’s
-executable as the first argument i.e. ``argv[0]``. The last argument from the command line is ``argv[argc - 1]``, and ``argv[argc]`` is always NULL. For example if ``a.out`` be the program being executed and it is passed the following command line arguments:
+``argv`` is an array of pointers to null-terminated strings that correspond to the program arguments. 
 
-```Console
-$:~ a.out foo 28 M
-```
+#### Argument processing
+* Arguments are delimited by white space, which is either a space or a tab.
+* Usually, the operating system passes the full path to the program’s executable as the first argument i.e. ``argv[0]``.
+* The last argument from the command line is ``argv[argc - 1]``, and ``argv[argc]`` is always NULL.
+* Quotes
+    * Quotes around the name of the program executable (e.g. ``"./a.out"``) are allowed. However, the double quote marks aren't included in the ``argv[0]`` output. i.e. ``argv[0]=a.out`` in this case.
+    * A string surrounded by double quote marks is interpreted as a single argument, which may contain white-space characters.
+ * Backslashes
+     * interpreted literally, unless they immediately precede a double quote mark.
+     * If an even number of backslashes is followed by a double quote mark, then one backslash (\) is placed in the argv array for every pair of backslashes (\\), and the double quote mark (") is interpreted as a string delimiter.
+     * If an odd number of backslashes is followed by a double quote mark, then one backslash (\) is placed in the argv array for every pair of backslashes (\\). 
 
-Then ```argv = ["/home/malagi/a.out", "foo" "28"]``` and ```argc=3```. 
- 
 Additional arguments known as implementation parammeters can be passed to ``main``. Implementation parameters aren’t common in modern desktop environments. Traditionally, if a third parameter is passed to ``main``, that parameter is named ``envp`` and contains an array of null terminated strings representing the variables set in the user's environment. The environment block passed to ``main`` is a "frozen" copy of the current environment. Later changes to the environment won't change the values in ``envp``.
  
 | Argument | Description                                                                             |
