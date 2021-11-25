@@ -184,7 +184,7 @@ int main(int argc, char *argv[])
   
   if (argc == 1)
   {
-    cout << "Very less arguments to process..!";
+    cout << "No arguments to process..!";
     return 0;
   }
   
