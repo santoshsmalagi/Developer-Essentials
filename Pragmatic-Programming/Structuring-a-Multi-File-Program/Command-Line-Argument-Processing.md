@@ -44,7 +44,7 @@ int main (int argc, char *argv[], char *envp[]) { /* body */ }
 * Quotes
     * Quotes around the name of the program executable (e.g. ``"./a.out"``) are allowed. 
     * However, the double quote marks aren't included in the ``argv[0]`` i.e. ``argv[0] = a.out`` in this case.
-    * A string surrounded by double quote marks is interpreted as a single argument, which may contain white-space characters (see examples below)
+    * A string surrounded by single or double quotes is interpreted as a single argument, which may contain white-space characters (see examples below)
  * Backslashes
      * interpreted literally, unless they immediately precede a double quote mark.
      * one backslash (\) is placed in the ``argv`` array for every pair of backslashes (\\)
