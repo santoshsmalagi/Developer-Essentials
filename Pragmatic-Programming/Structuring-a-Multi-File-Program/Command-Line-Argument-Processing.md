@@ -60,9 +60,9 @@ using std::endl;
 int main(int argc, char *argv[], char *envp[])
 {
   // print command line arguments
-  cout << "-----------------------------------------------------------------" << endl;
+  cout << "-----------------------------------------------" << endl;
   cout << "Command line arguments: " << endl;
-  cout << "-----------------------------------------------------------------" << endl;
+  cout << "-----------------------------------------------" << endl;
   for (int i = 0; i < argc; ++i)
     cout << "argv["<< i << "]: " << argv[i] << endl;
   cout << endl;
@@ -110,9 +110,9 @@ using std::endl;
 int main(int argc, char *argv[], char *envp[])
 {
   // print environment variables
-  cout << "-----------------------------------------------------------------" << endl;
+  cout << "---------------------------------------" << endl;
   cout << "Environment contains: " << endl;
-  cout << "-----------------------------------------------------------------" << endl;
+  cout << "---------------------------------------" << endl;
   while (*envp != NULL)
     cout << (*envp++);
   cout << endl;
