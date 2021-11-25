@@ -22,6 +22,13 @@ Additional arguments known as implementation parammeters can be passed to ``main
 | argv     | Array of character pointers corresponding to the program arguments                      |
 | envp     | Array of character pointers corresponding to the environment variables and their values |
 
+The following ignores any command line arguments:
+
+```C++
+// no arguments, ignore any command line arguments or environmental variables
+void main() { /* body */ } 
+int main () { /* body */ }
+```
 The compiler expects a ```main()``` function in one of the following forms to be able to parse and process command line arguments:
 
 ```C++
@@ -38,12 +45,24 @@ int main (int argc, const char **argv) { /* body */ }
 int main (int argc, char *argv[], char *envp[]) { /* body */ }         
 ```
 
-The following ignores any command line arguments:
-
+## Example to print command line arguments
 ```C++
-// no arguments, ignore any command line arguments or environmental variables
-void main() { /* body */ } 
-int main () { /* body */ }
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
+int main(int argc, char *argv[], char *envp[])
+{
+  // print command line arguments
+  cout << "-----------------------------------------------------------------" << endl;
+  cout << "Command line arguments: " << endl;
+  cout << "-----------------------------------------------------------------" << endl;
+  for (int i = 0; i < argc; ++i)
+    cout << "argv["<< i << "]: " << argv[i] << endl;
+  cout << endl;
+  return 0;
+}
 ```
 
 ## Example to print environment variables
@@ -71,6 +90,27 @@ int main(int argc, char *argv[], char *envp[])
     ++i;
   }
 
+  return 0;
+}
+```
+
+## Another example to print environment variables using postfix expression
+
+```C++
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
+int main(int argc, char *argv[], char *envp[])
+{
+  // print environment variables
+  cout << "-----------------------------------------------------------------" << endl;
+  cout << "Environment contains: " << endl;
+  cout << "-----------------------------------------------------------------" << endl;
+  while (*envp != NULL)
+    cout << (*envp++);
+  cout << endl;
   return 0;
 }
 ```
