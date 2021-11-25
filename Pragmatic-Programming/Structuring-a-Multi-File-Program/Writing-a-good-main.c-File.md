@@ -208,7 +208,7 @@ The C++ standard says it's undefined behaviour to call ```main()``` from another
 
 On a hypothetical implementation, calling ```main``` could result in fun things like re-running constructors for all static variables, re-initializing the data structures used by new/delete to keep track of allocations, or other total breakage of your program. Or it might not cause any problem at all - i.e. undefined behaviour.
 
-### 14. Function definitions
+## 14. Function definitions
 
 Finally, write functions that aren't boilerplate. Functions should almost always validate their input in some way. If full validation is expensive, try to do it once and treat the validated data as immutable. It also makes sense to group functions by their purpose and define them in a seperate source file, while including the header in which they are declared.
 
