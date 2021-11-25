@@ -24,11 +24,7 @@ Additional arguments known as implementation parammeters can be passed to ``main
 
 The compiler expects a ```main()``` function in one of the following forms to be able to parse and process command line arguments:
 
-```C
-// no arguments, ignore any command line arguments or environmental variables
-void main() { /* body */ } 
-int main () { /* body */ }
-
+```C++
 // process command line arguments
 int main (int argc, char *argv[]) { /* body */ }
  
@@ -40,4 +36,41 @@ int main (int argc, const char **argv) { /* body */ }
 
 // envp provides a list of environment variables and their values
 int main (int argc, char *argv[], char *envp[]) { /* body */ }         
+```
+
+The following ignores any command line arguments:
+
+```C++
+// no arguments, ignore any command line arguments or environmental variables
+void main() { /* body */ } 
+int main () { /* body */ }
+```
+
+## Example to print environment variables
+
+```C++
+#include <iostream>
+#include <cstring>
+
+using std::cout;
+using std::endl;
+
+int main(int argc, char *argv[], char *envp[])
+{
+  bool printLineNumbers {false};
+  int i {};
+
+  if ((argc == 2) && (strcmp(argv[1], "/n") == 0))
+    printLineNumbers = true;
+
+  while (envp[i] != NULL)
+  {
+    if (printLineNumbers)
+      cout << i << ".";
+    cout << envp[i] << endl;
+    ++i;
+  }
+
+  return 0;
+}
 ```
