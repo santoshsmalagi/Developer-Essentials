@@ -1,6 +1,6 @@
 # Command Line Argument Processing
 
-## argc, argv and envp
+## argc, argv, and envp
 The ```main()``` function has two arguments that are traditionally called ```argc``` (argument count) and ```argv``` (argument vector), although the compiler does not require these names. For e.g. you can have ``int argi`` and ``char *args[]`` inplace of ``int argc`` and ``char *argv[]`` respectively. The types for command line arguments are defined by the language.  
  
  ``argc``, is a non-negative number corresponding to the number of elements in ``argv``.  
