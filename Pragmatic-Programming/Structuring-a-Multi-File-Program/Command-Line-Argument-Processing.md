@@ -164,6 +164,11 @@ int main(int argc, char *argv[], char *envp[])
 
 ## Program to print a histogram of the length of command line arguments
 ```C++
+
+// Use a map to store the lengths of the command line arguments, and
+// number of times a string with particular length appears as a <key,value> pair
+// were the key is the string lengths and value is the number of time it appears
+
 #include <iostream>
 #include <map>
 #include <utility>
