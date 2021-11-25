@@ -7,19 +7,6 @@ The ```main()``` function has two arguments that are traditionally called ```arg
  
 ``argv`` is an array of pointers to null-terminated strings that correspond to the program arguments. 
 
-#### Argument processing
-* Arguments are delimited by white space, which is either a space or a tab.
-* Usually, the operating system passes the full path to the program’s executable as the first argument i.e. ``argv[0]``.
-* The last argument from the command line is ``argv[argc - 1]``, and ``argv[argc]`` is always NULL.
-* Quotes
-    * Quotes around the name of the program executable (e.g. ``"./a.out"``) are allowed. 
-    * However, the double quote marks aren't included in the ``argv[0]`` i.e. ``argv[0] = a.out`` in this case.
-    * A string surrounded by double quote marks is interpreted as a single argument, which may contain white-space characters (see examples below)
- * Backslashes
-     * interpreted literally, unless they immediately precede a double quote mark.
-     * one backslash (\) is placed in the ``argv`` array for every pair of backslashes (\\)
-     * If an odd number of backslashes is followed by a double quote mark, then one backslash (\) is placed in the argv array for every pair of backslashes (\\). 
-
 Additional arguments known as implementation parammeters can be passed to ``main``. Implementation parameters aren’t common in modern desktop environments. Traditionally, if a third parameter is passed to ``main``, that parameter is named ``envp`` and contains an array of null terminated strings representing the variables set in the user's environment. The environment block passed to ``main`` is a "frozen" copy of the current environment. Later changes to the environment won't change the values in ``envp``.
  
 | Argument | Description                                                                             |
@@ -50,6 +37,18 @@ int main (int argc, const char **argv) { /* body */ }
 // envp provides a list of environment variables and their values
 int main (int argc, char *argv[], char *envp[]) { /* body */ }         
 ```
+## Argument processing
+* Arguments are delimited by white space, which is either a space or a tab.
+* Usually, the operating system passes the full path to the program’s executable as the first argument i.e. ``argv[0]``.
+* The last argument from the command line is ``argv[argc - 1]``, and ``argv[argc]`` is always NULL.
+* Quotes
+    * Quotes around the name of the program executable (e.g. ``"./a.out"``) are allowed. 
+    * However, the double quote marks aren't included in the ``argv[0]`` i.e. ``argv[0] = a.out`` in this case.
+    * A string surrounded by double quote marks is interpreted as a single argument, which may contain white-space characters (see examples below)
+ * Backslashes
+     * interpreted literally, unless they immediately precede a double quote mark.
+     * one backslash (\) is placed in the ``argv`` array for every pair of backslashes (\\)
+     * If an odd number of backslashes is followed by a double quote mark, then one backslash (\) is placed in the ``argv`` array for every pair of backslashes (\\). 
 
 ## Example to print command line arguments
 ```C++
