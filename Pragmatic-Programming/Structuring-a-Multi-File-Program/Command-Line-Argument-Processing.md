@@ -48,7 +48,7 @@ int main (int argc, char *argv[], char *envp[]) { /* body */ }
  * Backslashes
      * interpreted literally, unless they immediately precede a double quote mark.
      * one backslash (\) is placed in the ``argv`` array for every pair of backslashes (\\)
-     * If an odd number of backslashes is followed by a double quote mark, then one backslash (\) is placed in the ``argv`` array for every pair of backslashes (\\). 
+     * for an odd number of backslashes, one backslash is placed for every pair and additional backslash is ignored, e.g. ``a\\\b`` becomes ``a\b`` 
 
 ## Example to print command line arguments
 ```C++
