@@ -208,93 +208,15 @@ The C++ standard says it's undefined behaviour to call ```main()``` from another
 
 On a hypothetical implementation, calling ```main``` could result in fun things like re-running constructors for all static variables, re-initializing the data structures used by new/delete to keep track of allocations, or other total breakage of your program. Or it might not cause any problem at all - i.e. undefined behaviour.
 
-This example declares an ```options``` variable initialized with default values and parse the command line, updating options as necessary.
-
-```C
-
-int main(int argc, char *argv[]) {
-    int opt;
-    options_t options = { 0, 0x0, stdin, stdout };
-
-    opterr = 0;
-
-    while ((opt = getopt(argc, argv, OPTSTR)) != EOF)
-       switch(opt) {
-           case 'i':
-              if (!(options.input = fopen(optarg, "r")) ){
-                 perror(ERR_FOPEN_INPUT);
-                 exit(EXIT_FAILURE);
-                 /* NOTREACHED */
-              }
-              break;
-
-           case 'o':
-              if (!(options.output = fopen(optarg, "w")) ){
-                 perror(ERR_FOPEN_OUTPUT);
-                 exit(EXIT_FAILURE);
-                 /* NOTREACHED */
-              }    
-              break;
-             
-           case 'f':
-              options.flags = (uint32_t )strtoul(optarg, NULL, 16);
-              break;
-
-           case 'v':
-              options.verbose += 1;
-              break;
-
-           case 'h':
-           default:
-              usage(basename(argv[0]), opt);
-              /* NOTREACHED */
-              break;
-       }
-
-    if (do_the_needful(&options) != EXIT_SUCCESS) {
-       perror(ERR_DO_THE_NEEDFUL);
-       exit(EXIT_FAILURE);
-       /* NOTREACHED */
-    }
-
-    return EXIT_SUCCESS;
-}
-```
-
-The guts of this ```main()``` function is a while loop that steps through argv looking for command line options and their arguments (if any). When a known command line option is detected, option-specific behavior happens. Some options have an argument, when an option has an argument, the next string in ```argv``` is available to the program. Files are opened for reading and writing or command line arguments are converted from a string to an integer value.
-
 ### 14. Function definitions
 
-```C
-void usage(char *progname, int opt) {
-   fprintf(stderr, USAGE_FMT, progname?progname:DEFAULT_PROGNAME);
-   exit(EXIT_FAILURE);
-   /* NOTREACHED */
-}
+Finally, write functions that aren't boilerplate. Functions should almost always validate their input in some way. If full validation is expensive, try to do it once and treat the validated data as immutable. It also makes sense to group functions by their purpose and define them in a seperate source file, while including the header in which they are declared.
 
-int do_the_needful(options_t *options) {
-
-   if (!options) {
-     errno = EINVAL;
-     return EXIT_FAILURE;
-   }
-
-   if (!options->input || !options->output) {
-     errno = ENOENT;
-     return EXIT_FAILURE;
-   }
-
-   /* XXX do needful stuff */
-
-   return EXIT_SUCCESS;
-}
-```
-
-Finally, write functions that aren't boilerplate. Functions should almost always validate their input in some way. If full validation is expensive, try to do it once and treat the validated data as immutable. 
+A good practice is that - if something goes wrong in the middle of a function, it's a good time to return an error condition. Writing a ton of nested if statements to just have one return is never a "good idea. Finally, if you write a function that takes four or more arguments, consider bundling them in a structure and passing a pointer to the structure. This makes the function signatures simpler, making them easier to remember and not screw up when they're called later. It also makes calling the function slightly faster, since fewer things need to be copied into the function's stack frame.  
 
 The big class of errors to avoid is de-referencing a NULL pointer. This will cause the operating system to send a special signal called SYSSEGV, which results in unavoidable death. The last thing users want to see is a crash due to SYSSEGV. It's much better to catch a NULL pointer in order to emit better error messages and shut down the program gracefully.
 
-A good practice is that - if something goes wrong in the middle of a function, it's a good time to return an error condition. Writing a ton of nested if statements to just have one return is never a "good idea. Finally, if you write a function that takes four or more arguments, consider bundling them in a structure and passing a pointer to the structure. This makes the function signatures simpler, making them easier to remember and not screw up when they're called later. It also makes calling the function slightly faster, since fewer things need to be copied into the function's stack frame. In practice, this will only become a consideration if the function is called millions or billions of times. Don't worry about it if that doesn't make sense.
+## Complete example main.c file
 
 Putting it all together:
 
@@ -404,3 +326,4 @@ int do_the_needful(options_t *options) {
 }
 ```
 
+The guts of this ```main()``` function is a while loop that steps through argv looking for command line options and their arguments (if any). When a known command line option is detected, option-specific behavior happens. Some options have an argument, when an option has an argument, the next string in ```argv``` is available to the program. Files are opened for reading and writing or command line arguments are converted from a string to an integer value.
