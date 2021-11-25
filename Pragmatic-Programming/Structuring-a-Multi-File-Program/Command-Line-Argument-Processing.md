@@ -181,7 +181,13 @@ int main(int argc, char *argv[])
 {
   std::map<int,int> argLengthsMap;
   std::map<int,int>::iterator argLengthsMapIter;
-
+  
+  if (argc == 1)
+  {
+    cout << "Very less arguments to process..!";
+    return 0;
+  }
+  
   for (int i = 1; i < argc; ++i)
   {
     argLengthsMapIter = argLengthsMap.find(strlen(argv[i]));
