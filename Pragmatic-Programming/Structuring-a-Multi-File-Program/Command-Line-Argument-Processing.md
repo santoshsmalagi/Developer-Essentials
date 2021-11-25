@@ -208,3 +208,17 @@ int main(int argc, char *argv[])
   return 0;
 }
 ```
+
+Example output,
+
+```Shell
+$ ./parse a b c ab abc ab ab ab ab ab ab abc abcd efrfgkwnfei a b c w
+------------------------------------
+Argument Length Histogram
+------------------------------------
+1. *******
+2. *******
+3. **
+4. *
+11. *
+```
