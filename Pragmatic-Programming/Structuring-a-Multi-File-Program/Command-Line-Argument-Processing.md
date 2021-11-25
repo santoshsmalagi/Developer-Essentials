@@ -161,3 +161,45 @@ int main(int argc, char *argv[], char *envp[])
   return 0;
 }
 ```
+
+## Program to print a histogram of the length of command line arguments
+```C++
+#include <iostream>
+#include <map>
+#include <utility>
+#include <cstring>
+
+using std::cout;
+using std::endl;
+
+int main(int argc, char *argv[])
+{
+  std::map<int,int> argLengthsMap;
+  std::map<int,int>::iterator argLengthsMapIter;
+
+  for (int i = 1; i < argc; ++i)
+  {
+    argLengthsMapIter = argLengthsMap.find(strlen(argv[i]));
+    if (argLengthsMapIter == argLengthsMap.end())
+      argLengthsMap.insert(std::pair<int,int> (strlen(argv[i]), 1));
+    else
+      argLengthsMapIter->second++;
+  }
+
+  cout << "------------------------------------" << endl
+       << "Argument Length Histogram" << endl
+       << "------------------------------------" << endl;
+
+  argLengthsMapIter = argLengthsMap.begin();
+  while (argLengthsMapIter != argLengthsMap.end())
+  {
+    cout << argLengthsMapIter->first << ". ";
+    for (int j = 0; j < argLengthsMapIter->second; ++j)
+      cout << "*";
+    cout << endl;
+    argLengthsMapIter++;
+  }
+  
+  return 0;
+}
+```
