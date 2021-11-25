@@ -70,6 +70,40 @@ int main(int argc, char *argv[], char *envp[])
 }
 ```
 
+Example output,
+
+```Shell
+
+./parse
+-----------------------------------------------------------------
+Command line arguments: 
+-----------------------------------------------------------------
+argv[0]: ./parse
+
+./parse ab a\b a\\b a\\\b a\\\\b a\\\\\b
+-----------------------------------------------------------------
+Command line arguments: 
+-----------------------------------------------------------------
+argv[0]: ./parse
+argv[1]: ab
+argv[2]: ab
+argv[3]: a\b
+argv[4]: a\b
+argv[5]: a\\b
+argv[6]: a\\b
+
+./parse a b cd"e f g" hi 'j k'
+-----------------------------------------------------------------
+Command line arguments: 
+-----------------------------------------------------------------
+argv[0]: ./parse
+argv[1]: a
+argv[2]: b
+argv[3]: cde f g
+argv[4]: hi
+argv[5]: j k
+```
+
 ## Example to print environment variables
 
 ```C++
