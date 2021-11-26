@@ -203,7 +203,7 @@ int wmain(int argc, wchar_t *argv[], wchar_t *envp[]) { /* body */ }
 
 #### What happens if any function in your program tries to call main()?
 
-The C++ standard says it's undefined behaviour to call ```main()``` from another function:
+The C++ standard says it's undefined behavior to call ```main()``` from another function:
 
 *" An implementation shall not predefine the main function. This function shall not be overloaded. It shall have a return type of type int, but otherwise its type is implementation defined. All implementations shall allow both of the following definitions of main … The function main shall not be used within a program. The linkage (3.5) of main is implementation-defined.*
 
