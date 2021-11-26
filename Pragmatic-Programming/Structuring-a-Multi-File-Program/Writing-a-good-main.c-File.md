@@ -1,7 +1,5 @@
 # Writing a Good main.c File
 
-The contents of this page are based on the original article which appeared on Opensource.com - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function).  
-
 * sets up the program environment
 * parses and validates command line arguments (or calls a function to do so), exiting gracefully in case of incorrect usage
 * initializes objects and sets up program controls based on specified arguments (or keyword-options)
@@ -321,3 +319,5 @@ int do_the_needful(options_t *options) {
 ```
 
 The guts of this ```main()``` function is a while loop that steps through argv looking for command line options and their arguments (if any). When a known command line option is detected, option-specific behavior happens. Some options have an argument, when an option has an argument, the next string in ```argv``` is available to the program. Files are opened for reading and writing or command line arguments are converted from a string to an integer value.
+
+> The contents of this page are based on the original article which appeared on Opensource.com - ["How to write a good C main function"](https://opensource.com/article/19/5/how-write-good-c-main-function).  
