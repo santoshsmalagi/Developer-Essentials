@@ -131,6 +131,21 @@ Program execution begins at the ```main()```. The compiler does not need a forwa
 
 ``main()``  always returns a signed integer, for example it returns a 0 (zero) on success and -1 (negative one) on failure. If no return statement is provided, the compiler will provide an implicit ```return 0;``` as the last statement. In C ``main`` can also be defined as returning ``void``, though its use isn't recommended and the compiler generally produces a WARNING.  If ``main`` returns a void the ``exit()`` function can be used to return an exit value to the OS. **However, in C++ it is NOT ALLOWED to have a ``main`` as a ``void`` (or any other) type, it MUST be declared to return an ``int`` value.**
 
+#### Why the ```main()``` function does not need a declaration?
+* The compiler does not need a forward declaration for ```main()```
+* In C++, since a user program never calls ```main```, so technically it never needs a declaration before the definition
+* In C, a program can call ```main```, in that case it does require that a declaration be visible before the call
+* Note that ```main``` does need to be known to the code that calls it. This is special code in what is typically called the C++ runtime startup code. The linker includes that code for you automatically when you are linking a C++ program with the appropriate linker options. Whatever language that code is written in, it has whatever declaration of ```main``` it needs in order to call it properly.
+* Technically though, all definitions are also declarations, so your definition of main also declares main. The compiler does not need a forward declaration for ```main()```, the definiton is accepted by the compiler as the declaration of ```main()```.
+
+#### What happens if any function in your program tries to call main()?
+
+The C++ standard says it's undefined behavior to call ```main()``` from another function:
+
+*" An implementation shall not predefine the main function. This function shall not be overloaded. It shall have a return type of type int, but otherwise its type is implementation defined. All implementations shall allow both of the following definitions of main … The function main shall not be used within a program. The linkage (3.5) of main is implementation-defined.*
+
+On a hypothetical implementation, calling ```main``` could result in fun things like re-running constructors for all static variables, re-initializing the data structures used by new/delete to keep track of allocations, or other total breakage of your program. Or it might not cause any problem at all - i.e. undefined behaviour.
+
 #### What happens before the main()?
 
 The true entry point for most C/C++ binaries is not the ``main``, it is a function called ``_start`` which is defined in the ``libc``. After the program has been loaded into memory by the loader, it looks for the address of the ``_start`` function. The ``_start`` initializes the arguments for ``__libc_start_main()`` and calls it. ``__libc_start_main`` performs a number of important tasks such as setting up the program's runtime environment, initializing it's threading, loading custom routines prior to calling ``main()`` and registering the ``_fini()`` for cleanup post ``main()`` returns. Finally ``libc_start_main()`` calls ``main()``.  
@@ -193,21 +208,6 @@ Windows Visual C++ programming environment also supports a wide-character versio
 // Visual studio also supports a wchar version of parameters
 int wmain(int argc, wchar_t *argv[], wchar_t *envp[]) { /* body */ }
  ```
-
-#### Why the ```main()``` function does not need a declaration?
-* The compiler does not need a forward declaration for ```main()```
-* In C++, since a user program never calls ```main```, so technically it never needs a declaration before the definition
-* In C, a program can call ```main```, in that case it does require that a declaration be visible before the call
-* Note that ```main``` does need to be known to the code that calls it. This is special code in what is typically called the C++ runtime startup code. The linker includes that code for you automatically when you are linking a C++ program with the appropriate linker options. Whatever language that code is written in, it has whatever declaration of ```main``` it needs in order to call it properly.
-* Technically though, all definitions are also declarations, so your definition of main also declares main. The compiler does not need a forward declaration for ```main()```, the definiton is accepted by the compiler as the declaration of ```main()```.
-
-#### What happens if any function in your program tries to call main()?
-
-The C++ standard says it's undefined behavior to call ```main()``` from another function:
-
-*" An implementation shall not predefine the main function. This function shall not be overloaded. It shall have a return type of type int, but otherwise its type is implementation defined. All implementations shall allow both of the following definitions of main … The function main shall not be used within a program. The linkage (3.5) of main is implementation-defined.*
-
-On a hypothetical implementation, calling ```main``` could result in fun things like re-running constructors for all static variables, re-initializing the data structures used by new/delete to keep track of allocations, or other total breakage of your program. Or it might not cause any problem at all - i.e. undefined behaviour.
 
 ## 14. Function definitions
 
