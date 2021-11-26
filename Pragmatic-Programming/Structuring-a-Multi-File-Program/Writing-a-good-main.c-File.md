@@ -1,6 +1,6 @@
 # Writing a Good main.c File
 
-All C/C++ programs must contain the qunitessential ``main()`` function, from a programmer's perspective this is where the execution of a program begins. However, even before the first line of ``main()`` function is executed a few other things happen in the background (this will be explained breifly in the upcoming sections). At a high level a *well-written* ``main()`` function achieves the following objectives:
+All C/C++ programs must contain the quintessential ``main()`` function, from a programmer's perspective this is where the execution of a program begins. However, even before the first line of ``main()`` function is executed a few other things happen in the background (this will be explained briefly in the upcoming sections). At a high level a *well-written* ``main()`` function achieves the following objectives:
 
 * sets up the program environment
 * parses and validates command line arguments (or calls a function to do so), exiting gracefully in case of incorrect usage
