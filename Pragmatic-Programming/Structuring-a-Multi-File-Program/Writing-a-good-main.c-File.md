@@ -146,7 +146,7 @@ The ```main()``` function has two arguments that are traditionally called ```arg
  
 ``argv`` is an array of pointers to null-terminated strings that correspond to the program arguments. 
 
-Additional arguments known as implementation parammeters can be passed to ``main``. Implementation parameters aren’t common in modern desktop environments. Traditionally, if a third parameter is passed to ``main``, that parameter is named ``envp`` and contains an array of null terminated strings representing the variables set in the user's environment. The environment block passed to ``main`` is a "frozen" copy of the current environment. Later changes to the environment won't change the values in ``envp``.
+Additional arguments known as implementation parameters can be passed to ``main``. Implementation parameters aren’t common in modern desktop environments. Traditionally, if a third parameter is passed to ``main``, that parameter is named ``envp`` and contains an array of null terminated strings representing the variables set in the user's environment. The environment block passed to ``main`` is a "frozen" copy of the current environment. Later changes to the environment won't change the values in ``envp``.
  
 | Argument | Description                                                                             |
 |----------|-----------------------------------------------------------------------------------------|
