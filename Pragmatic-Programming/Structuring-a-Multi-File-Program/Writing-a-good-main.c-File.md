@@ -1,5 +1,7 @@
 # Writing a Good main.c File
 
+All C/C++ programs must contain the qunitessential ``main()`` function, from a programmer's perspective this is where the execution of a program begins. However, even before the first line of ``main()`` function is executed a few other things happen in the background (this will be explained breifly in the upcoming sections). At a high level a *well-written* ``main()`` function achieves the following objectives:
+
 * sets up the program environment
 * parses and validates command line arguments (or calls a function to do so), exiting gracefully in case of incorrect usage
 * initializes objects and sets up program controls based on specified arguments (or keyword-options)
@@ -29,7 +31,10 @@ int main(int argc, char *argv[]) {
 /* 13. Clean up tasks */
 }
 
-/* 14. Function definitions */
+/* 14. Function definitions */ 
+/* Usually in a large project functions are grouped by their purpose,
+   declared in header files and defined in source files. The header
+   files get included in Section - 3 above */
 ```
 
 ## 1. Copyright, licensing and author information
