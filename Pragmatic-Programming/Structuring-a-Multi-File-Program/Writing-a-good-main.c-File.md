@@ -133,19 +133,12 @@ Program execution begins at the ```main()```. The compiler does not need a forwa
 #### Command line arguments
 The ```main()``` function has two arguments that are traditionally called ```argc``` (argument count) and ```argv``` (argument vector), although the compiler does not require these names. For e.g. you can have ``int argi`` and ``char *args[]`` inplace of ``int argc`` and ``char *argv[]`` respectively. The types for command line arguments are defined by the language.  
 
-> *Note that ``main`` can accept any number of command line arguments.* 
+> *Note that ``main`` can accept any number of command line arguments.*
  
- ``argc``, is a non-negative number corresponding to the number of elements in ``argv``.  
+ ``argc``, is a non-negative number corresponding to the number of elements in ``argv`` and is calculated automatically.
  
-``argv`` is an array of pointers to null-terminated strings that correspond to the program arguments. Usually, an operating system passes the full path to the program’s
-executable as the first argument i.e. ``argv[0]``. The last argument from the command line is ``argv[argc - 1]``, and ``argv[argc]`` is always NULL. For example if ``a.out`` be the program being executed and it is passed the following command line arguments:
+``argv`` is an array of pointers to null-terminated strings that correspond to the program arguments. 
 
-```Console
-$:~ a.out foo 28 M
-```
-
-Then ```argv = ["/home/malagi/a.out", "foo" "28"]``` and ```argc=3```. 
- 
 Additional arguments known as implementation parammeters can be passed to ``main``. Implementation parameters aren’t common in modern desktop environments. Traditionally, if a third parameter is passed to ``main``, that parameter is named ``envp`` and contains an array of null terminated strings representing the variables set in the user's environment. The environment block passed to ``main`` is a "frozen" copy of the current environment. Later changes to the environment won't change the values in ``envp``.
  
 | Argument | Description                                                                             |
@@ -153,7 +146,6 @@ Additional arguments known as implementation parammeters can be passed to ``main
 | argc     | Number of elements in the argument vector                                               |
 | argv     | Array of character pointers corresponding to the program arguments                      |
 | envp     | Array of character pointers corresponding to the environment variables and their values |
-
 
 The compiler expects a ```main()``` function in one of the following forms:
 
