@@ -125,7 +125,7 @@ A good practice (or choice of style) is to define the functions after the ```mai
 
 ## 9-13. main()
 
-Program execution begins at the ```main()```. The compiler does not need a forward declaration for ```main()```, because it's built into the language. The definiton itself is accepted by the compiler as the declaration of ```main()```. Also program functions usually dont call the ``main`` so there is no need for a forward declaration. It cannot be overloaded or declared as ``inline`` or ``static``. 
+Program execution begins at the ```main()```. The compiler does not need a forward declaration for ```main()```, because it's built into the language. The definition itself is accepted by the compiler as the declaration of ```main()```. Also program functions usually dont call the ``main`` so there is no need for a forward declaration. It cannot be overloaded or declared as ``inline`` or ``static``. 
 
 **The linker requires that one and only one ```main()``` function exist when creating an executable program**. Dynamic-link libraries and static libraries don't have a main function. Before a program enters the ``main`` function, all static class members without explicit initializers are set to zero. Global static objects are also initialized before entry to ``main``.
 
