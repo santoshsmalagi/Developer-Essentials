@@ -5,7 +5,7 @@ The ```main()``` function has two arguments that are traditionally called ```arg
 
 > *Note that ``main`` can accept any number of command line arguments.*
  
- ``argc``, is a non-negative number corresponding to the number of elements in ``argv``.  
+ ``argc``, is a non-negative number corresponding to the number of elements in ``argv`` and is calculated automatically.
  
 ``argv`` is an array of pointers to null-terminated strings that correspond to the program arguments. 
 
@@ -20,8 +20,10 @@ Additional arguments known as implementation parammeters can be passed to ``main
 The following ignores any command line arguments:
 
 ```C++
-// no arguments, ignore any command line arguments or environmental variables
+// no return value - C compiler will give a WARNING, NOT ALLOWED in C++
 void main() { /* body */ } 
+ 
+// no arguments, ignore any command line arguments or environmental variables
 int main () { /* body */ }
 ```
 The compiler expects a ```main()``` function in one of the following forms to be able to parse and process command line arguments:
