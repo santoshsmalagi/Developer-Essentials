@@ -7,7 +7,7 @@ All C/C++ programs must contain the quintessential ``main()`` function, from a p
 * initializes objects and sets up program controls based on specified arguments (or keyword-options)
 * calls a sequence of functions to operate on data
 * monitors return values from functions, and take further actions
-* outputs the results to stdout or writes it to a database/file
+* outputs the results to stdout or writes to a database/file
 * post program clean up tasks - free memory, report summary, and exit gracefully
  
 A good outline for a ```main.c``` to achieve the above mentioned objectives is as follows:
