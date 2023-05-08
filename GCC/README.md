@@ -11,7 +11,7 @@ GCC_INSTALL_DIR=<path to GCC install dir>
 export PATH=${GCC_INSTALL_DIR}/bin:${PATH}
 
 # dir path to search for header files
-export CPATH=${GCC_INSTALL_DIR}/include/c++/<GCC_VERSION>
+export CPATH=${GCC_INSTALL_DIR}/include/c++
 
 # compile time static/shared libs
 export LIBRARY_PATH=${GCC_INSTALL_DIR}/lib64
