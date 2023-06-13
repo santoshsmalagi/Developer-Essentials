@@ -10,13 +10,14 @@ GCC_INSTALL_DIR=<path to GCC install dir>
 # setup PATH to GCC install dir
 export PATH=${GCC_INSTALL_DIR}/bin:${PATH}
 
-# dir path to search for header files
+# list of dir path to search for header files
+# to be more specific you can use C_INCLUDE_PATH (for C headers) and CPLUS_INCLUDE_PATH (for C++ headers)
 export CPATH=${GCC_INSTALL_DIR}/include/c++
 
-# compile time static/shared libs
+# colon seperated list of dir paths to search for compile time static/shared libs
 export LIBRARY_PATH=${GCC_INSTALL_DIR}/lib64
 
-# runtime shared libs
+# colon seperated list of dir paths to search for runtime shared libs
 export LD_LIBRARY_PATH=${GCC_INSTALL_DIR}/lib64
 ```
 
