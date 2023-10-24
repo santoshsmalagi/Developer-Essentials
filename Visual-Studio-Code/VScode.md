@@ -1,5 +1,7 @@
 # Visual Studio Code
 Visual Studio Code is a lightweight, modern, but powerful source code editor. It comes with built-in support for JavaScript, TypeScript and Node.js and has a rich ecosystem of extensions for other languages and runtimes (such as C++, C#, Java, Python, PHP, Go, .NET).
+
+> *The following tutorial focuses on setting up a VS Code C/C++ development environment on Windows, using the MinGW (GCC) toolchain. VS Code website provides turotials for setting up C/C++ evelopment environment for other platforms/compiler toolchains.*
  
 ## Why use Visual Studio Code for C/C++ Development?
 * VS Code combines the simplicity of a source code editor with powerful developer tooling 
@@ -38,6 +40,15 @@ The next step is to enable C/C++ development support for VS Code by installing t
 
 #### Step III - [Setup C/C++ Development Tools](https://code.visualstudio.com/docs/languages/cpp)
 VS Code as an editor relies on command-line tools for C/C++ development workflow. The compiler-linker-debugger toolchain must therefore be installed, or VS Code must be configured to use these tools if they are already installed.
+
+Open a VS Code terminal window by Ctrl+Shift+`. USe the following command to check if GCC has been installed on the system:
+```bash
+g++ --version
+```
+
+**[Installing the MinGW-w64 toolchain](https://code.visualstudio.com/docs/cpp/config-mingw#_prerequisites)**
+The latest version of MinGW-w64 can be installed on Windows via MSYS2, which provides up-to-date native builds of GCC, MinGW-w64, and other helpful C++ tools and libraries. This will provide you with the necessary tools to compile your code, debug it, and configure it to work with IntelliSense.
+
 
 ## Debugging C/C++ Code in VS Code
 ## Navigating Code in VS Code
