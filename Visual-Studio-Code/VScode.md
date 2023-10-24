@@ -43,3 +43,6 @@ VS Code as an editor relies on command-line tools for C/C++ development workflow
 ## Navigating Code in VS Code
 ## [VS Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview)
 
+## Hot Keys
+* `Ctrl+Shift+`` - opens a VS Code terminal window
+
