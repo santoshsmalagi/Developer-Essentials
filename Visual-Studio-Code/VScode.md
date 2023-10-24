@@ -21,7 +21,12 @@ Visual Studio Code is a lightweight, modern, but powerful source code editor. It
 ## Configuring Visual Studio Code for C/C++ Development
 
 ## VS Code Extensions
-VS Code Extensions allow developers to extend the capability of VS Code by adding languages, debuggers, and tools to support several development workflows. VS Code's rich extensibility model lets extension authors plug directly into the VS Code UI and contribute functionality through the same APIs used by VS Code. VS Code extensions can be installed directly using the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/VSCode).
+VS Code Extensions allow developers to extend the capability of VS Code by adding languages, debuggers, and tools to support several development workflows. VS Code's rich extensibility model lets extension authors plug directly into the VS Code UI and contribute functionality through the same APIs used by VS Code. VS Code extensions can be installed directly using the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/VSCode). 
+
+Some interesting VS Code Extensions for C/C++ development:
+* [C/C++ for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+* [Remote-SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
+* [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock)
 
 ## Debugging C/C++ Code in VS Code
 ## Navigating Code in VS Code
