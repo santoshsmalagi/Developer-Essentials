@@ -3,18 +3,18 @@ Visual Studio Code is a lightweight but powerful source code editor. It comes wi
  
 ## Why use Visual Studio Code for C/C++?
 * Lightweight, modern yet powerful source code editor
- * VS Code combines the simplicity of a source code editor with powerful developer tooling 
+  * VS Code combines the simplicity of a source code editor with powerful developer tooling 
 * It offers a seamless experience across Windows, Linux, and macOS.
 * Features
- * syntax highlighting
- * bracket-matching
- * auto-indentation
- * box and snippets selection
- * IntelliSense code completion
- * rich semantic code understanding
- * support for code refactoring and navigation
+  * syntax highlighting
+  * bracket-matching
+  * auto-indentation
+  * box and snippets selection
+  * IntelliSense code completion
+  * rich semantic code understanding
+  * support for code refactoring and navigation
 * Interactive debugger
- * enabling developers to step through source code, inspect variables, view call stacks, and execute commands in the console
+  * enabling developers to step through source code, inspect variables, view call stacks, and execute commands in the console
 * VS Code also integrates with build and scripting tools
 
 
