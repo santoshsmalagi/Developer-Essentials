@@ -18,7 +18,13 @@ Visual Studio Code is a lightweight, modern, but powerful source code editor. It
 
 
 ## Visual Studio Code vs Vim?
+
 ## Configuring Visual Studio Code for C/C++ Development
+
+#### Step I - [Download and Install VS Code](https://code.visualstudio.com/docs/setup/setup-overview)
+Provides step by step instruction for Windows, Linux, and macOS to download and install VS Code.
+
+
 
 ## VS Code Extensions
 VS Code Extensions allow developers to extend the capability of VS Code by adding languages, debuggers, and tools to support several development workflows. VS Code's rich extensibility model lets extension authors plug directly into the VS Code UI and contribute functionality through the same APIs used by VS Code. VS Code extensions can be installed directly using the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/VSCode). 
