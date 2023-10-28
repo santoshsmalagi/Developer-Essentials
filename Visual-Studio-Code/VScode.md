@@ -25,6 +25,7 @@ Some interesting VS Code Extensions for C/C++ development:
 * [C/C++ for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 * [Remote-SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
 * [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock)
+* [vscodevim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
 
 ## Visual Studio Code vs Vim?
 * Vim *(or Emacs)* is de-facto standard for text editing on the Linux terminal, especially if a GUI environment cannot be loaded
@@ -33,6 +34,7 @@ Some interesting VS Code Extensions for C/C++ development:
 * VS Code by default list a source directory tree for easy navigation and auto-populates it everytime new code is checked out. Achieving similar functionality in Vim might require additional plugins/extra work.
 * Another notable feature of VS Code is it's ability to list an 'Outline' view of the current C/C++ source file or header file and list globals, function names, typedefs, structs, enums etc.
 * Opening a terminal inside of Vim and running the debugger seemed more intutive in Vim vs VS Code. Even better running gdb natively on Linux offered superior performance and control over running gdb inside of VS Code (personal opinion).
+* Syntax highlighing and semantic colorization in Vim for some specialized languages e.g. Tcl-Tk, Verilog etc. seemed superior to VS Code.
 
 ## Configuring Visual Studio Code for C/C++ Development
 
