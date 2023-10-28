@@ -72,7 +72,6 @@ This Remote Development extension pack includes four extensions:
 **[Connect to a remote host](https://code.visualstudio.com/docs/remote/ssh#_connect-to-a-remote-host)** - follow these steps to connect to a remote host. 
 
 ## VS Code Shortcuts/Tips and Tricks
-* Ctrl+Shift+` - opens a VS Code terminal window
 * ``code --diff <file1> <file2>`` - to diff two files using VS Code diff capability
 
 ## Creating a C/C++ Project in VS Code
