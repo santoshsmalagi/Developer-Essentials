@@ -72,7 +72,10 @@ This Remote Development extension pack includes four extensions:
 **[Connect to a remote host](https://code.visualstudio.com/docs/remote/ssh#_connect-to-a-remote-host)** - follow these steps to connect to a remote host. 
 
 ## An Example C/C++ Development Environment using VS Code
-* VS Code on Windows for code navigation and editing, optionally connected to a remote Linux machine via SSH. 'Terminal' inside VS Code can be used for compilation/linking. Following extensions are highly recommended:
+* VS Code on Windows for code navigation and editing
+* Optionally connected to a remote Linux machine via SSH
+* 'Terminal' inside VS Code can be used for compilation/linking, or the JSON file can be configured for build targets/compiler-linker flags etc.
+* Following extensions are highly recommended:
   * [C/C++ for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
   * [Remote-SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
   * [vscodevim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
