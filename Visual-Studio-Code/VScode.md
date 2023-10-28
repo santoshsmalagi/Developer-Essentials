@@ -32,6 +32,7 @@ Some interesting VS Code Extensions for C/C++ development:
 * Differences in keyboard shortcuts/hot-key bindings between VS Code vs Vim. It is possible to emulate Vim keyboard shortcuts in your VS Code environment using the [vscodevim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) extension (though not all Vim features may be supported).
 * VS Code by default list a source directory tree for easy navigation and auto-populates it everytime new code is checked out. Achieving similar functionality in Vim might require additional plugins/extra work.
 * Another notable feature of VS Code is it's ability to list an 'Outline' view of the current C/C++ source file or header file and list globals, function names, typedefs, structs, enums etc.
+* Opening a terminal inside of Vim and running the debugger seemed more intutive in Vim vs VS Code. Even better running gdb natively on Linux offered superior performance and control over running gdb inside of VS Code (personal opinion).
 
 ## Configuring Visual Studio Code for C/C++ Development
 
