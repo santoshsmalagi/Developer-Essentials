@@ -69,8 +69,7 @@ This Remote Development extension pack includes four extensions:
 * [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) - Work with a separate toolchain or container based application by opening any folder mounted into or inside a container.
 * [WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) - Get a Linux-powered development experience from the comfort of Windows by opening any folder in the Windows Subsystem for Linux.
 
-**[Connect to a remote host](https://code.visualstudio.com/docs/remote/ssh#_connect-to-a-remote-host)**
-Follow these steps to connect to a remote host. 
+**[Connect to a remote host](https://code.visualstudio.com/docs/remote/ssh#_connect-to-a-remote-host)** - follow these steps to connect to a remote host. 
 
 ## Creating a C/C++ Project in VS Code
 ## Debugging C/C++ Code in VS Code
