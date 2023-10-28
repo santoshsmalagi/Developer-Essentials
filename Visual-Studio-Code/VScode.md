@@ -55,7 +55,7 @@ Open a VS Code terminal window by Ctrl+Shift+`. USe the following command to che
 g++ --version
 ```
 
-**[Installing the MinGW-w64 toolchain](https://code.visualstudio.com/docs/cpp/config-mingw#_prerequisites)**  
+#### [Installing the MinGW-w64 toolchain](https://code.visualstudio.com/docs/cpp/config-mingw#_prerequisites)
 The latest version of MinGW-w64 can be installed on Windows via MSYS2, which provides up-to-date native builds of GCC, MinGW-w64, and other helpful C++ tools and libraries to compile code, debug it, and configure it to work with IntelliSense.
 
 > *[MSYS2](https://www.msys2.org/) is a collection of tools and libraries providing you with an easy-to-use environment for building, installing and running native Windows software. MSYS2 provides up-to-date native builds for GCC, mingw-w64, CPython, CMake, Meson, OpenSSL, FFmpeg, Rust, Ruby, just to name a few.*
