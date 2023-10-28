@@ -78,3 +78,4 @@ Follow these steps to connect to a remote host.
 
 ## Hot Keys
 * Ctrl+Shift+` - opens a VS Code terminal window
+* ``code --diff <file1> <file2>`` - to diff two files using VS Code diff capability
