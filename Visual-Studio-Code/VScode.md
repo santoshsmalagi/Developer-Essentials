@@ -60,7 +60,7 @@ The latest version of MinGW-w64 can be installed on Windows via MSYS2, which pro
 
 > *[MSYS2](https://www.msys2.org/) is a collection of tools and libraries providing you with an easy-to-use environment for building, installing and running native Windows software. MSYS2 provides up-to-date native builds for GCC, mingw-w64, CPython, CMake, Meson, OpenSSL, FFmpeg, Rust, Ruby, just to name a few.*
 
-#### Step IV - [Remote Development Setup](https://code.visualstudio.com/docs/remote/remote-overview)
+#### Step IV (optional) - [Remote Development Setup](https://code.visualstudio.com/docs/remote/remote-overview)
 The [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) extension pack allows you to open any folder in a container, on a remote machine, or in the Windows Subsystem for Linux (WSL) and take advantage of VS Code's full feature set. No source code needs to be on your local machine to gain these benefits since Remote Development runs commands and extensions directly on the remote machine.  
 
 This Remote Development extension pack includes four extensions:
