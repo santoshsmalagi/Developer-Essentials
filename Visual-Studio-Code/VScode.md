@@ -59,12 +59,18 @@ The latest version of MinGW-w64 can be installed on Windows via MSYS2, which pro
 
 > *[MSYS2](https://www.msys2.org/) is a collection of tools and libraries providing you with an easy-to-use environment for building, installing and running native Windows software. MSYS2 provides up-to-date native builds for GCC, mingw-w64, CPython, CMake, Meson, OpenSSL, FFmpeg, Rust, Ruby, just to name a few.*
 
-## Creating a C/C++ Project in VS Code
+#### Step IV - [Remote Development Setup](https://code.visualstudio.com/docs/remote/remote-overview)
+The [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) extension pack allows you to open any folder in a container, on a remote machine, or in the Windows Subsystem for Linux (WSL) and take advantage of VS Code's full feature set. No source code needs to be on your local machine to gain these benefits since Remote Development runs commands and extensions directly on the remote machine.
 
+This Remote Development extension pack includes four extensions:
+* [Remote-SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) - Work with source code in any location by opening folders on a remote machine/VM using SSH. Supports x86_64, ARMv7l (AArch32), and ARMv8l (AArch64) glibc-based Linux, Windows 10/Server (1803+), and macOS 10.14+ (Mojave) SSH hosts.
+* [Remote](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-server) - Tunnels - Work with source code in any location by opening folders on a remote machine/VM using a VS Code Tunnel (rather than SSH).
+* [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) - Work with a separate toolchain or container based application by opening any folder mounted into or inside a container.
+* [WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) - Get a Linux-powered development experience from the comfort of Windows by opening any folder in the Windows Subsystem for Linux.
+
+## Creating a C/C++ Project in VS Code
 ## Debugging C/C++ Code in VS Code
 ## Navigating Code in VS Code
-## [VS Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview)
 
 ## Hot Keys
 * Ctrl+Shift+` - opens a VS Code terminal window
-
