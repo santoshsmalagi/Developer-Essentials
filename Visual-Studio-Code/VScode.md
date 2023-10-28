@@ -65,7 +65,7 @@ The [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-
 
 This Remote Development extension pack includes four extensions:
 * [Remote-SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) - Work with source code in any location by opening folders on a remote machine/VM using SSH. Supports x86_64, ARMv7l (AArch32), and ARMv8l (AArch64) glibc-based Linux, Windows 10/Server (1803+), and macOS 10.14+ (Mojave) SSH hosts.
-* [Remote](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-server) - Tunnels - Work with source code in any location by opening folders on a remote machine/VM using a VS Code Tunnel (rather than SSH).
+* [Remote-Tunnels](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-server) - Work with source code in any location by opening folders on a remote machine/VM using a VS Code Tunnel (rather than SSH).
 * [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) - Work with a separate toolchain or container based application by opening any folder mounted into or inside a container.
 * [WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) - Get a Linux-powered development experience from the comfort of Windows by opening any folder in the Windows Subsystem for Linux.
 
