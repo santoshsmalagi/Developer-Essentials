@@ -112,6 +112,8 @@ This Remote Development extension pack includes four extensions:
     * ``Ctrl+T`` navigates through all symbols in the workspace.
   * ``Go to Definition`` (``F12``) - jump to the definition of the symbol
   * ``Go to Declaration`` - jump to the declaration of the symbol
+  * ``Go to References`` - lists all references to the current symbol in a inline peek view box
+  * ``Find all references`` - finds all references to the symbol, in a file explorer outline
   * ``Peek Definition`` (``Alt+F12``) - inline view of the definition
 * ``code --diff <file1> <file2>`` - to diff two files using VS Code diff capability
 
