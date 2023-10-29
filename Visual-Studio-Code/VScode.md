@@ -84,6 +84,8 @@ This Remote Development extension pack includes four extensions:
   * [vscodevim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
 * gdb running natively in a Linux terminal pointing to the binary for debug
 
+> *If you have a source file open in VS Code, but made an edit and saved it using Vim in another terminal, VS Code is quite quick in updating those changes!*
+
 ## VS Code Shortcuts/Tips and Tricks
 > *NOTE: Installing [vscodevim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) might change the default [keyboard shortcuts](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf) in VS Code.*
 
@@ -95,8 +97,9 @@ This Remote Development extension pack includes four extensions:
 * Go to line number within a file - ``Ctrl+G`` - enter a line number, the line is previewed, hit ``ESC`` to cancel. Also indicates line numbers 1 thru max line number for the current file. ``-1`` - negative offset takes you to the end of file.
 * Command Palette - ``Ctrl+Shift+P``
   * ``Go Back`` or ``Go Forward`` command to go the previous or next location in navigation history
-  * ``Go to Last Edit Location``
-  * ``Go to Bracket``
+  * ``Go to Last Edit Location`` - go back to the last location where an edit was made
+  * ``Go to Bracket`` - match brackets
+  * ``Go to Symbol`` or ``Ctrl+Shift+O`` to navigate through list of symbols
 * ``code --diff <file1> <file2>`` - to diff two files using VS Code diff capability
 
 ## Creating a C/C++ Project in VS Code
