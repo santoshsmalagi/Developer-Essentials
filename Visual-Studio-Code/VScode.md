@@ -86,6 +86,7 @@ This Remote Development extension pack includes four extensions:
 
 > *⚠️ If you have a source file open in VS Code, but made an edit and saved it using Vim in another terminal, VS Code is quite responsive in applying those changes to the currently open file.*
 
+## Editing Code in VS Code
 ## Navigating Code in VS Code
 > *NOTE: Installing [vscodevim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) might change the default [keyboard shortcuts](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf) in VS Code.*
 
@@ -120,4 +121,3 @@ This Remote Development extension pack includes four extensions:
 * ``code --diff <file1> <file2>`` - to diff two files using VS Code diff capability
 
 ## Formatting Code in VS Code
-## Editing Code in VS Code
