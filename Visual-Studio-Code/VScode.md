@@ -92,6 +92,8 @@ This Remote Development extension pack includes four extensions:
   * Holding down `Ctrl` key opens files in a new editor group or tab.
   * Navigate with up/down arrow keys, or open a split view. To open multiple files - use Ctrl+➡️ key
   * Fuzzy filtering - search within a specific dir(i.e. <dir> <string>), camelcase search etc.
+* Go to line number within a file - ``Ctrl+G`` - enter a line number, the line is previewed, hit ``ESC`` to cancel. Also indicates line numbers 1 thru max line number for the current file. ``-1`` - negative offset takes you to the end of file.
+* Command Palette - ``Ctrl_Shift+P``
 * ``code --diff <file1> <file2>`` - to diff two files using VS Code diff capability
 
 ## Creating a C/C++ Project in VS Code
