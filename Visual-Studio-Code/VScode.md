@@ -90,6 +90,7 @@ This Remote Development extension pack includes four extensions:
 > *NOTE: Installing [vscodevim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) might change the default [keyboard shortcuts](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf) in VS Code.*
 
 * ``Ctrl+,`` - to open and configure user settings for different VS Code features
+* Breadcrumbs - VS Code can display the entire path from the source directory down to the symbol name. This can also be used to do source code navigation.
 * Quick Open - ``Ctrl+P``
   * Open any file in the repository by searching for a string, mutliple files with same name listed with a relative path.
   * Holding down `Ctrl` key opens files in a new editor group or tab.
@@ -103,5 +104,4 @@ This Remote Development extension pack includes four extensions:
   * ``Go to Bracket`` - match brackets
   * ``Go to Symbol`` or ``Ctrl+Shift+O`` to navigate through list of symbols. ``@:`` sorts symbols by type. You can also combine it with the Quick Open by appending ``@`` to the file name. 
 * Outline View - search and filtering, 'Follow Cursor', 'Sort By' - Position, Name, or Category. Also possible to set/adjust advanced settings for the outline view.
-* Breadcrumbs - VS Code can display the entire path from the source directory down to the symbol name. This can also be used to do source code navigation.
 * ``code --diff <file1> <file2>`` - to diff two files using VS Code diff capability
