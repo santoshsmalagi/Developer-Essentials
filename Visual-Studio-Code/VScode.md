@@ -36,7 +36,7 @@ Apart from the general look and feel, Vim and VS Code are two superior tools for
 * **System Programmers are used to Vim/Emacs:** Most Linux/System programmers are used to Vim/Emacs style code editing, as the two tools are natively available on every major Linux system.
 
 #### Where VS Code stands out?
-* **Outline View:** A notable feature of VS Code is it's ability to list an 'Outline' view of the current C/C++ source or header file and list symbols with icons in a nice outline view. Achieving similar functionality in Vim might require additional plugins/extra work.
+* **Outline View:** A notable feature of VS Code is it's ability to list an 'Outline' view of the current C/C++ source or header file and list symbols (functions, enums, structs, variables etc.) with icons in a nice outline view. Achieving similar functionality in Vim might require additional plugins/extra work.
 * **Code Navigation:** Code navigation in Vim using [Exuberant ctags](https://ctags.sourceforge.net/) requires regeneration of a tag file everytime new code is checked out. VS Code automatically updates the references for declarations/definitions if new code is added to the developer work area. Besides code navigation/search features in VS Code stood out from Vim.
 * **Version Control Extensions:** VS Code offers some powerful extensions for version control systems such as [Perforce for VS Code](https://marketplace.visualstudio.com/items?itemName=mjcrouch.perforce)
 
