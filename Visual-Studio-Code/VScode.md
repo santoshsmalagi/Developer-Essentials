@@ -85,6 +85,8 @@ This Remote Development extension pack includes four extensions:
 * gdb running natively in a Linux terminal pointing to the binary for debug
 
 ## VS Code Shortcuts/Tips and Tricks
+> *NOTE: Installing [vscodevim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) might change the default [keyboard shortcuts](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf) in VS Code.*
+
 * ``code --diff <file1> <file2>`` - to diff two files using VS Code diff capability
 
 ## Creating a C/C++ Project in VS Code
