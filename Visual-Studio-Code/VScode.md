@@ -89,21 +89,21 @@ This Remote Development extension pack includes four extensions:
 ## Navigating Code in VS Code
 > *NOTE: Installing [vscodevim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) might change the default [keyboard shortcuts](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf) in VS Code.*
 
-* Useful keyboard shortcuts:
+* **Useful keyboard shortcuts:**
   * ``Ctrl+,`` - to open and configure user settings for different VS Code
   * ``Ctrl+`` or ``Ctrl-`` - zoom in or zoom out
   * Go to line number within a file - ``Ctrl+G``
     * enter a line number, the line is previewed, hit ``ESC`` to cancel.
     * Indicates line numbers 1 thru max line number for the current file.
     * ``-1`` - negative offset takes you to the end of file.
-* Breadcrumbs - VS Code can display the entire path from the source directory down to the symbol name. This can also be used to do source code navigation.
-* Outline View - lists an outline of all symbols (functions, classes, structs, enums, typedefs, variables etc.) in the current file. Search and filter by symbol names. Set/adjust advanced settings for the outline view, as well as 'Follow Cursor', 'Sort by - Position, Name or Category' etc.
-* Quick Open - ``Ctrl+P``
+* **Breadcrumbs** - VS Code can display the entire path from the source directory down to the symbol name. This can also be used to do source code navigation.
+* **Outline View** - lists an outline of all symbols (functions, classes, structs, enums, typedefs, variables etc.) in the current file. Search and filter by symbol names. Set/adjust advanced settings for the outline view, as well as 'Follow Cursor', 'Sort by - Position, Name or Category' etc.
+* **Quick Open** - ``Ctrl+P``
   * Open any file in the workspace by searching for a string, mutliple files with same name listed with a relative path.
   * Holding down `Ctrl` key opens files in a new editor group or tab.
   * Navigate with up/down arrow keys, or open a split view. To open multiple files - use Ctrl+➡️ key
   * Fuzzy filtering - search within a specific dir(i.e. <dir> <string>), camelcase search etc.
-* Command Palette - ``Ctrl+Shift+P``
+* **Command Palette** - ``Ctrl+Shift+P``
   * ``Go Back`` or ``Go Forward`` command to go the previous or next location in navigation history
   * ``Go to Last Edit Location`` - go back to the last location where an edit was made
   * ``Go to Bracket`` - match brackets
