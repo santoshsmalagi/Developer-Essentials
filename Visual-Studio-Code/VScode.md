@@ -1,7 +1,7 @@
 # Visual Studio Code
 Visual Studio Code is a lightweight, modern, but powerful source code editor. It comes with built-in support for JavaScript, TypeScript and Node.js and has a rich ecosystem of extensions for other languages and runtimes (such as C++, C#, Java, Python, PHP, Go, .NET).
 
-> *The following tutorial focuses on setting up a VS Code C/C++ development environment on Windows using the MinGW (GCC) toolchain. VS Code website provides turotials for setting up C/C++ evelopment environment for other platforms/compiler toolchains.*
+> ⚠️ The following tutorial focuses on setting up a VS Code C/C++ development environment on Windows using the MinGW (GCC) toolchain. VS Code website provides turotials for setting up C/C++ evelopment environment for other platforms/compiler toolchains.*
  
 ## Why use Visual Studio Code for C/C++ Development?
 * VS Code combines the simplicity of a source code editor with powerful developer tooling 
@@ -48,7 +48,7 @@ Provides step by step instruction for Windows, Linux, and macOS to download and 
 #### Step II - [C/C++ Extension for VS Code](https://code.visualstudio.com/docs/languages/cpp)
 The next step is to enable C/C++ development support for VS Code by installing the [Microsoft C/C++ Extension](https://code.visualstudio.com/docs/languages/cpp) in VS Code. This extension is a *must have* for C/C++ development in VS Code and adds useful features such as syntax highlighting (colorization), smart completions and hovers (IntelliSense), error checking etc.
 
-> *The C/C++ extension doesn't include a C++ compiler or debugger.*
+> *⚠️ The C/C++ extension doesn't include a C++ compiler or debugger.*
 
 #### Step III - [Setup C/C++ Development Tools](https://code.visualstudio.com/docs/languages/cpp)
 VS Code as an editor relies on command-line tools for C/C++ development workflow. The compiler-linker-debugger toolchain must therefore be installed, or VS Code must be configured to use these tools if they are already installed.
@@ -84,7 +84,7 @@ This Remote Development extension pack includes four extensions:
   * [vscodevim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
 * gdb running natively in a Linux terminal pointing to the binary for debug
 
-> *If you have a source file open in VS Code, but made an edit and saved it using Vim in another terminal, VS Code is quite quick in updating those changes!*
+> *⚠️ If you have a source file open in VS Code, but made an edit and saved it using Vim in another terminal, VS Code is quite responsive in applying those changes to the currently open file.*
 
 ## Navigating Code in VS Code
 > *NOTE: Installing [vscodevim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) might change the default [keyboard shortcuts](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf) in VS Code.*
