@@ -86,22 +86,22 @@ This Remote Development extension pack includes four extensions:
 
 > *If you have a source file open in VS Code, but made an edit and saved it using Vim in another terminal, VS Code is quite quick in updating those changes!*
 
-## VS Code Shortcuts/Tips and Tricks
+## Navigating Code in VS Code
 > *NOTE: Installing [vscodevim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) might change the default [keyboard shortcuts](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf) in VS Code.*
 
+* ``Ctrl+,`` - to open and configure user settings for different VS Code features
 * Quick Open - ``Ctrl+P``
   * Open any file in the repository by searching for a string, mutliple files with same name listed with a relative path.
   * Holding down `Ctrl` key opens files in a new editor group or tab.
   * Navigate with up/down arrow keys, or open a split view. To open multiple files - use Ctrl+➡️ key
   * Fuzzy filtering - search within a specific dir(i.e. <dir> <string>), camelcase search etc.
+* ``Ctrl+`` or ``Ctrl-`` - zoom in or zoom out
 * Go to line number within a file - ``Ctrl+G`` - enter a line number, the line is previewed, hit ``ESC`` to cancel. Also indicates line numbers 1 thru max line number for the current file. ``-1`` - negative offset takes you to the end of file.
 * Command Palette - ``Ctrl+Shift+P``
   * ``Go Back`` or ``Go Forward`` command to go the previous or next location in navigation history
   * ``Go to Last Edit Location`` - go back to the last location where an edit was made
   * ``Go to Bracket`` - match brackets
-  * ``Go to Symbol`` or ``Ctrl+Shift+O`` to navigate through list of symbols
+  * ``Go to Symbol`` or ``Ctrl+Shift+O`` to navigate through list of symbols. ``@:`` sorts symbols by type. You can also combine it with the Quick Open by appending ``@`` to the file name. 
+* Outline View - search and filtering, 'Follow Cursor', 'Sort By' - Position, Name, or Category. Also possible to set/adjust advanced settings for the outline view.
+* Breadcrumbs - VS Code can display the entire path from the source directory down to the symbol name. This can also be used to do source code navigation.
 * ``code --diff <file1> <file2>`` - to diff two files using VS Code diff capability
-
-## Creating a C/C++ Project in VS Code
-## Debugging C/C++ Code in VS Code
-## Navigating Code in VS Code
