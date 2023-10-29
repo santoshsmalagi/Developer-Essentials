@@ -89,7 +89,7 @@ This Remote Development extension pack includes four extensions:
 ## Navigating Code in VS Code
 > *NOTE: Installing [vscodevim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) might change the default [keyboard shortcuts](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf) in VS Code.*
 
-* **Useful keyboard shortcuts:**
+* **[Useful keyboard shortcuts:](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)**
   * ``Ctrl+,`` - to open and configure user settings for different VS Code
   * ``Ctrl+`` or ``Ctrl-`` - zoom in or zoom out
   * Go to line number within a file - ``Ctrl+G``
@@ -104,10 +104,15 @@ This Remote Development extension pack includes four extensions:
   * Navigate with up/down arrow keys, or open a split view. To open multiple files - use Ctrl+➡️ key
   * Fuzzy filtering - search within a specific dir(i.e. <dir> <string>), camelcase search etc.
 * **Command Palette** - ``Ctrl+Shift+P``
-  * ``Go Back`` or ``Go Forward`` command to go the previous or next location in navigation history
+  * ``Go Back`` (``Alt+⬅️``) or ``Go Forward`` (``Alt+➡️``) command to go the previous or next location in navigation history
   * ``Go to Last Edit Location`` - go back to the last location where an edit was made
   * ``Go to Bracket`` - match brackets
   * ``Go to Symbol`` - navigate to a symbol (function name, class, struct, enum, typedef, variable etc.).
     * ``Ctrl+Shift+O`` to navigate through list of symbols in the current file. ``@:`` sorts symbols by type. You can also combine it with the Quick Open by appending ``@`` to the file name.
     * ``Ctrl+T`` navigates through all symbols in the workspace.
+  * ``Go to Definition`` - jump to the definition of the symbol
+  * ``Go to Declaration`` - jump to the declaration of the symbol
 * ``code --diff <file1> <file2>`` - to diff two files using VS Code diff capability
+
+## Formatting Code in VS Code
+## Editing Code in VS Code
