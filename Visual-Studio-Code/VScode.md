@@ -102,6 +102,8 @@ This Remote Development extension pack includes four extensions:
   * ``Go Back`` or ``Go Forward`` command to go the previous or next location in navigation history
   * ``Go to Last Edit Location`` - go back to the last location where an edit was made
   * ``Go to Bracket`` - match brackets
-  * ``Go to Symbol`` - navihate to a symbol (function name, class, struct, enum, typedef, variable etc.). ``Ctrl+Shift+O`` to navigate through list of symbols in the current file. ``@:`` sorts symbols by type. You can also combine it with the Quick Open by appending ``@`` to the file name. ``Ctrl+T`` navigates symbols in the workspace.
+  * ``Go to Symbol`` - navigate to a symbol (function name, class, struct, enum, typedef, variable etc.).
+    * ``Ctrl+Shift+O`` to navigate through list of symbols in the current file. ``@:`` sorts symbols by type. You can also combine it with the Quick Open by appending ``@`` to the file name.
+    * ``Ctrl+T`` navigates through all symbols in the workspace.
 * Outline View - search and filtering, 'Follow Cursor', 'Sort By' - Position, Name, or Category. Also possible to set/adjust advanced settings for the outline view.
 * ``code --diff <file1> <file2>`` - to diff two files using VS Code diff capability
