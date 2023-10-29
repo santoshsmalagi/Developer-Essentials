@@ -94,6 +94,9 @@ This Remote Development extension pack includes four extensions:
   * Fuzzy filtering - search within a specific dir(i.e. <dir> <string>), camelcase search etc.
 * Go to line number within a file - ``Ctrl+G`` - enter a line number, the line is previewed, hit ``ESC`` to cancel. Also indicates line numbers 1 thru max line number for the current file. ``-1`` - negative offset takes you to the end of file.
 * Command Palette - ``Ctrl+Shift+P``
+  * ``Go Back`` or ``Go Forward`` command to go the previous or next location in navigation history
+  * ``Go to Last Edit Location``
+  * ``Go to Bracket``
 * ``code --diff <file1> <file2>`` - to diff two files using VS Code diff capability
 
 ## Creating a C/C++ Project in VS Code
