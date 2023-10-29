@@ -87,6 +87,10 @@ This Remote Development extension pack includes four extensions:
 ## VS Code Shortcuts/Tips and Tricks
 > *NOTE: Installing [vscodevim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) might change the default [keyboard shortcuts](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf) in VS Code.*
 
+* Quick Open - ``Ctrl+P``
+  * Open any file in the repository by searching for a string.
+  * Navigate with up/down arrow keys, or open a split view.
+  * Mutliple files with same name listed with a relative path.
 * ``code --diff <file1> <file2>`` - to diff two files using VS Code diff capability
 
 ## Creating a C/C++ Project in VS Code
