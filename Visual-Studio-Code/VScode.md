@@ -110,8 +110,9 @@ This Remote Development extension pack includes four extensions:
   * ``Go to Symbol`` - navigate to a symbol (function name, class, struct, enum, typedef, variable etc.).
     * ``Ctrl+Shift+O`` to navigate through list of symbols in the current file. ``@:`` sorts symbols by type. You can also combine it with the Quick Open by appending ``@`` to the file name.
     * ``Ctrl+T`` navigates through all symbols in the workspace.
-  * ``Go to Definition`` - jump to the definition of the symbol
+  * ``Go to Definition`` (``F12``) - jump to the definition of the symbol
   * ``Go to Declaration`` - jump to the declaration of the symbol
+  * ``Peek Definition`` (``Alt+F12``) - inline view of the definition
 * ``code --diff <file1> <file2>`` - to diff two files using VS Code diff capability
 
 ## Formatting Code in VS Code
