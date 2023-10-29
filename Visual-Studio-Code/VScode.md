@@ -115,6 +115,7 @@ This Remote Development extension pack includes four extensions:
   * ``Go to References`` - lists all references to the current symbol in a inline peek view box
   * ``Find all references`` - finds all references to the symbol, in a file explorer outline
   * ``Peek Definition`` (``Alt+F12``) - inline view of the definition
+  * Call hierarchy
 * ``code --diff <file1> <file2>`` - to diff two files using VS Code diff capability
 
 ## Formatting Code in VS Code
