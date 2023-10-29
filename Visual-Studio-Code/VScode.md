@@ -91,6 +91,7 @@ This Remote Development extension pack includes four extensions:
 
 * ``Ctrl+,`` - to open and configure user settings for different VS Code features
 * Breadcrumbs - VS Code can display the entire path from the source directory down to the symbol name. This can also be used to do source code navigation.
+* Outline View - lists an outline of all symbols (functions, classes, structs, enums, typedefs, variables etc.) in the current file. Search and filter by symbol names. Set/adjust advanced settings for the outline view, as well as 'Follow Cursor', 'Sort by - Position, Name or Category' etc.
 * Quick Open - ``Ctrl+P``
   * Open any file in the workspace by searching for a string, mutliple files with same name listed with a relative path.
   * Holding down `Ctrl` key opens files in a new editor group or tab.
@@ -105,5 +106,4 @@ This Remote Development extension pack includes four extensions:
   * ``Go to Symbol`` - navigate to a symbol (function name, class, struct, enum, typedef, variable etc.).
     * ``Ctrl+Shift+O`` to navigate through list of symbols in the current file. ``@:`` sorts symbols by type. You can also combine it with the Quick Open by appending ``@`` to the file name.
     * ``Ctrl+T`` navigates through all symbols in the workspace.
-* Outline View - search and filtering, 'Follow Cursor', 'Sort By' - Position, Name, or Category. Also possible to set/adjust advanced settings for the outline view.
 * ``code --diff <file1> <file2>`` - to diff two files using VS Code diff capability
