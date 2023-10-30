@@ -1,7 +1,7 @@
 # Visual Studio Code
-Visual Studio Code is a lightweight, modern, but powerful source code editor. It comes with built-in support for JavaScript, TypeScript and Node.js and has a rich ecosystem of extensions for other languages and runtimes (such as C++, C#, Java, Python, PHP, Go, .NET).
+Visual Studio Code is a lightweight, modern, but powerful source code editor. It comes with built-in support for JavaScript, TypeScript and Node.js. Support for other languages and runtimes such as C++, C#, Java, Python, PHP, Go, .NET etc. is achieved by installing approriate extensions.
 
-> ⚠️ The following tutorial focuses on setting up a VS Code C/C++ development environment on Windows using the MinGW (GCC) toolchain. VS Code website provides turotials for setting up C/C++ evelopment environment for other platforms/compiler toolchains.*
+> ⚠️ The following tutorial focuses on setting up VS Code C/C++ development environment on Windows using the MinGW (GCC) toolchain. VS Code website provides examples for setting up C/C++ development environments for other platforms/compiler toolchains.*
  
 ## Why use Visual Studio Code for C/C++ Development?
 * VS Code combines the simplicity of a source code editor with powerful developer tooling 
