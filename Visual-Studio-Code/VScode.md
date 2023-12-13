@@ -53,7 +53,7 @@ The next step is to enable C/C++ development support for VS Code by installing t
 #### Step III - [Setup C/C++ Development Tools](https://code.visualstudio.com/docs/languages/cpp)
 VS Code as an editor relies on command-line tools for C/C++ development workflow. The compiler-linker-debugger toolchain must therefore be installed, or VS Code must be configured to use these tools if they are already installed.
 
-Open a VS Code terminal window by Ctrl+Shift+`. USe the following command to check if GCC has been installed on the system:
+Open a VS Code terminal window by Ctrl+Shift+`. Use the following command to check if GCC has been installed on the system:
 ```bash
 g++ --version
 ```
