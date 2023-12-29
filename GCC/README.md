@@ -50,14 +50,14 @@ End of search list.
 #### Search paths for libraries
 
 ```shell
-LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:
-/lib/x86_64-linux-gnu/:
-/lib/../lib/:
-/usr/lib/x86_64-linux-gnu/:
-/usr/lib/../lib/:
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../:
-/lib/:
-/usr/lib/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:  
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:  
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:  
+/lib/x86_64-linux-gnu/:  
+/lib/../lib/:  
+/usr/lib/x86_64-linux-gnu/:  
+/usr/lib/../lib/:  
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../:  
+/lib/:  
+/usr/lib/  
 ```
