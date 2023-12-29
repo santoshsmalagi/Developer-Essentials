@@ -24,7 +24,7 @@ export LD_LIBRARY_PATH=${GCC_INSTALL_DIR}/lib64
 For more information on GCC environment variables, see:  
 [Environment Variables Affecting GCC](https://gcc.gnu.org/onlinedocs/gcc/Environment-Variables.html)
 
-## Example compilation command in Ubuntu 22.04 LTS
+## Example Search Paths for Headers and Libraries in Ubuntu
 
 Run with ``-v`` flag turned on, so that GCC can report the search paths for headers and library object files:
 
