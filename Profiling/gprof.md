@@ -1,9 +1,32 @@
 # Profiling with gprof
 
 We will use the following program to demonstrate the use of ``gprof``.
-```C++
-```
 
+```C++
+#include <iostream>
+#include <vector>
+
+void insert(std::vector<double> &vecofDoubles)
+{
+  for (unsigned int i = 0; i < 10000000; ++i)
+    vecofDoubles.push_back(i/2);
+}
+
+
+void print(std::vector<double> &vecofDoubles)
+{
+  for (const auto &i : vecofDoubles)
+    std::cout << i << "\n";
+}
+
+int main()
+{
+  std::vector<double> vecofDoubles {};
+  insert(vecofDoubles);
+  print(vecofDoubles);
+  return 0;
+}
+```
 
 Execute the following steps to compile the binary with instrumentation information, execute it to generate profiling information (``gmon.out`` by default), and finally run it under ``gprof`` to generate profiling data.
 
