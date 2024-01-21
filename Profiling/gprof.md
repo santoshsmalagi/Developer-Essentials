@@ -32,13 +32,13 @@ Execute the following steps to compile the binary with instrumentation informati
 
 ```bash
 # compile with -pg flag too generate instrumentation information
-$ g++ -Wall -pg vectorofDoubles.cpp -o vectorofDoubles
+$ g++ -Wall -pg vector.cpp -o vector
 
 # execute the binary to generate 'gmon.out'
-$ ./vectorofDoubles
+$ ./vector
 
 # run the binary under gprof (in presence of gmon.out) to write profiling data
-$ gprof vectorofDoubles > gprof.txt
+$ gprof vector > gprof.txt
 ```
 
 The sample output generated in ``gprof.txt`` looks like this:
