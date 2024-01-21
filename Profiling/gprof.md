@@ -1,7 +1,8 @@
 # Profiling with gprof
 
 We will use the following program to demonstrate the use of ``gprof``.
-
+```C++
+```
 
 
 Execute the following steps to compile the binary with instrumentation information, execute it to generate profiling information (``gmon.out`` by default), and finally run it under ``gprof`` to generate profiling data.
