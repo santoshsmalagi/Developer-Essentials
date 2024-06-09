@@ -24,6 +24,12 @@ Hello World
 > puts $a
 99
 
+# control structures
+while {$val>0} {
+  result *= val;
+  val -= 1;
+}
+
 # evaluate expressions
 > expr 2 + 2
 4
