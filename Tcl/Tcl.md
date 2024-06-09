@@ -13,7 +13,7 @@ Hello World
 > puts $a
 99
 
-# evalualte expressions
+# evaluate expressions
 > expr 2 + 2
 4
 
