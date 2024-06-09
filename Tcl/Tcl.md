@@ -6,14 +6,18 @@
 > set a 99
 99
 
+# combining two commands on same line with a semicolon character
+> set a 99; set b 100;
+
+
 # command substitution
-set b [expr $a*20]
+> set b [expr $a*20]
 
 # backslash substitution
-set x \$a
+> set x \$a
 $a
 
-set newline \n
+> set newline \n
 
 
 
@@ -26,8 +30,8 @@ Hello World
 
 # control structures
 while {$val>0} {
-  result *= val;
-  val -= 1;
+  set result [expr $result * $val]
+  incr val -1
 }
 
 # evaluate expressions
