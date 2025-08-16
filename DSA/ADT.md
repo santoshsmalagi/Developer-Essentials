@@ -33,3 +33,13 @@ While there isn't a single "complete" and universally agreed-upon list, as new A
 * String: A sequence of characters.
 * Container/Collection: A general ADT representing a group of elements, often serving as a supertype for other ADTs.
 * Tuple: A fixed-size, ordered collection of elements, typically of different types.
+
+## ADT vs Data Structure
+
+The distinction between an Abstract Data Type (ADT) and a Data Structure lies in their level of abstraction and focus:  
+
+Abstract Data Type (ADT): An ADT is a logical description or mathematical model of a data type. It defines the behavior and operations that can be performed on a set of data, without specifying the implementation details of how that data is stored or those operations are carried out. It focuses on "what" can be done with the data. Examples include Stack, Queue, List, and Map, which define operations like push, pop, enqueue, dequeue, add, remove, get, etc.  
+
+Data Structure: A data structure is a concrete implementation or physical organization of data in memory. It defines how data is stored and arranged to facilitate efficient access and manipulation. It focuses on "how" the data is represented and managed. Examples include arrays, linked lists, trees, and hash tables, which are specific ways to organize data.  
+
+In essence, an ADT is an interface or contract, while a data structure is a concrete realization of that contract. An ADT can be implemented using various data structures. For example, a Stack ADT can be implemented using either an array or a linked list data structure. The ADT specifies the LIFO behavior (Last-In, First-Out), while the underlying data structure determines the specific memory layout and implementation of push and pop operations.
