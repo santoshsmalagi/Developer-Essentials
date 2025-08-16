@@ -1,4 +1,15 @@
-An Abstract Data Type (ADT) defines a logical view of data and the operations that can be performed on it, without specifying the underlying implementation details. While there isn't a single "complete" and universally agreed-upon list, as new ADTs can be conceptualized, here are some of the most common and fundamental ADTs:  
+An Abstract Data Type (ADT) defines a logical view of data and the operations that can be performed on it, without specifying the underlying implementation details. An Abstract Data Type (ADT) is a mathematical model for data types, defining the behavior and operations associated with a data structure, without specifying the underlying implementation details. It focuses on what a data structure does rather than how it does it.
+
+Key characteristics of ADTs include:
+
+* Abstraction:
+    * ADTs hide the internal representation and implementation of the data, allowing users to interact with the data through a defined set of operations without needing to know the specifics of how those operations are performed or how the data is stored.
+* Behavioral Definition:
+    * They specify the logical properties of the data and the operations that can be performed on it (e.g., adding an element, removing an element, checking if empty).
+* Implementation Independence:
+    * An ADT can be implemented using various underlying concrete data structures. For example, a "Stack" ADT can be implemented using either an array or a linked list. The user of the Stack ADT does not need to know which implementation is being used.
+
+While there isn't a single "complete" and universally agreed-upon list, as new ADTs can be conceptualized, here are some of the most common and fundamental ADTs:  
 
 #### Linear ADTs:
 * List: An ordered collection of elements, allowing insertion, deletion, and access at specific positions.
