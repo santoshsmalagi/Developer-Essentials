@@ -43,3 +43,16 @@ Abstract Data Type (ADT): An ADT is a logical description or mathematical model 
 Data Structure: A data structure is a concrete implementation or physical organization of data in memory. It defines how data is stored and arranged to facilitate efficient access and manipulation. It focuses on "how" the data is represented and managed. Examples include arrays, linked lists, trees, and hash tables, which are specific ways to organize data.  
 
 In essence, an ADT is an interface or contract, while a data structure is a concrete realization of that contract. An ADT can be implemented using various data structures. For example, a Stack ADT can be implemented using either an array or a linked list data structure. The ADT specifies the LIFO behavior (Last-In, First-Out), while the underlying data structure determines the specific memory layout and implementation of push and pop operations.
+
+## Data Type vs Data Structure
+
+A data type defines the kind of values a variable can hold and the operations that can be performed on those values. It dictates how data is interpreted by the computer, such as whether it's a whole number, a decimal, a character, or a sequence of characters. Examples of primitive data types include integers (int), floating-point numbers (float), characters (char), and booleans (boolean).  
+
+A data structure is a way of organizing and storing data in a computer so that it can be accessed and modified efficiently. It is a collection of data types arranged in a specific logical or physical layout to facilitate particular operations. Data structures are designed to manage large amounts of data and optimize performance for tasks like searching, sorting, and insertion. Examples of data structures include arrays, linked lists, stacks, queues, trees, and graphs.  
+
+Key Differences:
+
+* Scope: Data types are fundamental building blocks that define the nature of individual pieces of data, while data structures are higher-level constructs that organize and relate multiple pieces of data.
+* Purpose: Data types specify what kind of data is being stored, while data structures specify how that data is organized and related to other data.
+* Abstraction Level: Data types are more primitive and directly tied to how data is represented in memory. Data structures are more abstract, focusing on the logical relationships between data elements and the operations that can be performed on them.
+* Composition: Data structures are often composed of multiple data types. For example, a linked list (a data structure) is made up of nodes, where each node is a composite data type containing data and a reference to the next node.
