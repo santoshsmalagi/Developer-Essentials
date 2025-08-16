@@ -32,3 +32,4 @@ While there isn't a single "complete" and universally agreed-upon list, as new A
 #### Other Notable ADTs:
 * String: A sequence of characters.
 * Container/Collection: A general ADT representing a group of elements, often serving as a supertype for other ADTs.
+* Tuple: A fixed-size, ordered collection of elements, typically of different types.
