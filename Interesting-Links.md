@@ -26,3 +26,6 @@ https://paulgp.substack.com/p/getting-started-with-claude-code
 https://code.claude.com/docs/en/overview
 
 https://www.anthropic.com/learn
+
+#### ML and AI
+https://jamwithai.substack.com/p/the-books-that-actually-matter-8
