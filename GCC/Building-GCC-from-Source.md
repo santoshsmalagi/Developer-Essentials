@@ -4,8 +4,9 @@ This tutorial walks through compiling the GNU Compiler Collection (GCC) from sou
 
 > [!CAUTION]
 > ## ⚠️ Building libstdc++ separately from the rest of GCC is not supported!!!
->
-> libstdc++ lives inside the GCC source tree (in `libstdc++-v3/`) and is built automatically whenever the C++ front end is enabled. If you need a newer libstdc++, the way to get it is to build GCC.
+> glibc is a separate project (sourceware.org/glibc) with its own configure and make, and it doesn't need GCC's source tree.
+> libstdc++ lives inside the GCC source tree (in `libstdc++-v3/`) and is built automatically whenever the C++ front end is enabled. If you need a newer libstdc++, the way to get it is to build GCC. libstdc++ can't be built without GCC because it's tied to the compiler. It implements exceptions, runtime type information and operator new, its headers use compiler built-ins, and new C++ features arrive in the compiler and library together.
+> glibc is tied to the kernel and the OS instead. **What you can't safely do is replace the system's glibc.**
 
 **Reference:** [GCC Installation Guide](https://gcc.gnu.org/install/)
 
